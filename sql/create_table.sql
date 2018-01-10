@@ -299,7 +299,7 @@ CREATE TABLE IF NOT EXISTS `item_retention`(
    `week7_lfree_cate1_boy` float DEFAULT 0 COMMENT '限免-一级分类男频-7日留存',
    `week7_lfree_cate1_girl` float DEFAULT 0 COMMENT '限免-一级分类女频-7日留存',
    `week7_lfree_cate1_pub` float DEFAULT 0 COMMENT '限免-一级分类出版-7日留存',
-   `week7_lfree_cate1_other` float DEFAULT 0 COMMENT '限免-一级分类其它-7日留存'
+   `week7_lfree_cate1_other` float DEFAULT 0 COMMENT '限免-一级分类其它-7日留存',
    PRIMARY KEY (`rid`)
 );
 
