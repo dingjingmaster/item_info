@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS `item_retention`(
    `rid` VARCHAR(64) NOT NULL COMMENT '主键',
-   `day_free` float COMMENT '免费-次日留存',
+   `day_free` float DEFAULT 0 COMMENT '免费-次日留存',
    `day_free_status_publish` float DEFAULT 0 COMMENT '免费-连载-次日留存',
    `day_free_status_end` float DEFAULT 0 COMMENT '免费-完结-次日留存',
    `day_free_view_gt10w` float DEFAULT 0 COMMENT '免费-订阅量大于10万-次日留存',
