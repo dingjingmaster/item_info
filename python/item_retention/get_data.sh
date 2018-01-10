@@ -4,10 +4,11 @@ source ~/.bashrc
 workDir=$(cd $(dirname $0); pwd)
 
 ###################     参数定义      ###########################
-thisDay =`date -d "-2 day" +%Y-%m-%d`
+thisDay=`date -d "-2 day" +%Y-%m-%d`
+lastDay=`date -d "-3 day" +%Y-%m-%d`
+
 hadLogBase="hdfs://10.26.24.165:9090/rs/appsinfo/data/user_retention_rate"
 
-cd ${workDir} && rm data && mkdir data
 # 天数据
 thisDayLog="data/day_${thisDay}"
 lastDayLog="data/day_${lastDay}"
@@ -22,7 +23,7 @@ lastWeek7Log="data/week7_${lastDay}"
 
 ###################     开始执行      ###########################
 # 拉取数据
-cd ${workDir} && rm data && mkdir data
+cd ${workDir} && rm -fr data && mkdir data
 hadoop fs -cat "${hadLogBase}/${thisDay}/day/last/*" > ${lastDayLog}
 hadoop fs -cat "${hadLogBase}/${thisDay}/day/remain/*" > ${thisDayLog}
 hadoop fs -cat "${hadLogBase}/${thisDay}/week/last/*" > ${lastWeekLog}
@@ -32,8 +33,8 @@ hadoop fs -cat "${hadLogBase}/${thisDay}/week/remain_1_7/*" > ${thisWeek7Log}
 
 # 留存率结果统计
 cd ${workDir}/
-python email/res_main_all.py ${lastDayLog} ${thisDayLog} ${lastWeekLog} ${thisWeekLog} 
-python email/res_main_week7.py ${lastWeek7Log} ${thisWeek7Log} 
+python get_data/res_main_all.py ${lastDayLog} ${thisDayLog} ${lastWeekLog} ${thisWeekLog} 
+python get_data/res_main_week7.py ${lastWeek7Log} ${thisWeek7Log} 
 
 
 
