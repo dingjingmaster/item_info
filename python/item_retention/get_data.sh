@@ -35,7 +35,7 @@ cd ${workDir} && rm -fr data && mkdir data
 cd ${workDir}/
 #python get_data/res_main_all.py ${lastDayLog} ${thisDayLog} ${lastWeekLog} ${thisWeekLog} 
 #python get_data/res_main_week7.py ${lastWeek7Log} ${thisWeek7Log} 
-python inject_retention.py "root" "dingjing1009." "${nowTime}" "result_day.txt" "result_week.txt" "result_week7.txt"
+python inject_retention.py "root" "dingjing1009." "nowTime" "result_day.txt" "result_week.txt" "result_week7.txt"
 
 
 
