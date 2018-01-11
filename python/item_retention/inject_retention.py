@@ -22,8 +22,8 @@ def get_limitfree_sql(irid, last, remain, retent, tfCate, timeStamp):
             last, remain, retent,\
             tfCate,\
             timeStamp)\
-            VALUES('%s', '%d', '%d', '%f', '%d', '%d')" % \
-            (irid, last, remain, retent, tfCate, timeStamp)
+            VALUES('%s', '%d', '%d', '%f', '%d', '%d');" % \
+            (irid, last, remain, retent, int(tfCate), timeStamp)
 
     return sql
 
@@ -41,7 +41,7 @@ def get_fee_sql(irid, last, remain, retent, feeCate, typeCate, timeStamp):
             last, remain, retent,\
             feeCate, typeCate,\
             timeStamp)\
-            VALUES('%s', '%d', '%d', '%f', '%d', '%d', '%d')" % \
+            VALUES('%s', '%d', '%d', '%f', '%d', '%d', '%d');" % \
             (irid, last, remain, retent, feeCate, typeCate, timeStamp)
 
     return sql
@@ -61,7 +61,7 @@ def get_status_sql(irid, last, remain, retent, statuCate, feeCate, typeCate, tim
             last, remain, retent,\
             statuCate, feeCate, typeCate,\
             timeStamp)\
-            VALUES('%s', '%d', '%d', '%f', '%d', '%d', '%d', '%d')" % \
+            VALUES('%s', '%d', '%d', '%f', '%d', '%d', '%d', '%d');" % \
             (irid, last, remain, retent, statuCate, feeCate, typeCate, timeStamp)
 
     return sql
@@ -79,11 +79,11 @@ def get_status_sql(irid, last, remain, retent, statuCate, feeCate, typeCate, tim
 '''
 def get_viewCount_sql(irid, last, remain, retent, viewCate, feeCate, typeCate, timeStamp):
 
-    sql = "INSERT INTO item_retent_status(irid,\
+    sql = "INSERT INTO item_retent_viewCount(irid,\
             last, remain, retent,\
             viewCate, feeCate, typeCate,\
             timeStamp)\
-            VALUES('%s', '%d', '%d', '%f', '%d', '%d', '%d', '%d')" % \
+            VALUES('%s', '%d', '%d', '%f', '%d', '%d', '%d', '%d');" % \
             (irid, last, remain, retent, viewCate, feeCate, typeCate, timeStamp)
 
     return sql
@@ -101,11 +101,11 @@ def get_viewCount_sql(irid, last, remain, retent, viewCate, feeCate, typeCate, t
 '''
 def get_intime_sql(irid, last, remain, retent, intimeCate, feeCate, typeCate, timeStamp):
 
-    sql = "INSERT INTO item_retent_status(irid,\
-            last, remain, retent\
+    sql = "INSERT INTO item_retent_intime(irid,\
+            last, remain, retent,\
             intimeCate, feeCate, typeCate,\
             timeStamp)\
-            VALUES('%s', '%d', '%d', '%f', '%d', '%d', '%d', '%d')" % \
+            VALUES('%s', '%d', '%d', '%f', '%d', '%d', '%d', '%d');" % \
             (irid, last, remain, retent, intimeCate, feeCate, typeCate, timeStamp)
 
     return sql
@@ -123,11 +123,11 @@ def get_intime_sql(irid, last, remain, retent, intimeCate, feeCate, typeCate, ti
 '''
 def get_update_sql(irid, last, remain, retent, updateCate, feeCate, typeCate, timeStamp):
 
-    sql = "INSERT INTO item_retent_status(irid,\
+    sql = "INSERT INTO item_retent_update(irid,\
             last, remain, retent,\
             updateCate, feeCate, typeCate,\
             timeStamp)\
-            VALUES('%s', '%d', '%d', '%f', '%d', '%d', '%d', '%d')" % \
+            VALUES('%s', '%d', '%d', '%f', '%d', '%d', '%d', '%d');" % \
             (irid, last, remain, retent, updateCate, feeCate, typeCate, timeStamp)
 
     return sql
@@ -145,11 +145,11 @@ def get_update_sql(irid, last, remain, retent, updateCate, feeCate, typeCate, ti
 '''
 def get_classify1_sql(irid, last, remain, retent, cate1Cate, feeCate, typeCate, timeStamp):
 
-    sql = "INSERT INTO item_retent_status(irid,\
+    sql = "INSERT INTO item_retent_classify1(irid,\
             last, remain, retent,\
             cate1Cate, feeCate, typeCate,\
             timeStamp)\
-            VALUES('%s', '%d', '%d', '%f', '%d', '%d', '%d', '%d')" % \
+            VALUES('%s', '%d', '%d', '%f', '%d', '%d', '%d', '%d');" % \
             (irid, last, remain, retent, cate1Cate, feeCate, typeCate, timeStamp)
 
     return sql
@@ -277,40 +277,40 @@ def inject_mysql(txtpath, cursor, times, type):
 
         # 天限免 ok
         if len(id) == 3 and id[0] == "tf":
-            irid = "tf" + id[2] + "-" + str(times)
+            irid = type + "-" + "tf" + id[2] + "-" + str(times)
             sql = get_limitfree_sql(irid, last, remain, retent, id[2], timeStamp)
         # 总体付费情况 ok
         elif len(id) == 2 and id[0] == "fee":
-            irid = id[1] + "-" + str(times)
+            irid = type + "-" + id[1] + "-" + str(times)
             feeCate = get_fee_status(id[1])
             sql = get_fee_sql(irid, last, remain, retent, feeCate, typeCate, timeStamp)
         # 状态(连载/完结)付费情况 ok
         elif len(id) == 3 and id[0] == "status":
-            irid = id[2] + "-" + str(times)
+            irid = type + "-" + id[1] + "-" + id[2] + "-" + str(times)
             statuCate = get_statu_status(id[2])
             feeCate = get_fee_status(id[1])
             sql = get_status_sql(irid, last, remain, retent, statuCate, feeCate, typeCate, timeStamp)
         # 订阅量情况 ok
         elif len(id) == 3 and id[0] == "view":
-            irid = id[2] + "-" + str(times)
+            irid = type + "-" + id[1] + "-" + id[2] + "-" + str(times)
             viewCate = get_view_status(id[2])
             feeCate = get_fee_status(id[1])
             sql = get_viewCount_sql(irid, last, remain, retent, viewCate, feeCate, typeCate, timeStamp)
         # 入库时间
         elif len(id) == 3 and id[0] == "intime":
-            irid = id[2] + "-" + str(times)
+            irid = type + "-" + id[1] + "-" + id[2] + "-" + str(times)
             intimeCate = get_cate1_status(id[2])
             feeCate = get_fee_status(id[1])
             sql = get_intime_sql(irid, last, remain, retent, intimeCate, feeCate, typeCate, timeStamp)
         # 最后更新时间
         elif len(id) == 3 and id[0] == "updatetime":
-            irid = id[2] + "-" + str(times)
+            irid = type + "-" + id[1] + "-" + id[2] + "-" + str(times)
             updateCate = get_cate1_status(id[2])
             feeCate = get_fee_status(id[1])
             sql = get_update_sql(irid, last, remain, retent, updateCate, feeCate, typeCate, timeStamp)
         # 一级分类
         elif len(id) == 3 and id[0] == "cate1":
-            irid = get_cate_status(id[2]) + "-" + str(times)
+            irid = type + "-" + id[1] + "-" + get_cate_status(id[2]) + "-" + str(times)
             cate1Cate = get_cate1_status(id[2])
             feeCate = get_fee_status(id[1])
             sql = get_classify1_sql(irid, last, remain, retent, cate1Cate, feeCate, typeCate, timeStamp)
@@ -321,7 +321,7 @@ def inject_mysql(txtpath, cursor, times, type):
 
 if __name__ == '__main__':
 
-    if len(sys.argv) != 4:
+    if len(sys.argv) != 7:
         print '请输入数据库用户名和密码以及notime(例:"20180101")'
         exit(-1)
     user = sys.argv[1]
