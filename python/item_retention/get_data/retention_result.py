@@ -32,7 +32,7 @@ def get_time(year, month, day):
     in3Month = "bt1mt3m"
     inyear = "bt3mt1y"
     outYear = "gt1y"
-    isZero = "时间戳是 0"
+    isZero = "notime"
 
     # 直接把 0 返回
     if int(year) == 0:
@@ -1020,9 +1020,11 @@ def trans_to_string(inList, outPath, title, flag = 0):
                     continue
                 outList1.append((arr[2] + " - " + arr[3], i[1], i[2], i[3]))
             elif cate == "2":
-                outList2.append((arr[2] + " - " + arr[3], i[1], i[2], i[3]))
+                continue
+                #outList2.append((arr[2] + " - " + arr[3], i[1], i[2], i[3]))
             elif cate == "3":
-                outList3.append((arr[2] + " - " + arr[3], i[1], i[2], i[3]))
+                continue
+                #outList3.append((arr[2] + " - " + arr[3], i[1], i[2], i[3]))
 
     if len(outList0) != 0:
         outList0.sort(key = lambda x: x[3], reverse = True)
