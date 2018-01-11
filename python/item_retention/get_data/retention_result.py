@@ -28,10 +28,10 @@ def get_time(year, month, day):
     last3Month = nowTime - 86400 * 30 * 3
     lastYear = nowTime - 86400 * 366
 
-    inMonth = "一个月之内"
-    in3Month = "一个月到三个月"
-    inyear = "三月到一年"
-    outYear = "一年以上"
+    inMonth = "l1m"
+    in3Month = "bt1mt3m"
+    inyear = "bt3mt1y"
+    outYear = "gt1y"
     isZero = "时间戳是 0"
 
     # 直接把 0 返回
@@ -167,15 +167,15 @@ def fee_rate(lastDayDict, thisDayRemain, outRateList):
             tf = "0"
 
         if int(freeFlag) == 0 or freeFlag == "":
-            freeFlag = "免费书"
+            freeFlag = "free"
         elif int(tf) > 0 and int(freeFlag) > 0:
-            freeFlag = "限免书"
+            freeFlag = "limitfree"
         elif int(freeFlag) == 1:
-            freeFlag = "付费书"
+            freeFlag = "charge"
         elif int(freeFlag) == 2:
-            freeFlag = "包月书"
+            freeFlag = "month"
         elif int(freeFlag) == 10:
-            freeFlag = "公版书"
+            freeFlag = "pub"
 
         key = "fee" + "|" + str(freeFlag)
         if lastD.has_key(key):
@@ -195,15 +195,15 @@ def fee_rate(lastDayDict, thisDayRemain, outRateList):
             tf = "0"
 
         if int(freeFlag) == 0 or freeFlag == "":
-            freeFlag = "免费书"
+            freeFlag = "free"
         elif int(tf) > 0 and int(freeFlag) > 0:
-            freeFlag = "限免书"
+            freeFlag = "limitfree"
         elif int(freeFlag) == 1:
-            freeFlag = "付费书"
+            freeFlag = "charge"
         elif int(freeFlag) == 2:
-            freeFlag = "包月书"
+            freeFlag = "month"
         elif int(freeFlag) == 10:
-            freeFlag = "公版书"
+            freeFlag = "pub"
 
         key = "fee" + "|" + str(freeFlag)
         if thisD.has_key(key):
@@ -242,20 +242,20 @@ def status_rate(lastDayDict, thisDayRemain, outRateList):
             tf = "0"
 
         if status == "2":
-            status = "完结"
+            status = "accomplish"
         else:
-            status = "连载"
+            status = "publish"
 
         if freeFlag == "0" or freeFlag == "":
-            freeFlag = "免费书"
+            freeFlag = "free"
         elif int(tf) > 0 and int(freeFlag) > 0:
-            freeFlag = "限免书"
+            freeFlag = "limitfree"
         elif freeFlag == "1":
-            freeFlag = "付费书"
+            freeFlag = "charge"
         elif freeFlag == "2":
-            freeFlag = "包月书"
+            freeFlag = "month"
         elif freeFlag == "10":
-            freeFlag = "公版书"
+            freeFlag = "pub"
 
         key = "status" + "|" + str(freeFlag) + "|" + str(status)
         if lastD.has_key(key):
@@ -276,20 +276,20 @@ def status_rate(lastDayDict, thisDayRemain, outRateList):
             tf = "0"
 
         if status == "2":
-            status = "完结"
+            status = "accomplish"
         else:
-            status = "连载"
+            status = "publish"
 
         if freeFlag == "0" or freeFlag == "":
-            freeFlag = "免费书"
+            freeFlag = "free"
         elif int(tf) > 0 and int(freeFlag) > 0:
-            freeFlag = "限免书"
+            freeFlag = "limitfree"
         elif freeFlag == "1":
-            freeFlag = "付费书"
+            freeFlag = "charge"
         elif freeFlag == "2":
-            freeFlag = "包月书"
+            freeFlag = "month"
         elif freeFlag == "10":
-            freeFlag = "公版书"
+            freeFlag = "pub"
 
         key = "status" + "|" + str(freeFlag) + "|" + str(status)
         if thisD.has_key(key):
@@ -329,15 +329,15 @@ def category_rate(lastDayDict, thisDayRemain, outRateDayList):
             tf = "0"
 
         if freeFlag == "0" or freeFlag == "":
-            freeFlag = "免费书"
+            freeFlag = "free"
         elif int(tf) > 0 and int(freeFlag) > 0:
-            freeFlag = "限免书"
+            freeFlag = "limitfree"
         elif freeFlag == "1":
-            freeFlag = "付费书"
+            freeFlag = "charge"
         elif freeFlag == "2":
-            freeFlag = "包月书"
+            freeFlag = "month"
         elif freeFlag == "10":
-            freeFlag = "公版书"
+            freeFlag = "pub"
 
         # 一级分类
         key = "cate" + "|" + "1" + "|" + str(freeFlag) + "|" + cate1
@@ -375,15 +375,15 @@ def category_rate(lastDayDict, thisDayRemain, outRateDayList):
             tf = "0"
 
         if freeFlag == "0" or freeFlag == "":
-            freeFlag = "免费书"
+            freeFlag = "free"
         elif int(tf) > 0 and int(freeFlag) != 0:
-            freeFlag = "限免书"
+            freeFlag = "limitfree"
         elif freeFlag == "1":
-            freeFlag = "付费书"
+            freeFlag = "charge"
         elif freeFlag == "2":
-            freeFlag = "包月书"
+            freeFlag = "month"
         elif freeFlag == "10":
-            freeFlag = "公版书"
+            freeFlag = "pub"
 
         # 一级分类
         key = "cate" + "|" + "1" + "|" + str(freeFlag) + "|" + cate1
@@ -422,11 +422,11 @@ def viewcount_rate(lastDayDict, thisDayRemain, outRateDayList):
     lastD = {}
     thisD = {}
 
-    b0to100 =       "大于 0 小于 100"
-    b100to1000 =    "大于 100 小于 1000"
-    b1000to10000 =  "大于 1000 小于 10000"
-    b10000to100000 =  "大于 10000 小于 100000"
-    g100000 =        "大于 100000"
+    b0to100 =       "bt0to1b"
+    b100to1000 =    "bt1bto1k"
+    b1000to10000 =  "bt1kto1w"
+    b10000to100000 ="bt1wto10w"
+    g100000 =       "gt10w"
 
     # 上段时间整理
     for i in lastDayDict.items():
@@ -441,15 +441,15 @@ def viewcount_rate(lastDayDict, thisDayRemain, outRateDayList):
             tf = "0"
 
         if freeFlag == "0" or freeFlag == "":
-            freeFlag = "免费书"
+            freeFlag = "free"
         elif int(tf) > 0 and int(freeFlag) > 0:
-            freeFlag = "限免书"
+            freeFlag = "limitfree"
         elif freeFlag == "1":
-            freeFlag = "付费书"
+            freeFlag = "charge"
         elif freeFlag == "2":
-            freeFlag = "包月书"
+            freeFlag = "month"
         elif freeFlag == "10":
-            freeFlag = "公版书"
+            freeFlag = "pub"
 
         # 0 - 100
         if viewCount >=0 and viewCount < 100:
@@ -483,15 +483,15 @@ def viewcount_rate(lastDayDict, thisDayRemain, outRateDayList):
             tf = "0"
 
         if freeFlag == "0" or freeFlag == "":
-            freeFlag = "免费书"
+            freeFlag = "free"
         elif int(tf) > 0 and int(freeFlag) > 0:
-            freeFlag = "限免书"
+            freeFlag = "limitfree"
         elif freeFlag == "1":
-            freeFlag = "付费书"
+            freeFlag = "charge"
         elif freeFlag == "2":
-            freeFlag = "包月书"
+            freeFlag = "month"
         elif freeFlag == "10":
-            freeFlag = "公版书"
+            freeFlag = "pub"
 
         # 0 - 100
         if viewCount >=0 and viewCount < 100:
@@ -546,15 +546,15 @@ def intime_rate(lastDayDict, thisDayRemain, outRateList):
             tf = "0"
 
         if freeFlag == "0" or freeFlag == "":
-            freeFlag = "免费书"
+            freeFlag = "free"
         elif int(tf) > 0 and int(freeFlag) > 0:
-            freeFlag = "限免书"
+            freeFlag = "limitfree"
         elif freeFlag == "1":
-            freeFlag = "付费书"
+            freeFlag = "charge"
         elif freeFlag == "2":
-            freeFlag = "包月书"
+            freeFlag = "month"
         elif freeFlag == "10":
-           freeFlag = "公版书"
+           freeFlag = "pub"
 
         year = 0
         month = 0
@@ -586,15 +586,15 @@ def intime_rate(lastDayDict, thisDayRemain, outRateList):
             tf = "0"
 
         if freeFlag == "0" or freeFlag == "":
-            freeFlag = "免费书"
+            freeFlag = "free"
         elif int(tf) > 0 and int(freeFlag) > 0:
-            freeFlag = "限免书"
+            freeFlag = "limitfree"
         elif freeFlag == "1":
-            freeFlag = "付费书"
+            freeFlag = "charge"
         elif freeFlag == "2":
-            freeFlag = "包月书"
+            freeFlag = "month"
         elif freeFlag == "10":
-            freeFlag = "公版书"
+            freeFlag = "pub"
 
         year = 0
         month = 0
@@ -648,15 +648,15 @@ def lastUpdate_rate(lastDayDict, thisDayRemain, outRateList):
             tf = "0"
 
         if freeFlag == "0" or freeFlag == "":
-            freeFlag = "免费书"
+            freeFlag = "free"
         elif int(tf) > 0 and int(freeFlag) > 0:
-            freeFlag = "限免书"
+            freeFlag = "limitfree"
         elif freeFlag == "1":
-            freeFlag = "付费书"
+            freeFlag = "charge"
         elif freeFlag == "2":
-            freeFlag = "包月书"
+            freeFlag = "month"
         elif freeFlag == "10":
-            freeFlag = "公版书"
+            freeFlag = "pub"
 
         year = 0
         month = 0
@@ -688,15 +688,15 @@ def lastUpdate_rate(lastDayDict, thisDayRemain, outRateList):
             tf = "0"
 
         if freeFlag == "0" or freeFlag == "":
-            freeFlag = "免费书"
+            freeFlag = "free"
         elif int(tf) > 0 and int(freeFlag) > 0:
-            freeFlag = "限免书"
+            freeFlag = "limitfree"
         elif freeFlag == "1":
-            freeFlag = "付费书"
+            freeFlag = "charge"
         elif freeFlag == "2":
-            freeFlag = "包月书"
+            freeFlag = "month"
         elif freeFlag == "10":
-            freeFlag = "公版书"
+            freeFlag = "pub"
 
         year = 0
         month = 0
@@ -847,16 +847,16 @@ def monthly_limit_free_rate(lastDayDict, thisDayRemain, outRateList):
 
         #
         if tf == "1":
-            key = "tf" + "|" + freeFlag + "|" + "第一批限免书籍"
+            key = "tf" + "|" + freeFlag + "|" + "1"
             flag = "ok"
         elif tf == "2":
-            key = "tf" + "|" + freeFlag + "|" + "第二批限免书籍"
+            key = "tf" + "|" + freeFlag + "|" + "2"
             flag = "ok"
         elif tf == "3":
-            key = "tf" + "|" + freeFlag + "|" + "第三批限免书籍"
+            key = "tf" + "|" + freeFlag + "|" + "3"
             flag = "ok"
         elif tf == "4":
-            key = "tf" + "|" + freeFlag + "|" + "第四批限免书籍"
+            key = "tf" + "|" + freeFlag + "|" + "4"
             flag = "ok"
 
         if flag == "ok":
@@ -879,16 +879,16 @@ def monthly_limit_free_rate(lastDayDict, thisDayRemain, outRateList):
         freeFlag = ""
         #
         if tf == "1":
-            key = "tf" + "|" + freeFlag + "|" + "第一批限免书籍"
+            key = "tf" + "|" + freeFlag + "|" + "1"
             flag = "ok"
         elif tf == "2":
-            key = "tf" + "|" + freeFlag + "|" + "第二批限免书籍"
+            key = "tf" + "|" + freeFlag + "|" + "2"
             flag = "ok"
         elif tf == "3":
-            key = "tf" + "|" + freeFlag + "|" + "第三批限免书籍"
+            key = "tf" + "|" + freeFlag + "|" + "3"
             flag = "ok"
         elif tf == "4":
-            key = "tf" + "|" + freeFlag + "|" + "第四批限免书籍"
+            key = "tf" + "|" + freeFlag + "|" + "4"
             flag = "ok"
 
         if flag == "ok":
