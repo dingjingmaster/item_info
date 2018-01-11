@@ -2,11 +2,11 @@
 source ~/.bash_profile
 source ~/.bashrc
 workDir=$(cd $(dirname $0); pwd)
-
-###################     参数定义      ###########################
+nowTime=`date -d "-2 day" +%Y%m%d`
 thisDay=`date -d "-2 day" +%Y-%m-%d`
 lastDay=`date -d "-3 day" +%Y-%m-%d`
 
+###################     参数定义      ###########################
 hadLogBase="hdfs://10.26.24.165:9090/rs/appsinfo/data/user_retention_rate"
 
 # 天数据

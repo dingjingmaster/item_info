@@ -968,6 +968,7 @@ def trans_to_string(inList, outPath, title, flag = 0):
     outList1 = []
     outList2 = []
     outList3 = []
+    title = ""
 
     if len(inList) <= 0:
         print "输入链表为空"
@@ -984,10 +985,10 @@ def trans_to_string(inList, outPath, title, flag = 0):
 
     # 如果非分类
     if len(arr) == 2:
-        title = "总体付费情况结果统计" + title
+        #title = "总体付费情况结果统计" + title
         for i in inList:
             arr = i[0].split("|")
-            outList0.append((arr[1], i[1], i[2], i[3]))
+            outList0.append((arr[0] + "-" + arr[1], i[1], i[2], i[3]))
     elif len(arr) == 3:
         for i in inList:
             arr = i[0].split("|")
@@ -1009,7 +1010,7 @@ def trans_to_string(inList, outPath, title, flag = 0):
             elif arr[0] == "tf" and fM == "":
                 title = "限免书籍 留存率结果统计" + title
                 fM = "ok"
-            outList1.append((arr[1] + " - " + arr[2], i[1], i[2], i[3]))
+            outList1.append((arr[0] + "-" + arr[1] + "-" + arr[2], i[1], i[2], i[3]))
     else:
         title = "分类结果统计" + title
         for i in inList:
@@ -1018,7 +1019,7 @@ def trans_to_string(inList, outPath, title, flag = 0):
             if cate == "1":
                 if arr[3] != "男频" and arr[3] != "女频" and arr[3] != "出版" and arr[3] != "其他":
                     continue
-                outList1.append((arr[2] + " - " + arr[3], i[1], i[2], i[3]))
+                outList1.append(("cate1" + "-" + arr[2] + "-" + arr[3], i[1], i[2], i[3]))
             elif cate == "2":
                 continue
                 #outList2.append((arr[2] + " - " + arr[3], i[1], i[2], i[3]))

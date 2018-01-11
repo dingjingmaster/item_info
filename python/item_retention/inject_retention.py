@@ -4,7 +4,7 @@ import sys
 reload(sys)
 sys.setdefaultencoding('utf8')
 import MySQLdb
-import time
+import datetime
 
 def execute_sql(cursor, sql):
 
@@ -128,14 +128,25 @@ def get_classify1Count_sql(irid, last, remain, retent, feeCate, typeCate, classi
 
     return sql
 
+# inject mysql
+def inject_mysql(txtpath, type):
+
+    pass
+
+
+
 
 if __name__ == '__main__':
 
-    if len(sys.argv) != 3:
-        print "请输入数据库用户名和密码"
+    if len(sys.argv) != 4:
+        print '请输入数据库用户名和密码以及notime(例:"20180101")'
         exit(-1)
     user = sys.argv[1]
     passwd = sys.argv[2]
+    time = sys.argv[3]
+    day = sys.argv[4]
+    week = sys.argv[5]
+    week7 = sys.argv[6]
 
     sql = 'SELECT * FROM item_retent_status'
 
