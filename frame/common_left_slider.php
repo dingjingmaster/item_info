@@ -19,7 +19,7 @@
         <a href="#demo">留存率相关</a>
         <div id="demo" class="content">
             <ul class="button-group stack">
-                <li><button type="button" class="button">天留存</button></li>
+                <li><button type="button" class="button" onclick="day_retention">天留存</button></li>
                 <li><button type="button" class="button">周留存</button></li>
                 <li><button type="button" class="button">7天留存</button></li>
             </ul>

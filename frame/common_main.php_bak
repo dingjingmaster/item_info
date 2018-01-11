@@ -1,12 +1,3 @@
-<?php
-session_start();
-define('IN_TEST', true);
-define('SCRIPT', 'main');   // 指定本页内容
-require dirname(__FILE__).'/include/common_info.php'
-
-?>
-
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -25,18 +16,6 @@ require dirname(__FILE__).'/include/common_info.php'
 
     </head>
     <body>
-        <div>
-            <?php
-                //echo ACTION;
-                echo '<form action="' . ACTION . '" method="get">';
-            ?>
-                姓名<input type="text" name="test">
-                <input type="submit" value="提交">
-            <?php
-                echo '</form>';
-            ?>
-        </div>
-
         <div data-magellan-expedition="fixed">
             <nav class="top-bar" data-topbar>
                 <ul class="title-area">
