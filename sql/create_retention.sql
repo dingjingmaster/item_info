@@ -1,4 +1,13 @@
 alter database item_retention default character set utf8;
+CREATE TABLE IF NOT EXISTS `item_retent_limitfree`(
+    `irid` VARCHAR(128) NOT NULL COMMENT '主键 限免 + 批次+时间戳',
+    `last` INT(12) DEFAULT 0 NOT NULL COMMENT '上一阶段人数',
+    `remain` INT(12) DEFAULT 0 NOT NULL COMMENT '留下人数',
+    `retent` FLOAT DEFAULT 0 NOT NULL COMMENT '留存率',
+    `timeStamp` INT(10) NOT NULL COMMENT '时间戳20180110',
+    PRIMARY KEY (`irid`)
+    );
+
 CREATE TABLE IF NOT EXISTS `item_retent_status`(
     `irid` VARCHAR(128) NOT NULL COMMENT '主键 状态+分类(付费情况)+时间戳',
     `last` INT(12) DEFAULT 0 NOT NULL COMMENT '上一阶段人数',
@@ -9,7 +18,6 @@ CREATE TABLE IF NOT EXISTS `item_retent_status`(
     `timeStamp` INT(10) NOT NULL COMMENT '时间戳20180110',
     PRIMARY KEY (`irid`)
     );
-alter table item_retent_status default character set utf8;
 
 CREATE TABLE IF NOT EXISTS `item_retent_viewCount`(
     `irid` VARCHAR(128) NOT NULL COMMENT '主键 订阅+分类(付费情况)+时间戳',
@@ -22,7 +30,6 @@ CREATE TABLE IF NOT EXISTS `item_retent_viewCount`(
     `timeStamp` INT(10) NOT NULL COMMENT '时间戳20180110',
     PRIMARY KEY (`irid`)
     );
-alter table item_retent_viewCount default character set utf8;
 
 CREATE TABLE IF NOT EXISTS `item_retent_intime`(
     `irid` VARCHAR(128) NOT NULL COMMENT '主键 入库时间+分类(付费情况)+时间戳',
@@ -60,6 +67,9 @@ CREATE TABLE IF NOT EXISTS `item_retent_classify1`(
     PRIMARY KEY (`irid`)
     );
 
+alter table item_retent_limitfree default character set utf8;
+alter table item_retent_status default character set utf8;
+alter table item_retent_viewCount default character set utf8;
 alter table item_retent_intime default character set utf8;
 alter table item_retent_update default character set utf8;
 alter table item_retent_classify1 default character set utf8;
