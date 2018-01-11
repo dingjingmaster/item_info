@@ -915,7 +915,7 @@ def print_format(outBuf, title, outList):
         res2 = i[1]
         res3 = i[2]
         res4 = float(i[3])
-        outBuf = res1 + "\t" + res2 + "\t" + res3 + "\t" + "res4" + "\n"
+        outBuf = str(res1) + "\t" + str(res2) + "\t" + str(res3) + "\t" + str(res4) + "\n"
     return outBuf
 
 '''
