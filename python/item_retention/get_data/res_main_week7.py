@@ -39,7 +39,7 @@ if __name__ == '__main__':
     outLastupdateRateWeekList = []
 
     # 输出路径
-    outpath = "./result"
+    outpath_week7 = "./result_week7.txt"
 
     '''
         按天统计
@@ -61,12 +61,12 @@ if __name__ == '__main__':
     lastUpdate_rate(lastWeekDict, thisWeekRemain, outLastupdateRateWeekList)                                                    # 计算 last update time 留存率
 
     # 输出 flag = 1 表示清除文件后写入
-    trans_to_string(outFeeRateWeekList, outpath, "(周)", 1)
-    trans_to_string(outStatusRateWeekList, outpath, "(周)")
-    trans_to_string(outViewcountRateWeekList, outpath, "(周)")
-    trans_to_string(outIntimeRateWeekList, outpath, "(周)")
-    trans_to_string(outLastupdateRateWeekList, outpath, "(周)")
-    trans_to_string(outCategoryRateWeekList, outpath, "(周)")
+    trans_to_string(outFeeRateWeekList, outpath_week7, "(周)", 1)
+    trans_to_string(outStatusRateWeekList, outpath_week7, "(周)")
+    trans_to_string(outViewcountRateWeekList, outpath_week7, "(周)")
+    trans_to_string(outIntimeRateWeekList, outpath_week7, "(周)")
+    trans_to_string(outLastupdateRateWeekList, outpath_week7, "(周)")
+    trans_to_string(outCategoryRateWeekList, outpath_week7, "(周)")
 
 
     exit(0)

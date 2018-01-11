@@ -54,7 +54,8 @@ if __name__ == '__main__':
     outLastupdateRateWeekList = []
 
     # 输出路径
-    outpath = "./result"
+    outpath_day = "./result_day.txt"
+    outpath_week = "./result_week.txt"
 
     '''
         按天统计
@@ -102,28 +103,25 @@ if __name__ == '__main__':
     lastUpdate_rate(lastWeekDict, thisWeekRemain, outLastupdateRateWeekList)
 
     # 输出 flag = 1 表示清除文件后写入
-    trans_to_string(outMonthlyLimitFreeDayList, outpath, "(仅有天)", 1)
+    trans_to_string(outMonthlyLimitFreeDayList, outpath_day, "(仅有天)", 1)
 
-    trans_to_string(outFeeRateDayList, outpath, "(天)")
-    trans_to_string(outFeeRateWeekList, outpath, "(周)")
+    trans_to_string(outFeeRateDayList, outpath_day, "(天)")
+    trans_to_string(outFeeRateWeekList, outpath_week, "(周)", 1)
 
-    trans_to_string(outStatusRateDayList, outpath, "(天)")
-    trans_to_string(outStatusRateWeekList, outpath, "(周)")
+    trans_to_string(outStatusRateDayList, outpath_day, "(天)")
+    trans_to_string(outStatusRateWeekList, outpath_week, "(周)")
 
-    trans_to_string(outViewcountRateDayList, outpath, "(天)")
-    trans_to_string(outViewcountRateWeekList, outpath, "(周)")
+    trans_to_string(outViewcountRateDayList, outpath_day, "(天)")
+    trans_to_string(outViewcountRateWeekList, outpath_week, "(周)")
 
-    trans_to_string(outIntimeRateDayList, outpath, "(天)")
-    trans_to_string(outIntimeRateWeekList, outpath, "(周)")
+    trans_to_string(outIntimeRateDayList, outpath_day, "(天)")
+    trans_to_string(outIntimeRateWeekList, outpath_week, "(周)")
 
-    trans_to_string(outLastupdateRateDayList, outpath, "(天)")
-    trans_to_string(outLastupdateRateWeekList, outpath, "(周)")
+    trans_to_string(outLastupdateRateDayList, outpath_day, "(天)")
+    trans_to_string(outLastupdateRateWeekList, outpath_week, "(周)")
 
-    trans_to_string(outCategoryRateDayList, outpath, "(天)")
-    trans_to_string(outCategoryRateWeekList, outpath, "(周)")
-
-
-
+    trans_to_string(outCategoryRateDayList, outpath_day, "(天)")
+    trans_to_string(outCategoryRateWeekList, outpath_week, "(周)")
 
     exit(0)
 

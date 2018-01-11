@@ -908,19 +908,14 @@ def monthly_limit_free_rate(lastDayDict, thisDayRemain, outRateList):
 '''
 def print_format(outBuf, title, outList):
 
-    outBuf = outBuf + "\n"
-    outBuf = outBuf + "<p>" + title + "</p>"
-    outBuf = outBuf + '<table width="80%">\n'
-    outBuf = outBuf + '<tr align="center"><th align="center">分类</th><th align="center">上一时间段用户数</th><th align="center">剩下用户数</th><th align="center">留存率</th>'
+    #outBuf = outBuf + '<tr align="center"><th align="center">分类</th><th align="center">上一时间段用户数</th><th align="center">剩下用户数</th><th align="center">留存率</th>'
+    outBuf = ""
     for i in outList:
-        res1 = "%-30s" % i[0]
-        res2 = "%-8s" % i[1]
-        res3 = "%-8s" % i[2]
-        res4 = "%-4.02f" % float(i[3])
-        outBuf = outBuf + '<tr align="center"><td align="left">' + res1.center(50) + '</td>\n<td align="right">' + res2.center(12) + '</td>\n<td align="right">' + res3.center(12) + '</td>\n<td align="right">' + res4.center(12) + "%</td></tr>" + "\n"
-    outBuf = outBuf + '</table>'
-    outBuf = outBuf + "\n"
-
+        res1 = i[0]
+        res2 = i[1]
+        res3 = i[2]
+        res4 = float(i[3])
+        outBuf = res1 + "\t" + res2 + "\t" + res3 + "\t" + "res4" + "\n"
     return outBuf
 
 '''
@@ -996,7 +991,6 @@ def trans_to_string(inList, outPath, title, flag = 0):
     elif len(arr) == 3:
         for i in inList:
             arr = i[0].split("|")
-
             if arr[0] == "status" and fS == "":
                 title = "连载/完结 留存率结果统计" + title
                 fS = "ok"
@@ -1038,14 +1032,13 @@ def trans_to_string(inList, outPath, title, flag = 0):
 
     # 输出
     if len(outList0) != 0 and len(outList1) == 0:
-        outBuf = print_format(outBuf, title, outList0)
+        outBuf = print_format(outBuf, "", outList0)
     elif len(outList0) == 0 and len(outList3) != 0:
-        outBuf = print_format(outBuf, title + "  一级分类", outList1)
-        outBuf = print_format(outBuf, title + "  二级分类", outList2)
-        outBuf = print_format(outBuf, title + "  三级分类", outList3)
+        outBuf = print_format(outBuf, "" + "cat1", outList1)
+        outBuf = print_format(outBuf, "" + "cat2", outList2)
+        outBuf = print_format(outBuf, "" + "cat3", outList3)
     else:
-        outBuf = print_format(outBuf, title, outList1)
-    outBuf = outBuf + "\n"
+        outBuf = print_format(outBuf, "", outList1)
     fW.write(outBuf)
     fW.close()
 
