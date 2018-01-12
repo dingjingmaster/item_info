@@ -17,13 +17,23 @@ require ROOT_PATH.'/include/mysql_func.php';
 _mysql_connect();
 _mysql_select_db();
 
+// 主键切割 - 获取字段信息
+function prekey_split($mstr) {
+    $arr = explode(',', $mstr, 0);
+    if(count($arr) == 3) {
+        return $arr[1];
+    }
+}
+
 // 生成x轴cate数据
-function generate_x_data($data, $res) {
+function generate_x_data($mArray, $res) {
     if(strlen($res) > 1) {
         $res = $res . ','; 
     } 
-
-    $res = $res . '"' . $data . '"';
+    for($i = 0; $i < count($mArray); ++ $i) {
+        $res = $res . '"' . $mArray[$i] . '"' . ',';
+    }
+    $res = substr($res, 0, strlen($res) - 1);
 
     return $res;
 }
@@ -31,7 +41,7 @@ function generate_x_data($data, $res) {
 // 生成y轴数据
 function generate_y_data($name, $mArray, $res) {
     if (strlen($res) > 1) {
-        $buf = $buf . ',';
+        $res = $res . ',';
     }
 
     $res = $res . '{name: "' . $name . '", data: [';

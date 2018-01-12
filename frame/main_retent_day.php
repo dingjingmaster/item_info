@@ -44,124 +44,149 @@ require dirname(__FILE__).'/include/item_retent_info.php'
                     </li>
                     <li class="toggle-topbar menu-icon"><a href="#"><span> Menu </span></a></li>
                 </ul>
-
                 <section class="top-bar-section">
                     <ul class="left">
-                        <li data-magellan-arrival="fee"><a href="#free">付费情况留存</a></dd>
-                        <li data-magellan-arrival="limitfree"><a href="#limitfree">限免书</a></dd>
-                        <li data-magellan-arrival="status"><a href="#status">连载/完结统计</a></dd>
-                        <li data-magellan-arrival="viewcount"><a href="#viewcount">订阅量</a></dd>
-                        <li data-magellan-arrival="intime"><a href="#intime">入库时间</a></dd>
-                        <li data-magellan-arrival="update"><a href="#update">更新时间</a></dd>
+                        <li data-magellan-arrival="limitfree"><a href="#limitfree">各批次限免书留存</a></dd>
+                        <li data-magellan-arrival="fee"><a href="#fee">各付费情况留存</a></dd>
+                        <li data-magellan-arrival="status"><a href="#status">连载/完结状态留存</a></dd>
+                        <li data-magellan-arrival="viewcount"><a href="#viewcount">各订阅量阶段留存</a></dd>
+                        <li data-magellan-arrival="intime"><a href="#intime">入库时间段留存</a></dd>
+                        <li data-magellan-arrival="update"><a href="#update">更新时间段留存</a></dd>
                     </ul>
                 </section>
             </nav>
         </div>
         <div>
+            <a name="limitfree"></a>
+            <h5 data-magellan-destination="limitfree">各限免批次留存</h5>
+            <div id="limitfree_plot" style="width: 900px; height: 600px; margin: 0 auto"> </div>
+
             <a name="fee"></a>
-            <h5 data-magellan-destination="month">付费书情况留存</h5>
+            <h5 data-magellan-destination="fee">各付费情况留存率</h5>
             <div id="fee_plot" style="width: 900px; height: 600px; margin: 0 auto"> </div>
+
             <?php
-                $sql='SELECT * FROM item_retent_fee WHERE typeCate=1';
+                // 各限免批次留存
+                $title = "各批次限免书留存率统计";
+                $yTitle = "留存率(100%)";
+                $xData = "";
+                $yData = "";
+                $tfDiv = "limitfree_plot";
+                // 第1批
+                $tf1 = "第一批限免";
+                $sql='SELECT * FROM item_retent_limitfree WHERE tfCate=1';
                 $result = _mysql_query($sql);
+                $xArray = array();
+                $yArray = array();
                 while($row = _mysql_fetch_array($result)) {
-                    echo "<p>".$row['irid']."\t".$row['last']. "\t". $row['retent']."</p>";
+                    array_push($xArray, $row['timeStamp']);
+                    array_push($yArray, $row['retent']);
                 }
+                // 生成第一批
+                $xData = generate_x_data($xArray, $xData);
+                $yData = generate_y_data($tf1, $yArray, $yData);
+
+                // 第二批
+                $tf2 = "第二批限免";
+                $sql='SELECT * FROM item_retent_limitfree WHERE tfCate=2';
+                $result = _mysql_query($sql);
+                $yArray = array();
+                while($row = _mysql_fetch_array($result)) {
+                    array_push($yArray, $row['retent']);
+                }
+                // 生成第二批
+                $yData = generate_y_data($tf2, $yArray, $yData);
+
+                // 第三批
+                $tf3 = "第三批限免";
+                $sql='SELECT * FROM item_retent_limitfree WHERE tfCate=3';
+                $result = _mysql_query($sql);
+                $yArray = array();
+                while($row = _mysql_fetch_array($result)) {
+                    array_push($yArray, $row['retent']);
+                }
+                // 生成第三批
+                $yData = generate_y_data($tf3, $yArray, $yData);
+
+                // 第四批
+                $tf4 = "第四批限免";
+                $sql='SELECT * FROM item_retent_limitfree WHERE tfCate=4';
+                $result = _mysql_query($sql);
+                $yArray = array();
+                while($row = _mysql_fetch_array($result)) {
+                    array_push($yArray, $row['retent']);
+                }
+                // 生成第四批
+                $yData = generate_y_data($tf4, $yArray, $yData);
+
+                // 画图
+                plot_line_chart($title, $xData, $yTitle, $yData, $tfDiv);
+
+
+
+                // 各付费情况留存
+                $title = "各付费书留存率统计";
+                $yTitle = "留存率(100%)";
+                $xData = "";
+                $yData = "";
+                $feeDiv = "fee_plot";
+                // 免费
+                $free = "免费书";
+                $sql='SELECT * FROM item_retent_fee WHERE feeCate=1 AND typeCate=1';
+                $result = _mysql_query($sql);
+                $xArray = array();
+                $yArray = array();
+                while($row = _mysql_fetch_array($result)) {
+                    array_push($xArray, $row['timeStamp']);
+                    array_push($yArray, $row['retent']);
+                }
+                // 免费
+                $xData = generate_x_data($xArray, $xData);
+                $yData = generate_y_data($free, $yArray, $yData);
+
+                // 付费
+                $charge = "付费书";
+                $sql='SELECT * FROM item_retent_fee WHERE feeCate=2 AND typeCate=1';
+                $result = _mysql_query($sql);
+                $yArray = array();
+                while($row = _mysql_fetch_array($result)) {
+                    array_push($yArray, $row['retent']);
+                }
+                // 
+                $yData = generate_y_data($charge, $yArray, $yData);
+
+                // 包月
+                $month = "包月书";
+                $sql='SELECT * FROM item_retent_fee WHERE feeCate=3 AND typeCate=1';
+                $result = _mysql_query($sql);
+                $yArray = array();
+                while($row = _mysql_fetch_array($result)) {
+                    array_push($yArray, $row['retent']);
+                }
+                $yData = generate_y_data($month, $yArray, $yData);
+
+                // 公版
+                $pub = "公版书";
+                $sql='SELECT * FROM item_retent_fee WHERE feeCate=4 AND typeCate=1';
+                $result = _mysql_query($sql);
+                $yArray = array();
+                while($row = _mysql_fetch_array($result)) {
+                    array_push($yArray, $row['retent']);
+                }
+                $yData = generate_y_data($pub, $yArray, $yData);
+
+                // 画图
+                plot_line_chart($title, $xData, $yTitle, $yData, $feeDiv);
+
+
+
+
+
 
             ?>
-            <!-- 画图 -->
-            <?php
-                $x = "";
-                $y = "";
-                $yd = array('1', '2', '3', '4', '5');
-                echo "<hr><br/>";
-
-                $x = generate_x_data("x1", $x);
-                $x = generate_x_data("x2", $x);
-                $x = generate_x_data("x3", $x);
-                $x = generate_x_data("x4", $x);
-                $x = generate_x_data("x5", $x);
-                $y = generate_y_data("yname", $yd, $y);
-                echo $x;
-                echo '<br/>';
-                echo $y;
-                echo "<br/><hr/>";
-
-                plot_line_chart("测试", $x, "y标题", $y, "fee_plot");
-            ?>
-
-            <!-- 画图 
-            <script language="JavaScript">
-                $(document).ready(function () {
-                    var title = { text: '月留存情况统计' };
-                    var subtitle = { text: '' };
-                    var xAxis = {
-                        categories: ['2017-12-01',
-                            '2017-12-02',
-                            '2017-12-03',
-                            '2017-12-04',
-                            '2017-12-05',
-                            '2017-12-06']
-                    };
-                    var yAxis = {
-                        title: {
-                            text: '留存率'
-                        }
-                    };
-
-                    var plotOptions = {
-                        line: {
-                            dataLabels: {
-                                enabled: true
-                            },
-                            enableMouseTracking: true 
-                        }
-                    };
-
-                    var series = [{
-                        name: '留存率1',
-                        data: [1.1, 2.2, 3.3, 4.4, 5.5, 6.6]
-                    }, {
-                        name: '留存率2',
-                        data: [2.1, 3.2, 4.3, 5.4, 6.5, 7.6]
-                    }
-                    ];
-
-                    var json = {};
-
-                    json.title = title;
-                    json.subtitle = subtitle;
-                    json.xAxis = xAxis;
-                    json.yAxis = yAxis;
-                    json.series = series;
-                    json.plotOptions = plotOptions;
-
-                    $('#fee_plot').highcharts(json);
-                });
-            
-            </script>
-
--->
 
 
 
-
-
-            <h4 data-magellan-destination="free">免费书</h4>
-                <a name="free"></a>
-                <p>免费书留存情况<br/></p>
-
-            <h4 data-magellan-destination="charge">付费书</h4>
-                <a name="charge"></a>
-                <p>付费书留存情况<br/></p>
-
-            <h4 data-magellan-destination="limit_free">限免书</h4>
-                <a name="limit_free"></a>
-                <p>限免书留存情况<br/></p>
-
-            <h4 data-magellan-destination="pub">公版书</h4>
-                <a name="pub"></a>
-                <p>公版书留存情况<br/></p>
 
         </div>
     </body>
