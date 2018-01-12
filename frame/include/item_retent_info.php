@@ -19,17 +19,24 @@ _mysql_select_db();
 
 // 主键切割 - 获取字段信息
 function prekey_split($mstr) {
-    $arr = explode(',', $mstr, 0);
+    $arr = explode('-', $mstr);
     if(count($arr) == 3) {
         return $arr[1];
+    } else if (count($arr) == 4) {
+        return $arr[1] . '-' . $arr[2];
     }
+    return 'unknow' . '-' . $mstr . '-' . 'error';
 }
 
 // 生成x轴cate数据
 function generate_x_data($mArray, $res) {
+    if (count(mArray) == 0) {
+        return $res;
+    }
     if(strlen($res) > 1) {
         $res = $res . ','; 
     } 
+
     for($i = 0; $i < count($mArray); ++ $i) {
         $res = $res . '"' . $mArray[$i] . '"' . ',';
     }
@@ -40,6 +47,9 @@ function generate_x_data($mArray, $res) {
 
 // 生成y轴数据
 function generate_y_data($name, $mArray, $res) {
+    if (count(mArray) == 0 || strlen($name) == "") {
+        return $res;
+    }
     if (strlen($res) > 1) {
         $res = $res . ',';
     }

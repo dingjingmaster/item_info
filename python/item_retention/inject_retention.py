@@ -299,13 +299,13 @@ def inject_mysql(txtpath, cursor, times, type):
         # 入库时间
         elif len(id) == 3 and id[0] == "intime":
             irid = type + "-" + id[1] + "-" + id[2] + "-" + str(times)
-            intimeCate = get_cate1_status(id[2])
+            intimeCate = get_time_status(id[2])
             feeCate = get_fee_status(id[1])
             sql = get_intime_sql(irid, last, remain, retent, intimeCate, feeCate, typeCate, timeStamp)
         # 最后更新时间
         elif len(id) == 3 and id[0] == "updatetime":
             irid = type + "-" + id[1] + "-" + id[2] + "-" + str(times)
-            updateCate = get_cate1_status(id[2])
+            updateCate = get_time_status(id[2])
             feeCate = get_fee_status(id[1])
             sql = get_update_sql(irid, last, remain, retent, updateCate, feeCate, typeCate, timeStamp)
         # 一级分类
