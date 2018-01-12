@@ -32,31 +32,9 @@ function _mysql_query($sql) {
     return mysql_query($sql);
 }
 
-// fetch_array 和 query 结果集作用的结果
-function _mysql_fetch_array($sql) {
-    return mysql_fetch_array(_query($sql));
-}
-
-// 单纯的mysql_fetch_array执行结果
-function _mysql_array_list($res) {
-    return mysql_fetch_array($res);
-}
-
-// 返回结果集中包含的结果个数
-function _mysql_num_rows($sql) {
-    return mysql_num_rows(_query($sql));
-}
-
-// 返回结果集中包含的结果个数
-function _mysql_num_rows_list($res) {
-    return mysql_num_rows($res);
-}
-
-// 判断插入信息在数据库中是否存在
-function _mysql_is_repeat($sql, $info) {
-    if(_mysql_fetch_array($sql)) {
-        _alert_back($info);
-    }
+// 
+function _mysql_fetch_array($result) {
+    return mysql_fetch_array($result);
 }
 
 ?>

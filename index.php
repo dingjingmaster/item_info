@@ -24,11 +24,7 @@
 
     <body onresize="body_resize()">
         <iframe src="frame/common_left_slider.php" id="frame_slider" scrolling="auto" width="200" height="100%"></iframe>
-        <?php
-
-        ?>
-        <button type="button" onclick="mtest()"> test </button>
-        <iframe src="frame/common_main.php" id="frame_main" onload="frame_width()" float="right" scrolling="auto" height="100%"></iframe>
+        <iframe src="frame/main_retent_day.php" id="frame_main" onload="frame_width()" float="right" scrolling="auto" height="100%"></iframe>
 
 
     </body>
