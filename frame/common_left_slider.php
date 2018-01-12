@@ -13,10 +13,11 @@
         })
     </script>
 </head>
-<body style="padding:2px">
+<body>
+<br/>
 <ul class="accordion" data-accordion>
     <li class="accordion-navigation">
-        <a href="#demo">留存率相关</a>
+        <a href="#demo">留存率相关统计</a>
         <div id="demo" class="content">
             <ul class="button-group stack">
                 <li><button type="button" class="button" onclick="day_retention">天留存</button></li>

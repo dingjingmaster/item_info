@@ -1,130 +1,16 @@
 <?php
 session_start();
 define('IN_TEST', true);
-define('SCRIPT', 'day_retention');   // 指定本页内容
+define('SCRIPT', 'day_retention');
+require dirname(__FILE__).'/include/common_page.php';
 require dirname(__FILE__).'/include/item_retent_info.php';
 
-function plot_retention($which, $div) {
-    // 中间变量
-    $tableName = "";
-    $typeCate = "AND typeCate=1";                           // 天、周、七日
-    $paraCate = "";                                         // 自定义字段
-    $feeCate = "";                                          // 付费
-    $paraNum = 0;                                           // 自定义字段最大值
-    $feeNum = 0;                                            // 付费最大值
-
-    // 最终变量
-    $title = "";
-    $yTitle = "留存率(100%)";
-    $xData = "";
-    $yData = "";
-
-    if ($which == 'limitfree') {
-        $tableName = "item_retent_limitfree";
-        $title = "各批次限免书留存率统计";
-        $paraCate = "tfCate=";
-        $paraNum = 4;
-        $typeCate = "";
-    } else if ($which == 'fee') {
-        $tableName = "item_retent_fee";
-        $title = "付费留存率统计";
-        $paraCate = "feeCate=";
-        $paraNum = 5;
-    } else if ($which == 'status') {
-        $tableName = "item_retent_status";
-        $title = "书籍状态留存率统计";
-        $paraCate = "statuCate=";
-        $paraNum = 2;
-        $feeCate = "feeCate=";
-        $feeNum = 5;
-    } else if ($which == 'viewCount') {
-        $tableName = "item_retent_viewCount";
-        $title = "书籍订阅留存率统计";
-        $paraCate = "viewCate=";
-        $paraNum = 5;
-        $feeCate = "feeCate=";
-        $feeNum = 5;
-    } else if ($which == 'intime') {
-        $tableName = "item_retent_intime";
-        $title = "书籍入库时间留存率统计";
-        $paraCate = "intimeCate=";
-        $paraNum = 4;
-        $feeCate = "feeCate=";
-        $feeNum = 5;
-    } else if ($which == 'update') {
-        $tableName = "item_retent_update";
-        $title = "书籍最后更新时间留存率统计";
-        $paraCate = "updateCate=";
-        $paraNum = 4;
-        $feeCate = "feeCate=";
-        $feeNum = 5;
-    } else if ($which == 'classify1') {
-        $tableName = "item_retent_classify1";
-        $title = "书籍一级分类留存率统计";
-        $paraCate = "cate1Cate=";
-        $paraNum = 4;
-        $feeCate = "feeCate=";
-        $feeNum = 5;
-    }
-
-    $sql = 'SELECT * FROM ' . $tableName . ' WHERE ';
-    echo $feeNum;
-    echo '<br/>';
-    echo strlen($typeCate);
-
-    if ($feeNum <= 0) {
-        for ($i = 1; $i <= $paraNum; ++ $i) {
-            $msql = $sql . ' ' . $paraCate . $i . ' ' . $typeCate;
-            $result = _mysql_query($msql);
-            $xArray = array();
-            $yArray = array();
-            $cate = '';
-            while ($row = _mysql_fetch_array($result)) {
-                $cate = prekey_split($row['irid']);
-                array_push($xArray, $row['timeStamp']);
-                array_push($yArray, $row['retent']);
-            }
-            // 生成 xdata
-            $xData = generate_x_data($xArray, '');
-            $yData = generate_y_data($cate, $yArray, $yData);
-        }
-    } else {
-        // 其它情况
-        for($i = 1; $i <= $paraNum; ++ $i) {
-            for($j = 1; $j <= $feeNum; ++ $j) {
-                $msql = $sql . ' ' . $paraCate . $i . ' AND ' . $feeCate . $j . ' ' . $typeCate;
-                $result = _mysql_query($msql);
-                $xArray = array();
-                $yArray = array();
-                $cate = '';
-                while ($row = _mysql_fetch_array($result)) {
-                    $cate = prekey_split($row['irid']);
-                    array_push($xArray, $row['timeStamp']);
-                    array_push($yArray, $row['retent']);
-                }
-                // 生成 xdata
-                $xData = generate_x_data($xArray, '');
-                $yData = generate_y_data($cate, $yArray, $yData);
-            } 
-        }
-    }
-    // 画图
-    plot_line_chart($title, $xData, $yTitle, $yData, $div);
-
-    return '';
-}
-
 ?>
+
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdn.bootcss.com/foundation/5.5.3/css/foundation.min.css">
-        <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
-        <script src="https://cdn.bootcss.com/foundation/5.5.3/js/foundation.min.js"></script>
-        <script src="https://cdn.bootcss.com/foundation/5.5.3/js/vendor/modernizr.js"></script>
-        <script src="http://code.highcharts.com/highcharts.js"></script>
+        <?php _print_head(); ?>
         <script>
             $(document).ready(function() {
                 $(document).foundation();
