@@ -18,7 +18,6 @@ if(SCRIPT == 'day_retention') {
 } else if (SCRIPT == 'week7_retention') {
     define('RETENT', 3);
 }
-
 define('ACTION', '/frame/include/common_action.php');
 
 require ROOT_PATH.'/include/mysql_func.php';
@@ -95,7 +94,7 @@ function plot_line_chart($title, $xCate, $yTitle, $series, $divId) {
         '</script>';
 }
 
-function plot_retention($which, $div) {
+function plot_retention($which, $div, $retent) {
     // 中间变量
     $tableName = "";
     $typeCate = "AND typeCate=" . RETENT;                   // 天、周、七日

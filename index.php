@@ -16,22 +16,13 @@
             }
 
             function mtest(){
+                alert("test");
                 document.getElementById('frame_main').src="frame/common_left_slider.php";
             }
         </script>
     </head>
     <body onresize="body_resize()">
-        <div>
-            <hr/>
-        </div>
-        <div class="full_screen">
-            <iframe src="frame/common_left_slider.php" id="frame_slider" scrolling="auto" width="200" height="100%"></iframe>
-            <iframe src="frame/main_retent_day.php" id="frame_main" onload="frame_width()" float="right" scrolling="auto" height="100%"></iframe>
-        </div>
-        <footer>
-            <hr/>
-            <hr/>
-            <hr/>
-        </footer>
+        <iframe src="frame/common_left_slider.php" id="frame_slider" scrolling="auto" width="200" height="100%"></iframe>
+        <iframe src="frame/main_retent_day.php" id="frame_main" onload="frame_width()" float="right" scrolling="auto" height="100%"></iframe>
     </body>
 </html>
