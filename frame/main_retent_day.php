@@ -10,6 +10,8 @@ require dirname(__FILE__).'/include/item_retent_info.php';
 <html>
     <head>
         <?php _print_head(); ?>
+        <link rel="stylesheet" type="text/css" href="../css/slide_main.css">
+
         <script>
             $(document).ready(function() {
                 $(document).foundation();
@@ -39,7 +41,7 @@ require dirname(__FILE__).'/include/item_retent_info.php';
                 </section>
             </nav>
         </div>
-        <div>
+        <div id="slide_main">
             <a name="limitfree"></a>
             <h5 data-magellan-destination="limitfree">各限免批次留存率</h5>
             <div id="limitfree_plot" style="width: 900px; height: 600px; margin: 0 auto"> </div>
