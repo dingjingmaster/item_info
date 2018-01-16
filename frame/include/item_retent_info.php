@@ -8,7 +8,7 @@ header('Content-Type: text/html; charset=utf-8');
 define('ROOT_PATH', substr(dirname(__FILE__),0,-8));                    // 转换硬路径常量
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
-define('DB_PWD', '123456');
+define('DB_PWD', 'dingjing1009.');
 define('DB_NAME', 'item_retention');
 
 if(SCRIPT == 'day_retention') {
@@ -25,6 +25,16 @@ _mysql_connect();
 _mysql_select_db();
 
 
+function _print_head(){
+
+    echo '<meta charset="utf-8">' .
+        '<meta name="viewport" content="width=device-width, initial-scale=1">' .
+        '<link rel="stylesheet" href="https://cdn.bootcss.com/foundation/5.5.3/css/foundation.min.css">' .
+        '<script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>' .
+        '<script src="https://cdn.bootcss.com/foundation/5.5.3/js/foundation.min.js"></script>' .
+        '<script src="https://cdn.bootcss.com/foundation/5.5.3/js/vendor/modernizr.js"></script>' .
+        '<script src="http://code.highcharts.com/highcharts.js"></script>';
+}
 
 // 解析字符
 function parse_to_chinese($mstr) {

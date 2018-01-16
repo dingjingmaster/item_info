@@ -19,8 +19,8 @@
 <br/>
 <ul class="accordion" data-accordion>
     <li class="accordion-navigation">
-        <a href="#item_retention">留存率相关统计</a>
-        <div id="item_retention" class="content">
+        <a href="#item_retent">留存率相关统计</a>
+        <div id="item_retent" class="content">
             <ul class="button-group stack-for-small">
                 <li><button type="button" class="button" onclick="day_retention_click()">天留存</button></li>
                 <li><button type="button" class="button" onclick="week_retention_click()">周留存</button></li>

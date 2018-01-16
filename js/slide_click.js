@@ -1,4 +1,5 @@
 function day_retention_click() {
+    alert('day');
     var mframe = window.parent.document.getElementById("frame_main");
     mframe.setAttribute("src", "frame/main_retent_day.php");
 }

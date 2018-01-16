@@ -2,7 +2,6 @@
 session_start();
 define('IN_TEST', true);
 define('SCRIPT', 'week7_retention');
-require dirname(__FILE__).'/include/common_page.php';
 require dirname(__FILE__).'/include/item_retent_info.php';
 ?>
 
