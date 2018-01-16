@@ -8,7 +8,7 @@ header('Content-Type: text/html; charset=utf-8');
 define('ROOT_PATH', substr(dirname(__FILE__),0,-8));                    // 转换硬路径常量
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
-define('DB_PWD', 'dingjing1009.');
+define('DB_PWD', '123456');
 define('DB_NAME', 'item_retention');
 
 if(SCRIPT == 'day_retention') {

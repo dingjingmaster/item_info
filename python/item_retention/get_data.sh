@@ -1,6 +1,6 @@
 #!/bin/bash
-#source ~/.bash_profile
-#source ~/.bashrc
+source ~/.bash_profile
+source ~/.bashrc
 workDir=$(cd $(dirname $0); pwd)
 nowTime=`date -d "-2 day" +%Y%m%d`
 thisDay=`date -d "-2 day" +%Y-%m-%d`
@@ -23,19 +23,19 @@ lastWeek7Log="data/week7_${lastDay}"
 
 ###################     开始执行      ###########################
 # 拉取数据
-cd ${workDir} && rm -fr data && mkdir data
-#hadoop fs -cat "${hadLogBase}/${thisDay}/day/last/*" > ${lastDayLog}
-#hadoop fs -cat "${hadLogBase}/${thisDay}/day/remain/*" > ${thisDayLog}
-#hadoop fs -cat "${hadLogBase}/${thisDay}/week/last/*" > ${lastWeekLog}
-#hadoop fs -cat "${hadLogBase}/${thisDay}/week/remain/*" > ${thisWeekLog}
-#hadoop fs -cat "${hadLogBase}/${thisDay}/week/last_1_7/*" > ${lastWeek7Log}
-#hadoop fs -cat "${hadLogBase}/${thisDay}/week/remain_1_7/*" > ${thisWeek7Log}
+cd ${workDir} && rm -fr data && rm -fr ./*.txt && mkdir data
+hadoop fs -cat "${hadLogBase}/${thisDay}/day/last/*" > ${lastDayLog}
+hadoop fs -cat "${hadLogBase}/${thisDay}/day/remain/*" > ${thisDayLog}
+hadoop fs -cat "${hadLogBase}/${thisDay}/week/last/*" > ${lastWeekLog}
+hadoop fs -cat "${hadLogBase}/${thisDay}/week/remain/*" > ${thisWeekLog}
+hadoop fs -cat "${hadLogBase}/${thisDay}/week/last_1_7/*" > ${lastWeek7Log}
+hadoop fs -cat "${hadLogBase}/${thisDay}/week/remain_1_7/*" > ${thisWeek7Log}
 
 # 留存率结果统计
 cd ${workDir}/
-#python get_data/res_main_all.py ${lastDayLog} ${thisDayLog} ${lastWeekLog} ${thisWeekLog} 
-#python get_data/res_main_week7.py ${lastWeek7Log} ${thisWeek7Log} 
-python inject_retention.py "root" "dingjing1009." "nowTime" "result_day.txt" "result_week.txt" "result_week7.txt"
+python get_data/res_main_all.py ${lastDayLog} ${thisDayLog} ${lastWeekLog} ${thisWeekLog} 
+python get_data/res_main_week7.py ${lastWeek7Log} ${thisWeek7Log} 
+python inject_retention.py "root" "123456" "${nowTime}" "result_day.txt" "result_week.txt" "result_week7.txt"
 
 
 
