@@ -27,6 +27,45 @@ _mysql_select_db();
 
 
 // 解析字符
+function parse_to_chinese($mstr) {
+    if(strlen($mstr) <= 1) {
+        echo $mstr;
+        return $mstr;
+    }
+
+    $chArray = array (
+        'tf1' => '第一批限免',
+        'tf2' => '第二批限免',
+        'tf3' => '第三批限免',
+        'tf4' => '第四批限免',
+        'free' => '免费',
+        'charge' => '付费',
+        'month' => '包月',
+        'pub' => '公版',
+        'limitfree' => '限免',
+        'publish' => '连载',
+        'accomplish' => '完结',
+        'bt0to1b' => '订阅量:0 ~ 100',
+        'bt1bto1k' => '订阅量:100 ~ 1000',
+        'bt1kto1w' => '订阅量:1000 ~ 10000',
+        'bt1wto10w' => '订阅量:10000 ~ 100000',
+        'gt10w' => '订阅量: 大于100000',
+        'l1m' => '时间: 小于1个月',
+        'bt1mt3m' => '时间: 介于1个月到三个月',
+        'bt3mt1y' => '时间: 介于3个月到1年',
+        'gt1y' => '时间: 大于1年',
+        'boy' => '男频',
+        'girl' => '女频',
+        'other' => '其它',
+    );
+
+    if(in_array($mstr, array_keys($chArray))) {
+        return $chArray[$mstr];
+    }
+
+
+    return $mstr;
+}
 
 
 
@@ -34,9 +73,9 @@ _mysql_select_db();
 function prekey_split($mstr) {
     $arr = explode('-', $mstr);
     if(count($arr) == 3) {
-        return $arr[1];
+        return parse_to_chinese($arr[1]);
     } else if (count($arr) == 4) {
-        return $arr[1] . '-' . $arr[2];
+        return parse_to_chinese($arr[1]) . '-' . parse_to_chinese($arr[2]);
     }
     return 'unknow' . '-' . $mstr . '-' . 'error';
 }
