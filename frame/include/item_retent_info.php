@@ -108,7 +108,7 @@ function generate_y_data($name, $mArray, $res) {
 
     $res = $res . '{name: "' . $name . '", data: [';
     for($i=0; $i<count($mArray); ++$i) {
-        $res = $res . $mArray[$i] . ',';
+        $res = $res . sprintf("%.1f", $mArray[$i]) . ',';
     }
 
     $res = substr($res, 0, strlen($res) - 1);
@@ -117,7 +117,7 @@ function generate_y_data($name, $mArray, $res) {
     return $res;
 }
 
-// 绘制则线图
+// 绘制折线图
 function plot_line_chart($title, $xCate, $yTitle, $series, $divId) {
     echo '<script language="JavaScript">'.
         '$(document).ready(function(){' .
