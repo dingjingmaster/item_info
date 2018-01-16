@@ -172,7 +172,11 @@ function plot_retention($which, $div, $retent) {
                 array_push($yArray, $row['retent']);
             }
             // 生成 xdata
+            $xData1 = $xData;
             $xData = generate_x_data($xArray, '');
+            if(strlen($xData) <= 3) {
+                $xData = $xData1;
+            }
             $yData = generate_y_data($cate, $yArray, $yData);
         }
     } else {
@@ -190,7 +194,11 @@ function plot_retention($which, $div, $retent) {
                     array_push($yArray, $row['retent']);
                 }
                 // 生成 xdata
+                $xData1 = $xData;
                 $xData = generate_x_data($xArray, '');
+                if(strlen($xData) <= 3) {
+                    $xData = $xData1;
+                }
                 $yData = generate_y_data($cate, $yArray, $yData);
             } 
         }
