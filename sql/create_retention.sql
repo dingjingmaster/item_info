@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS `item_retent_intime`(
     `retent` FLOAT DEFAULT 0 NOT NULL COMMENT '留存率',
     `intimeCate` INT(6) DEFAULT 0 NOT NULL COMMENT '入库时间级别: 1小于1月 2是1月-3月 3是3月-1年 4是大于1年',
     `feeCate` INT(3) DEFAULT 0 NOT NULL COMMENT '付费类别: 1免费 2付费 3包月 4公版 5限免',
-    `typeCate` INT(6) DEFAULT 0 NOT NULL COMMENT '统计类型: 1天人数 2天留下人数 3周人数 4周留下人数 5七日人数 6七日留下人数',
+    `typeCate` INT(6) DEFAULT 0 NOT NULL COMMENT '统计类型: 1天 2周 3七日',
     `timeStamp` INT(10) NOT NULL COMMENT '时间戳20180110',
     PRIMARY KEY (`irid`)
     );
@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `item_retent_update`(
     `retent` FLOAT DEFAULT 0 NOT NULL COMMENT '留存率',
     `updateCate` INT(6) DEFAULT 0 NOT NULL COMMENT '更新时间级别: 1小于1月 2是1月-3月 3是3月-1年 4是大于1年',
     `feeCate` INT(3) DEFAULT 0 NOT NULL COMMENT '付费类别: 1免费 2付费 3包月 4公版 5限免',
-    `typeCate` INT(6) DEFAULT 0 NOT NULL COMMENT '统计类型: 1天人数 2天留下人数 3周人数 4周留下人数 5七日人数 6七日留下人数',
+    `typeCate` INT(6) DEFAULT 0 NOT NULL COMMENT '统计类型: 1天 2周 3七日',
     `timeStamp` INT(10) NOT NULL COMMENT '时间戳20180110',
     PRIMARY KEY (`irid`)
     );
@@ -75,7 +75,7 @@ CREATE TABLE IF NOT EXISTS `item_retent_classify1`(
     `retent` FLOAT DEFAULT 0 NOT NULL COMMENT '留存率',
     `cate1Cate` INT(6) DEFAULT 0 NOT NULL COMMENT '一级分类: 1男频 2女频 3出版 4其它',
     `feeCate` INT(3) DEFAULT 0 NOT NULL COMMENT '付费类别: 1免费 2付费 3包月 4公版 5限免',
-    `typeCate` INT(6) DEFAULT 0 NOT NULL COMMENT '统计类型: 1天人数 2天留下人数 3周人数 4周留下人数 5七日人数 6七日留下人数',
+    `typeCate` INT(6) DEFAULT 0 NOT NULL COMMENT '统计类型: 1天人数 2周 3七日',
     `timeStamp` INT(10) NOT NULL COMMENT '时间戳20180110',
     PRIMARY KEY (`irid`)
     );

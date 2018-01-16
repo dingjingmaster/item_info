@@ -18,6 +18,7 @@
 <body>
 <br/>
 <ul class="accordion" data-accordion>
+
     <li class="accordion-navigation">
         <a href="#item_retent">留存率相关统计</a>
         <div id="item_retent" class="content">
@@ -28,6 +29,24 @@
             </ul>
         </div>
     </li>
+
+    <li class="accordion-navigation">
+        <a href="#sub_exhib_ratio">订展比相关统计</a>
+        <div id="sub_exhib_ratio" class="content">
+            <ul class="button-group stack-for-small">
+                <li><button type="button" class="button" onclick="day_retention_click()">点展比</button></li>
+                <li><button type="button" class="button" onclick="week_retention_click()">订点比</button></li>
+                <li><button type="button" class="button" onclick="week_retention_click()">订展比</button></li>
+                <li><button type="button" class="button" onclick="week7_retention_click()">阅订比</button></li>
+                <li><button type="button" class="button" onclick="week7_retention_click()">阅展比</button></li>
+                <li><button type="button" class="button" onclick="week7_retention_click()">留存率</button></li>
+                <li><button type="button" class="button" onclick="week7_retention_click()">留展比</button></li>
+            </ul>
+        </div>
+    </li>
+
+
+
 </ul>
 </body>
 </html>
