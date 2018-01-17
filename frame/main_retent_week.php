@@ -1,5 +1,4 @@
 <?php
-session_start();
 define('IN_TEST', true);
 define('SCRIPT', 'week_retention');
 require dirname(__FILE__).'/include/item_retent_info.php';
