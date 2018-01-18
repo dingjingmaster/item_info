@@ -24,7 +24,7 @@ function _common_print_head(){
         '<link rel="stylesheet" href="lib/layui/css/layui.css">' .
         '<script src="lib/layui/layui.js"></script>'.
         '<script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>'.
-        '<script src="https://img.hcharts.cn/highcharts/highcharts.js"></script>';
+        '<script src="http://code.highcharts.com/highcharts.js"></script>';
 
     return '';
 }

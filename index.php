@@ -56,23 +56,7 @@ require dirname(__FILE__) . '/include/common_action.php';
         <div class="layui-layout layui-layout-admin">
             <div class="layui-header">
                 <div class="layui-logo"> logo </div>
-
-
-                <ul class="layui-nav layui-layout-left">
-                    <li class="layui-nav-item"> <a href="">item1</a></li>
-                    <li class="layui-nav-item"> <a href="">item2</a></li>
-                    <li class="layui-nav-item"> <a href="">item3</a></li>
-                    <li class="layui-nav-item">
-                        <a href="javascript:;">other</a>
-                        <dl class="layui-nav-child">
-                            <dd><a href="">l1</a></dd>
-                            <dd><a href="">l2</a></dd>
-                            <dd><a href="">l3</a></dd>
-                        </dl>
-                    </li>
-                </ul>
-
-
+                <ul id="nav_page" class="layui-nav layui-layout-left"></ul>
             </div>
 
             <div class="layui-side layui-bg-black">
@@ -103,7 +87,7 @@ require dirname(__FILE__) . '/include/common_action.php';
 
 
             <div class="layui-body">
-                <div id="main_div" style="padding: 15px;">主体区域</div>
+                <div id="main_div" style="padding: 15px;"></div>
             </div>
 
             <div class="layui-footer">
