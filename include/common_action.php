@@ -15,27 +15,14 @@ function _set_mysql($func) {
     }
 }
 
-if(!strcasecmp($_GET['type'], 'retent_day')) {
+if(!strcasecmp($_GET['type'], 'retent')) {
     _set_mysql('retent');
     require ROOT_PATH . '/include/item_retent_info.php';
     _mysql_connect();
     _mysql_select_db();
+    echo get_item_retent($_GET['req']);
+} 
 
-    echo get_item_retent('day');
-
-
-
-} else if(!strcasecmp($_GET['type'], 'retent_week')) {
-    _set_mysql('retent');
-    require ROOT_PATH . '/include/item_retent_info.php';
-    define('RETENT', 2);
-
-} else if(!strcasecmp($_GET['type'], 'retent_week7')) {
-    _set_mysql('retent');
-    require ROOT_PATH . '/include/item_retent_info.php';
-    define('RETENT', 3);
-
-}
 
 
 

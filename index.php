@@ -65,9 +65,9 @@ require dirname(__FILE__) . '/include/common_action.php';
                         <li class="layui-nav-item">
                             <a class="" href="javascript:;">留存相关统计</a>
                             <dl class="layui-nav-child">
-                                <dd><button class="layui-btn layui-btn-fluid" onclick="request_retent_day()">天留存统计</button></dd>
-                                <dd><button class="layui-btn layui-btn-fluid" onclick="request_retent_week()">周留存统计</button></dd>
-                                <dd><button class="layui-btn layui-btn-fluid" onclick="request_retent_week7()">七日留存统计</button></dd>
+                                <dd><button class="layui-btn layui-btn-fluid" onclick="request_retent('day')">天留存统计</button></dd>
+                                <dd><button class="layui-btn layui-btn-fluid" onclick="request_retent('week')">周留存统计</button></dd>
+                                <dd><button class="layui-btn layui-btn-fluid" onclick="request_retent('week7')">七日留存统计</button></dd>
                             </dl>
                         </li>
 

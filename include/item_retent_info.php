@@ -19,16 +19,12 @@ function get_item_retent($cate) {
         $arr['divId'] = "limitfree_plot";
         $arr['json'] = get_chart_json("limitfree", "limitfree_plot");
         array_push($resArr, json_encode($arr));
-
         // 主页
         $mainPage = $mainPage .
             '<a name="limitfree"></a>'.'<h5>各限免批次留存率</h5>'.'<div id="limitfree_plot" style="width: 900px; height: 600px; margin: 0 auto"> </div>';
-
         // 导航栏
         $navPage = $navPage .
             '<li class="layui-nav-item"><a href="#limitfree">各限免批次留存率</a></li>';
-
-
     } else if ($cate == "week") {
         define('RETENT', 2);
     } else if ($cate == "week7"){
