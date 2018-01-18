@@ -9,14 +9,7 @@ define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PWD', 'dingjing1009.');
 
-function _set_mysql($func) {
-    if($func == 'retent') {
-        define('DB_NAME', 'item_retention');
-    }
-}
-
 if(!strcasecmp($_GET['type'], 'retent')) {
-    _set_mysql('retent');
     require ROOT_PATH . '/include/item_retent_info.php';
     _mysql_connect();
     _mysql_select_db();

@@ -51,6 +51,7 @@ function request_retent(req) {
                 var mJson = mJS['json'];
                 plot_picture(mJS['divId'], JSON.parse(mJson));
             }
+            document.getElementById('main_div').innerHTML = res;
         }
     }
 
