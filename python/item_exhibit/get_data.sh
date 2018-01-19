@@ -1,40 +1,50 @@
 #!/bin/bash
-source ~/.bash_profile
-source ~/.bashrc
+#source ~/.bash_profile
+#source ~/.bashrc
 workDir=$(cd $(dirname $0); pwd)
-nowTime=`date -d "-2 day" +%Y%m%d`
-thisDay=`date -d "-2 day" +%Y-%m-%d`
+nowTime=`date -d "-1 day" +%Y%m%d`
 
 ###################     参数定义      ###########################
-exhibitBase="hdfs://10.26.24.165:9090/rs/appsinfo/data/"
+exhibitBase="hdfs://10.26.24.165:9090/rs/stat/${nowTime}/mail/"
+
+total="data/total.txt"                                                  # 总计
+fee="data/fee.txt"                                                      # 付费类型
+strategy="data/strategy.txt"                                            # 推荐策略
+statu="data/status.txt"                                                 # 连载状态
+viewCount="data/viewcount.txt"                                          # 订阅量级别
+intime="data/intime.txt"                                                # 入库时间
+update="data/update.txt"                                                # 更新时间
+classify1="data/classify1.txt"                                          # 一级分类
+classify2="data/classify2.txt"                                          # 二级分类
+
+### 测试
+total="mail/total/part-00000"
+fee="mail/charge/part-00000"
+strategy="mail/strategy/part-00000"
+statu="mail/status/part-00000"
+viewCount="mail/level/part-00000"
+intime="mail/itime/part-00000"
+update="mail/utime/part-00000"
+classify1="mail/firstType/part-00000"
 
 
-
-# 天数据
-thisDayLog="data/day_${thisDay}"
-lastDayLog="data/day_${lastDay}"
-
-# 周数据
-thisWeekLog="data/week_${thisDay}"
-lastWeekLog="data/week_${lastDay}"
-
-# 7日留存数据
-thisWeek7Log="data/week7_${thisDay}"
-lastWeek7Log="data/week7_${lastDay}"
 
 ###################     开始执行      ###########################
 # 拉取数据
-cd ${workDir} && rm -fr data && rm -fr ./*.txt && mkdir data
-hadoop fs -cat "${hadLogBase}/${thisDay}/day/last/*" > ${lastDayLog}
-hadoop fs -cat "${hadLogBase}/${thisDay}/day/remain/*" > ${thisDayLog}
-hadoop fs -cat "${hadLogBase}/${thisDay}/week/last/*" > ${lastWeekLog}
-hadoop fs -cat "${hadLogBase}/${thisDay}/week/remain/*" > ${thisWeekLog}
-hadoop fs -cat "${hadLogBase}/${thisDay}/week/last_1_7/*" > ${lastWeek7Log}
-hadoop fs -cat "${hadLogBase}/${thisDay}/week/remain_1_7/*" > ${thisWeek7Log}
+#cd ${workDir} && rm -fr data && mkdir data
+#hadoop fs -cat "${exhibitBase}/total/*" > ${total}
+#hadoop fs -cat "${exhibitBase}/charge/*" > ${fee}
+#hadoop fs -cat "${exhibitBase}/strategy/*" > ${strategy}
+#hadoop fs -cat "${exhibitBase}/status/*" > ${statu}
+#hadoop fs -cat "${exhibitBase}/level/*" > ${viewCount}
+#hadoop fs -cat "${exhibitBase}/itime/*" > ${intime}
+#hadoop fs -cat "${exhibitBase}/utime/*" > ${update}
+#hadoop fs -cat "${exhibitBase}/firstType/*" > ${classify1}
+#hadoop fs -cat "${exhibitBase}/secondType/*" > ${classify2}
 
 # 留存率结果统计
 cd ${workDir}/
-python inject_retention.py "root" "123456" "${nowTime}" "result_day.txt" "result_week.txt" "result_week7.txt"
+python inject_exhibit.py "root" "dingjing1009." "${nowTime}" "${total}" "${fee}" "${strategy}" "${statu}" "${viewCount}" "${intime}" "${update}" "${classify1}" "${classify2}"
 
 
 

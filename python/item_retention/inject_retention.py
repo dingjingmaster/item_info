@@ -331,8 +331,6 @@ if __name__ == '__main__':
     week = sys.argv[5]
     week7 = sys.argv[6]
 
-    sql = 'SELECT * FROM item_retent_status'
-
     db = MySQLdb.connect('localhost', user, passwd, 'item_retention', unix_socket='/data/wapage/hhzk/mserver/mysql5713/mysql.sock');
     cursor = db.cursor()                                                                # 获取操作游标
     inject_mysql(day, cursor, time, "day")
