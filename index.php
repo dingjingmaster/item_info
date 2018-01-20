@@ -42,9 +42,13 @@ require dirname(__FILE__) . '/include/common_action.php';
                         <li class="layui-nav-item">
                             <a href="javascript:;">订展比相关统计</a>
                             <dl class="layui-nav-child">
-                                <dd><a href="javascript:;">子1</a></dd>
-                                <dd><a href="javascript:;">子2</a></dd>
-                                <dd><a href="javascript:;">子3</a></dd>
+                                <dd><button class="layui-btn layui-btn-fluid" onclick="request_exhibit('clkDsp')">点展比</button></dd>
+                                <dd><button class="layui-btn layui-btn-fluid" onclick="request_exhibit('srbClk')">订点比</button></dd>
+                                <dd><button class="layui-btn layui-btn-fluid" onclick="request_exhibit('srbDsp')">订展比</button></dd>
+                                <dd><button class="layui-btn layui-btn-fluid" onclick="request_exhibit('redSrb')">阅订比</button></dd>
+                                <dd><button class="layui-btn layui-btn-fluid" onclick="request_exhibit('redDsp')">阅展比</button></dd>
+                                <dd><button class="layui-btn layui-btn-fluid" onclick="request_exhibit('rte')">留存率</button></dd>
+                                <dd><button class="layui-btn layui-btn-fluid" onclick="request_exhibit('rteDsp')">留展比</button></dd>
                             </dl>
                         </li>
                     </ul>
@@ -58,7 +62,7 @@ require dirname(__FILE__) . '/include/common_action.php';
             </div>
 
             <div class="layui-footer">
-                @ this is a demo
+                @  宜搜小说
             </div>
         </div>
     <script>
