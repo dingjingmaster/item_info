@@ -51,9 +51,7 @@ require dirname(__FILE__) . '/include/common_action.php';
                                 <dd><button class="layui-btn layui-btn-fluid" onclick="request_exhibit('rteDsp')">留展比</button></dd>
                             </dl>
                         </li>
-                        <li class="layui-nav-item">
-                            <a href="javascript:;">订展比相关统计</a>
-                        </li>
+                        <li class="layui-nav-item"> <a href="">订展比相关统计</a> </li>
                     </ul>
                 </div>
             </div>
