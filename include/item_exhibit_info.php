@@ -331,7 +331,7 @@ function get_chart_json($which, $div) {
     }
 
     $allTime = array();
-    $endTime = (int)date("Ymd",time()); - 2;
+    $endTime = (int)date("Ymd",time()) - 2;
     $startTime = (int)($endTime - SHOWDAYS);
     $sql = 'SELECT * FROM ' . $tableName . ' WHERE timeStamp>=' . $startTime;
 //    /*
