@@ -29,7 +29,7 @@ require dirname(__FILE__) . '/include/common_action.php';
 
             <div class="layui-side layui-bg-black">
                 <div class="layui-slide-scroll">
-                    <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                    <ul class="layui-nav layui-nav-tree layui-nav-slide">
                         <li class="layui-nav-item">
                             <a class="" href="javascript:;">留存相关统计</a>
                             <dl class="layui-nav-child">
