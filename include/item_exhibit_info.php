@@ -389,7 +389,7 @@ function get_chart_json($which, $div) {
                 echo 'x: ' . count($xArray) . '   y: ' . count($yArray) . '<hr/>';
 
                 // 生成 y
-                if(count($yArray) == count($xArray)) {
+                if(count($yArray) == count($allTime)) {
                     array_push($yData, generate_series($cate, $yArray));
                 }
             }
