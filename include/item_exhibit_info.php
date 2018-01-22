@@ -386,7 +386,7 @@ function get_chart_json($which, $div) {
 
                 // 生成 x
                 $xData = generate_x($allTime);
-                //echo 'x: ' . count($xArray) . '   y: ' . count($yArray) . '<hr/>';
+                echo 'x: ' . count($allTime) . '   y: ' . count($yArray) . '<hr/>';
 
 
                 // 生成 y
