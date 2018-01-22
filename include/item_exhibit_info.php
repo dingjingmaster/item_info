@@ -422,6 +422,7 @@ function get_chart_json($which, $div) {
                 }
             }
         }
+        break;
          */
     }
     
