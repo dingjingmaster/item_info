@@ -362,6 +362,7 @@ function get_chart_json($which, $div) {
         }
         break;
     case 2:
+        /*
         for($i = 1; $i <= $typeCateNum; ++ $i) {
             for($j = 1; $j <= $feeCateNum; ++ $j) {
                 $msql = $sql . ' AND typeCate=' . $i . ' AND feeCate=' . $j;
@@ -387,7 +388,9 @@ function get_chart_json($which, $div) {
                 }
             }
         }
+         */
     case 3:
+        /*
         for($i = 1; $i <= $typeCateNum; ++ $i) {
             for($j = 1; $j <= $feeCateNum; ++ $j) {
                 for($k = 1; $k <= $otherNum; ++ $k) {
@@ -415,6 +418,7 @@ function get_chart_json($which, $div) {
                 }
             }
         }
+         */
     }
     
     // 产生title

@@ -6,7 +6,6 @@
 > Created Time: 2018年01月17日 星期三 14时23分34秒
  ************************************************************************/
 require dirname(__FILE__) . '/include/common_action.php';
-
 ?>
 <!DOCTYPE html>
 <html lang="zh-cn">
@@ -51,7 +50,7 @@ require dirname(__FILE__) . '/include/common_action.php';
                                 <dd><button class="layui-btn layui-btn-fluid" onclick="request_exhibit('rteDsp')">留展比</button></dd>
                             </dl>
                         </li>
-                        <li class="layui-nav-item"> <a href="">订展比相关统计</a> </li>
+                        <li class="layui-nav-item"> <button class="layui-btn layui-btn-fluid" onclick="search_request_init("exhibit")">订展比相关统计</button> </li>
                     </ul>
                 </div>
             </div>

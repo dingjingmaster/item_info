@@ -101,6 +101,6 @@ function request_exhibit(req) {
 
     xmlhttp.open('GET', request, true);
     xmlhttp.send();
-
-
 }
+
+
