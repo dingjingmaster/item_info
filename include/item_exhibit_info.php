@@ -334,7 +334,7 @@ function get_chart_json($which, $div) {
     $startTime = (int)($endTime - SHOWDAYS);
     $sql = 'SELECT * FROM ' . $tableName . ' WHERE timeStamp>=' . $startTime;
     for($i = $startTime; $i <= $endTime; ++ $i) {
-        array_push($allTime, $i);
+        array_push($allTime, ''.$i);
     }
 
     switch($paraNum) {
@@ -366,7 +366,6 @@ function get_chart_json($which, $div) {
         }
         break;
     case 2:
-        $maxX = 0;
         for($i = 1; $i <= $typeCateNum; ++ $i) {
             for($j = 1; $j <= $feeCateNum; ++ $j) {
                 $msql = $sql . ' AND typeCate=' . $i . ' AND feeCate=' . $j;
