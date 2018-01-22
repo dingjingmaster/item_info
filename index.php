@@ -22,7 +22,7 @@ require dirname(__FILE__) . '/include/common_action.php';
     <body class="layui-layout-body" onload="request_retent('day')">
         <div class="layui-layout layui-layout-admin">
             <div class="layui-header">
-                <div class="layui-logo"> logo </div>
+                <div class="layui-logo" id="title_div"></div>
                 <ul id="nav_page" class="layui-nav layui-layout-left"></ul>
             </div>
 

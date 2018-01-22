@@ -78,6 +78,7 @@ function get_item_exhibit($cate) {
     array_push($resArr, json_encode($arr));
 
     $res = array();
+    $res['title'] = parse_to_chinese(RETENT);
     $res['mainPage'] = $mainPage;
     $res['navPage'] = $navPage;
     $res['json'] = json_encode($resArr);

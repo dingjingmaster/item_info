@@ -74,6 +74,7 @@ function get_item_retent($cate) {
         '<li class="layui-nav-item"><a href="#cate1">一级分类留存率</a></li>';
 
     $res = array();
+    $res['title'] = parse_to_chinese($cate);
     $res['mainPage'] = $mainPage;
     $res['navPage'] = $navPage;
     $res['json'] = json_encode($resArr);
@@ -89,6 +90,9 @@ function parse_to_chinese($mstr) {
     }
 
     $chArray = array (
+        'day' => '天留存统计',
+        'week' => '周留存统计',
+        'week7' => '七日留存统计',
         'tf1' => '第一批限免',
         'tf2' => '第二批限免',
         'tf3' => '第三批限免',

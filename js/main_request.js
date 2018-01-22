@@ -34,6 +34,10 @@ function request_retent(req) {
             var res = xmlhttp.responseText;
             var json = JSON.parse(res);
 
+            // 标题
+            var titlePage = json.title;
+            document.getElementById('title_div').innerHTML = titlePage;
+
             // 主页
             var mainPage = json.mainPage;
             document.getElementById('main_div').innerHTML = mainPage;
@@ -76,6 +80,10 @@ function request_exhibit(req) {
             //
             var res = xmlhttp.responseText;
 //            document.getElementById('main_div').innerHTML = res;
+
+            // 标题
+            var titlePage = json.title;
+            document.getElementById('title_div').innerHTML = titlePage;
 
 //            /*
             var json = JSON.parse(res);
