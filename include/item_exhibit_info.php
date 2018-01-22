@@ -335,7 +335,7 @@ function get_chart_json($which, $div) {
     $sql = 'SELECT * FROM ' . $tableName . ' WHERE timeStamp>=' . $startTime;
     for($i = $startTime; $i <= $endTime; ++ $i) {
         array_push($allTime, ''.$i);
-        echo ''.$i.'<hr/>';
+//        echo ''.$i.'<hr/>';
     }
 
     switch($paraNum) {
@@ -377,7 +377,7 @@ function get_chart_json($which, $div) {
 
                 while($row = _mysql_fetch_array($result)) {
                     $cate = prekey_split($row['dzid']);
-                    echo 'tim: ' . $row['timeStamp'] . '....<hr/>';
+//                    echo 'tim: ' . $row['timeStamp'] . '....<hr/>';
                     if(in_array($row['timeStamp'], $allTime)) {
                         array_push($yArray, $row[RETENT]);
                     } else {
