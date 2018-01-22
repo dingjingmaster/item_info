@@ -378,7 +378,6 @@ function get_chart_json($which, $div) {
                 while($row = _mysql_fetch_array($result)) {
                     $cate = prekey_split($row['dzid']);
                     if(in_array($row['timeStamp'], $allTime)) {
-                        array_push($xArray, $row['timeStamp']);
                         array_push($yArray, $row[RETENT]);
                     } else {
                         array_push($yArray, 0);
@@ -386,7 +385,7 @@ function get_chart_json($which, $div) {
                 }
 
                 // 生成 x
-                $ret = generate_x($allTime);
+                $xData = generate_x($allTime);
 
                 // 生成 y
                 $ret = generate_series($cate, $yArray);
