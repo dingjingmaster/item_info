@@ -21,7 +21,7 @@ function plot_picture(divName, jsonPara) {
 
 function request_retent(req) {
     var xmlhttp;
-    var request = '/include/common_action.php?type=retent&req=' + req;
+    var request = '/item_info/item_info/include/common_action.php?type=retent&req=' + req;
     if(window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
     } else {
@@ -64,7 +64,7 @@ function request_retent(req) {
 function request_exhibit(req) {
 
     var xmlhttp;
-    var request = '/include/common_action.php?type=exhibit&req=' + req;
+    var request = '/item_info/item_info/include/common_action.php?type=exhibit&req=' + req;
     if(window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
     } else {
