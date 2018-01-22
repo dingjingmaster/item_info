@@ -275,6 +275,7 @@ function get_chart_json($which, $div) {
     $yTitle = parse_to_chinese(RETENT) . " (100%)";
     $xData ;
     $yData = array();
+    $allTime = array();
 
     if ($which == 'summary') {
         $tableName = "item_exhibit_summary";
@@ -332,6 +333,9 @@ function get_chart_json($which, $div) {
     $endTime = (int)date("Ymd",time());
     $startTime = (int)($endTime - SHOWDAYS);
     $sql = 'SELECT * FROM ' . $tableName . ' WHERE timeStamp>=' . $startTime;
+    for($i = $startTime; $i <= $endTime; ++ $i) {
+        array_push($allTime, $i);
+    }
 
     switch($paraNum) {
     case 1:
@@ -373,18 +377,18 @@ function get_chart_json($which, $div) {
 
                 while($row = _mysql_fetch_array($result)) {
                     $cate = prekey_split($row['dzid']);
-                    array_push($xArray, $row['timeStamp']);
-                    array_push($yArray, $row[RETENT]);
-                }
-                // 生成x
-                if($maxX < count($xArray)) {
-                    $maxX = count($xArray);
-                    $ret = generate_x($xArray);
-                    if($ret != false){
-                        $xData = $ret;
+                    if(in_array($row['timeStamp'], $allTime)) {
+                        array_push($xArray, $row['timeStamp']);
+                        array_push($yArray, $row[RETENT]);
+                    } else {
+                        array_push($yArray, 0);
                     }
                 }
-                // 生成y
+
+                // 生成 x
+                $ret = generate_x($allTime);
+
+                // 生成 y
                 $ret = generate_series($cate, $yArray);
                 if($ret) {
                     array_push($yData, $ret);
