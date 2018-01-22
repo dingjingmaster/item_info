@@ -273,7 +273,6 @@ function get_chart_json($which, $div) {
     // 最终变量
     $title = "";
     $yTitle = parse_to_chinese(RETENT) . " (100%)";
-    $xArray = array();
     $xData ;
     $yData = array();
     $allTime = array();
@@ -331,36 +330,35 @@ function get_chart_json($which, $div) {
         $otherPara = "classify1Cate=";
     }
 
-    $endTime = (int)date("Ymd",time()); // - 2;
+    $endTime = (int)date("Ymd",time()); - 2;
     $startTime = (int)($endTime - SHOWDAYS);
     $sql = 'SELECT * FROM ' . $tableName . ' WHERE timeStamp>=' . $startTime;
-    /*
+//    /*
+    $allTime = array();
     for($i = $startTime; $i <= $endTime; ++ $i) {
         array_push($allTime, ''.$i);
 //        echo ''.$i.'<hr/>';
     }
-     */
+//     */
 
     switch($paraNum) {
     case 1:
         for($i = 1; $i <= $typeCateNum; ++ $i) {
             $msql = $sql . ' AND typeCate=' . $i;
             $result = _mysql_query($msql);
-            $mxArray = array();
+            $xArray = array();
             $yArray = array();
             $cate = '';
     
             while($row = _mysql_fetch_array($result)) {
                 $cate = prekey_split($row['dzid']);
-                array_push($mxArray, $row['timeStamp']);
                 array_push($yArray, $row[RETENT]);
             }
     
             // 生成x
-            $ret = generate_x($mxArray);
+            $ret = generate_x($xArray);
             if($ret != false) {
                 $xData = $ret;
-                $xArray = $mxArray;
             }
     
             // 生成y
@@ -380,7 +378,7 @@ function get_chart_json($which, $div) {
 
                 while($row = _mysql_fetch_array($result)) {
                     $cate = prekey_split($row['dzid']);
-                    if(in_array($row['timeStamp'], $xArray)) {
+                    if(in_array($row['timeStamp'], $allTime)) {
                         array_push($yArray, $row[RETENT]);
                     } else {
                         array_push($yArray, 0);
@@ -388,7 +386,7 @@ function get_chart_json($which, $div) {
                 }
 
                 // 生成 y
-                if(count($yArray) == count($xArray)) {
+                if(count($yArray) == count($allTime)) {
                     array_push($yData, generate_series($cate, $yArray));
                 }
             }
@@ -406,14 +404,14 @@ function get_chart_json($which, $div) {
 
                     while($row = _mysql_fetch_array($result)) {
                         $cate = prekey_split($row['dzid']);
-                        if(in_array($row['timeStamp'], $xArray)) {
+                        if(in_array($row['timeStamp'], $allTime)) {
                             array_push($yArray, $row[RETENT]);
                         } else {
                             array_push($yArray, 0);
                         }
                     }
                     // 生成 y
-                    if(count($yArray) == count($xArray)) {
+                    if(count($yArray) == count($allTime)) {
                         array_push($yData, generate_series($cate, $yArray));
                     }
                 }
