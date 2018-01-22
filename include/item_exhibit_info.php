@@ -201,7 +201,7 @@ function generate_subtitle($subtitle) {
 
 // json x
 function generate_x($mArray) {
-    if (count($mArray) <= 1) {
+    if (count($mArray) <= 1 || count($mArray) != SHOWDAYS) {
         return false;
     }
 
