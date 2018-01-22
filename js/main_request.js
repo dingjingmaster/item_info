@@ -79,14 +79,11 @@ function request_exhibit(req) {
         if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             //
             var res = xmlhttp.responseText;
-//            document.getElementById('main_div').innerHTML = res;
+            var json = JSON.parse(res);
 
             // 标题
             var titlePage = json.title;
             document.getElementById('title_div').innerHTML = titlePage;
-
-//            /*
-            var json = JSON.parse(res);
 
             // 主页
             var mainPage = json.mainPage;
@@ -105,7 +102,6 @@ function request_exhibit(req) {
                 var mJson = mJS['json'];
                 plot_picture(mJS['divId'], JSON.parse(mJson));
             }
-//            */
         }
     }
 
