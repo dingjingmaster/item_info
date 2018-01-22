@@ -335,7 +335,7 @@ function get_chart_json($which, $div) {
     $sql = 'SELECT * FROM ' . $tableName . ' WHERE timeStamp>=' . $startTime;
     for($i = $startTime; $i <= $endTime; ++ $i) {
         array_push($allTime, ''.$i);
-        echo ''.$i.'<hr/>';
+//        echo ''.$i.'<hr/>';
     }
 
     switch($paraNum) {
@@ -388,7 +388,7 @@ function get_chart_json($which, $div) {
                 $xData = generate_x($allTime);
 
                 // 生成 y
-                if(count($yArray) == count($xArray)) {
+                if(array_count_values($yArray) == array_count_values($xArray)) {
                     array_push($yData, generate_series($cate, $yArray));
                 }
             }
