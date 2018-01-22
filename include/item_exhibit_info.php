@@ -371,7 +371,7 @@ function get_chart_json($which, $div) {
             for($j = 1; $j <= $feeCateNum; ++ $j) {
                 $msql = $sql . ' AND typeCate=' . $i . ' AND feeCate=' . $j;
                 $result = _mysql_query($msql);
-                $xArray = array();
+                //$xArray = array();
                 $yArray = array();
                 $cate = '';
 
@@ -386,7 +386,8 @@ function get_chart_json($which, $div) {
 
                 // 生成 x
                 $xData = generate_x($allTime);
-                echo 'x: ' . count($xArray) . '   y: ' . count($yArray) . '<hr/>';
+                //echo 'x: ' . count($xArray) . '   y: ' . count($yArray) . '<hr/>';
+
 
                 // 生成 y
                 if(count($yArray) == count($allTime)) {
