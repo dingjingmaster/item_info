@@ -395,8 +395,6 @@ function get_chart_json($which, $div) {
         }
         break;
     case 3:
-        echo ' errpr';
-        /*
         for($i = 1; $i <= $typeCateNum; ++ $i) {
             for($j = 1; $j <= $feeCateNum; ++ $j) {
                 for($k = 1; $k <= $otherNum; ++ $k) {
@@ -408,24 +406,23 @@ function get_chart_json($which, $div) {
 
                     while($row = _mysql_fetch_array($result)) {
                         $cate = prekey_split($row['dzid']);
-                        array_push($xArray, $row['timeStamp']);
-                        array_push($yArray, $row[RETENT]);
+                        if(in_array($row['timeStamp'], $allTime)) {
+                            array_push($yArray, $row[RETENT]);
+                        } else {
+                            array_push($yArray, 0);
+                        }
                     }
                     // 生成 x
-                    $ret = generate_x($xArray);
-                    if($ret != false){
-                        $xData = $ret;
-                    }
+                    $xData = generate_x($xArray);
+
                     // 生成 y
-                    $ret = generate_series($cate, $yArray);
-                    if($ret) {
-                        array_push($yData, $ret);
+                    if(count($yArray) == count($xArray)) {
+                        array_push($yData, generate_series($cate, $yArray));
                     }
                 }
             }
         }
         break;
-         */
     }
     
     // 产生title
