@@ -377,7 +377,8 @@ function get_chart_json($which, $div) {
                     array_push($yArray, $row[RETENT]);
                 }
                 // 生成x
-                if($mxxX < count($xArray)) {
+                if($maxX < count($xArray)) {
+                    $maxX = count($xArray);
                     $ret = generate_x($xArray);
                     if($ret != false){
                         $xData = $ret;
