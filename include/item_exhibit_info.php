@@ -330,11 +330,11 @@ function get_chart_json($which, $div) {
         $otherPara = "classify1Cate=";
     }
 
+    $allTime = array();
     $endTime = (int)date("Ymd",time()); - 2;
     $startTime = (int)($endTime - SHOWDAYS);
     $sql = 'SELECT * FROM ' . $tableName . ' WHERE timeStamp>=' . $startTime;
 //    /*
-    $allTime = array();
     for($i = $startTime; $i <= $endTime; ++ $i) {
         array_push($allTime, ''.$i);
 //        echo ''.$i.'<hr/>';
@@ -352,6 +352,7 @@ function get_chart_json($which, $div) {
     
             while($row = _mysql_fetch_array($result)) {
                 $cate = prekey_split($row['dzid']);
+                array_push($xArray, $row['timeStamp']);
                 array_push($yArray, $row[RETENT]);
             }
     
