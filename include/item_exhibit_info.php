@@ -385,6 +385,8 @@ function get_chart_json($which, $div) {
                     }
                 }
 
+                $xData = generate_x($allTime);
+
                 // 生成 y
                 if(count($yArray) == count($allTime)) {
                     array_push($yData, generate_series($cate, $yArray));
