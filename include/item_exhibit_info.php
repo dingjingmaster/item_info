@@ -176,6 +176,8 @@ function prekey_split($mstr) {
         return parse_to_chinese($arr[0]) . '-' . parse_to_chinese($arr[1]);
     } else if (count($arr) == 4) {
         return parse_to_chinese($arr[0]) . '-' . parse_to_chinese($arr[1]) . '-' . parse_to_chinese($arr[2]);
+    } else if (count($arr) == 5) {
+        return parse_to_chinese($arr[0]) . '-' . parse_to_chinese($arr[1]) . '-' . parse_to_chinese($arr[2]) . '-' . parse_to_chinese($arr[3]);
     }
 
     return 'unknow' . '-' . $mstr . '-' . 'error';
@@ -200,7 +202,7 @@ function generate_subtitle($subtitle) {
 // json x
 function generate_x($mArray) {
     if (count($mArray) == 0) {
-        return '';
+        return false;
     }
 
     $arr = array();
@@ -226,7 +228,7 @@ function generate_y($mName) {
 // json series
 function generate_series($mName, $dataArray) {
     
-    if (count($dataArray) == 0 || strlen($mName) == "") {
+    if (count($dataArray) <= 0 || strlen($mName) == 0) {
         return false;
     }
 
@@ -348,10 +350,9 @@ function get_chart_json($which, $div) {
             }
     
             // 生成x
-            $xData1 = $xData;
-            $xData = generate_x($xArray);
-            if($xData == '') {
-                $xData = $xData1;
+            $ret = generate_x($xArray);
+            if($ret != false && (count($ret) > count($xData))) {
+                $xData = $ret;
             }
     
             // 生成y
@@ -376,10 +377,9 @@ function get_chart_json($which, $div) {
                     array_push($yArray, $row[RETENT]);
                 }
                 // 生成x
-                $xData1 = $xData;
-                $xData = generate_x($xArray);
-                if($xData == '') {
-                    $xData = $xData1;
+                $ret = generate_x($xArray);
+                if($ret == false && (count($ret) > count($xData))){
+                    $xData = $ret;
                 }
                 // 生成y
                 $ret = generate_series($cate, $yArray);
@@ -404,10 +404,9 @@ function get_chart_json($which, $div) {
                         array_push($yArray, $row[RETENT]);
                     }
                     // 生成 x
-                    $xData1 = $xData;
-                    $xData = generate_x($xArray);
-                    if($xData == '') {
-                        $xData = $xData1;
+                    $ret = generate_x($xArray);
+                    if($ret == false && (count($ret) > count($xData))){
+                        $xData = $ret;
                     }
                     // 生成 y
                     $ret = generate_series($cate, $yArray);

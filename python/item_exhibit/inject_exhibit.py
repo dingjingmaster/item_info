@@ -114,30 +114,30 @@ def trans_to_word(mstr):
     # 推荐模块
     if mstr == '书架推荐':
         res = 'shfRecMdl'
+    elif mstr == '书架-猜你喜欢':
+        res = 'shfGusMdl'
     elif mstr == '免费-猜你喜欢':
         res = 'freGusMdl'
+    elif mstr == '免费-包月推荐':
+        res = 'freMonRecMdl'
     elif mstr == '章末页-读本书的人还看过':
         res = 'bakArdMdl'
     elif mstr == '封面页-读本书的人还看过':
         res = 'foeArdMdl'
-    elif mstr == '书架-猜你喜欢':
-        res = 'shfGusMdl'
-    elif mstr == '精选-瀑布流':
-        res = 'chsStmMdl'
     elif mstr == '封面页-读本书的人还看过更多':
         res = 'foeArdMorMdl'
-    elif mstr == '包月瀑布流':
-        res = 'monStmMdl'
     elif mstr == '封面页-类别推荐':
         res = 'foeCtgMdl'
     elif mstr == '封面页-作者推荐':
         res = 'foeAutMdl'
+    elif mstr == '精选-瀑布流':
+        res = 'chsStmMdl'
+    elif mstr == '包月瀑布流':
+        res = 'monStmMdl'
     elif mstr == '精选-完结瀑布流':
         res = 'chsFinStmMdl'
     elif mstr == '精选-女频瀑布流':
         res = 'chsGilStmMdl'
-    elif mstr == '免费-包月推荐':
-        res = 'freMonRecMdl'
     elif mstr == '精选-男频瀑布流':
         res = 'chsBoyStmMdl'
     elif mstr == '精选-排行瀑布流':
@@ -281,7 +281,7 @@ def get_strategy_number(mstr):
     elif mstr == '一级同分类':
         res = 11
     elif mstr == '0':
-        res = 13
+        res = 12
 
     return res
 
@@ -473,6 +473,8 @@ def inject_mysql(txtpath, cursor, times, type):
             redShwRat = float(arr[12][:-1])
             remRat = float(arr[13][:-1])
             remShwRat = float(arr[14][:-1])
+        else:
+            print 'error';
 
         if type == "summary":
             typeCate = get_module_number(moduleName)

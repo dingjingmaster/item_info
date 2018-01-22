@@ -20,7 +20,7 @@ require dirname(__FILE__) . '/include/common_action.php';
         </script>
     </head>
 
-    <body class="layui-layout-body">
+    <body class="layui-layout-body" onload="request_retent('day')">
         <div class="layui-layout layui-layout-admin">
             <div class="layui-header">
                 <div class="layui-logo"> logo </div>
@@ -47,7 +47,7 @@ require dirname(__FILE__) . '/include/common_action.php';
                                 <dd><button class="layui-btn layui-btn-fluid" onclick="request_exhibit('srbDsp')">订展比</button></dd>
                                 <dd><button class="layui-btn layui-btn-fluid" onclick="request_exhibit('redSrb')">阅订比</button></dd>
                                 <dd><button class="layui-btn layui-btn-fluid" onclick="request_exhibit('redDsp')">阅展比</button></dd>
-                                <dd><button class="layui-btn layui-btn-fluid" onclick="request_exhibit('rte')">留存率</button></dd>
+                                <dd><button class="layui-btn layui-btn-fluid" onclick="request_exhibit('retent')">留存率</button></dd>
                                 <dd><button class="layui-btn layui-btn-fluid" onclick="request_exhibit('rteDsp')">留展比</button></dd>
                             </dl>
                         </li>
