@@ -201,7 +201,7 @@ function generate_subtitle($subtitle) {
 
 // json x
 function generate_x($mArray) {
-    if (count($mArray) <= 0) {
+    if (count($mArray) < SHOWDAYS) {
         return false;
     }
 
@@ -227,7 +227,7 @@ function generate_y($mName) {
 
 // json series
 function generate_series($mName, $dataArray) {
-    if (count($dataArray) <= 0 || strlen($mName) == 0) {
+    if (count($dataArray) < SHOWDAYS || strlen($mName) == 0) {
         return false;
     }
 
