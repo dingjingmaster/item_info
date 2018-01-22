@@ -362,6 +362,7 @@ function get_chart_json($which, $div) {
         }
         break;
     case 2:
+        $maxX = 0;
         for($i = 1; $i <= $typeCateNum; ++ $i) {
             for($j = 1; $j <= $feeCateNum; ++ $j) {
                 $msql = $sql . ' AND typeCate=' . $i . ' AND feeCate=' . $j;
@@ -376,9 +377,11 @@ function get_chart_json($which, $div) {
                     array_push($yArray, $row[RETENT]);
                 }
                 // 生成x
-                $ret = generate_x($xArray);
-                if($ret != false){
-                    $xData = $ret;
+                if($mxxX < count($xArray)) {
+                    $ret = generate_x($xArray);
+                    if($ret != false){
+                        $xData = $ret;
+                    }
                 }
                 // 生成y
                 $ret = generate_series($cate, $yArray);
