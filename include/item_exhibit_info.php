@@ -334,12 +334,10 @@ function get_chart_json($which, $div) {
     $endTime = (int)date("Ymd",time()) - 2;
     $startTime = (int)($endTime - SHOWDAYS);
     $sql = 'SELECT * FROM ' . $tableName . ' WHERE timeStamp>=' . $startTime;
-//    /*
+
     for($i = $startTime; $i <= $endTime; ++ $i) {
         array_push($allTime, ''.$i);
-//        echo ''.$i.'<hr/>';
     }
-//     */
 
     switch($paraNum) {
     case 1:
@@ -395,7 +393,6 @@ function get_chart_json($which, $div) {
             }
         }
         break;
-       // /*
     case 3:
         for($i = 1; $i <= $typeCateNum; ++ $i) {
             for($j = 1; $j <= $feeCateNum; ++ $j) {
@@ -413,6 +410,9 @@ function get_chart_json($which, $div) {
                             array_push($yArray, 0);
                         }
                     }
+                    
+                    $xData = generate_x($allTime);
+
                     // 生成 y
                     if(count($yArray) == count($allTime)) {
                         array_push($yData, generate_series($cate, $yArray));
@@ -421,7 +421,6 @@ function get_chart_json($which, $div) {
             }
         }
         break;
-//*/
     }
     
     // 产生title
