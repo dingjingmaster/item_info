@@ -350,7 +350,7 @@ function get_chart_json($which, $div) {
     
             // 生成x
             $ret = generate_x($xArray);
-            if($ret != false && (count($ret) <= 0)) {
+            if($ret != false && (count($ret) > 1)) {
                 $xData = $ret;
             }
     
@@ -377,7 +377,7 @@ function get_chart_json($which, $div) {
                 }
                 // 生成x
                 $ret = generate_x($xArray);
-                if($ret != false && (count($ret) <= 1)){
+                if($ret != false && (count($ret) > 1)){
                     $xData = $ret;
                 }
                 // 生成y
@@ -404,7 +404,7 @@ function get_chart_json($which, $div) {
                     }
                     // 生成 x
                     $ret = generate_x($xArray);
-                    if($ret != false && (count($ret) <= 0)){
+                    if($ret != false && (count($ret) > 1)){
                         $xData = $ret;
                     }
                     // 生成 y
