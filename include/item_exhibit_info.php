@@ -273,6 +273,7 @@ function get_chart_json($which, $div) {
     // 最终变量
     $title = "";
     $yTitle = parse_to_chinese(RETENT) . " (100%)";
+    $xArray = array();
     $xData ;
     $yData = array();
     $allTime = array();
@@ -330,33 +331,36 @@ function get_chart_json($which, $div) {
         $otherPara = "classify1Cate=";
     }
 
-    $endTime = (int)date("Ymd",time()) - 2;
+    $endTime = (int)date("Ymd",time()); // - 2;
     $startTime = (int)($endTime - SHOWDAYS);
     $sql = 'SELECT * FROM ' . $tableName . ' WHERE timeStamp>=' . $startTime;
+    /*
     for($i = $startTime; $i <= $endTime; ++ $i) {
         array_push($allTime, ''.$i);
 //        echo ''.$i.'<hr/>';
     }
+     */
 
     switch($paraNum) {
     case 1:
         for($i = 1; $i <= $typeCateNum; ++ $i) {
             $msql = $sql . ' AND typeCate=' . $i;
             $result = _mysql_query($msql);
-            $xArray = array();
+            $mxArray = array();
             $yArray = array();
             $cate = '';
     
             while($row = _mysql_fetch_array($result)) {
                 $cate = prekey_split($row['dzid']);
-                array_push($xArray, $row['timeStamp']);
+                array_push($mxArray, $row['timeStamp']);
                 array_push($yArray, $row[RETENT]);
             }
     
             // 生成x
-            $ret = generate_x($xArray);
+            $ret = generate_x($mxArray);
             if($ret != false) {
                 $xData = $ret;
+                $xArray = $mxArray;
             }
     
             // 生成y
@@ -371,24 +375,17 @@ function get_chart_json($which, $div) {
             for($j = 1; $j <= $feeCateNum; ++ $j) {
                 $msql = $sql . ' AND typeCate=' . $i . ' AND feeCate=' . $j;
                 $result = _mysql_query($msql);
-                //$xArray = array();
                 $yArray = array();
                 $cate = '';
 
                 while($row = _mysql_fetch_array($result)) {
                     $cate = prekey_split($row['dzid']);
-//                    echo 'tim: ' . $row['timeStamp'] . '....<hr/>';
-                    if(in_array($row['timeStamp'], $allTime)) {
+                    if(in_array($row['timeStamp'], $xArray)) {
                         array_push($yArray, $row[RETENT]);
                     } else {
                         array_push($yArray, 0);
                     }
                 }
-
-                // 生成 x
-                $xData = generate_x($allTime);
-                //echo 'x: ' . count($allTime) . '   y: ' . count($yArray) . '<hr/>';
-
 
                 // 生成 y
                 if(count($yArray) == count($allTime)) {
