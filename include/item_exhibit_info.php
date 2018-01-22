@@ -388,34 +388,30 @@ function get_chart_json($which, $div) {
                 }
 
                 // 生成 y
-                if(count($yArray) == count($allTime)) {
+                if(count($yArray) == count($xArray)) {
                     array_push($yData, generate_series($cate, $yArray));
                 }
             }
         }
         break;
-        /*
+       // /*
     case 3:
         for($i = 1; $i <= $typeCateNum; ++ $i) {
             for($j = 1; $j <= $feeCateNum; ++ $j) {
                 for($k = 1; $k <= $otherNum; ++ $k) {
                     $msql = $sql . ' AND typeCate=' . $i . ' AND feeCate=' . $j . ' AND ' . $otherPara . $k;
                     $result = _mysql_query($msql);
-                    $xArray = array();
                     $yArray = array();
                     $cate = '';
 
                     while($row = _mysql_fetch_array($result)) {
                         $cate = prekey_split($row['dzid']);
-                        if(in_array($row['timeStamp'], $allTime)) {
+                        if(in_array($row['timeStamp'], $xArray)) {
                             array_push($yArray, $row[RETENT]);
                         } else {
                             array_push($yArray, 0);
                         }
                     }
-                    // 生成 x
-                    $xData = generate_x($xArray);
-
                     // 生成 y
                     if(count($yArray) == count($xArray)) {
                         array_push($yData, generate_series($cate, $yArray));
@@ -423,7 +419,8 @@ function get_chart_json($which, $div) {
                 }
             }
         }
-        break;*/
+        break;
+//*/
     }
     
     // 产生title
