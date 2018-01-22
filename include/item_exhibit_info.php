@@ -201,7 +201,7 @@ function generate_subtitle($subtitle) {
 
 // json x
 function generate_x($mArray) {
-    if (count($mArray) == 0) {
+    if (count($mArray) <= 1) {
         return false;
     }
 
