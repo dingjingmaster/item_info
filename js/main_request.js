@@ -75,9 +75,9 @@ function request_exhibit(req) {
         if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             //
             var res = xmlhttp.responseText;
-            document.getElementById('main_div').innerHTML = res;
+//            document.getElementById('main_div').innerHTML = res;
 
-            /*
+//            /*
             var json = JSON.parse(res);
 
             // 主页
@@ -97,7 +97,7 @@ function request_exhibit(req) {
                 var mJson = mJS['json'];
                 plot_picture(mJS['divId'], JSON.parse(mJson));
             }
-            */
+//            */
         }
     }
 
