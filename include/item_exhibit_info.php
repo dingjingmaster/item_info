@@ -335,6 +335,7 @@ function get_chart_json($which, $div) {
     $sql = 'SELECT * FROM ' . $tableName . ' WHERE timeStamp>=' . $startTime;
     for($i = $startTime; $i <= $endTime; ++ $i) {
         array_push($allTime, ''.$i);
+        echo ''.$i;
     }
 
     switch($paraNum) {
