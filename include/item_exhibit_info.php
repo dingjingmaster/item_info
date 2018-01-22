@@ -392,6 +392,7 @@ function get_chart_json($which, $div) {
                 }
             }
         }
+        break;
     case 3:
         /*
         for($i = 1; $i <= $typeCateNum; ++ $i) {
