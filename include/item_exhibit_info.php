@@ -395,6 +395,7 @@ function get_chart_json($which, $div) {
         }
         break;
     case 3:
+        echo ' errpr';
         /*
         for($i = 1; $i <= $typeCateNum; ++ $i) {
             for($j = 1; $j <= $feeCateNum; ++ $j) {
