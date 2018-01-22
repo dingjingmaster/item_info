@@ -98,7 +98,7 @@ function parse_to_chinese($mstr) {
         'srbDsp' => '订展比 ',
         'redSrb' => '阅订比 ',
         'redDsp' => '阅展比',
-        'rte' => '留存率',
+        'retent' => '留存率',
         'rteDsp' => '留展比 ',
         'shfRecMdl' => '书架推荐',
         'freGusMdl' => '免费-猜你喜欢',
@@ -350,7 +350,7 @@ function get_chart_json($which, $div) {
     
             // 生成x
             $ret = generate_x($xArray);
-            if($ret != false && (count($ret) > count($xData))) {
+            if($ret != false && (count($ret) != SHOWDAYS)) {
                 $xData = $ret;
             }
     
@@ -377,7 +377,7 @@ function get_chart_json($which, $div) {
                 }
                 // 生成x
                 $ret = generate_x($xArray);
-                if($ret == false && (count($ret) > count($xData))){
+                if($ret == false && (count($ret) != SHOWDAYS)){
                     $xData = $ret;
                 }
                 // 生成y
@@ -404,7 +404,7 @@ function get_chart_json($which, $div) {
                     }
                     // 生成 x
                     $ret = generate_x($xArray);
-                    if($ret == false && (count($ret) > count($xData))){
+                    if($ret == false && (count($ret) != SHOWDAYS)){
                         $xData = $ret;
                     }
                     // 生成 y
