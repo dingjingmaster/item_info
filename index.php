@@ -43,9 +43,9 @@ require dirname(__FILE__) . '/include/common_action.php';
                             <a href="javascript:;">订展比相关统计</a>
                             <dl class="layui-nav-child">
                                 <dd><button class="layui-btn layui-btn-fluid" onclick="request_exhibit('clkDsp')">点展比</button></dd>
-                                <dd><button class="layui-btn layui-btn-fluid" onclick="request_exhibit('srbClk')">订点比</button></dd>
-                                <dd><button class="layui-btn layui-btn-fluid" onclick="request_exhibit('srbDsp')">订展比</button></dd>
-                                <dd><button class="layui-btn layui-btn-fluid" onclick="request_exhibit('redSrb')">阅订比</button></dd>
+                                <dd><button class="layui-btn layui-btn-fluid" onclick="request_exhibit('subClk')">订点比</button></dd>
+                                <dd><button class="layui-btn layui-btn-fluid" onclick="request_exhibit('subDsp')">订展比</button></dd>
+                                <dd><button class="layui-btn layui-btn-fluid" onclick="request_exhibit('redSub')">阅订比</button></dd>
                                 <dd><button class="layui-btn layui-btn-fluid" onclick="request_exhibit('redDsp')">阅展比</button></dd>
                                 <dd><button class="layui-btn layui-btn-fluid" onclick="request_exhibit('retent')">留存率</button></dd>
                                 <dd><button class="layui-btn layui-btn-fluid" onclick="request_exhibit('rteDsp')">留展比</button></dd>
@@ -61,9 +61,7 @@ require dirname(__FILE__) . '/include/common_action.php';
                 <div id="main_div" style="padding: 15px;"></div>
             </div>
 
-            <div class="layui-footer">
-                @  宜搜小说
-            </div>
+            <div class="layui-footer"> @  宜搜小说 </div>
         </div>
     <script>
         layui.use('element', function(){
