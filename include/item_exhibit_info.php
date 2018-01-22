@@ -386,14 +386,16 @@ function get_chart_json($which, $div) {
 
                 // 生成 x
                 $xData = generate_x($allTime);
+                echo 'x: ' . count($xArray) . '   y: ' . count($yArray) . '<hr/>';
 
                 // 生成 y
-                if(array_count_values($yArray) == array_count_values($xArray)) {
+                if(count($yArray) == count($xArray)) {
                     array_push($yData, generate_series($cate, $yArray));
                 }
             }
         }
         break;
+        /*
     case 3:
         for($i = 1; $i <= $typeCateNum; ++ $i) {
             for($j = 1; $j <= $feeCateNum; ++ $j) {
@@ -422,7 +424,7 @@ function get_chart_json($which, $div) {
                 }
             }
         }
-        break;
+        break;*/
     }
     
     // 产生title
