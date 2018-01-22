@@ -5,10 +5,10 @@
 > Created Time: 2018年01月22日 星期一 15时08分39秒
  ************************************************************************/
 
-function search_request_init(req) {
+function search_request_init() {
 
     var xmlhttp;
-    var request = '/item_info/item_info/include/common_action.php?schTyp=exhibit' + req;
+    var request = '/include/common_action.php?schTyp=init';
     if(window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
     } else {
@@ -19,27 +19,26 @@ function search_request_init(req) {
         if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             //
             var res = xmlhttp.responseText;
-            //document.getElementById('main_div').innerHTML = res;
 
-            var json = JSON.parse(res);
+            //var json = JSON.parse(res);
 
             // 主页
-            var mainPage = json.mainPage;
-            document.getElementById('main_div').innerHTML = mainPage;
+            //var mainPage = json.mainPage;
+            //document.getElementById('main_div').innerHTML = mainPage;
 
             // 导航栏
-            var navPage = json.navPage;
-            document.getElementById('nav_page').innerHTML = navPage;
+            //var navPage = json.navPage;
+            //document.getElementById('nav_page').innerHTML = navPage;
 
             // json 绘图信息
-            var js = JSON.parse(json.json);
-            for(var i in js) {
-                var elem = js[i];
-                var mJS = JSON.parse(elem);
-                var divID = mJS['divId'];
-                var mJson = mJS['json'];
-                plot_picture(mJS['divId'], JSON.parse(mJson));
-            }
+            //var js = JSON.parse(json.json);
+            //for(var i in js) {
+            //    var elem = js[i];
+            //    var mJS = JSON.parse(elem);
+            //    var divID = mJS['divId'];
+            //    var mJson = mJS['json'];
+            //    plot_picture(mJS['divId'], JSON.parse(mJson));
+            //}
         }
     }
 

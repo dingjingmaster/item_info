@@ -21,7 +21,8 @@ function plot_picture(divName, jsonPara) {
 
 function request_retent(req) {
     var xmlhttp;
-    var request = '/item_info/item_info/include/common_action.php?type=retent&req=' + req;
+    //var request = '/item_info/item_info/include/common_action.php?type=retent&req=' + req;
+    var request = '/include/common_action.php?type=retent&req=' + req;
     if(window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
     } else {
