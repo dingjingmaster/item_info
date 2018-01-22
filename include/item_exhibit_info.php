@@ -330,12 +330,12 @@ function get_chart_json($which, $div) {
         $otherPara = "classify1Cate=";
     }
 
-    $endTime = (int)date("Ymd",time());
-    $startTime = (int)($endTime - SHOWDAYS - 2);
+    $endTime = (int)date("Ymd",time()) - 2;
+    $startTime = (int)($endTime - SHOWDAYS);
     $sql = 'SELECT * FROM ' . $tableName . ' WHERE timeStamp>=' . $startTime;
     for($i = $startTime; $i <= $endTime; ++ $i) {
         array_push($allTime, ''.$i);
-        echo ''.$i.'<hr/>';
+//        echo ''.$i.'<hr/>';
     }
 
     switch($paraNum) {
@@ -369,7 +369,7 @@ function get_chart_json($which, $div) {
     case 2:
         for($i = 1; $i <= $typeCateNum; ++ $i) {
             for($j = 1; $j <= $feeCateNum; ++ $j) {
-                $msql = $sql . ' AND typeCate=' . $i . ' AND feeCate=' . $j;
+//                $msql = $sql . ' AND typeCate=' . $i . ' AND feeCate=' . $j;
                 $result = _mysql_query($msql);
                 //$xArray = array();
                 $yArray = array();
