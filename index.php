@@ -84,7 +84,7 @@ require dirname(__FILE__) . '/include/common_action.php';
             form.on('select(form_dim)', function(data){
                 var test = '';
                 hest = '<option value="ssss"> ddddd </option>';
-                $("select#form_module").append(hest);
+                $("#form_module").append(hest);
                 if(data.value == 'sum') {
                 }
                 alert(data.value);
