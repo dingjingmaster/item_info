@@ -47,6 +47,7 @@ function search_request_init(page) {
 }
 
 function exhibit_change() {
+    alert("改变1");
     var x = document.getElementById("form_dim");
     var y = document.getElementById("form_module");
 
