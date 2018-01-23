@@ -22,13 +22,14 @@ if(!strcasecmp($_GET['type'], 'retent')) {
 
 } else if(!strcasecmp($_GET['type'], 'search')) {
     echo count($_GET) . '<hr/>';
+    /*
     if((!strcasecmp($_GET['page'], 'retent')) && (count($_GET) == 2)) {
         require ROOT_PATH . '/include/search_retent.php';
         echo search_init();
     } else if ((!strcasecmp($_GET['page'], 'exhibit')) && (count($_GET) == 2)) {
         require ROOT_PATH . '/include/search_exhibit.php';
         echo search_init();
-    }
+    }*/
 }
 
 
