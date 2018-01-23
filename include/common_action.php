@@ -7,7 +7,7 @@ require ROOT_PATH .'/include/mysql_func.php';
 header('Content-Type: text/html; charset=utf-8');
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
-define('DB_PWD', 'dingjing1009.');
+define('DB_PWD', '123456');
 
 if(!strcasecmp($_GET['type'], 'retent')) {
     require ROOT_PATH . '/include/item_retent_info.php';
