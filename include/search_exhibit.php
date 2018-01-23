@@ -27,8 +27,12 @@ function search_init(){
                     '<input type="radio" name="dim" value="ctg1Dim" title="一级分类">'.
                 '</div>' .
             '</div>' .
+
+            '<div class="layui-form-item">' .
+                '<button class="layui-btn" layui-submit="">提交</button>'.
+            '</div>'.
          '</form>' .
-         '<hr class="layui-bg-black">';
+         '<hr class="layui-bg-black"/>';
 
 }
 ?>
