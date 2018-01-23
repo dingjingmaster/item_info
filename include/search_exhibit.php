@@ -19,17 +19,28 @@ function search_init(){
                     '<div class="layui-input-block">'.
                         '<select name="dim" lay-verify="required">'.
                             '<option value=""></option>'.
-                            '<option value="1">总计</option>'.
-                            '<option value="2">付费类型</option>'.
-                            '<option value="3">推荐策略</option>'.
-                            '<option value="4">连载状态</option>'.
-                            '<option value="5">订阅级别</option>'.
-                            '<option value="6">入库时间</option>'.
-                            '<option value="7">更新时间</option>'.
-                            '<option value="8">一级分类</option>'.
+                            '<option value="sum">总计</option>'.
+                            '<option value="fee">付费类型</option>'.
+                            '<option value="stg">推荐策略</option>'.
+                            '<option value="stu">连载状态</option>'.
+                            '<option value="vie">订阅级别</option>'.
+                            '<option value="itim">入库时间</option>'.
+                            '<option value="utim">更新时间</option>'.
+                            '<option value="ctg1">一级分类</option>'.
                         '</select>'.
                     '</div>'.
+                '</div>'.
+                '<div class="layui-form-item">'.
+                    '<label class="layui-form-label">付费类型</label>'.
+                    '<div class="layui-input-block">'.
+                        '<input type="checkbox" name="freFee" title="免费">'.
+                        '<input type="checkbox" name="chgFee" title="付费">'.
+                        '<input type="checkbox" name="monFee" title="包月">'.
+                        '<input type="checkbox" name="pubFee" title="公版">'.
+                        '<input type="checkbox" name="tfFee" title="限免">'.
                     '</div>'.
+                '</div>'.
+
                 '<div class="layui-form-item">'.
                     '<label class="layui-form-label">页面模块</label>'.
                     '<div class="layui-input-block">'.
@@ -50,17 +61,6 @@ function search_init(){
                         '<input type="checkbox" name="chsGilStmMdl" title="精选-女频瀑布流">'.
                         '<input type="checkbox" name="redRecMdl" title="根据阅读推荐">'.
                         '<input type="checkbox" name="extRecMdl" title="退出拦截推荐">'.
-                    '</div>'.
-                '</div>'.
-
-                '<div class="layui-form-item">'.
-                    '<label class="layui-form-label">付费类型</label>'.
-                    '<div class="layui-input-block">'.
-                        '<input type="checkbox" name="freFee" title="免费">'.
-                        '<input type="checkbox" name="chgFee" title="付费">'.
-                        '<input type="checkbox" name="monFee" title="包月">'.
-                        '<input type="checkbox" name="pubFee" title="公版">'.
-                        '<input type="checkbox" name="tfFee" title="限免">'.
                     '</div>'.
                 '</div>'.
 
