@@ -50,6 +50,8 @@ function exhibit_change() {
     var x = document.getElementById("form_dim");
     var y = document.getElementById("form_module");
 
+    alert("改变");
+
     y.options.length = 0;
     if(x.selectedIndex == 1) {
         y.options.add(new Option("书架-猜你喜欢", "shfGusMdl"));
