@@ -82,11 +82,17 @@ require dirname(__FILE__) . '/include/common_action.php';
 
         layui.use('form', function(){
             var form = layui.form;
+            form.on('select(dim_select)', function(idata){
+                alert('选择了');
+            
+            });
+
             form.on('submit(formDemo)', function(data){
                 layer.msg(JSON.stringify(data.field));
                 return false;
             });
         });
+
     </script>
 
 
