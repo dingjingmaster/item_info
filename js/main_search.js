@@ -22,6 +22,7 @@ function search_request_init(page) {
             document.getElementById('form_div').innerHTML = res;
             var reset = document.getElementById('form_reset');
             alert(reset.innerHTML);
+            reset.click();
 
             //var json = JSON.parse(res);
             // 主页
