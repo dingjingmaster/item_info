@@ -8,7 +8,7 @@
 function search_request_init(page) {
 
     var xmlhttp;
-    var request = '/item_info/item_info/include/common_action.php?type=search&page=' + page;
+    var request = '/item_info/item_info/include/common_action.php?type=search&page=' . page;
     if(window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
     } else {
@@ -22,15 +22,12 @@ function search_request_init(page) {
             document.getElementById('form_div').innerHTML = res;
 
             //var json = JSON.parse(res);
-
             // 主页
             //var mainPage = json.mainPage;
             //document.getElementById('main_div').innerHTML = mainPage;
-
             // 导航栏
             //var navPage = json.navPage;
             //document.getElementById('nav_page').innerHTML = navPage;
-
             // json 绘图信息
             //var js = JSON.parse(json.json);
             //for(var i in js) {

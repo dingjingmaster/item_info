@@ -13,7 +13,7 @@ if(!strcasecmp(INTEST, 'DEBUG')) {
 }
 
 function search_init(){
-    echo '<form class="layui-form" action="">' .
+    $page = '<form class="layui-form" action="">' .
             '<div class="layui-form-item">' . 
                 '<label class="layui-form-label">选择查询维度</label>' .
                 '<div class="layui-input-block">' . 
@@ -35,6 +35,7 @@ function search_init(){
          '</form>' .
          '<hr class="layui-bg-black"/>';
 
+    return $page;
 }
 ?>
 
