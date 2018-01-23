@@ -81,7 +81,7 @@ require dirname(__FILE__) . '/include/common_action.php';
 
         layui.use('form', function(){
             var form = layui.form;
-            form.on('select(dim_select)', function(data){
+            form.on('select(form_dim)', function(data){
                 var test = '';
                 hest = '<option value="ssss"> ddddd </option>';
                 $("select#form_module").append(hest);

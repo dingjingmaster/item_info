@@ -17,7 +17,7 @@ function search_init(){
                 '<div class="layui-form-item">'.
                     '<label class="layui-form-label">查询维度</label>'.
                     '<div class="layui-input-block">'.
-                        '<select id="form_dim" lay-filter="dim_select" name="dim">'.
+                        '<select lay-filter="form_dim" name="dim">'.
                             '<option value=""></option>'.
                             '<option value="sum">总计</option>'.
                             '<option value="fee">付费类型</option>'.
@@ -34,7 +34,7 @@ function search_init(){
                 '<div class="layui-form-item">'.
                     '<label class="layui-form-label">页面模块</label>'.
                     '<div class="layui-input-block">'.
-                        '<select id="form_module" name="dim" lay-verify="required">'.
+                        '<select lay-filter="form_module" name="dim" lay-verify="required">'.
                             '<option value=""></option>'.
                         '</select>'.
                     '</div>'.
