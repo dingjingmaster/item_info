@@ -15,12 +15,6 @@ if(!strcasecmp(INTEST, 'DEBUG')) {
 function search_init(){
     $page = '<form class="layui-form" action="">'.
                 '<div class="layui-form-item">'.
-                    '<label class="layui-form-label">输入框</label>'.
-                    '<div class="layui-input-block">'.
-                        '<input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">'.
-                    '</div>'.
-                '</div>'.
-                '<div class="layui-form-item">'.
                     '<label class="layui-form-label">选择框</label>'.
                     '<div class="layui-input-block">'.
                         '<select name="city" lay-verify="required">'.
