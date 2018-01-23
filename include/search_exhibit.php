@@ -18,7 +18,6 @@ function search_init(){
                     '<label class="layui-form-label">查询维度</label>'.
                     '<div class="layui-input-block">'.
                         '<select id="form_dim" name="dim" onchange=exhibit_change()>'.
-                            '<option value=""></option>'.
                             '<option value="sum">总计</option>'.
                             '<option value="fee">付费类型</option>'.
                             '<option value="stg">推荐策略</option>'.
