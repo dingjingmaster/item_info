@@ -29,6 +29,7 @@ function search_init(){
                     '</select>' .
                 '</div>' .
             '</div>' .
+            '' .
             '<div class="layui-form-item">' .
                 '<button class="layui-btn" layui-submit="">提交</button>'.
             '</div>'.
