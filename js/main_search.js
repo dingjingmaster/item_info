@@ -21,7 +21,9 @@ function search_request_init(page) {
             var res = xmlhttp.responseText;
             document.getElementById('form_div').innerHTML = res;
             var reset = document.getElementById('form_reset');
-            $("button#reset").click();
+            $("button#reset").click(function() {
+                alert("点击了");
+            });
             alert(reset.innerHTML);
 
             //var json = JSON.parse(res);
