@@ -14,7 +14,7 @@ if(!strcasecmp(INTEST, 'DEBUG')) {
 
 function search_init(){
     $page = '<form class="layui-form" action="">'.
-               /* '<div class="layui-form-item">'.
+                '<div class="layui-form-item">'.
                     '<label class="layui-form-label">要查询的模块</label>'.
                     '<div class="layui-input-block">'.
                         '<select name="city" lay-verify="required">'.
@@ -26,7 +26,7 @@ function search_init(){
                             '<option value="4">杭州</option>'.
                         '</select>'.
                     '</div>'.
-                    '</div>'.*/
+                    '</div>'.
                 '<div class="layui-form-item">'.
                     '<label class="layui-form-label">复选框</label>'.
                     '<div class="layui-input-block">'.
@@ -48,16 +48,8 @@ function search_init(){
                         '<button type="reset" class="layui-btn layui-btn-primary">重置</button>'.
                     '</div>'.
                 '</div>'.
-            '</form>'.
-            '<script>'.
-                'layui.use("form", function(){'.
-                    'var form = layui.form;'.
-                    'form.on("submit(formDemo)", function(data){'.
-                        'layer.msg(JSON.stringify(data.field));'.
-                        'return false;'.
-                    '});'.
-                '});'.
-            '</script>';
+            '</form>';
+
     return $page;
 }
 ?>
