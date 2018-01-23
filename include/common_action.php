@@ -14,11 +14,21 @@ if(!strcasecmp($_GET['type'], 'retent')) {
     _mysql_connect();
     _mysql_select_db();
     echo get_item_retent($_GET['req']);
-} else if(!strcasecmp($_GET['type'], 'exhibit')) {
+} else if((!strcasecmp($_GET['type'], 'exhibit')) && (count($_GET) == 1)) {
+    require ROOT_PATH . '/include/item_exhibit_info.php';
+    _mysql_connect();
+    _mysql_select_db();
+    echo '11111111111111111';
+
+    /*
     require ROOT_PATH . '/include/item_exhibit_info.php';
     _mysql_connect();
     _mysql_select_db();
     echo get_item_exhibit($_GET['req']);
+     */
+
+
+
 } else if(!strcasecmp($_GET['type'], 'search')) {
     if(!strcasecmp($_GET['schPge'], 'exhibit')) {
         require ROOT_PATH . '/include/search_page.php';

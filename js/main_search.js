@@ -6,10 +6,9 @@
  ************************************************************************/
 
 function search_exhibit(module) {
-    alert('exhibit');
 
     var xmlhttp;
-    var request = '/include/common_action.php?type=search';
+    var request = '/include/common_action.php?type=search&module='.module;
     if(window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
     } else {
