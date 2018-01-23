@@ -64,10 +64,6 @@ function search_init(){
                     '});'.
                 '});'.
             '</script>';
-
-
-
-
     return $page;
 }
 ?>
