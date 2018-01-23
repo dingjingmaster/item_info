@@ -21,6 +21,7 @@ if(!strcasecmp($_GET['type'], 'retent')) {
     echo get_item_exhibit($_GET['req']);
 
 } else if(!strcasecmp($_GET['type'], 'search')) {
+    echo count($_GET) . '<hr/>';
     if((!strcasecmp($_GET['page'], 'retent')) && (count($_GET) == 2)) {
         require ROOT_PATH . '/include/search_retent.php';
         echo search_init();
