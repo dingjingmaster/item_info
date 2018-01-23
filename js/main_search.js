@@ -19,11 +19,9 @@ function search_request_init(page) {
         if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             //
             var res = xmlhttp.responseText;
-            alert("ok1");
             document.getElementById('form_div').innerHTML = res;
-            alert("ok2");
-            document.getElementById('form_reset').click();
-            alert("ok3");
+            var reset = document.getElementById('form_reset');
+            alert(reset.innerHTML);
 
             //var json = JSON.parse(res);
             // 主页
