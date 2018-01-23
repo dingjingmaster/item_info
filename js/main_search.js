@@ -5,10 +5,10 @@
 > Created Time: 2018年01月22日 星期一 15时08分39秒
  ************************************************************************/
 
-function search_request_init(module) {
+function search_request_init(page) {
 
     var xmlhttp;
-    var request = '/item_info/item_info/include/common_action.php?type=search&page='. module;
+    var request = '/item_info/item_info/include/common_action.php?type=search&page=' + page;
     if(window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
     } else {
