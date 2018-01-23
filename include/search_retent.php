@@ -12,8 +12,8 @@ if(!strcasecmp(INTEST, 'DEBUG')) {
     error_reporting(E_ERROR);                                             // 开启错误报告
 }
 
-function chose_select_module() {
-    echo '<div class="layui-form">' . 
+function search_init() {
+    $page = '<div class="layui-form">' . 
         '<div class="layui-form-item">'.
         '<label class="layui-form-label">选择查询信息</label>'.
         '<div class="layui-input-block">'.
@@ -30,6 +30,7 @@ function chose_select_module() {
         '</div>'.
         '</div>'.
         '</form>';
+    return $page;
 }
 
 ?>
