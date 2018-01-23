@@ -136,6 +136,17 @@ require dirname(__FILE__) . '/include/common_action.php';
             var element = layui.element;
         })
     </script>
+    <script>
+        layui.use("form", function(){
+            var form = layui.form;
+            form.on("submit(formDemo)", function(data){
+                layer.msg(JSON.stringify(data.field));
+                return false;
+            });
+        });
+    </script>
+
+
     </body>
 </html>
 
