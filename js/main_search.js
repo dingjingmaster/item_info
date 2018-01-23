@@ -20,7 +20,10 @@ function search_request_init(page) {
             //
             var res = xmlhttp.responseText;
             document.getElementById('form_div').innerHTML = res;
+            sleep(500);
+            alert(1);
             document.getElementById('form_reset').click();
+            alert(2);
 
             //var json = JSON.parse(res);
             // 主页
