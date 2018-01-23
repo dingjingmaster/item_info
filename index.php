@@ -31,17 +31,11 @@ require dirname(__FILE__) . '/include/common_action.php';
                     <li class="layui-nav-item">
                         <a href="javascript:;">自定义查询</a>
                         <dl id="search_module" class="layui-nav-child">
-                            <dd><a href="">留存率相关查询</a></dd>
-                            <dd><a href="">订展比相关查询</a></dd>
+                            <dd><a href="javascript:search_request_init('retent');">留存率相关查询</a></dd>
+                            <dd><a href="javascript:search_request_init('exhibit');">订展比相关查询</a></dd>
                         </dl>
                     </li>
                 </ul>
-
-<!--
-                <ul id="search_page" class="layui-nav layui-layout-right">
-                    <li id="select_li" class="layui-nav-item"><button class="layui-btn layui-btn-normal layui-btn-fluid layui-bg-black" onclick="search_request_init()">自定义查询</button></li>
-                </ul>
--->
             </div>
 
             <div class="layui-side layui-bg-black">
@@ -68,12 +62,8 @@ require dirname(__FILE__) . '/include/common_action.php';
                                 <dd><button class="layui-btn layui-btn-normal layui-btn-fluid" onclick="request_exhibit('rteDsp')">留展比</button></dd>
                             </dl>
                         </li>
-<!--                     
-                        <li class="layui-nav-item">
-                            <a href="javascript:request_init('exhibit');">订展比相关查询</a>
-                        </li>
--->
                     </ul>
+
                 </div>
             </div>
 

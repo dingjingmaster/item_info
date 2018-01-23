@@ -19,10 +19,14 @@ if(!strcasecmp($_GET['type'], 'retent')) {
     _mysql_connect();
     _mysql_select_db();
     echo get_item_exhibit($_GET['req']);
+
 } else if(!strcasecmp($_GET['type'], 'search')) {
 
-    if(!strcasecmp($_GET['schPge'], 'exhibit')) {
-        require ROOT_PATH . '/include/search_page.php';
+    if((!strcasecmp($_GET['schPge'], 'retent')) && (count($_GET) == 2)) {
+        require ROOT_PATH . '/include/search_retent.php';
+    } else if ((!strcasecmp($_GET['schPge'], 'exhibit')) && (count($_GET) == 2)) {
+        require ROOT_PATH . '/include/search_exhibit.php';
+        echo search_init();
     }
 }
 

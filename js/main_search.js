@@ -19,6 +19,7 @@ function search_exhibit(module) {
         if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             //
             var res = xmlhttp.responseText;
+            document.getElementById('form_div').innerHTML = res;
 
             //var json = JSON.parse(res);
 
@@ -47,12 +48,10 @@ function search_exhibit(module) {
 }
 
 
-
-
-function search_request_init() {
+function search_request_init(page) {
 
     var xmlhttp;
-    var request = '/include/common_action.php?type=search';
+    var request = '/include/common_action.php?type=search&schPage=' . page;
     if(window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
     } else {
@@ -63,6 +62,7 @@ function search_request_init() {
         if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             //
             var res = xmlhttp.responseText;
+            document.getElementById('main_div').innerHTML = res;
 
             //var json = JSON.parse(res);
 
