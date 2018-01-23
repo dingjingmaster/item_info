@@ -8,7 +8,7 @@
 function search_request_init(module) {
 
     var xmlhttp;
-    var request = '/include/common_action.php?type=search&page='.module;
+    var request = '/item_info/item_info/include/common_action.php?type=search&page='.module;
     if(window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
     } else {
