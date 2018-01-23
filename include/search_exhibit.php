@@ -30,7 +30,7 @@ function search_init(){
                         '</select>'.
                     '</div>'.
                 '</div>'.
-    
+                ''.
                 '<div class="layui-form-item">'.
                     '<label class="layui-form-label">页面模块</label>'.
                     '<div class="layui-input-block">'.
@@ -39,7 +39,7 @@ function search_init(){
                         '</select>'.
                     '</div>'.
                 '</div>'.
-
+                ''.
                 '<div class="layui-form-item">'.
                     '<label class="layui-form-label">付费类型</label>'.
                     '<div class="layui-input-block">'.
@@ -50,7 +50,7 @@ function search_init(){
                         '<input type="checkbox" name="tfFee" title="限免">'.
                     '</div>'.
                 '</div>'.
-
+                ''.
                 '<div class="layui-form-item">'.
                     '<div class="layui-input-block">'.
                         '<button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>'.
