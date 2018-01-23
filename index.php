@@ -28,7 +28,7 @@ require dirname(__FILE__) . '/include/common_action.php';
                 <ul id="nav_page" class="layui-nav layui-layout-left"></ul>
 
                 <ul id="search_page" class="layui-nav layui-layout-right">
-                    <li id="select_li" class="layui-nav-item"><button class="layui-btn layui-btn-normal layui-btn-fluid layui-bg-black" onclick="search_request_init()">自定义查询</button></li>
+                    <li id="select_li"><button class="layui-btn layui-btn-normal layui-btn-fluid layui-bg-black" onclick="search_request_init()">自定义查询</button></li>
                 </ul>
             </div>
 
