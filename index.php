@@ -82,8 +82,10 @@ require dirname(__FILE__) . '/include/common_action.php';
 
         layui.use('form', function(){
             var form = layui.form;
-            form.on('select(dim_select)', function(idata){
+            form.on('select(dim_select)', function(data){
                 alert('选择了');
+                alert(data.value);
+
             
             });
 
