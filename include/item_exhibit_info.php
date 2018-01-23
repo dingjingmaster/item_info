@@ -8,7 +8,6 @@ if(!strcasecmp(INTEST, 'DEBUG')) {
 
 define('SLIDE_PAGE', '');
 define('DB_NAME', 'item_exhibit');
-
 define('SHOWDAYS', 7);
 
 function get_item_exhibit($cate) {
