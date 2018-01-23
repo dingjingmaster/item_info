@@ -545,8 +545,8 @@ if __name__ == '__main__':
     classify1Path = sys.argv[11]
     classify2Path = sys.argv[12]
 
-    db = MySQLdb.connect('localhost', user, passwd, 'item_exhibit');
-    #db = MySQLdb.connect('localhost', user, passwd, 'item_exhibit', unix_socket='/data/wapage/hhzk/mserver/mysql5713/mysql.sock');
+    #db = MySQLdb.connect('localhost', user, passwd, 'item_exhibit');
+    db = MySQLdb.connect('localhost', user, passwd, 'item_exhibit', unix_socket='/data/wapage/hhzk/mserver/mysql5713/mysql.sock');
     cursor = db.cursor()                                                                # 获取操作游标
 
     inject_mysql(summaryPath, cursor, time, "summary")
