@@ -12,6 +12,7 @@ require dirname(__FILE__) . '/include/common_action.php';
     <head>
         <?php _common_print_head() ?>
         <title>宜搜物品信息展示平台</title>
+        <script type="text/javascript" src="js/global_function.js"></script>
         <script type="text/javascript" src="js/main_request.js"></script>
         <script type="text/javascript" src="js/main_search.js"></script>
         <script>
