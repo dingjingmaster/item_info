@@ -27,9 +27,21 @@ require dirname(__FILE__) . '/include/common_action.php';
                 <div id="title_div" class="layui-logo"></div>
                 <ul id="nav_page" class="layui-nav layui-layout-left"></ul>
 
-                <ul id="search_page" class="layui-nav layui-layout-right">
-                    <li id="select_li"><button class="layui-btn layui-btn-normal layui-btn-fluid layui-bg-black" onclick="search_request_init()">自定义查询</button></li>
+                <ul class="layui-nav layui-layout-right">
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">自定义查询</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="">基本资料</a></dd>
+                            <dd><a href="">安全设置</a></dd>
+                        </dl>
+                    </li>
                 </ul>
+
+<!--
+                <ul id="search_page" class="layui-nav layui-layout-right">
+                    <li id="select_li" class="layui-nav-item"><button class="layui-btn layui-btn-normal layui-btn-fluid layui-bg-black" onclick="search_request_init()">自定义查询</button></li>
+                </ul>
+-->
             </div>
 
             <div class="layui-side layui-bg-black">

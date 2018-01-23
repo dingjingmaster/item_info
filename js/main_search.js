@@ -8,7 +8,7 @@
 function search_request_init() {
 
     var xmlhttp;
-    var request = '/include/common_action.php?schTyp=init';
+    var request = '/include/common_action.php?type=search';
     if(window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
     } else {

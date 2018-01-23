@@ -15,11 +15,14 @@ if(!strcasecmp($_GET['type'], 'retent')) {
     _mysql_select_db();
     echo get_item_retent($_GET['req']);
 } else if(!strcasecmp($_GET['type'], 'exhibit')) {
-    //echo '<h1>THIS REQUEST IS FORBIDDEN !!!<h1>';
     require ROOT_PATH . '/include/item_exhibit_info.php';
     _mysql_connect();
     _mysql_select_db();
     echo get_item_exhibit($_GET['req']);
+} else if(!strcasecmp($_GET['type'], 'search')) {
+    if(!strcasecmp($_GET['schPge'], 'exhibit')) {
+        require ROOT_PATH . '/include/search_page.php';
+    }
 }
 
 
