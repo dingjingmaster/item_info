@@ -14,8 +14,8 @@ if(!strcasecmp(INTEST, 'DEBUG')) {
 
 function search_init(){
     $page = '<form class="layui-form" action="">'.
-                '<div class="layui-form-item">'.
-                    '<label class="layui-form-label">选择框</label>'.
+               /* '<div class="layui-form-item">'.
+                    '<label class="layui-form-label">要查询的模块</label>'.
                     '<div class="layui-input-block">'.
                         '<select name="city" lay-verify="required">'.
                             '<option value=""></option>'.
@@ -26,7 +26,7 @@ function search_init(){
                             '<option value="4">杭州</option>'.
                         '</select>'.
                     '</div>'.
-                '</div>'.
+                    '</div>'.*/
                 '<div class="layui-form-item">'.
                     '<label class="layui-form-label">复选框</label>'.
                     '<div class="layui-input-block">'.
