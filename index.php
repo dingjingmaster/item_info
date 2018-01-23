@@ -29,10 +29,10 @@ require dirname(__FILE__) . '/include/common_action.php';
 
                 <ul class="layui-nav layui-layout-right">
                     <li class="layui-nav-item">
-                        <a href="javascript:;">自定义查询</a>
-                        <dl class="layui-nav-child">
-                            <dd><a href="">基本资料</a></dd>
-                            <dd><a href="">安全设置</a></dd>
+                        <a href="javascript:;">预留按钮</a>
+                        <dl id="search_module" class="layui-nav-child">
+                            <dd><a href="">按钮1</a></dd>
+                            <dd><a href="">按钮2</a></dd>
                         </dl>
                     </li>
                 </ul>
@@ -67,6 +67,10 @@ require dirname(__FILE__) . '/include/common_action.php';
                                 <dd><button class="layui-btn layui-btn-normal layui-btn-fluid" onclick="request_exhibit('retent')">留存率</button></dd>
                                 <dd><button class="layui-btn layui-btn-normal layui-btn-fluid" onclick="request_exhibit('rteDsp')">留展比</button></dd>
                             </dl>
+                        </li>
+                        
+                        <li class="layui-nav-item">
+                            <a href="javascript:;">订展比相关查询</a>
                         </li>
                     </ul>
                 </div>
