@@ -70,7 +70,7 @@ require dirname(__FILE__) . '/include/common_action.php';
                         </li>
                         
                         <li class="layui-nav-item">
-                            <a href="javascript:;">订展比相关查询</a>
+                            <a href="">订展比相关查询</a>
                         </li>
                     </ul>
                 </div>
