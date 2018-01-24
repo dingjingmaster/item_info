@@ -34,7 +34,7 @@ function search_init(){
                 ''.
                 '<div id="form_sub_div" class="layui-inline ele_hidden">'.
                     '<label class="layui-form-label">维度细分</label>'.
-                    '<div id="form_sub" class="layui-input-inline">'.
+                    '<div id="form_sub" class="layui-input-block">'.
 
                              //'<select id="form_sub" lay-filter="form_sub" name="sub">'.
                              //   '<option value=""></option>'.
