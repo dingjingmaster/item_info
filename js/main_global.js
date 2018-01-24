@@ -182,7 +182,6 @@ layui.use('form', function(){
         }
         
         search_request_select('exhibit', detail_input(formData));
-        //layer.msg(detail_input(formData));
 
         return false;
     });

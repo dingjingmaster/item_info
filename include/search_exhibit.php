@@ -12,6 +12,8 @@ if(!strcasecmp(INTEST, 'DEBUG')) {
     error_reporting(E_ERROR);                                             // 开启错误报告
 }
 
+define('DB_NAME', 'item_exhibit');
+
 function search_init(){
     $page = '<form class="layui-form" action="">'.
                 '<div class="layui-form-item">'.
@@ -94,6 +96,34 @@ function search_init(){
 
     return $page;
 }
+
+
+
+
+
+function search_select($data){
+
+    $req = json_encode($data);
+    $table = $req['table'];
+    $module = $req['module'];
+    $fee = $req['fee'];
+    $target = $req['target'];
+    $para = $req['para'];
+
+
+    $mainPage = ''. 
+        '<a name="select"></a>'.'<h5>自定义查询</h5>'.'<div id="select_plot" style="width: 900px; height: 600px; margin: 0 auto"> </div>';
+
+    $navPage = ''.
+        '<li class="layui-nav-item"><a href="#select">自定义查询</a></li>';
+
+
+    // 查询并返回
+    $sql = 'SELECT * FROM ' . ' item_exhibit_' . table . ' WHERE ';
+
+}
+
+
 ?>
 
 

@@ -28,7 +28,10 @@ if(!strcasecmp($_GET['type'], 'retent')) {
         require ROOT_PATH . '/include/search_exhibit.php';
         echo search_init();
     } else if ((!strcasecmp($_GET['page'], 'exhibit')) && (count($_GET) == 3)) {
-        echo $_GET['data'];
+        require ROOT_PATH . '/include/search_exhibit.php';
+        _mysql_connect();
+        _mysql_select_db();
+        echo search_select($_GET['data']);
     }
 
 }
