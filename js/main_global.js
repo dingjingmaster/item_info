@@ -71,8 +71,8 @@ layui.use('form', function(){
             document.getElementById('form_submit').style.display="block";
             // 维度细分
             var stu= '' +
-                '<option value="cmpStau">完结</option>' + 
-                '<option value="noCmpStau">连载</option>';
+                '<input type="checkbox" name="cmpStau" title="完结"/>' + 
+                '<input type="checkbox" name="noCmpStau" title="连载"/>';
             document.getElementById('form_sub').innerHTML = stu;
         } else if (data.value == 'vie') {
             // 订阅级别
@@ -83,13 +83,13 @@ layui.use('form', function(){
             document.getElementById('form_submit').style.display="block";
             // 维度细分
             var vie= '' +
-                '<option value="bt0to10Sub">介于0到10</option>' + 
-                '<option value="bt10to1bSub">介于10到100</option>' + 
-                '<option value="bt1bto1kSub">介于100到1000</option>' + 
-                '<option value="bt1kto10kSub">介于1000到10000</option>' + 
-                '<option value="bt10kto100kSub">介于1万到10万</option>' + 
-                '<option value="bt100kto1000kSub">介于10万到100万</option>' + 
-                '<option value="bt1000kto10000kSub">介于100万到1千万</option>';
+                '<input type="checkbox" name="bt0to10Sub" title="介于0到10"/>' + 
+                '<input type="checkbox" name="bt10to1bSub" title="介于10到100"/>' + 
+                '<input type="checkbox" name="bt1bto1kSub" title="介于100到1000"/>' + 
+                '<input type="checkbox" name="bt1kto10kSub" title="介于1000到10000"/>' + 
+                '<input type="checkbox" name="bt10kto100kSub" title="介于1万到10万"/>' + 
+                '<input type="checkbox" name="bt100kto1000kSub" title="介于10万到100万"/>' + 
+                '<input type="checkbox" name="bt1000kto10000kSub" title="介于100万到1千万"/>';
             document.getElementById('form_sub').innerHTML = vie;
         } else if (data.value == 'itim') {
             // 入库时间
@@ -100,10 +100,10 @@ layui.use('form', function(){
             document.getElementById('form_submit').style.display="block";
             // 维度细分
             var itim= '' +
-                '<option value="lesMonIn">1月内入库</option>' + 
-                '<option value="bt1mto3mIn">1~3月内入库</option>' + 
-                '<option value="bt3mto12mIn">3~12月内入库</option>' + 
-                '<option value="bt12mto99mIn">12~99月内入库</option>';
+                '<input type="checkbox" name="lesMonIn" title="1月内入库"/>' + 
+                '<input type="checkbox" name="bt1mto3mIn" title="1~3月内入库"/>' + 
+                '<input type="checkbox" name="bt3mto12mIn" title="3~12月内入库"/>' + 
+                '<input type="checkbox" name="bt12mto99mIn" title="12~99月内入库"/>';
             document.getElementById('form_sub').innerHTML = itim;
         } else if (data.value == 'utim') {
             // 最后更新时间
@@ -114,10 +114,10 @@ layui.use('form', function(){
             document.getElementById('form_submit').style.display="block";
             // 维度细分
             var utim = '' +
-                '<option value="lesMonUpd">0~1月未更新</option>' + 
-                '<option value="bt1mto3mUpd">1~3月未更新</option>' + 
-                '<option value="bt3mto12mUpd">3~12月未更新</option>' + 
-                '<option value="bt12mto99mUpd">12~99月未更新</option>';
+                '<input type="checkbox" name="lesMonUpd" title="0~1月未更新"/>' + 
+                '<input type="checkbox" name="bt1mto3mUpd" title="1~3月未更新"/>' + 
+                '<input type="checkbox" name="bt3mto12mUpd" title="3~12月未更新"/>' + 
+                '<input type="checkbox" name="bt12mto99mUpd" title="12~99月未更新"/>';
             document.getElementById('form_sub').innerHTML = utim;
         } else if (data.value == 'ctg1') {
             // 一级分类
@@ -128,11 +128,11 @@ layui.use('form', function(){
             document.getElementById('form_submit').style.display="block";
             // 维度细分
             var ctg1 = '' +
-                '<option value="boyCfy1">男频</option>' + 
-                '<option value="girlCfy1">女频</option>' + 
-                '<option value="monCfy1">包月</option>' + 
-                '<option value="pshCfy1">出版</option>' + 
-                '<option value="othCfy1">其它</option>';
+                '<input type="checkbox" name="boyCfy1" title="男频"/>' + 
+                '<input type="checkbox" name="girlCfy1" title="女频"/>' + 
+                '<input type="checkbox" name="monCfy1" title="包月"/>' + 
+                '<input type="checkbox" name="pshCfy1" title="出版"/>' + 
+                '<input type="checkbox" name="othCfy1" title="其它"/>';
             document.getElementById('form_sub').innerHTML = ctg1;
         }
         form.render();
