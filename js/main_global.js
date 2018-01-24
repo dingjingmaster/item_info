@@ -72,7 +72,7 @@ layui.use('form', function(){
             // 维度细分
             var stu= '' +
                 '<option value="cmpStau">完结</option>' + 
-                '<option value="noCmpStau">连载</option>' + 
+                '<option value="noCmpStau">连载</option>';
             $("#form_sub").append(stu);
         } else if (data.value == 'vie') {
             // 订阅级别
@@ -89,7 +89,7 @@ layui.use('form', function(){
                 '<option value="bt1kto10kSub">介于1000到10000</option>' + 
                 '<option value="bt10kto100kSub">介于1万到10万</option>' + 
                 '<option value="bt100kto1000kSub">介于10万到100万</option>' + 
-                '<option value="bt1000kto10000kSub">介于100万到1千万</option>' + 
+                '<option value="bt1000kto10000kSub">介于100万到1千万</option>';
             $("#form_sub").append(vie);
         } else if (data.value == 'itim') {
             // 入库时间
@@ -103,7 +103,7 @@ layui.use('form', function(){
                 '<option value="lesMonIn">1月内入库</option>' + 
                 '<option value="bt1mto3mIn">1~3月内入库</option>' + 
                 '<option value="bt3mto12mIn">3~12月内入库</option>' + 
-                '<option value="bt12mto99mIn">12~99月内入库</option>' + 
+                '<option value="bt12mto99mIn">12~99月内入库</option>';
             $("#form_sub").append(itim);
         } else if (data.value == 'utim') {
             // 最后更新时间
@@ -117,7 +117,7 @@ layui.use('form', function(){
                 '<option value="lesMonUpd">0~1月未更新</option>' + 
                 '<option value="bt1mto3mUpd">1~3月未更新</option>' + 
                 '<option value="bt3mto12mUpd">3~12月未更新</option>' + 
-                '<option value="bt12mto99mUpd">12~99月未更新</option>' + 
+                '<option value="bt12mto99mUpd">12~99月未更新</option>';
             $("#form_sub").append(utim);
         } else if (data.value == 'ctg1') {
             // 一级分类
@@ -132,11 +132,9 @@ layui.use('form', function(){
                 '<option value="girlCfy1">女频</option>' + 
                 '<option value="monCfy1">包月</option>' + 
                 '<option value="pshCfy1">出版</option>' + 
-                '<option value="othCfy1">其它</option>' + 
+                '<option value="othCfy1">其它</option>';
             $("#form_sub").append(ctg1);
         }
-        //var test = '<option value="ssss"> ddddd </option>';
-        //$("#form_module").append(test);
         form.render('select');
     });
     
