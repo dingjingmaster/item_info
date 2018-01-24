@@ -15,11 +15,13 @@ layui.use('form', function(){
     var form = layui.form;
     form.on('select(form_dim)', function(data){
         if(data.value == 'sum') {
-            $('div#form_mod_div').hiden();
-            $('div#form_fee_div').hiden();
+            // 发送 ajax 返回按钮
+            document.getElementById('form_mod_div').style.display="none";
+//            $('div#form_mod_div').hiden();
+//            $('div#form_fee_div').hiden();
         }
-        var test = '<option value="ssss"> ddddd </option>';
-        $("#form_module").append(test);
+        //var test = '<option value="ssss"> ddddd </option>';
+        //$("#form_module").append(test);
         form.render('select');
     });
     
