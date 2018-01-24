@@ -29,14 +29,14 @@ layui.use('form', function(){
             // 总体情况
             // 1. 选择要查询的页面 2.选中后出现按钮
             document.getElementById('form_mod_div').style.display="block";
-            document.getElementById('form_target_div').style.display="none";
+            document.getElementById('form_target_div').style.display="block";
             document.getElementById('form_submit').style.display="block";
         } else if (data.value == 'fee') {
             // 付费类别
             // 1. 选择要查询的页面 和 付费类型 2.选中后出现按钮
             document.getElementById('form_mod_div').style.display="block";
             document.getElementById('form_fee_div').style.display="block";
-            document.getElementById('form_target_div').style.display="none";
+            document.getElementById('form_target_div').style.display="block";
             document.getElementById('form_submit').style.display="block";
             // 维度细分
         } else if (data.value == 'stg') {
