@@ -38,7 +38,6 @@ layui.use('form', function(){
             document.getElementById('form_fee_div').style.display="block";
             document.getElementById('form_target_div').style.display="block";
             document.getElementById('form_submit').style.display="block";
-            // 维度细分
         } else if (data.value == 'stg') {
             // 推荐策略
             // 1. 选择要查询的页面 和 付费类型 和 模块细分 2. 选中后出现按钮
@@ -47,6 +46,21 @@ layui.use('form', function(){
             document.getElementById('form_fee_div').style.display="block";
             document.getElementById('form_target_div').style.display="block";
             document.getElementById('form_submit').style.display="block";
+            // 维度细分
+            var stg= '' +
+                '<option value="livStmRec">实时流</option>' + 
+                '<option value="usrKnnRec">用户协同</option>' + 
+                '<option value="codBotRec">冷启动</option>' + 
+                '<option value="popRec">流行度</option>' + 
+                '<option value="itmKnnRec">物品协同</option>' + 
+                '<option value="samCtgRec">同分类</option>' + 
+                '<option value="subMdlRec">订阅模型</option>' + 
+                '<option value="redMdlRec">阅读模型</option>' + 
+                '<option value="cotSimRec">内容相似</option>' + 
+                '<option value="redMdlRec">阅读同分类</option>' + 
+                '<option value="cat1SimCtgRec">一级同分类</option>';
+            $("#form_sub").append(stg);
+
         } else if (data.value == 'stu') {
             // 连载状态
             document.getElementById('form_sub_div').style.display="block";
