@@ -136,7 +136,7 @@ layui.use('form', function(){
                 '<option value="othCfy1">其它</option>';
             $("#form_sub").append(ctg1);
         }
-        form.render('select');
+        form.render();
     });
     
     form.on('submit(form_submit)', function(data){
