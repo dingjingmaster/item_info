@@ -34,7 +34,7 @@ function search_init(){
                 '<div id="form_mod_div" class="layui-form-item ele_hidden">'.
                     '<label class="layui-form-label">页面模块</label>'.
                     '<div class="layui-input-block">'.
-                        '<select id="form_module" lay-filter="form_module" name="module" lay-verify="required">'.
+                        '<select id="form_module" lay-filter="form_module" name="module">'.
                             '<option value=""></option>'.
                         '</select>'.
                     '</div>'.
