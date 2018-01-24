@@ -189,7 +189,7 @@ layui.use('form', function(){
         }
         
         //layer.msg(detail_input(formData));
-        alert(detail_input(formData));
+        //alert(detail_input(formData));
 
         return false;
     });
