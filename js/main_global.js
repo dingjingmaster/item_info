@@ -181,7 +181,8 @@ layui.use('form', function(){
             layer.msg("请您输入查询维度...");
         }
         
-        layer.msg(detail_input(formData));
+        search_request_select('exhibit', detail_input(formData));
+        //layer.msg(detail_input(formData));
 
         return false;
     });
