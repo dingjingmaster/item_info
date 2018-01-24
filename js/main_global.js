@@ -6,7 +6,7 @@
  ************************************************************************/
 
 function detail_input(jsObj) {
-    var table = "";
+    var dim = "";
     var module = Array();
     var fee = Array();
     var target = Array();
@@ -14,7 +14,7 @@ function detail_input(jsObj) {
 
     var res = Object();
 
-    table = jsObj['dim'];
+    dim = jsObj['dim'];
     for(var key in jsObj) {
         if(key == 'dim') {
             continue;
@@ -29,7 +29,7 @@ function detail_input(jsObj) {
         }
     }
 
-    res.table = table;
+    res.tab = dim;
     res.module = module;
     res.fee = fee;
     res.para = para;
