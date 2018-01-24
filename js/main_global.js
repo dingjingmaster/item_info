@@ -20,7 +20,8 @@ layui.use('form', function(){
         } else if (data.value == 'fee') {
 
             // 可以提交
-            document.getElementById('form_submit').style.display="block";
+            document.getElementById('form_submit').style.display="none";
+            document.getElementById('form_fee_div').style.display="block";
             // 维度细分
         }
         //var test = '<option value="ssss"> ddddd </option>';

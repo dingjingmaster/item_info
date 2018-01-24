@@ -40,17 +40,6 @@ function search_init(){
                     '</div>'.
                 '</div>'.
                 ''.
-                '<div id="form_fee_div" class="layui-form-item ele_hidden">'.
-                    '<label class="layui-form-label">付费类型</label>'.
-                    '<div class="layui-input-block">'.
-                        '<input type="checkbox" name="freFee" title="免费">'.
-                        '<input type="checkbox" name="chgFee" title="付费">'.
-                        '<input type="checkbox" name="monFee" title="包月">'.
-                        '<input type="checkbox" name="pubFee" title="公版">'.
-                        '<input type="checkbox" name="tfFee" title="限免">'.
-                    '</div>'.
-                '</div>'.
-                ''.
                 '<div id="form_mod_div" class="layui-form-item ele_hidden">'.
                     '<label class="layui-form-label">查询模块</label>'.
                     '<div class="layui-input-block">'.
@@ -74,14 +63,27 @@ function search_init(){
                     '</div>'.
                 '</div>'.
                 ''.
+                '<div id="form_fee_div" class="layui-form-item ele_hidden">'.
+                    '<label class="layui-form-label">付费类型</label>'.
+                    '<div class="layui-input-block">'.
+                        '<input type="checkbox" name="freFee" title="免费">'.
+                        '<input type="checkbox" name="chgFee" title="付费">'.
+                        '<input type="checkbox" name="monFee" title="包月">'.
+                        '<input type="checkbox" name="pubFee" title="公版">'.
+                        '<input type="checkbox" name="tfFee" title="限免">'.
+                    '</div>'.
+                '</div>'.
+                ''.
                 '<div id="form_target_div" class="layui-form-item ele_hidden">'.
                     '<label class="layui-form-label">查询指标</label>'.
                     '<div class="layui-input-block">'.
-                        '<input type="checkbox" name="" title="">'.
-                        '<input type="checkbox" name="" title="">'.
-                        '<input type="checkbox" name="" title="">'.
-                        '<input type="checkbox" name="" title="">'.
-                        '<input type="checkbox" name="" title="">'.
+                        '<input type="checkbox" name="clkDsp" title="点展比">'.
+                        '<input type="checkbox" name="srbClk" title="订点比">'.
+                        '<input type="checkbox" name="srbDsp" title="订展比">'.
+                        '<input type="checkbox" name="redSrb" title="阅订比">'.
+                        '<input type="checkbox" name="redDsp" title="阅展比">'.
+                        '<input type="checkbox" name="retent" title="留存率">'.
+                        '<input type="checkbox" name="rteDsp" title="留展比">'.
                     '</div>'.
                 '</div>'.
                 ''.
