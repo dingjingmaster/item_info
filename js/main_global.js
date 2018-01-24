@@ -31,9 +31,9 @@ function detail_input(jsObj) {
 
     res.dim = table;
     res.module = module;
-    //res['fee'] = fee;
-    //res['para'] = para;
-    //res['target'] = target;
+    res.fee = fee;
+    res.para = para;
+    res.target = target;
 
     return JSON.stringify(res);
 }
@@ -181,9 +181,7 @@ layui.use('form', function(){
             layer.msg("请您输入查询维度...");
         }
         
-        document.getElementById('main_div').innerHTML = detail_input(formData);
-        //layer.msg(detail_input(formData));
-        //alert(detail_input(formData));
+        layer.msg(detail_input(formData));
 
         return false;
     });
