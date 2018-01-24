@@ -8,7 +8,7 @@ if(!strcasecmp(INTEST, 'DEBUG')) {
 
 require ROOT_PATH . '/include/plot_function.php';
 
-//define('SLIDE_PAGE', '');
+define('SLIDE_PAGE', '');
 define('DB_NAME', 'item_exhibit');
 define('SHOWDAYS', 7);
 
