@@ -6,9 +6,9 @@ if(!strcasecmp(INTEST, 'DEBUG')) {
     error_reporting(E_ERROR);                                             // 开启错误报告
 }
 
-require ROOT_PATH . '/include/plot_function.php';
+require ROOT_PATH . '/include/plot_func.php';
 
-define('SLIDE_PAGE', '');
+//define('SLIDE_PAGE', '');
 define('DB_NAME', 'item_exhibit');
 define('SHOWDAYS', 7);
 
