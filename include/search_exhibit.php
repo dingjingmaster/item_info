@@ -14,7 +14,30 @@ if(!strcasecmp(INTEST, 'DEBUG')) {
 
 function search_init(){
     $page = '<form class="layui-form" action="">'.
-                '<div class="layui-form-item">'.
+                '<div id="form_mod_div" class="layui-form-item">'.
+                    '<label class="layui-form-label">查询模块</label>'.
+                    '<div class="layui-input-block">'.
+                        '<input type="checkbox" name="shfRecMdl" title="书架推荐">'.
+                        '<input type="checkbox" name="monStmMdl" title="包月瀑布流">'.
+                        '<input type="checkbox" name="redRecMdl" title="根据阅读推荐">'.
+                        '<input type="checkbox" name="extRecMdl" title="退出拦截推荐">'.
+                        '<input type="checkbox" name="freGusMdl" title="免费-猜你喜欢">'.
+                        '<input type="checkbox" name="freMonRecMdl" title="免费-包月推荐">'.
+                        '<input type="checkbox" name="shfGusMdl" title="书架-猜你喜欢">'.
+                        '<input type="checkbox" name="chsStmMdl" title="精选-瀑布流">'.
+                        '<input type="checkbox" name="chsBoyStmMdl" title="精选-男频瀑布流">'.
+                        '<input type="checkbox" name="chsGilStmMdl" title="精选-女频瀑布流">'.
+                        '<input type="checkbox" name="chsRakStmMdl" title="精选-排行瀑布流">'.
+                        '<input type="checkbox" name="chsFinStmMdl" title="精选-完结瀑布流">'.
+                        '<input type="checkbox" name="foeCtgMdl" title="封面页-类别推荐">'.
+                        '<input type="checkbox" name="foeAutMdl" title="封面页-作者推荐">'.
+                        '<input type="checkbox" name="foeArdMdl" title="封面页-读本书的人还看过">'.
+                        '<input type="checkbox" name="foeArdMorMdl" title="封面页-读本书的人还看过更多">'.
+                        '<input type="checkbox" name="bakArdMdl" title="章末页-读本书的人还看过">'.
+                    '</div>'.
+                '</div>'.
+                ''.
+                '<div class="layui-form-item ele_hidden">'.
                     '<label class="layui-form-label">查询维度</label>'.
                     '<div class="layui-input-block">'.
                         '<select id="form_dim" lay-filter="form_dim" name="dim">'.
@@ -40,28 +63,6 @@ function search_init(){
                     '</div>'.
                 '</div>'.
                 ''.
-                '<div id="form_mod_div" class="layui-form-item ele_hidden">'.
-                    '<label class="layui-form-label">查询模块</label>'.
-                    '<div class="layui-input-block">'.
-                        '<input type="checkbox" name="shfRecMdl" title="书架推荐">'.
-                        '<input type="checkbox" name="monStmMdl" title="包月瀑布流">'.
-                        '<input type="checkbox" name="redRecMdl" title="根据阅读推荐">'.
-                        '<input type="checkbox" name="extRecMdl" title="退出拦截推荐">'.
-                        '<input type="checkbox" name="freGusMdl" title="免费-猜你喜欢">'.
-                        '<input type="checkbox" name="freMonRecMdl" title="免费-包月推荐">'.
-                        '<input type="checkbox" name="shfGusMdl" title="书架-猜你喜欢">'.
-                        '<input type="checkbox" name="chsStmMdl" title="精选-瀑布流">'.
-                        '<input type="checkbox" name="chsBoyStmMdl" title="精选-男频瀑布流">'.
-                        '<input type="checkbox" name="chsGilStmMdl" title="精选-女频瀑布流">'.
-                        '<input type="checkbox" name="chsRakStmMdl" title="精选-排行瀑布流">'.
-                        '<input type="checkbox" name="chsFinStmMdl" title="精选-完结瀑布流">'.
-                        '<input type="checkbox" name="foeCtgMdl" title="封面页-类别推荐">'.
-                        '<input type="checkbox" name="foeAutMdl" title="封面页-作者推荐">'.
-                        '<input type="checkbox" name="foeArdMdl" title="封面页-读本书的人还看过">'.
-                        '<input type="checkbox" name="foeArdMorMdl" title="封面页-读本书的人还看过更多">'.
-                        '<input type="checkbox" name="bakArdMdl" title="章末页-读本书的人还看过">'.
-                    '</div>'.
-                '</div>'.
                 ''.
                 '<div id="form_fee_div" class="layui-form-item ele_hidden">'.
                     '<label class="layui-form-label">付费类型</label>'.

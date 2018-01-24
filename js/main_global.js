@@ -14,15 +14,32 @@ layui.use('element', function(){
 layui.use('form', function(){
     var form = layui.form;
     form.on('select(form_dim)', function(data){
+        // 初始化
+        //
         if(data.value == 'sum') {
-            // 展示
-            document.getElementById('form_submit').style.display="block";
+            // 总体情况
+            // 1. 选择要查询的页面 2.选中后出现按钮
+            document.getElementById('form_mod_div').style.display="block";
         } else if (data.value == 'fee') {
-
-            // 可以提交
+            // 付费类别
+            // 1. 选择要查询的页面 和 付费类型 2.选中后出现按钮
             document.getElementById('form_submit').style.display="none";
+            document.getElementById('form_mod_div').style.display="block";
             document.getElementById('form_fee_div').style.display="block";
             // 维度细分
+        } else if (data.value == 'stg') {
+            // 推荐策略
+            // 1. 选择要查询的页面 和 付费类型 和 模块细分 2. 选中后出现按钮
+        } else if (data.value == 'stu') {
+            // 连载状态
+        } else if (data.value == 'vie') {
+            // 订阅级别
+        } else if (data.value == 'itim') {
+            // 入库时间
+        } else if (data.value == 'utim') {
+            // 最后更新时间
+        } else if (data.value == 'vtg1') {
+            // 一级分类
         }
         //var test = '<option value="ssss"> ddddd </option>';
         //$("#form_module").append(test);
