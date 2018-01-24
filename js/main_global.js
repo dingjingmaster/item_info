@@ -50,17 +50,17 @@ layui.use('form', function(){
             document.getElementById('form_submit').style.display="block";
             // 维度细分
             var stg= '' +
-                '<option value="livStmRec">实时流</option>' + 
-                '<option value="usrKnnRec">用户协同</option>' + 
-                '<option value="codBotRec">冷启动</option>' + 
-                '<option value="popRec">流行度</option>' + 
-                '<option value="itmKnnRec">物品协同</option>' + 
-                '<option value="samCtgRec">同分类</option>' + 
-                '<option value="subMdlRec">订阅模型</option>' + 
-                '<option value="redMdlRec">阅读模型</option>' + 
-                '<option value="cotSimRec">内容相似</option>' + 
-                '<option value="redMdlRec">阅读同分类</option>' + 
-                '<option value="cat1SimCtgRec">一级同分类</option>';
+                '<input type="checkbox" name="livStmRec" title="实时流"/>' + 
+                '<input type="checkbox" name="usrKnnRec" title="用户协同"/>' + 
+                '<input type="checkbox" name="codBotRec" title="冷启动"/>' + 
+                '<input type="checkbox" name="popRec" title="流行度"/>' + 
+                '<input type="checkbox" name="itmKnnRec" title="物品协同"/>' + 
+                '<input type="checkbox" name="samCtgRec" title="同分类"/>' + 
+                '<input type="checkbox" name="subMdlRec" title="订阅模型"/>' + 
+                '<input type="checkbox" name="redMdlRec" title="阅读模型"/>' + 
+                '<input type="checkbox" name="cotSimRec" title="内容相似"/>' + 
+                '<input type="checkbox" name="redMdlRec" title="阅读同分类"/>' + 
+                '<input type="checkbox" name="cat1SimCtgRec" title="一级同分类"/>';
             $("#form_sub").append(stg);
         } else if (data.value == 'stu') {
             // 连载状态
@@ -138,7 +138,8 @@ layui.use('form', function(){
         form.render('select');
     });
     
-    form.on('submit(formDemo)', function(data){
+    form.on('submit(form_submit)', function(data){
+        // 检查数据是否有错
         layer.msg(JSON.stringify(data.field));
         return false;
     });

@@ -35,10 +35,12 @@ function search_init(){
                     ''.
                     '<div id="form_sub_div" class="layui-inline ele_hidden">'.
                         '<label class="layui-form-label">维度细分</label>'.
-                        '<div class="layui-input-inline">'.
-                             '<select id="form_sub" lay-filter="form_sub" name="sub">'.
-                                '<option value=""></option>'.
-                             '</select>'.
+                        '<div id="form_sub" class="layui-input-inline">'.
+
+                             //'<select id="form_sub" lay-filter="form_sub" name="sub">'.
+                             //   '<option value=""></option>'.
+                             //'</select>'.
+
                         '</div>'.
                     '</div>'.
                 '</div>'.
@@ -92,8 +94,8 @@ function search_init(){
                 ''.
                 '<div id="form_submit" class="layui-form-item ele_hidden">'.
                     '<div class="layui-input-block">'.
-                        '<button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>'.
-                        '<button id="form_reset" type="reset" class="layui-btn layui-btn-primary">重置</button>'.
+                        '<button class="layui-btn" lay-submit lay-filter="form_submit">立即提交</button>'.
+                        '<button id="form_reset" type="reset" class="layui-btn layui-btn-primary" lay-filter="form_reset">重置</button>'.
                     '</div>'.
                 '</div>'.
             '</form>';
