@@ -40,7 +40,7 @@ function search_init(){
                     '</div>'.
                 '</div>'.
                 ''.
-                '<div id="form_fee_div" class="layui-form-item">'.
+                '<div id="form_fee_div" class="layui-form-item ele_hidden">'.
                     '<label class="layui-form-label">付费类型</label>'.
                     '<div class="layui-input-block">'.
                         '<input type="checkbox" name="freFee" title="免费">'.
@@ -51,7 +51,7 @@ function search_init(){
                     '</div>'.
                 '</div>'.
                 ''.
-                '<div class="layui-form-item">'.
+                '<div id="form_submit" class="layui-form-item ele_hidden">'.
                     '<div class="layui-input-block">'.
                         '<button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>'.
                         '<button id="form_reset" type="reset" class="layui-btn layui-btn-primary">重置</button>'.

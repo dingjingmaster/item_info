@@ -15,8 +15,8 @@ layui.use('form', function(){
     var form = layui.form;
     form.on('select(form_dim)', function(data){
         if(data.value == 'sum') {
-            // 发送 ajax 返回按钮
-            document.getElementById('form_mod_div').style.display="none";
+
+            document.getElementById('form_submit').style.display="block";
 //            $('div#form_mod_div').hiden();
 //            $('div#form_fee_div').hiden();
         }
