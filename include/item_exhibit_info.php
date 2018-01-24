@@ -7,6 +7,7 @@ if(!strcasecmp(INTEST, 'DEBUG')) {
 }
 
 require ROOT_PATH . '/include/plot_func.php';
+require ROOT_PATH . '/include/parse_string.php';
 
 //define('SLIDE_PAGE', '');
 define('DB_NAME', 'item_exhibit');
@@ -79,7 +80,7 @@ function get_item_exhibit($cate) {
     array_push($resArr, json_encode($arr));
 
     $res = array();
-    $res['title'] = parse_to_chinese(RETENT);
+    $res['title'] = exhibit_parse_to_chinese(RETENT);
     $res['mainPage'] = $mainPage;
     $res['navPage'] = $navPage;
     $res['json'] = json_encode($resArr);
@@ -88,98 +89,18 @@ function get_item_exhibit($cate) {
 }
 
 
-// 解析字符
-function parse_to_chinese($mstr) {
-    if(strlen($mstr) <= 1) {
-        return $mstr;
-    }
-
-    $chArray = array (
-        'clkDsp' => '点展比 ',
-        'srbClk' => '订点比 ',
-        'srbDsp' => '订展比 ',
-        'redSrb' => '阅订比 ',
-        'redDsp' => '阅展比',
-        'retent' => '留存率',
-        'rteDsp' => '留展比 ',
-        'shfRecMdl' => '书架推荐',
-        'freGusMdl' => '免费-猜你喜欢',
-        'bakArdMdl' => '章末页-读本书的人还看过',
-        'foeArdMdl' => '封面页-读本书的人还看过',
-        'shfGusMdl' => '书架-猜你喜欢',
-        'chsStmMdl' => '精选-瀑布流',
-        'foeArdMorMdl' => '封面页-读本书的人还看过更多',
-        'monStmMdl' => '包月瀑布流',
-        'foeCtgMdl' => '封面页-类别推荐',
-        'foeAutMdl' => '封面页-作者推荐',
-        'chsFinStmMdl' => '精选-完结瀑布流',
-        'chsGilStmMdl' => '精选-女频瀑布流',
-        'freMonRecMdl' => '免费-包月推荐',
-        'chsBoyStmMdl' => '精选-男频瀑布流',
-        'chsRakStmMdl' => '精选-排行瀑布流',
-        'redRecMdl' => '根据阅读推荐',
-        'extRecMdl' => '退出拦截推荐',
-        'chgFee' => '付费',
-        'freFee' => '免费',
-        'monFee' => '包月',
-        'pubFee' => '公版',
-        'tfFee' => '限免',
-        'livStmRec' => '实时流',
-        'usrKnnRec' => '用户协同',
-        'codBotRec' => '冷启动',
-        'popRec' => '流行度',
-        'itmKnnRec' => '物品协同',
-        'samCtgRec' => '同分类',
-        'subMdlRec' => '订阅模型',
-        'redMdlRec' => '阅读模型',
-        'cotSimRec' => '内容相似',
-        'redSimRec' => '阅读同分类',
-        'cat1SimCtgRec' => '一级同分类',
-        'cmpStau' => '完结',
-        'noCmpStau' => '连载',
-        'bt0to10Sub' => '[0,10)',
-        'bt10to1bSub' => '[10,100)',
-        'bt1bto1kSub' => '[100,1000)',
-        'bt1kto10kSub' => '[1000,10000)',
-        'bt10kto100kSub' => '[10000,100000)',
-        'bt100kto1000kSub' => '[100000,1000000)',
-        'bt1000kto10000kSub' => '[1000000,10000000)',
-        'lesMonIn' => '1月内入库',
-        'bt1mto3mIn' => '1~3月内入库',
-        'bt3mto12mIn' => '3~12月内入库',
-        'bt12mto99mIn' => '12~99月内入库',
-        'lesMonUpd' => '0~1月未更新',
-        'bt1mto3mUpd' => '1~3月未更新',
-        'bt3mto12mUpd' => '3~12月未更新',
-        'bt12mto99mUdp' => '12~99月未更新',
-        'boyCfy1' => '男频',
-        'girlCfy1' => '女频',
-        'monCfy1' => '包月',
-        'pshCfy1' => '出版',
-        'othCfy1' => '其他',
-    );
-    
-    if(in_array($mstr, array_keys($chArray))) {
-        return $chArray[$mstr];
-    }
-
-    return $mstr;
-}
-
-
-
 // 主键切割 - 获取字段信息
 function prekey_split($mstr) {
 
     $arr = explode('-', $mstr);
     if(count($arr) == 2) {
-        return parse_to_chinese($arr[0]);
+        return exhibit_parse_to_chinese($arr[0]);
     } else if (count($arr) == 3) {
-        return parse_to_chinese($arr[0]) . '-' . parse_to_chinese($arr[1]);
+        return exhibit_parse_to_chinese($arr[0]) . '-' . exhibit_parse_to_chinese($arr[1]);
     } else if (count($arr) == 4) {
-        return parse_to_chinese($arr[0]) . '-' . parse_to_chinese($arr[1]) . '-' . parse_to_chinese($arr[2]);
+        return exhibit_parse_to_chinese($arr[0]) . '-' . exhibit_parse_to_chinese($arr[1]) . '-' . exhibit_parse_to_chinese($arr[2]);
     } else if (count($arr) == 5) {
-        return parse_to_chinese($arr[0]) . '-' . parse_to_chinese($arr[1]) . '-' . parse_to_chinese($arr[2]) . '-' . parse_to_chinese($arr[3]);
+        return exhibit_parse_to_chinese($arr[0]) . '-' . exhibit_parse_to_chinese($arr[1]) . '-' . exhibit_parse_to_chinese($arr[2]) . '-' . exhibit_parse_to_chinese($arr[3]);
     }
 
     return 'unknow' . '-' . $mstr . '-' . 'error';
@@ -200,7 +121,7 @@ function get_chart_json($which, $div) {
 
     // 最终变量
     $title = "";
-    $yTitle = parse_to_chinese(RETENT) . " (100%)";
+    $yTitle = exhibit_parse_to_chinese(RETENT) . " (100%)";
     $xData ;
     $yData = array();
     $allTime = array();

@@ -11,6 +11,7 @@ if(!defined('IN_TEST')) {
 if(!strcasecmp(INTEST, 'DEBUG')) {
     error_reporting(E_ERROR);                                             // 开启错误报告
 }
+require ROOT_PATH . '/include/parse_string.php';
 
 define('DB_NAME', 'item_exhibit');
 
@@ -98,17 +99,28 @@ function search_init(){
 }
 
 
-
-
+function get_table_field($table) {
+    $field = Array(
+        'item_exhibit_strategy' => 'strategyCate',
+        'item_exhibit_status' => 'statusCate',
+        'item_exhibit_view' => 'viewCate',
+        'item_exhibit_intime' => 'intimeCate',
+        'item_exhibit_update' => 'updateCate',
+        'item_exhibit_classify1' => 'classify1Cate'
+    );
+}
 
 function search_select($data){
 
     $req = json_encode($data);
-    $table = $req['table'];
+    $table = 'item_exhibit_' . $req['table'];
     $module = $req['module'];
     $fee = $req['fee'];
     $target = $req['target'];
     $para = $req['para'];
+
+    // 最后输出的变量
+    $xData = array();
 
 
     $mainPage = ''. 
@@ -119,7 +131,36 @@ function search_select($data){
 
 
     // 查询并返回
-    $sql = 'SELECT * FROM ' . ' item_exhibit_' . table . ' WHERE ';
+    $sql = 'SELECT * FROM ' . $table . ' WHERE ';
+    foreach($module as $i) { // 字段
+        foreach($fee as $j) { // feeCate
+            foreach($target as $k) { //直接字段
+                $msql = $sql . ' typeCate=' . exhibit_flag_to_number($i) . ' AND ' . ' feeCate=' . exhibit_flag_to_number($j);
+                $result = _mysql_query($msql);
+                $xArray = array();
+                $yArray = array();
+                $cate = '';
+                while($row = _mysql_fetch_array($result)) {
+                    $cate = ''; //解析
+                    array_push($xArray, $row['timeStamp']);
+                    array_push($yArray, $row[$k]);
+                }
+
+                // 生成 x
+                $xData1 = $xData;
+                $xData = generate_x($xArray);
+                if($xData == '') {
+                    $xData = $xData1;
+                }
+
+                // 生成 y
+                $ret = generate_series($cate, $yArray);
+                if($ret) {
+                    array_push($yData, $ret);
+                }
+            }
+        }
+    }
 
 }
 
