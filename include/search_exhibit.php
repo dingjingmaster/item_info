@@ -14,9 +14,9 @@ if(!strcasecmp(INTEST, 'DEBUG')) {
 
 function search_init(){
     $page = '<form class="layui-form" action="">'.
-                    '<div class="layui-form-item ele_hidden">'.
+                '<div class="layui-form-item">'.
                     '<label class="layui-form-label">查询维度</label>'.
-                    '<div class="layui-input-block">'.
+                    '<div class="layui-input-inline">'.
                         '<select id="form_dim" lay-filter="form_dim" name="dim">'.
                             '<option value=""></option>'.
                             '<option value="sum">总计</option>'.
