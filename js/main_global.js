@@ -142,6 +142,7 @@ layui.use('form', function(){
         // 检查数据是否有错
         for(var key in data.field) {
             layer.msg(key);
+            sleep(1000);
         }
         return false;
     });
