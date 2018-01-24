@@ -35,7 +35,7 @@ function detail_input(jsObj) {
     res['para'] = para;
     res['target'] = target;
 
-    return JSON.stringify(res);
+    return; // JSON.stringify(res);
 }
 
 
