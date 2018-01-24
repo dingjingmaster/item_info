@@ -35,6 +35,7 @@ function detail_input(jsObj) {
     res['fee'] = fee;
     res['para'] = para;
     res['target'] = target;
+    alert(JSON.stringify(res));
 
     return JSON.stringify(res);
 }
