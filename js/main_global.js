@@ -28,21 +28,14 @@ function detail_input(jsObj) {
             para.push(key);
         }
     }
-    alert("ok");
-    alert(table);
-    alert(module);
-    alert(fee);
-    alert(target);
-    alert(para);
 
     res['dim'] = table;
     res['module'] = module;
     res['fee'] = fee;
     res['para'] = para;
     res['target'] = target;
-    //alert(JSON.stringify(res));
 
-    //return JSON.stringify(res);
+    return JSON.stringify(res);
 }
 
 
@@ -188,7 +181,7 @@ layui.use('form', function(){
             layer.msg("请您输入查询维度...");
         }
         
-        detail_input(formData);
+        document.getElementById('main_div').innerHTML = detail_input(formData);
         //layer.msg(detail_input(formData));
         //alert(detail_input(formData));
 
