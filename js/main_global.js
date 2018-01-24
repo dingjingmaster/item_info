@@ -29,13 +29,13 @@ function detail_input(jsObj) {
         }
     }
 
-    //res['dim'] = table;
+    res['dim'] = table;
     //res['module'] = module;
     //res['fee'] = fee;
     //res['para'] = para;
     //res['target'] = target;
 
-    return; // JSON.stringify(res);
+    return JSON.stringify(res);
 }
 
 
