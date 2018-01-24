@@ -15,10 +15,13 @@ layui.use('form', function(){
     var form = layui.form;
     form.on('select(form_dim)', function(data){
         if(data.value == 'sum') {
-
+            // 展示
             document.getElementById('form_submit').style.display="block";
-//            $('div#form_mod_div').hiden();
-//            $('div#form_fee_div').hiden();
+        } else if (data.value == 'fee') {
+
+            // 可以提交
+            document.getElementById('form_submit').style.display="block";
+            // 维度细分
         }
         //var test = '<option value="ssss"> ddddd </option>';
         //$("#form_module").append(test);
