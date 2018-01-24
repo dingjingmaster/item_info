@@ -40,7 +40,7 @@ function search_init(){
                     '</div>'.
                 '</div>'.
                 ''.
-                 '<div id="form_mod_div" class="layui-form-item">'.
+                 '<div id="form_mod_div" class="layui-form-item ele_hidden">'.
                     '<label class="layui-form-label">查询模块</label>'.
                     '<div class="layui-input-block">'.
                         '<input type="checkbox" name="shfRecMdl" title="书架推荐"/>'.
