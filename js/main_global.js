@@ -61,7 +61,8 @@ layui.use('form', function(){
                 '<input type="checkbox" name="cotSimRec" title="内容相似"/>' + 
                 '<input type="checkbox" name="redMdlRec" title="阅读同分类"/>' + 
                 '<input type="checkbox" name="cat1SimCtgRec" title="一级同分类"/>';
-            document.getElementById('form_sub').innerHTML = "sssssssssss";
+
+            document.getElementById('form_sub').innerHTML = '<input type="checkbox" name="liveStmRec" title="实时流">';
         } else if (data.value == 'stu') {
             // 连载状态
             document.getElementById('form_sub_div').style.display="block";
