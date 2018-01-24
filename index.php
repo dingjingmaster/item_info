@@ -14,6 +14,7 @@ require dirname(__FILE__) . '/include/common_action.php';
         <title>宜搜物品信息展示平台</title>
         <script type="text/javascript" src="js/main_request.js"></script>
         <script type="text/javascript" src="js/main_search.js"></script>
+        <script type="text/javascript" src="js/main_global.js"></script>
         <script>
             $(document).ready(function() {
             })
@@ -75,24 +76,6 @@ require dirname(__FILE__) . '/include/common_action.php';
             <div class="layui-footer"> @  宜搜小说 </div>
         </div>
     <script>
-        layui.use('element', function(){
-            var element = layui.element;
-        });
-
-        layui.use('form', function(){
-            var form = layui.form;
-            form.on('select(form_dim)', function(data){
-                var test = '<option value="ssss"> ddddd </option>';
-                $("#form_module").append(test);
-                form.render('select');
-            
-            });
-
-            form.on('submit(formDemo)', function(data){
-                layer.msg(JSON.stringify(data.field));
-                return false;
-            });
-        });
 
     </script>
 
