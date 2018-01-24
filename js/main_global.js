@@ -12,7 +12,7 @@ function detail_input(jsObj) {
     var target = Array();
     var para = Array();                 // 细分的模块
 
-    var res;
+    var res = Object();
 
     table = jsObj['dim'];
     for(var key in jsObj) {
@@ -29,8 +29,8 @@ function detail_input(jsObj) {
         }
     }
 
-    res['dim'] = table;
-    //res['module'] = module;
+    res.dim = table;
+    res.module = module;
     //res['fee'] = fee;
     //res['para'] = para;
     //res['target'] = target;
