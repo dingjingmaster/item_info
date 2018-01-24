@@ -15,8 +15,8 @@ layui.use('form', function(){
     var form = layui.form;
     form.on('select(form_dim)', function(data){
         if(data.value == 'sum') {
-            $("form_mod_div").hiden();
-            $("form_fee_div").hiden();
+            $("#form_mod_div").hiden();
+            $("#form_fee_div").hiden();
         }
         var test = '<option value="ssss"> ddddd </option>';
         $("#form_module").append(test);
