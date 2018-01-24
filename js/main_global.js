@@ -29,6 +29,11 @@ function detail_input(jsObj) {
         }
     }
     alert("ok");
+    alert(table);
+    alert(module);
+    alert(fee);
+    alert(target);
+    alert(para);
 
     res['dim'] = table;
     res['module'] = module;
