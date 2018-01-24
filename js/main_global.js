@@ -73,7 +73,7 @@ layui.use('form', function(){
             var stu= '' +
                 '<option value="cmpStau">完结</option>' + 
                 '<option value="noCmpStau">连载</option>';
-            $("#form_sub").append(stu);
+            $("div#form_sub").append(stu);
         } else if (data.value == 'vie') {
             // 订阅级别
             document.getElementById('form_sub_div').style.display="block";

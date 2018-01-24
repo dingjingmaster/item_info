@@ -16,32 +16,30 @@ function search_init(){
     $page = '<form class="layui-form" action="">'.
 
                 '<div class="layui-form-item">'.
-                    '<div class="layui-inline">'.
-                        '<label class="layui-form-label">查询维度</label>'.
-                        '<div class="layui-input-inline">'.
-                            '<select id="form_dim" lay-filter="form_dim" name="dim">'.
-                                '<option value=""></option>'.
-                                '<option value="sum">总计</option>'.
-                                '<option value="fee">付费类型</option>'.
-                                '<option value="stg">推荐策略</option>'.
-                                '<option value="stu">连载状态</option>'.
-                                '<option value="vie">订阅级别</option>'.
-                                '<option value="itim">入库时间</option>'.
-                                '<option value="utim">更新时间</option>'.
-                                '<option value="ctg1">一级分类</option>'.
-                            '</select>'.
-                        '</div>'.
+                    '<label class="layui-form-label">查询维度</label>'.
+                    '<div class="layui-input-inline">'.
+                        '<select id="form_dim" lay-filter="form_dim" name="dim">'.
+                            '<option value=""></option>'.
+                            '<option value="sum">总计</option>'.
+                            '<option value="fee">付费类型</option>'.
+                            '<option value="stg">推荐策略</option>'.
+                            '<option value="stu">连载状态</option>'.
+                            '<option value="vie">订阅级别</option>'.
+                            '<option value="itim">入库时间</option>'.
+                            '<option value="utim">更新时间</option>'.
+                            '<option value="ctg1">一级分类</option>'.
+                        '</select>'.
                     '</div>'.
-                    ''.
-                    '<div id="form_sub_div" class="layui-inline ele_hidden">'.
-                        '<label class="layui-form-label">维度细分</label>'.
-                        '<div id="form_sub" class="layui-input-inline">'.
+                '</div>'.
+                ''.
+                '<div id="form_sub_div" class="layui-inline ele_hidden">'.
+                    '<label class="layui-form-label">维度细分</label>'.
+                    '<div id="form_sub" class="layui-input-inline">'.
 
                              //'<select id="form_sub" lay-filter="form_sub" name="sub">'.
                              //   '<option value=""></option>'.
                              //'</select>'.
 
-                        '</div>'.
                     '</div>'.
                 '</div>'.
                 ''.
