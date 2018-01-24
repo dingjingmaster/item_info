@@ -34,14 +34,12 @@ function search_init(){
                     '</div>'.
                     ''.
                     '<div id="form_sub_div" class="layui-inline ele_hidden">'.
-                        '<div class="layui-form-inline">'.
                             '<label class="layui-form-label">维度细分</label>'.
                             '<div class="layui-input-inline">'.
                                 '<select id="form_sub" lay-filter="form_module" name="module">'.
                                     '<option value=""></option>'.
                                 '</select>'.
                             '</div>'.
-                        '</div>'.
                     '</div>'.
                 '</div>'.
                 ''.
