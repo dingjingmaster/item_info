@@ -32,17 +32,6 @@ function search_init(){
                     '</div>'.
                 '</div>'.
                 ''.
-                '<div id="form_sub_div" class="layui-inline ele_hidden">'.
-                    '<label class="layui-form-label">维度细分</label>'.
-                    '<div id="form_sub" class="layui-input-block">'.
-
-                             //'<select id="form_sub" lay-filter="form_sub" name="sub">'.
-                             //   '<option value=""></option>'.
-                             //'</select>'.
-
-                    '</div>'.
-                '</div>'.
-                ''.
                 '<div id="form_mod_div" class="layui-form-item ele_hidden">'.
                     '<label class="layui-form-label">查询模块</label>'.
                     '<div class="layui-input-block">'.
@@ -74,6 +63,12 @@ function search_init(){
                         '<input type="checkbox" name="monFee" title="包月">'.
                         '<input type="checkbox" name="pubFee" title="公版">'.
                         '<input type="checkbox" name="tfFee" title="限免">'.
+                    '</div>'.
+                '</div>'.
+                ''.
+                '<div id="form_sub_div" class="layui-inline ele_hidden">'.
+                    '<label class="layui-form-label">维度细分</label>'.
+                    '<div id="form_sub" class="layui-input-block">'.
                     '</div>'.
                 '</div>'.
                 ''.

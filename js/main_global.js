@@ -61,8 +61,7 @@ layui.use('form', function(){
                 '<input type="checkbox" name="cotSimRec" title="内容相似"/>' + 
                 '<input type="checkbox" name="redMdlRec" title="阅读同分类"/>' + 
                 '<input type="checkbox" name="cat1SimCtgRec" title="一级同分类"/>';
-
-            document.getElementById('form_sub').innerHTML = '<input type="checkbox" name="liveStmRec" title="实时流">';
+            document.getElementById('form_sub').innerHTML = stg;
         } else if (data.value == 'stu') {
             // 连载状态
             document.getElementById('form_sub_div').style.display="block";
@@ -74,7 +73,7 @@ layui.use('form', function(){
             var stu= '' +
                 '<option value="cmpStau">完结</option>' + 
                 '<option value="noCmpStau">连载</option>';
-            $("div#form_sub").append(stu);
+            document.getElementById('form_sub').innerHTML = stu;
         } else if (data.value == 'vie') {
             // 订阅级别
             document.getElementById('form_sub_div').style.display="block";
@@ -91,7 +90,7 @@ layui.use('form', function(){
                 '<option value="bt10kto100kSub">介于1万到10万</option>' + 
                 '<option value="bt100kto1000kSub">介于10万到100万</option>' + 
                 '<option value="bt1000kto10000kSub">介于100万到1千万</option>';
-            $("#form_sub").append(vie);
+            document.getElementById('form_sub').innerHTML = vie;
         } else if (data.value == 'itim') {
             // 入库时间
             document.getElementById('form_sub_div').style.display="block";
@@ -105,7 +104,7 @@ layui.use('form', function(){
                 '<option value="bt1mto3mIn">1~3月内入库</option>' + 
                 '<option value="bt3mto12mIn">3~12月内入库</option>' + 
                 '<option value="bt12mto99mIn">12~99月内入库</option>';
-            $("#form_sub").append(itim);
+            document.getElementById('form_sub').innerHTML = itim;
         } else if (data.value == 'utim') {
             // 最后更新时间
             document.getElementById('form_sub_div').style.display="block";
@@ -119,7 +118,7 @@ layui.use('form', function(){
                 '<option value="bt1mto3mUpd">1~3月未更新</option>' + 
                 '<option value="bt3mto12mUpd">3~12月未更新</option>' + 
                 '<option value="bt12mto99mUpd">12~99月未更新</option>';
-            $("#form_sub").append(utim);
+            document.getElementById('form_sub').innerHTML = utim;
         } else if (data.value == 'ctg1') {
             // 一级分类
             document.getElementById('form_sub_div').style.display="block";
@@ -134,7 +133,7 @@ layui.use('form', function(){
                 '<option value="monCfy1">包月</option>' + 
                 '<option value="pshCfy1">出版</option>' + 
                 '<option value="othCfy1">其它</option>';
-            $("#form_sub").append(ctg1);
+            document.getElementById('form_sub').innerHTML = ctg1;
         }
         form.render();
     });
