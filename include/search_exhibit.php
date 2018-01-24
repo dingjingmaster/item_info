@@ -14,32 +14,7 @@ if(!strcasecmp(INTEST, 'DEBUG')) {
 
 function search_init(){
     $page = '<form class="layui-form" action="">'.
-                '<div id="form_mod_div" class="layui-form-item">'.
-                    '<label class="layui-form-label">查询模块</label>'.
-                    '<div class="layui-input-block">'.
-                        '<select id="form_mod" lay-filter="form_mod" name="mod">'.
-                            '<option value="shfRecMdl">书架推荐</select>'.
-                            '<option value="monStmMdl">包月瀑布流</select>'.
-                            '<option value="redRecMdl">根据阅读推荐</select>'.
-                            '<option value="extRecMdl">退出拦截推荐</select>'.
-                            '<option value="freGusMdl">免费-猜你喜欢</select>'.
-                            '<option value="freMonRecMdl">免费-包月推荐</select>'.
-                            '<option value="shfGusMdl">书架-猜你喜欢</select>'.
-                            '<option value="chsStmMdl">精选-瀑布流</select>'.
-                            '<option value="chsBoyStmMdl">精选-男频瀑布流</select>'.
-                            '<option value="chsGilStmMdl">精选-女频瀑布流</select>'.
-                            '<option value="chsRakStmMdl">精选-排行瀑布流</select>'.
-                            '<option value="chsFinStmMdl">精选-完结瀑布流</select>'.
-                            '<option value="foeCtgMdl">封面页-类别推荐</select>'.
-                            '<option value="foeAutMdl">封面页-作者推荐</select>'.
-                            '<option value="foeArdMdl">封面页-读本书的人还看过</select>'.
-                            '<option value="foeArdMorMdl">封面页-读本书的人还看过更多</select>'.
-                            '<option value="bakArdMdl">章末页-读本书的人还看过</select>'.
-                        '</select>'.
-                    '</div>'.
-                '</div>'.
-                ''.
-                '<div class="layui-form-item ele_hidden">'.
+                    '<div class="layui-form-item ele_hidden">'.
                     '<label class="layui-form-label">查询维度</label>'.
                     '<div class="layui-input-block">'.
                         '<select id="form_dim" lay-filter="form_dim" name="dim">'.
@@ -65,6 +40,30 @@ function search_init(){
                     '</div>'.
                 '</div>'.
                 ''.
+                 '<div id="form_mod_div" class="layui-form-item">'.
+                    '<label class="layui-form-label">查询模块</label>'.
+                    '<div class="layui-input-block">'.
+                        '<select id="form_mod" lay-filter="form_mod" name="mod">'.
+                            '<option value="shfRecMdl">书架推荐</select>'.
+                            '<option value="monStmMdl">包月瀑布流</select>'.
+                            '<option value="redRecMdl">根据阅读推荐</select>'.
+                            '<option value="extRecMdl">退出拦截推荐</select>'.
+                            '<option value="freGusMdl">免费-猜你喜欢</select>'.
+                            '<option value="freMonRecMdl">免费-包月推荐</select>'.
+                            '<option value="shfGusMdl">书架-猜你喜欢</select>'.
+                            '<option value="chsStmMdl">精选-瀑布流</select>'.
+                            '<option value="chsBoyStmMdl">精选-男频瀑布流</select>'.
+                            '<option value="chsGilStmMdl">精选-女频瀑布流</select>'.
+                            '<option value="chsRakStmMdl">精选-排行瀑布流</select>'.
+                            '<option value="chsFinStmMdl">精选-完结瀑布流</select>'.
+                            '<option value="foeCtgMdl">封面页-类别推荐</select>'.
+                            '<option value="foeAutMdl">封面页-作者推荐</select>'.
+                            '<option value="foeArdMdl">封面页-读本书的人还看过</select>'.
+                            '<option value="foeArdMorMdl">封面页-读本书的人还看过更多</select>'.
+                            '<option value="bakArdMdl">章末页-读本书的人还看过</select>'.
+                        '</select>'.
+                    '</div>'.
+                '</div>'.
                 ''.
                 '<div id="form_fee_div" class="layui-form-item ele_hidden">'.
                     '<label class="layui-form-label">付费类型</label>'.

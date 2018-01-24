@@ -13,6 +13,16 @@ layui.use('element', function(){
 
 layui.use('form', function(){
     var form = layui.form;
+
+    form.on('select(form_mod)', function(data) {
+        // 初始化
+    
+    });
+
+
+
+
+
     form.on('select(form_dim)', function(data){
         // 初始化
         //
