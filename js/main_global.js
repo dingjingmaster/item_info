@@ -140,9 +140,13 @@ layui.use('form', function(){
     
     form.on('submit(form_submit)', function(data){
         // 检查数据是否有错
-        for(var key in data.field) {
+        var formData = data.field;
+        // 检查第一栏是否选择
+        if(formData['dim'] == "") {
+            layer.msg("请您输入查询维度...");
+        }
+        for(var key in formData) {
             layer.msg(key);
-            sleep(1000);
         }
         return false;
     });
