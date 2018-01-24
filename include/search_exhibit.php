@@ -33,8 +33,8 @@ function search_init(){
                         '</div>'.
                     '</div>'.
                     ''.
-                    '<div class="layui-inline">'.
-                        '<div id="form_sub_div" class="layui-form-item ele_hidden">'.
+                    '<div id="form_sub_div" class="layui-inline ele_hidden">'.
+                        '<div class="layui-form-inline">'.
                             '<label class="layui-form-label">维度细分</label>'.
                             '<div class="layui-input-inline">'.
                                 '<select id="form_sub" lay-filter="form_module" name="module">'.
@@ -45,7 +45,7 @@ function search_init(){
                     '</div>'.
                 '</div>'.
                 ''.
-                 '<div id="form_mod_div" class="layui-form-item ele_hidden">'.
+                '<div id="form_mod_div" class="layui-form-item ele_hidden">'.
                     '<label class="layui-form-label">查询模块</label>'.
                     '<div class="layui-input-block">'.
                         '<input type="checkbox" name="shfRecMdl" title="书架推荐"/>'.
