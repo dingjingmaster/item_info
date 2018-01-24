@@ -14,15 +14,14 @@ layui.use('element', function(){
 layui.use('form', function(){
     var form = layui.form;
 
-    // 隐藏所有div
-    document.getElementById('form_sub_div').style.display="none";
-    document.getElementById('form_mod_div').style.display="none";
-    document.getElementById('form_fee_div').style.display="none";
-    document.getElementById('form_target_div').style.display="none";
-    document.getElementById('form_submit').style.display="none";
-
     form.on('select(form_dim)', function(data){
-        // 初始化
+        // 隐藏所有div
+        document.getElementById('form_sub_div').style.display="none";
+        document.getElementById('form_mod_div').style.display="none";
+        document.getElementById('form_fee_div').style.display="none";
+        document.getElementById('form_target_div').style.display="none";
+        document.getElementById('form_submit').style.display="none";
+
         //
         if(data.value == 'sum') {
             // 总体情况
