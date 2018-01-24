@@ -42,6 +42,11 @@ layui.use('form', function(){
         } else if (data.value == 'stg') {
             // 推荐策略
             // 1. 选择要查询的页面 和 付费类型 和 模块细分 2. 选中后出现按钮
+            document.getElementById('form_sub_div').style.display="block";
+            document.getElementById('form_mod_div').style.display="block";
+            document.getElementById('form_fee_div').style.display="block";
+            document.getElementById('form_target_div').style.display="block";
+            document.getElementById('form_submit').style.display="block";
         } else if (data.value == 'stu') {
             // 连载状态
         } else if (data.value == 'vie') {
