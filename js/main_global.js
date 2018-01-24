@@ -140,7 +140,9 @@ layui.use('form', function(){
     
     form.on('submit(form_submit)', function(data){
         // 检查数据是否有错
-        layer.msg(JSON.stringify(data.field));
+        for(var key in data.field) {
+            layer.msg(key);
+        }
         return false;
     });
 });
