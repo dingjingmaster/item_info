@@ -5,6 +5,40 @@
 > Created Time: 2018年01月24日 星期三 09时22分47秒
  ************************************************************************/
 
+function detail_input(jsObj) {
+    var table = "";
+    var module = new Array();
+    var fee = new Array();
+    var target = new Array();
+    var para = new Array();                 // 细分的模块
+
+    var res;
+
+    table = jsObj['dim'];
+    for(var key in jsObj) {
+        if(key == 'dim') {
+            continue;
+        } else if (null != key.match('Mdl')) {
+            module.push(key);
+        } else if (null != key.match('Fee')) {
+            fee.push(key);
+        } else if (key == 'clkDsp' || key == 'srbClk' || key == 'srbDsp' || key == 'redSrb' || key == 'redDsp' || key == 'retent' || key == 'rteDsp') {
+            target.push(key);
+        } else {
+            para.push(key);
+        }
+    }
+
+    res['dim'] = table;
+    res['module'] = module;
+    res['fee'] = fee;
+    res['para'] = para;
+    res['target'] = target;
+
+    return JSON.stringify(res);
+}
+
+
 $(document).ready(function() {})
 
 layui.use('element', function(){
@@ -141,13 +175,14 @@ layui.use('form', function(){
     form.on('submit(form_submit)', function(data){
         // 检查数据是否有错
         var formData = data.field;
+
         // 检查第一栏是否选择
         if(formData['dim'] == "") {
             layer.msg("请您输入查询维度...");
         }
-        for(var key in formData) {
-            layer.msg(key);
-        }
+        
+        layer.msg(detail_input(formData));
+
         return false;
     });
 });
