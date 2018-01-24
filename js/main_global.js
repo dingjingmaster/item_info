@@ -6,7 +6,7 @@
  ************************************************************************/
 
 function detail_input(jsObj) {
-    var dim = "";
+    var table = "";
     var module = Array();
     var fee = Array();
     var target = Array();
@@ -14,7 +14,7 @@ function detail_input(jsObj) {
 
     var res = Object();
 
-    dim = jsObj['dim'];
+    table = jsObj['dim'];
     for(var key in jsObj) {
         if(key == 'dim') {
             continue;
@@ -29,7 +29,7 @@ function detail_input(jsObj) {
         }
     }
 
-    res.table = dim;
+    res.table = table;
     res.module = module;
     res.fee = fee;
     res.para = para;
@@ -61,7 +61,7 @@ layui.use('form', function(){
         $("#form_sub").empty();
 
         //
-        if(data.value == 'sum') {
+        if(data.value == 'summary') {
             // 总体情况
             // 1. 选择要查询的页面 2.选中后出现按钮
             document.getElementById('form_mod_div').style.display="block";
@@ -74,7 +74,7 @@ layui.use('form', function(){
             document.getElementById('form_fee_div').style.display="block";
             document.getElementById('form_target_div').style.display="block";
             document.getElementById('form_submit').style.display="block";
-        } else if (data.value == 'stg') {
+        } else if (data.value == 'strategy') {
             // 推荐策略
             // 1. 选择要查询的页面 和 付费类型 和 模块细分 2. 选中后出现按钮
             document.getElementById('form_sub_div').style.display="block";
@@ -96,7 +96,7 @@ layui.use('form', function(){
                 '<input type="checkbox" lay-skin="primary" name="redMdlRec" title="阅读同分类"/>' + 
                 '<input type="checkbox" lay-skin="primary" name="cat1SimCtgRec" title="一级同分类"/>';
             document.getElementById('form_sub').innerHTML = stg;
-        } else if (data.value == 'stu') {
+        } else if (data.value == 'status') {
             // 连载状态
             document.getElementById('form_sub_div').style.display="block";
             document.getElementById('form_mod_div').style.display="block";
@@ -108,7 +108,7 @@ layui.use('form', function(){
                 '<input type="checkbox" lay-skin="primary" name="cmpStau" title="完结"/>' + 
                 '<input type="checkbox" lay-skin="primary" name="noCmpStau" title="连载"/>';
             document.getElementById('form_sub').innerHTML = stu;
-        } else if (data.value == 'vie') {
+        } else if (data.value == 'view') {
             // 订阅级别
             document.getElementById('form_sub_div').style.display="block";
             document.getElementById('form_mod_div').style.display="block";
@@ -125,7 +125,7 @@ layui.use('form', function(){
                 '<input type="checkbox" lay-skin="primary" name="bt100kto1000kSub" title="介于10万到100万"/>' + 
                 '<input type="checkbox" lay-skin="primary" name="bt1000kto10000kSub" title="介于100万到1千万"/>';
             document.getElementById('form_sub').innerHTML = vie;
-        } else if (data.value == 'itim') {
+        } else if (data.value == 'intime') {
             // 入库时间
             document.getElementById('form_sub_div').style.display="block";
             document.getElementById('form_mod_div').style.display="block";
@@ -139,7 +139,7 @@ layui.use('form', function(){
                 '<input type="checkbox" lay-skin="primary" name="bt3mto12mIn" title="3~12月内入库"/>' + 
                 '<input type="checkbox" lay-skin="primary" name="bt12mto99mIn" title="12~99月内入库"/>';
             document.getElementById('form_sub').innerHTML = itim;
-        } else if (data.value == 'utim') {
+        } else if (data.value == 'update') {
             // 最后更新时间
             document.getElementById('form_sub_div').style.display="block";
             document.getElementById('form_mod_div').style.display="block";
@@ -153,7 +153,7 @@ layui.use('form', function(){
                 '<input type="checkbox" lay-skin="primary" name="bt3mto12mUpd" title="3~12月未更新"/>' + 
                 '<input type="checkbox" lay-skin="primary" name="bt12mto99mUpd" title="12~99月未更新"/>';
             document.getElementById('form_sub').innerHTML = utim;
-        } else if (data.value == 'ctg1') {
+        } else if (data.value == 'classify1') {
             // 一级分类
             document.getElementById('form_sub_div').style.display="block";
             document.getElementById('form_mod_div').style.display="block";
