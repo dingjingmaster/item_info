@@ -7,10 +7,10 @@
 
 function detail_input(jsObj) {
     var table = "";
-    var module = new Array();
-    var fee = new Array();
-    var target = new Array();
-    var para = new Array();                 // 细分的模块
+    var module = Array();
+    var fee = Array();
+    var target = Array();
+    var para = Array();                 // 细分的模块
 
     var res;
 
