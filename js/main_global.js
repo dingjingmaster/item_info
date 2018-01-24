@@ -29,7 +29,7 @@ function detail_input(jsObj) {
         }
     }
 
-    res.tab = dim;
+    res.table = dim;
     res.module = module;
     res.fee = fee;
     res.para = para;
