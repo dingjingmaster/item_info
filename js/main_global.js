@@ -28,6 +28,7 @@ function detail_input(jsObj) {
             para.push(key);
         }
     }
+    alert("ok");
 
     res['dim'] = table;
     res['module'] = module;
