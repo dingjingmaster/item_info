@@ -136,7 +136,6 @@ layui.use('form', function(){
             $("#form_sub").append(ctg1);
         }
         form.render('select');
-        form.render('div');
     });
     
     form.on('submit(form_submit)', function(data){
