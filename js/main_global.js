@@ -23,6 +23,8 @@ layui.use('form', function(){
         document.getElementById('form_fee_div').style.display="none";
         document.getElementById('form_target_div').style.display="none";
         document.getElementById('form_submit').style.display="none";
+        // 删除
+        $("#form_sub").empty();
 
         //
         if(data.value == 'sum') {
