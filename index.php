@@ -83,12 +83,9 @@ require dirname(__FILE__) . '/include/common_action.php';
             var form = layui.form;
             form.on('select(form_dim)', function(data){
                 var test = '';
-                hest = '<option value="ssss"> ddddd </option>';
+                var hest = '<option value="ssss"> ddddd </option>';
                 $("#form_module").append(hest);
-                if(data.value == 'sum') {
-                }
-                alert(data.value);
-
+                form.render('select');
             
             });
 
