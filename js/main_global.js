@@ -70,10 +70,10 @@ layui.use('form', function(){
             document.getElementById('form_target_div').style.display="block";
             document.getElementById('form_submit').style.display="block";
             // 维度细分
-            var stg= '' +
+            var stu= '' +
                 '<option value="cmpStau">完结</option>' + 
                 '<option value="noCmpStau">连载</option>' + 
-            $("#form_sub").append(stg);
+            $("#form_sub").append(stu);
         } else if (data.value == 'vie') {
             // 订阅级别
             document.getElementById('form_sub_div').style.display="block";
@@ -82,7 +82,7 @@ layui.use('form', function(){
             document.getElementById('form_target_div').style.display="block";
             document.getElementById('form_submit').style.display="block";
             // 维度细分
-            var stg= '' +
+            var vie= '' +
                 '<option value="bt0to10Sub">介于0到10</option>' + 
                 '<option value="bt10to1bSub">介于10到100</option>' + 
                 '<option value="bt1bto1kSub">介于100到1000</option>' + 
@@ -90,7 +90,7 @@ layui.use('form', function(){
                 '<option value="bt10kto100kSub">介于1万到10万</option>' + 
                 '<option value="bt100kto1000kSub">介于10万到100万</option>' + 
                 '<option value="bt1000kto10000kSub">介于100万到1千万</option>' + 
-            $("#form_sub").append(stg);
+            $("#form_sub").append(vie);
         } else if (data.value == 'itim') {
             // 入库时间
             document.getElementById('form_sub_div').style.display="block";
@@ -99,12 +99,12 @@ layui.use('form', function(){
             document.getElementById('form_target_div').style.display="block";
             document.getElementById('form_submit').style.display="block";
             // 维度细分
-            var stg= '' +
+            var itim= '' +
                 '<option value="lesMonIn">1月内入库</option>' + 
                 '<option value="bt1mto3mIn">1~3月内入库</option>' + 
                 '<option value="bt3mto12mIn">3~12月内入库</option>' + 
                 '<option value="bt12mto99mIn">12~99月内入库</option>' + 
-            $("#form_sub").append(stg);
+            $("#form_sub").append(itim);
         } else if (data.value == 'utim') {
             // 最后更新时间
             document.getElementById('form_sub_div').style.display="block";
@@ -113,13 +113,13 @@ layui.use('form', function(){
             document.getElementById('form_target_div').style.display="block";
             document.getElementById('form_submit').style.display="block";
             // 维度细分
-            var stg= '' +
+            var utim = '' +
                 '<option value="lesMonUpd">0~1月未更新</option>' + 
                 '<option value="bt1mto3mUpd">1~3月未更新</option>' + 
                 '<option value="bt3mto12mUpd">3~12月未更新</option>' + 
                 '<option value="bt12mto99mUpd">12~99月未更新</option>' + 
-            $("#form_sub").append(stg);
-        } else if (data.value == 'vtg1') {
+            $("#form_sub").append(utim);
+        } else if (data.value == 'ctg1') {
             // 一级分类
             document.getElementById('form_sub_div').style.display="block";
             document.getElementById('form_mod_div').style.display="block";
@@ -127,13 +127,13 @@ layui.use('form', function(){
             document.getElementById('form_target_div').style.display="block";
             document.getElementById('form_submit').style.display="block";
             // 维度细分
-            var stg= '' +
+            var ctg1 = '' +
                 '<option value="boyCfy1">男频</option>' + 
                 '<option value="girlCfy1">女频</option>' + 
                 '<option value="monCfy1">包月</option>' + 
                 '<option value="pshCfy1">出版</option>' + 
                 '<option value="othCfy1">其它</option>' + 
-            $("#form_sub").append(stg);
+            $("#form_sub").append(ctg1);
         }
         //var test = '<option value="ssss"> ddddd </option>';
         //$("#form_module").append(test);
