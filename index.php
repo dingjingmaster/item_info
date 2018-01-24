@@ -15,11 +15,6 @@ require dirname(__FILE__) . '/include/common_action.php';
         <script type="text/javascript" src="js/main_request.js"></script>
         <script type="text/javascript" src="js/main_search.js"></script>
         <script type="text/javascript" src="js/main_global.js"></script>
-        <script>
-            $(document).ready(function() {
-            })
-
-        </script>
     </head>
 
     <body class="layui-layout-body" onload="request_retent('day')">
@@ -75,11 +70,6 @@ require dirname(__FILE__) . '/include/common_action.php';
 
             <div class="layui-footer"> @  宜搜小说 </div>
         </div>
-    <script>
-
-    </script>
-
-
     </body>
 </html>
 

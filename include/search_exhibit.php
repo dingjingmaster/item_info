@@ -31,7 +31,7 @@ function search_init(){
                     '</div>'.
                 '</div>'.
                 ''.
-                '<div class="layui-form-item">'.
+                '<div id="form_mod_div" lay-filter="form_mod_div" class="layui-form-item">'.
                     '<label class="layui-form-label">页面模块</label>'.
                     '<div class="layui-input-block">'.
                         '<select id="form_module" lay-filter="form_module" name="module" lay-verify="required">'.
@@ -40,7 +40,7 @@ function search_init(){
                     '</div>'.
                 '</div>'.
                 ''.
-                '<div class="layui-form-item">'.
+                '<div id="form_fee_div" lay-filter="form_fee_div" class="layui-form-item">'.
                     '<label class="layui-form-label">付费类型</label>'.
                     '<div class="layui-input-block">'.
                         '<input type="checkbox" name="freFee" title="免费">'.
