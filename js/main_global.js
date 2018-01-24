@@ -188,6 +188,7 @@ layui.use('form', function(){
             layer.msg("请您输入查询维度...");
         }
         
+        detail_input(formData);
         //layer.msg(detail_input(formData));
         //alert(detail_input(formData));
 
