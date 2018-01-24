@@ -49,14 +49,39 @@ layui.use('form', function(){
             document.getElementById('form_submit').style.display="block";
         } else if (data.value == 'stu') {
             // 连载状态
+            document.getElementById('form_sub_div').style.display="block";
+            document.getElementById('form_mod_div').style.display="block";
+            document.getElementById('form_fee_div').style.display="block";
+            document.getElementById('form_target_div').style.display="block";
+            document.getElementById('form_submit').style.display="block";
         } else if (data.value == 'vie') {
             // 订阅级别
+            document.getElementById('form_sub_div').style.display="block";
+            document.getElementById('form_mod_div').style.display="block";
+            document.getElementById('form_fee_div').style.display="block";
+            document.getElementById('form_target_div').style.display="block";
+            document.getElementById('form_submit').style.display="block";
         } else if (data.value == 'itim') {
             // 入库时间
+            document.getElementById('form_sub_div').style.display="block";
+            document.getElementById('form_mod_div').style.display="block";
+            document.getElementById('form_fee_div').style.display="block";
+            document.getElementById('form_target_div').style.display="block";
+            document.getElementById('form_submit').style.display="block";
         } else if (data.value == 'utim') {
             // 最后更新时间
+            document.getElementById('form_sub_div').style.display="block";
+            document.getElementById('form_mod_div').style.display="block";
+            document.getElementById('form_fee_div').style.display="block";
+            document.getElementById('form_target_div').style.display="block";
+            document.getElementById('form_submit').style.display="block";
         } else if (data.value == 'vtg1') {
             // 一级分类
+            document.getElementById('form_sub_div').style.display="block";
+            document.getElementById('form_mod_div').style.display="block";
+            document.getElementById('form_fee_div').style.display="block";
+            document.getElementById('form_target_div').style.display="block";
+            document.getElementById('form_submit').style.display="block";
         }
         //var test = '<option value="ssss"> ddddd </option>';
         //$("#form_module").append(test);
