@@ -157,7 +157,8 @@ function search_select($data){
                     $yArray = array();
                     $cate = '';
                     echo $msql . '<br/>';
-                    while($row = _mysql_fetch_array($result)) {
+                    $row = _mysql_fetch_array($result);
+                    //while($row = _mysql_fetch_array($result)) {
                         echo $row['dzid'];
                         echo $row['timeStamp'];
 
@@ -165,7 +166,7 @@ function search_select($data){
                         $cate = exhibit_prekey_split($row['dzid']); //解析
                         array_push($xArray, $row['timeStamp']);
                         array_push($yArray, $row[$k]);
-                 */  }
+                 */  //}
     /*
                     // 生成 x
                     $xData1 = $xData;
