@@ -158,6 +158,7 @@ function search_select($data){
                     $cate = '';
                     echo $msql . '<br/>';
                     $row = _mysql_fetch_array($result);
+                        echo var_dump($row);
                     //while($row = _mysql_fetch_array($result)) {
                         echo $row['dzid'];
                         echo $row['timeStamp'];
