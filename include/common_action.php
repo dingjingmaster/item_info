@@ -32,9 +32,9 @@ if(!strcasecmp($_GET['type'], 'retent')) {
             echo search_init();
         } else if (count($_POST) == 3) {
             echo $_POST['data'];
-            _mysql_connect();
-            _mysql_select_db();
-            echo $_POST['data'];
+            //_mysql_connect();
+            //_mysql_select_db();
+            //echo $_POST['data'];
             //echo search_select($_GET['data']);
         }
     }

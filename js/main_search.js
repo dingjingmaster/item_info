@@ -32,7 +32,7 @@ function search_request_init(page) {
 function search_request_select(page, info) {
 
     var xmlhttp;
-    var request = '/item_info/item_info/include/common_action.php?type=search&page=' + page + '&data=' + info;
+    var request = '/item_info/item_info/include/common_action.php';
     if(window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
     } else {
@@ -65,6 +65,7 @@ function search_request_select(page, info) {
     }
 
     xmlhttp.open('POST', request, true);
-    xmlhttp.send();
+    xmlhttp.setRequestHeader('Content-type', "applicarion/x-www-form-urlencoded");
+    xmlhttp.send("type=search&page=" + page + '&data=' + info);
 }
 
