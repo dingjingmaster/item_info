@@ -113,9 +113,7 @@ function get_table_field($table) {
 function search_select($data){
 
     $req = json_decode($data, true);
-    if(!$req) {
-        return print_r(json_last_error());
-    }
+    return $req ->table;
     $table = 'item_exhibit_' . $req['table'];
     $module = $req['module'];
     $fee = $req['fee'];
