@@ -111,10 +111,6 @@ function get_table_field($table) {
 
 function search_select($data){
 
-    $test = array(
-        'aa' => 'mmm',
-        'bb' => '[sd,sd,as,ds,dssd]',
-    );
     $req = json_decode(utf8_encode($data), true);
     $table = 'item_exhibit_' . $req['table'];
 
@@ -122,12 +118,6 @@ function search_select($data){
     $fee = $req['fee'];
     $target = $req['target'];
     $para = $req['para'];
-
-    //return $table . '   ' . $module[0];
-    //echo $module[0];
-    //echo $fee;
-    //echo $target;
-    //echo $para;
 
     // 最后输出的变量
     $title = "自定义查询";
@@ -161,6 +151,9 @@ function search_select($data){
                         array_push($xArray, $row['timeStamp']);
                         array_push($yArray, $row[$k]);
                     }
+                    echo $cate;
+
+                    /*
                     // 生成 x
                     $xData1 = $xData;
                     $xData = generate_x($xArray);
@@ -173,10 +166,13 @@ function search_select($data){
                     if($ret) {
                         array_push($yData, $ret);
                     }
+                     */
                 }
             }
         }
     }
+
+    return;
 
     // 产生title
     $picRes['title'] = generate_title($title);
