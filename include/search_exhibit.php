@@ -134,6 +134,7 @@ function search_select($data){
     $navPage = ''.
         '<li class="layui-nav-item"><a href="#select">自定义查询</a></li>';
 
+    echo "okkkkkkkkkkkkk!";
 
     // 查询并返回
     $sql = 'SELECT * FROM ' . $table . ' WHERE ';
