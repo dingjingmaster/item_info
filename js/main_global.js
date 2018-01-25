@@ -50,6 +50,7 @@ layui.use(['form', 'laydate'], function(){
     var laydate = layui.laydate;
 
     var fee = [];
+
     // 开始时间
     laydate.render({
         elem: '#form_start_time',
