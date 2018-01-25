@@ -161,6 +161,13 @@ function exhibit_parse_to_chinese($mstr) {
         'monCfy1' => '包月',
         'pshCfy1' => '出版',
         'othCfy1' => '其他',
+        'clkDsp' => '点展比',
+        'srbClk' => '订点比',
+        'srbDsp' => '订展比',
+        'redSrb' => '阅订比',
+        'redDsp' => '阅展比',
+        'retent' => '留存率',
+        'rteDsp' => '留展比',
     );
     
     if(in_array($mstr, array_keys($chArray))) {
