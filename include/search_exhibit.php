@@ -90,13 +90,13 @@ function search_init(){
                     '<div class="layui-inline">'.
                         '<label class="layui-form-label">开始时间</label>'.
                         '<div class="layui-input-inline">'.
-                            '<input id="form_start_time" type="text" class="layui-input" placeholder="yyyyMMdd">'.
+                            '<input id="form_start_time" type="text" class="layui-input"/>'.
                         '</div>'.
                     '</div>'.
                     '<div class="layui-inline">'.
                         '<label class="layui-form-label">截止时间</label>'.
                         '<div class="layui-input-inline">'.
-                            '<input id="form_stop_time" type="text" class="layui-input" placeholder="yyyyMMdd">'.
+                            '<input id="form_stop_time" type="text" class="layui-input"/>'.
                         '</div>'.
                     '</div>'.
                 '</div>'.
