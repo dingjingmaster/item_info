@@ -47,13 +47,12 @@ layui.use('element', function(){
 
 layui.use(['form', 'laydate'], function(){
     var form = layui.form;
-    var dt = layui.laydate;
+    var laydate = layui.laydate;
 
     var fee = [];
     // 开始时间
-    dt.render({
+    laydate.render({
         elem: '#form_start_time',
-        type: 'date',
     });
 
     form.on('select(form_dim)', function(data){
