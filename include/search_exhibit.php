@@ -114,6 +114,7 @@ function search_select($data){
 
     $req = json_decode(utf8_encode($data), true);
     //return var_dump($req);
+    return var_dump($req).'<hr/>'.$data;
     $table = 'item_exhibit_' . $req['table'];
     $module = $req['module'];
     $fee = $req['fee'];
