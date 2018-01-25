@@ -69,8 +69,7 @@ function search_init(){
                 ''.
                 '<div id="form_sub_div" class="layui-inline ele_hidden">'.
                     '<label class="layui-form-label">维度细分</label>'.
-                    '<div id="form_sub" class="layui-input-block">'.
-                    '</div>'.
+                    '<div id="form_sub" class="layui-input-block"></div>'.
                 '</div>'.
                 ''.
                 '<div id="form_target_div" class="layui-form-item ele_hidden">'.
@@ -90,7 +89,7 @@ function search_init(){
                     '<div class="layui-inline">'.
                         '<label class="layui-form-label">开始时间</label>'.
                         '<div class="layui-input-inline">'.
-                            '<input id="form_start_time" type="text" class="layui-input"/>'.
+                            '<input type="text" class="layui-input" id="form_start_time"/>'.
                         '</div>'.
                     '</div>'.
                     '<div class="layui-inline">'.
