@@ -13,7 +13,6 @@ if(!strcasecmp(INTEST, 'DEBUG')) {
 }
 define('DB_NAME', 'item_exhibit');
 require ROOT_PATH . '/include/parse_string.php';
-require ROOT_PATH . '/include/mysql_func.php';
 
 function search_init(){
     $page = '<form class="layui-form" action="">'.
