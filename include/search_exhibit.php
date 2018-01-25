@@ -139,6 +139,10 @@ function search_select($data){
     // 查询并返回
     $sql = 'SELECT * FROM ' . $table . ' WHERE ';
     if (count($para) == 0) {
+    $xData = array();
+    $yData = array();
+    $picRes = array();
+    $finRes = array();
         foreach($module as $i) { // 字段
             foreach($fee as $j) { // feeCate
                 foreach($target as $k) { //直接字段
@@ -154,13 +158,18 @@ function search_select($data){
                     }
                     $cate = $cate . '-' . exhibit_parse_to_chinese($k);
 
+                    // 判断是否合适
+                    if(count($xArray) != count($yArray)) {
+                        continue;
+                    }
+
                     // 生成 x
                     $xData1 = $xData;
                     $xData = generate_x($xArray);
                     if($xData == '') {
                         $xData = $xData1;
                     }
-    
+
                     // 生成 y
                     $ret = generate_series($cate, $yArray);
                     if($ret) {
@@ -171,8 +180,11 @@ function search_select($data){
         }
 
     } else if(count($para) > 0) {
+    $xData = array();
+    $yData = array();
+    $picRes = array();
+    $finRes = array();
         foreach($para as $p) { //特殊查询
-        
             foreach($module as $i) { // 字段
                 foreach($fee as $j) { // feeCate
                     foreach($target as $k) { //直接字段
@@ -204,9 +216,6 @@ function search_select($data){
                 }
             }
         }
-    
-
-
     }
 
 
