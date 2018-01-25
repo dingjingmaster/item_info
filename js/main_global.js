@@ -53,7 +53,7 @@ layui.use(['form', 'laydate'], function(){
     var startTim = {
         elem: '#form_start_time',
         format: 'YYYYMMDD',
-        max: laydate.now(),
+        //max: laydate.now(),
     }
 
     laydate(start);
