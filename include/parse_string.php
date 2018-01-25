@@ -85,10 +85,10 @@ function exhibit_flag_to_number($mstr) {
         'pshCfy1' => 4,
         'othCfy1' => 5,);
     if(in_array($mstr, $trans)) {
-        return $trans[$mstr];
     }
 
-    return $mstr;
+    return $trans[$mstr];
+    //return $mstr;
 }
 
 
