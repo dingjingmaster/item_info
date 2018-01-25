@@ -77,9 +77,9 @@ function search_init(){
                     '<label class="layui-form-label">查询指标</label>'.
                     '<div class="layui-input-block">'.
                         '<input type="checkbox" lay-skin="primary" name="clkDsp" title="点展比">'.
-                        '<input type="checkbox" lay-skin="primary" name="srbClk" title="订点比">'.
-                        '<input type="checkbox" lay-skin="primary" name="srbDsp" title="订展比">'.
-                        '<input type="checkbox" lay-skin="primary" name="redSrb" title="阅订比">'.
+                        '<input type="checkbox" lay-skin="primary" name="subClk" title="订点比">'.
+                        '<input type="checkbox" lay-skin="primary" name="subDsp" title="订展比">'.
+                        '<input type="checkbox" lay-skin="primary" name="redSub" title="阅订比">'.
                         '<input type="checkbox" lay-skin="primary" name="redDsp" title="阅展比">'.
                         '<input type="checkbox" lay-skin="primary" name="retent" title="留存率">'.
                         '<input type="checkbox" lay-skin="primary" name="rteDsp" title="留展比">'.

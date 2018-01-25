@@ -22,7 +22,7 @@ function detail_input(jsObj) {
             module.push(key);
         } else if (null != key.match(/Fee$/)) {
             fee.push(key);
-        } else if (key == 'clkDsp' || key == 'srbClk' || key == 'srbDsp' || key == 'redSrb' || key == 'redDsp' || key == 'retent' || key == 'rteDsp') {
+        } else if (key == 'clkDsp' || key == 'subClk' || key == 'subDsp' || key == 'redSub' || key == 'redDsp' || key == 'retent' || key == 'rteDsp') {
             target.push(key);
         } else {
             para.push(key);
