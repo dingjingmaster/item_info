@@ -50,11 +50,20 @@ layui.use(['form', 'laydate'], function(){
     var laydate = layui.laydate;
 
     var fee = [];
+    var startTim = {
+        max: laydate.now(),
+    }
+
+    // 开始日期设置
+    document.getElementById('form_start_time').onclick = function(){
+        start.ele = this;
+        laydate(start);
+    }
 
     // 开始时间
-    laydate.render({
-        elem: '#form_start_time',
-    });
+    //laydate.render({
+    //    elem: '#form_start_time',
+    //});
 
     form.on('select(form_dim)', function(data){
         // 隐藏所有div
