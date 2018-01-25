@@ -119,25 +119,6 @@ function search_select($data){
     $target = $req['target'];
     $para = $req['para'];
 
-    if(in_array('table', $req)) {
-        echo $req['table'];
-    }
-    if(in_array('module', $req)) {
-        echo $req['module'];
-    }
-    if(in_array('fee', $req)) {
-        echo $req['fee'];
-    }
-    if(in_array('target', $req)) {
-        echo $req['target'];
-    }
-    if(in_array('para', $req)) {
-        echo $req['para'];
-    }
-
-    return "ok";
-
-
     echo $module;
     echo $fee;
     echo $target;
