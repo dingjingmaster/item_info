@@ -65,7 +65,7 @@ function search_request_select(page, info) {
     }
 
     xmlhttp.open('POST', request, true);
-    xmlhttp.setRequestHeader('Content-type', "applicarion/x-www-form-urlencoded");
+    xmlhttp.setRequestHeader('Content-type', "application/x-www-form-urlencoded");
     xmlhttp.send("page=" + page + '&data=' + info);
 }
 
