@@ -53,7 +53,7 @@ layui.use('laydate', function() {
     //});
 });
 
-layui.use([form, laydate], function(){
+layui.use(['form', 'laydate'], function(){
     var form = layui.form;
     var laydate = layui.laydate;
 
