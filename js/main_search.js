@@ -52,10 +52,10 @@ function search_request_select(page, info) {
             document.getElementById('main_div').innerHTML = mainPage;
             
             // 导航栏
-            //var navPage = json.navPage;
-            //document.getElementById('nav_page').innerHTML = navPage;
+            var navPage = json.navPage;
+            document.getElementById('nav_page').innerHTML = navPage;
             // json 绘图信息
-            //var js = JSON.parse(json.json);
+            var js = JSON.parse(json.json);
             //for(var i in js) {
             //    var elem = js[i];
             //    var mJS = JSON.parse(elem);
