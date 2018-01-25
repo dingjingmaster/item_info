@@ -43,7 +43,8 @@ function search_request_select(page, info) {
         if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             //
             var res = xmlhttp.responseText;
-            //document.getElementById('main_div').innerHTML = res;
+            document.getElementById('main_div').innerHTML = res;
+            /*
             
             var json = JSON.parse(res);
             
@@ -66,6 +67,7 @@ function search_request_select(page, info) {
             //    var mJson = mJS['json'];
             //    plot_picture(mJS['divId'], JSON.parse(mJson));
             //}
+            */
         }
     }
 
