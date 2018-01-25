@@ -56,7 +56,7 @@ function search_request_select(page, info) {
             document.getElementById('nav_page').innerHTML = navPage;
             // json 绘图信息
             var js = JSON.parse(json.json);
-            var divId = js['divId'];
+            var divId = js['div'];
             var pic = js['json'];
             plot_picture(divId, pic);
             alert(divId);
