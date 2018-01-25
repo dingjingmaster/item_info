@@ -21,7 +21,7 @@ function _common_print_head(){
         '<meta name="renderer" content="webkit">' .
         '<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">' .
         '<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">' .
-        '<link rel="stylesheet" href="lib/layui/css/layui.css">' .
+        '<link rel="stylesheet" href="lib/layui/css/layui.css" media="all">' .
         '<script src="lib/layui/layui.js"></script>'.
         '<script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>'.
         '<script src="lib/highcharts/code/highcharts.js"></script>';
