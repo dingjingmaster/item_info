@@ -155,7 +155,8 @@ function search_select($data){
                 $xArray = array();
                 $yArray = array();
                 $cate = '';
-                return $msql;
+                echo $msql;
+                /*
                 while($row = _mysql_fetch_array($result)) {
                     return $row['dzid'];
                     $cate = exhibit_prekey_split($row['dzid']); //解析
@@ -175,9 +176,12 @@ function search_select($data){
                 if($ret) {
                     array_push($yData, $ret);
                 }
+                 */
             }
         }
     }
+
+    return;
 
     // 产生title
     $picRes['title'] = generate_title($title);
