@@ -83,9 +83,7 @@ function exhibit_flag_to_number($mstr) {
         'girlCfy1' => 2,
         'monCfy1' => 3,
         'pshCfy1' => 4,
-        'othCfy1' => 5,);
-    if(in_array($mstr, $trans)) {
-    }
+        'othCfy1' => 5);
 
     return $trans[$mstr];
     //return $mstr;
