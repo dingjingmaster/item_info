@@ -13,8 +13,6 @@ if(!strcasecmp(INTEST, 'DEBUG')) {
 }
 define('DB_NAME', 'item_exhibit');
 require ROOT_PATH . '/include/parse_string.php';
-_mysql_connect();
-_mysql_select_db();
 
 function search_init(){
     $page = '<form class="layui-form" action="">'.
@@ -158,19 +156,11 @@ function search_select($data){
                     $xArray = array();
                     $yArray = array();
                     $cate = '';
-                    echo $msql . '<br/>';
-                    $row = _mysql_fetch_array($result);
-                        echo var_dump($row);
-                    //while($row = _mysql_fetch_array($result)) {
-                        echo $row['dzid'];
-                        echo $row['timeStamp'];
-
-                /*        return $row['dzid'];
+                    while($row = _mysql_fetch_array($result)) {
                         $cate = exhibit_prekey_split($row['dzid']); //解析
                         array_push($xArray, $row['timeStamp']);
                         array_push($yArray, $row[$k]);
-                 */  //}
-    /*
+                    }
                     // 生成 x
                     $xData1 = $xData;
                     $xData = generate_x($xArray);
@@ -183,7 +173,6 @@ function search_select($data){
                     if($ret) {
                         array_push($yData, $ret);
                   }
-     */
                 }
             }
         }
