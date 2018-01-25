@@ -6,6 +6,25 @@
 > Created Time: 2018年01月24日 星期三 17时39分34秒
  ************************************************************************/
 
+// 主键切割 - 获取字段信息
+function exhibit_prekey_split($mstr) {
+
+    $arr = explode('-', $mstr);
+    if(count($arr) == 2) {
+        return exhibit_parse_to_chinese($arr[0]);
+    } else if (count($arr) == 3) {
+        return exhibit_parse_to_chinese($arr[0]) . '-' . exhibit_parse_to_chinese($arr[1]);
+    } else if (count($arr) == 4) {
+        return exhibit_parse_to_chinese($arr[0]) . '-' . exhibit_parse_to_chinese($arr[1]) . '-' . exhibit_parse_to_chinese($arr[2]);
+    } else if (count($arr) == 5) {
+        return exhibit_parse_to_chinese($arr[0]) . '-' . exhibit_parse_to_chinese($arr[1]) . '-' . exhibit_parse_to_chinese($arr[2]) . '-' . exhibit_parse_to_chinese($arr[3]);
+    }
+
+    return 'unknow' . '-' . $mstr . '-' . 'error';
+}
+
+
+
 // exhibit 转换为数字
 
 function exhibit_flag_to_number($mstr) {
