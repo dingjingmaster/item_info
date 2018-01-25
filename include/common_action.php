@@ -25,8 +25,7 @@ if(!strcasecmp($_GET['type'], 'retent')) {
     require ROOT_PATH . '/include/search_exhibit.php';
     echo search_init();
 } else if(!strcasecmp($_POST['page'], 'exhibit')) {
-    echo 'okkkkk';
-    //echo $_POST['data'];
+    echo $_POST['data'];
 }
 
 
