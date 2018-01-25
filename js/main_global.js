@@ -55,11 +55,11 @@ layui.use('laydate', function() {
 
 layui.use(['form', 'laydate'], function(){
     var form = layui.form;
-    var laydate = layui.laydate;
+    var dt = layui.laydate;
 
     var fee = [];
     // 开始时间
-    laydate.render({
+    dt.render({
         elem: '#form_start_time'
     });
 
