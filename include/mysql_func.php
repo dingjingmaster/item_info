@@ -41,7 +41,7 @@ function _mysql_query($sql) {
 
 // 
 function _mysql_fetch_array($result) {
-    return mysql_fetch_array($result, MYSQL_ASSOC);
+    return mysql_fetch_array($result);
 }
 
 ?>
