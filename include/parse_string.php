@@ -169,12 +169,8 @@ function exhibit_parse_to_chinese($mstr) {
         'retent' => '留存率',
         'rteDsp' => '留展比',
     );
-    
-    if(in_array($mstr, array_keys($chArray))) {
-        return $chArray[$mstr];
-    }
 
-    return $mstr;
+    return $chArray[$mstr];
 }
 
 
