@@ -120,7 +120,12 @@ function search_select($data){
     $para = $req['para'];
 
     // 最后输出的变量
+    $title = "自定义查询";
+    $yTitle = "(100%)";
     $xData = array();
+    $yData = array();
+    $picRes = array();
+    $finRes = array();
 
 
     $mainPage = ''. 
@@ -141,7 +146,7 @@ function search_select($data){
                 $yArray = array();
                 $cate = '';
                 while($row = _mysql_fetch_array($result)) {
-                    $cate = ''; //解析
+                    $cate = exhibit_prekey_split($row['dzid']); //解析
                     array_push($xArray, $row['timeStamp']);
                     array_push($yArray, $row[$k]);
                 }
@@ -162,6 +167,24 @@ function search_select($data){
         }
     }
 
+    // 产生title
+    $picRes['title'] = generate_title($title);
+    $picRes['subtitle'] = generate_title('');
+    $picRes['xAxis'] = $xData;
+    $picRes['yAxis'] = generate_y($yTitle);
+    $picRes['series'] = $yData;
+    $picRes['plotOptions'] = generate_plot_option();
+
+    $finRes['div'] = "select_plot";
+    $finRes['json'] = json_encode($finRes);
+
+    $rep = array();
+    $rep['title'] = "自定义查询";
+    $rep['mainPage'] = $mainPage;
+    $rep['navPage'] = $navPage;
+    $rep['json'] = json_encode($finRes);
+
+    return json_encode($rep);
 }
 
 
