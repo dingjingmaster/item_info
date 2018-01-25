@@ -88,7 +88,7 @@ layui.use('form', function(){
                 '<input type="checkbox" lay-skin="primary" name="usrKnnRec" title="用户协同"/>' + 
                 '<input type="checkbox" lay-skin="primary" name="codBotRec" title="冷启动"/>' + 
                 '<input type="checkbox" lay-skin="primary" name="popRec" title="流行度"/>' + 
-                '<input type="checkbox" lay-skin="primary" name="itmKnnRec" title="物品协同"/>' + 
+                '<input type="checkbox" lay-skin="primary" name="itemKnnRec" title="物品协同"/>' + 
                 '<input type="checkbox" lay-skin="primary" name="samCtgRec" title="同分类"/>' + 
                 '<input type="checkbox" lay-skin="primary" name="subMdlRec" title="订阅模型"/>' + 
                 '<input type="checkbox" lay-skin="primary" name="redMdlRec" title="阅读模型"/>' + 
