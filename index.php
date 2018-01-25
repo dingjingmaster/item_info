@@ -29,7 +29,8 @@ require dirname(__FILE__) . '/include/common_action.php';
                         <a href="javascript:;">自定义查询</a>
                         <dl id="search_module" class="layui-nav-child">
                             <dd><a href="javascript:search_request_init('retent');">留存率相关查询</a></dd>
-                            <dd><a href="javascript:search_request_init('exhibit');">订展比相关查询</a></dd>
+<!--                            <dd><a href="javascript:search_request_init('exhibit');">订展比相关查询</a></dd>
+-->
                         </dl>
                     </li>
                 </ul>
@@ -48,8 +49,11 @@ require dirname(__FILE__) . '/include/common_action.php';
                         </li>
 
                         <li class="layui-nav-item">
-                            <a href="javascript:;">订展比相关统计</a>
+                            <a href="javascript:;">订展比相关查询</a>
                             <dl class="layui-nav-child">
+                                <dd><a href="javascript:search_request_init('exhibit');">各指标占比查询</a></dd>
+<!--
+
                                 <dd><button class="layui-btn layui-btn-normal layui-btn-fluid" onclick="request_exhibit('clkDsp')">点展比</button></dd>
                                 <dd><button class="layui-btn layui-btn-normal layui-btn-fluid" onclick="request_exhibit('subClk')">订点比</button></dd>
                                 <dd><button class="layui-btn layui-btn-normal layui-btn-fluid" onclick="request_exhibit('subDsp')">订展比</button></dd>
@@ -57,6 +61,7 @@ require dirname(__FILE__) . '/include/common_action.php';
                                 <dd><button class="layui-btn layui-btn-normal layui-btn-fluid" onclick="request_exhibit('redDsp')">阅展比</button></dd>
                                 <dd><button class="layui-btn layui-btn-normal layui-btn-fluid" onclick="request_exhibit('retent')">留存率</button></dd>
                                 <dd><button class="layui-btn layui-btn-normal layui-btn-fluid" onclick="request_exhibit('rteDsp')">留展比</button></dd>
+-->
                             </dl>
                         </li>
                     </ul>
