@@ -158,9 +158,9 @@ function search_select($data){
                     $cate = '';
                     while($row = _mysql_fetch_array($result)) {
                         $cate = exhibit_prekey_split($row['dzid']); //解析
-                        echo $cate;
-                        //array_push($xArray, $row['timeStamp']);
-                        //array_push($yArray, $row[$k]);
+                        array_push($xArray, $row['timeStamp']);
+                        array_push($yArray, $row[$k]);
+                        echo $row[$k];
                     }
                 /*    // 生成 x
                     $xData1 = $xData;
