@@ -45,6 +45,11 @@ layui.use('element', function(){
     var element = layui.element;
 });
 
+// 开始时间
+laydate.render({
+elem: '#form_start_time',
+    });
+
 layui.use(['form', 'laydate'], function(){
     var form = layui.form;
     var laydate = layui.laydate;
