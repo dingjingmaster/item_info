@@ -51,14 +51,13 @@ layui.use(['form', 'laydate'], function(){
 
     var fee = [];
     var startTim = {
+        elem: '#form_start_time',
+        format: 'YYYYMMDD',
         max: laydate.now(),
     }
 
-    // 开始日期设置
-    document.getElementById('form_start_time').onclick = function(){
-        start.ele = this;
-        laydate(start);
-    }
+    laydate(start);
+
 
     // 开始时间
     //laydate.render({
