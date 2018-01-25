@@ -153,7 +153,9 @@ function search_select($data){
                     $cate = '';
                     while($row = _mysql_fetch_array($result)) {
                         $cate = exhibit_prekey_split($row['dzid']); //解析
-                        array_push($xArray, $row['timeStamp']);
+                        if($row['timeStamp'] >= 20180101) {
+                            array_push($xArray, $row['timeStamp']);
+                        }
                         array_push($yArray, $row[$k]);
                     }
                     $cate = $cate . '-' . exhibit_parse_to_chinese($k);
@@ -195,11 +197,18 @@ function search_select($data){
                         $cate = '';
                         while($row = _mysql_fetch_array($result)) {
                             $cate = exhibit_prekey_split($row['dzid']); //解析
-                            array_push($xArray, $row['timeStamp']);
+                            if($row['timeStamp'] >= 20180101) {
+                                array_push($xArray, $row['timeStamp']);
+                            }
                             array_push($yArray, $row[$k]);
                         }
                         $cate = $cate . '-' . exhibit_parse_to_chinese($k);
     
+                        // 判断是否合适
+                        if(count($xArray) != count($yArray)) {
+                            continue;
+                        }
+
                         // 生成 x
                         $xData1 = $xData;
                         $xData = generate_x($xArray);
