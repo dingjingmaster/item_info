@@ -64,7 +64,7 @@ function search_request_select(page, info) {
         }
     }
 
-    xmlhttp.open('GET', request, true);
+    xmlhttp.open('POST', request, true);
     xmlhttp.send();
 }
 
