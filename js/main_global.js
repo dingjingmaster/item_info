@@ -18,9 +18,9 @@ function detail_input(jsObj) {
     for(var key in jsObj) {
         if(key == 'dim') {
             continue;
-        } else if (null != key.endWith(/Mdl$/)) {
+        } else if (null != key.match(/Mdl$/)) {
             module.push(key);
-        } else if (null != key.endWith(/Fee$/)) {
+        } else if (null != key.match(/Fee$/)) {
             fee.push(key);
         } else if (key == 'clkDsp' || key == 'srbClk' || key == 'srbDsp' || key == 'redSrb' || key == 'redDsp' || key == 'retent' || key == 'rteDsp') {
             target.push(key);
