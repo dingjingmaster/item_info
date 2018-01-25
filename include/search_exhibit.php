@@ -12,6 +12,7 @@ if(!strcasecmp(INTEST, 'DEBUG')) {
     error_reporting(E_ERROR);                                             // 开启错误报告
 }
 require ROOT_PATH . '/include/parse_string.php';
+require ROOT_PATH . '/include/mysql_func.php';
 
 define('DB_NAME', 'item_exhibit');
 
@@ -159,6 +160,7 @@ function search_select($data){
                 $cate = '';
                 while($row = _mysql_fetch_array($result)) {
                     $cate = exhibit_prekey_split($row['dzid']); //解析
+                    return $cate;
                     array_push($xArray, $row['timeStamp']);
                     array_push($yArray, $row[$k]);
                 }
@@ -195,6 +197,7 @@ function search_select($data){
     $rep['mainPage'] = $mainPage;
     $rep['navPage'] = $navPage;
     $rep['json'] = json_encode($finRes);
+
 
     return json_encode($rep);
 }
