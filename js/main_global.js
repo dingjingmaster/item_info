@@ -45,14 +45,6 @@ layui.use('element', function(){
     var element = layui.element;
 });
 
-layui.use('laydate', function() {
-
-    // 截止时间
-    //laydate.render({
-    //    elem: '#form_stop_time'
-    //});
-});
-
 layui.use(['form', 'laydate'], function(){
     var form = layui.form;
     var dt = layui.laydate;
@@ -60,7 +52,8 @@ layui.use(['form', 'laydate'], function(){
     var fee = [];
     // 开始时间
     dt.render({
-        elem: '#form_start_time'
+        elem: '#form_start_time',
+        type: 'date',
     });
 
     form.on('select(form_dim)', function(data){
