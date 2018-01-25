@@ -157,6 +157,7 @@ function search_select($data){
                 $cate = '';
                 echo $msql . '<br/>';
                 while($row = _mysql_fetch_array($result)) {
+                    echo $row['dzid'];
             /*        return $row['dzid'];
                     $cate = exhibit_prekey_split($row['dzid']); //解析
                     array_push($xArray, $row['timeStamp']);
