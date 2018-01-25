@@ -159,15 +159,12 @@ function search_select($data){
                     if($xData == '') {
                         $xData = $xData1;
                     }
-                    echo $xData;
-                    /*
     
                     // 生成 y
                     $ret = generate_series($cate, $yArray);
                     if($ret) {
                         array_push($yData, $ret);
                     }
-                     */
                 }
             }
         }
