@@ -170,6 +170,11 @@ function search_select($data){
         }
     }
 
+    var_dump($xData);
+    var_dump($yData);
+
+    return;
+
     // 产生title
     $picRes['title'] = generate_title($title);
     $picRes['subtitle'] = generate_title('');
