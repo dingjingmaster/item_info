@@ -66,6 +66,6 @@ function search_request_select(page, info) {
 
     xmlhttp.open('POST', request, true);
     xmlhttp.setRequestHeader('Content-type', "applicarion/x-www-form-urlencoded");
-    xmlhttp.send("type=search&page=" + page + '&data=' + info);
+    xmlhttp.send("page=" + page + '&data=' + info);
 }
 
