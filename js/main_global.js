@@ -45,6 +45,20 @@ layui.use('element', function(){
     var element = layui.element;
 });
 
+layui.use('layuidate', function() {
+    var laydate = layui.laydate;
+
+    // 开始时间
+    laydate.render({
+        elem: '#form_start_time'
+    });
+
+    // 截止时间
+    laydate.render({
+        elem: '#form_stop_time'
+    });
+});
+
 layui.use('form', function(){
     var form = layui.form;
 
