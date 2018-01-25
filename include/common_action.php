@@ -23,14 +23,17 @@ if(!strcasecmp($_GET['type'], 'retent')) {
     if((!strcasecmp($_GET['page'], 'retent')) && (count($_GET) == 2)) {
         require ROOT_PATH . '/include/search_retent.php';
         echo search_init();
+
     } else if ((!strcasecmp($_GET['page'], 'exhibit')) && (count($_GET) == 2)) {
         require ROOT_PATH . '/include/search_exhibit.php';
-        echo search_init();
-    } else if ((!strcasecmp($_GET['page'], 'exhibit')) && (count($_GET) == 3)) {
-        require ROOT_PATH . '/include/search_exhibit.php';
-        _mysql_connect();
-        _mysql_select_db();
-        echo search_select($_GET['data']);
+        if(count($_GET) == 2) {
+            echo search_init();
+        } else if (count($_GET) == 3) {
+            _mysql_connect();
+            _mysql_select_db();
+            echo $_GET['data'];
+            //echo search_select($_GET['data']);
+        }
     }
 
 }
