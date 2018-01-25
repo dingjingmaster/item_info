@@ -11,10 +11,9 @@ if(!defined('IN_TEST')) {
 if(!strcasecmp(INTEST, 'DEBUG')) {
     error_reporting(E_ERROR);                                             // 开启错误报告
 }
+define('DB_NAME', 'item_exhibit');
 require ROOT_PATH . '/include/parse_string.php';
 require ROOT_PATH . '/include/mysql_func.php';
-
-define('DB_NAME', 'item_exhibit');
 
 function search_init(){
     $page = '<form class="layui-form" action="">'.
