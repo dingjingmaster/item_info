@@ -152,7 +152,7 @@ function search_select($data){
         foreach($fee as $j) { // feeCate
             foreach($target as $k) { //直接字段
                 $msql = $sql . ' typeCate=' . exhibit_flag_to_number($i) . ' AND ' . ' feeCate=' . exhibit_flag_to_number($j);
-                echo $msql;
+                return $msql;
                 /*
                 $result = _mysql_query($msql);
                 $xArray = array();
