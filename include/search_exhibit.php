@@ -156,7 +156,6 @@ function search_select($data){
                 $yArray = array();
                 $cate = '';
                 echo $msql . '<br/>';
-                /*
                 while($row = _mysql_fetch_array($result)) {
                     return $row['dzid'];
                     $cate = exhibit_prekey_split($row['dzid']); //解析
@@ -176,7 +175,6 @@ function search_select($data){
                 if($ret) {
                     array_push($yData, $ret);
                 }
-                 */
             }
         }
     }
