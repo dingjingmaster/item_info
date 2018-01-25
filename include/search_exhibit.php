@@ -152,6 +152,7 @@ function search_select($data){
                         array_push($xArray, $row['timeStamp']);
                         array_push($yArray, $row[$k]);
                     }
+                    $cate = $cate . $k;
 
                     // 生成 x
                     $xData1 = $xData;
