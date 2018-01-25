@@ -58,7 +58,8 @@ function search_request_select(page, info) {
             var js = JSON.parse(json.json);
             var divId = js['div'];
             var pic = js['json'];
-            plot_picture(divId, pic);
+//            plot_picture(divId, pic);
+            document.getElementById('main_div').innerHTML = pic;
             //for(var i in js) {
             //    var elem = js[i];
             //    var mJS = JSON.parse(elem);
