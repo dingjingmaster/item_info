@@ -29,12 +29,13 @@ function exhibit_prekey_split($mstr) {
 
 function exhibit_flag_to_number($mstr) {
     // 付费类型
-    $trans = Array("freFee" => 1,
+    $trans = Array(
+        "freFee" => 1,
         "chgFee" => 2,
         "monFee" => 3,
         "pubFee" => 4,
         "tfFee" => 5,
-        'livStmRec' => 1,       /*策略*/
+        'livStmRec' => 1,
         'usrKnnRec' => 2,
         'codBotRec' => 3,
         'popRec' => 4,
@@ -45,7 +46,7 @@ function exhibit_flag_to_number($mstr) {
         'cotSimRec' => 9,
         'redMdlRec' => 10,
         'cat1SimCtgRec' => 11,
-        'shfRecMdl' => 1,   // 模块
+        'shfRecMdl' => 1,
         'freGusMdl' => 2,
         'bakArdMdl' => 3,
         'foeArdMdl' => 4,
@@ -83,7 +84,7 @@ function exhibit_flag_to_number($mstr) {
         'girlCfy1' => 2,
         'monCfy1' => 3,
         'pshCfy1' => 4,
-        'othCfy1' => 5);
+        'othCfy1' => 5,);
 
     return $trans[$mstr];
     //return $mstr;
@@ -132,7 +133,7 @@ function exhibit_parse_to_chinese($mstr) {
         'usrKnnRec' => '用户协同',
         'codBotRec' => '冷启动',
         'popRec' => '流行度',
-        'itmKnnRec' => '物品协同',
+        'itemKnnRec' => '物品协同',
         'samCtgRec' => '同分类',
         'subMdlRec' => '订阅模型',
         'redMdlRec' => '阅读模型',
