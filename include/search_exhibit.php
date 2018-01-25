@@ -155,7 +155,7 @@ function search_select($data){
                 $xArray = array();
                 $yArray = array();
                 $cate = '';
-                echo $msql;
+                echo $msql . '<br/>';
                 /*
                 while($row = _mysql_fetch_array($result)) {
                     return $row['dzid'];
