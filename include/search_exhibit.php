@@ -187,7 +187,6 @@ function search_select($data){
     $rep['navPage'] = $navPage;
     $rep['json'] = json_encode($finRes);
 
-
     return json_encode($rep);
 }
 
