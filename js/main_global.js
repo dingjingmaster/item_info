@@ -56,7 +56,7 @@ layui.use(['form', 'laydate'], function(){
         //max: laydate.now(),
     }
 
-    laydate(startTim);
+    laydate.render(startTim);
 
 
     // 开始时间
