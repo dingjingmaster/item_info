@@ -147,36 +147,40 @@ function search_select($data){
 
     // 查询并返回
     $sql = 'SELECT * FROM ' . $table . ' WHERE ';
-    foreach($module as $i) { // 字段
-        foreach($fee as $j) { // feeCate
-            foreach($target as $k) { //直接字段
-                $msql = $sql . ' typeCate=' . exhibit_flag_to_number($i) . ' AND ' . ' feeCate=' . exhibit_flag_to_number($j);
-                $result = _mysql_query($msql);
-                $xArray = array();
-                $yArray = array();
-                $cate = '';
-                echo $msql . '<br/>';
-                while($row = _mysql_fetch_array($result)) {
-                    echo $row['dzid'];
-            /*        return $row['dzid'];
-                    $cate = exhibit_prekey_split($row['dzid']); //解析
-                    array_push($xArray, $row['timeStamp']);
-                    array_push($yArray, $row[$k]);
-             */  }
-/*
-                // 生成 x
-                $xData1 = $xData;
-                $xData = generate_x($xArray);
-                if($xData == '') {
-                    $xData = $xData1;
+    if (count($para) == 0) {
+        foreach($module as $i) { // 字段
+            foreach($fee as $j) { // feeCate
+                foreach($target as $k) { //直接字段
+                    $msql = $sql . ' typeCate=' . exhibit_flag_to_number($i) . ' AND ' . ' feeCate=' . exhibit_flag_to_number($j);
+                    $result = _mysql_query($msql);
+                    $xArray = array();
+                    $yArray = array();
+                    $cate = '';
+                    echo $msql . '<br/>';
+                    while($row = _mysql_fetch_array($result)) {
+                        if(count($row) > 0) {
+                            echo $row['dzid'];
+                        }
+                /*        return $row['dzid'];
+                        $cate = exhibit_prekey_split($row['dzid']); //解析
+                        array_push($xArray, $row['timeStamp']);
+                        array_push($yArray, $row[$k]);
+                 */  }
+    /*
+                    // 生成 x
+                    $xData1 = $xData;
+                    $xData = generate_x($xArray);
+                    if($xData == '') {
+                        $xData = $xData1;
+                    }
+    
+                    // 生成 y
+                    $ret = generate_series($cate, $yArray);
+                    if($ret) {
+                        array_push($yData, $ret);
+                  }
+     */
                 }
-
-                // 生成 y
-                $ret = generate_series($cate, $yArray);
-                if($ret) {
-                    array_push($yData, $ret);
-              }
- */
             }
         }
     }
