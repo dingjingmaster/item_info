@@ -54,9 +54,9 @@ layui.use('laydate', function() {
     });
 
     // 截止时间
-    laydate.render({
-        elem: '#form_stop_time'
-    });
+    //laydate.render({
+    //    elem: '#form_stop_time'
+    //});
 });
 
 layui.use('form', function(){
