@@ -111,6 +111,7 @@ function get_table_field($table) {
 
 function search_select($data){
 
+    require ROOT_PATH . '/include/plot_func.php';
     $req = json_decode(utf8_encode($data), true);
     $table = 'item_exhibit_' . $req['table'];
 
