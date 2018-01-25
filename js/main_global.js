@@ -45,7 +45,7 @@ layui.use('element', function(){
     var element = layui.element;
 });
 
-layui.use('layuidate', function() {
+layui.use('laydate', function() {
     var laydate = layui.laydate;
 
     // 开始时间
