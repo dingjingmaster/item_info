@@ -170,10 +170,6 @@ function search_select($data){
         }
     }
 
-    var_dump($xData);
-    var_dump($yData);
-
-    return;
 
     // 产生title
     $picRes['title'] = generate_title($title);
@@ -184,7 +180,7 @@ function search_select($data){
     $picRes['plotOptions'] = generate_plot_option();
 
     $finRes['div'] = "select_plot";
-    $finRes['json'] = json_encode($finRes);
+    $finRes['json'] = json_encode($picRes);
 
     $rep = array();
     $rep['title'] = "自定义查询";
