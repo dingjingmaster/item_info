@@ -113,12 +113,16 @@ function get_table_field($table) {
 function search_select($data){
 
     $req = json_decode($data);
-    return $data;
     $table = 'item_exhibit_' . $req['table'];
     $module = $req['module'];
     $fee = $req['fee'];
     $target = $req['target'];
     $para = $req['para'];
+    echo $table;
+    echo $module;
+    echo $fee;
+    echo $target;
+    echo $para;
 
     // 最后输出的变量
     $title = "自定义查询";
