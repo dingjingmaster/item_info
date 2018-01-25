@@ -158,10 +158,11 @@ function search_select($data){
                     $cate = '';
                     while($row = _mysql_fetch_array($result)) {
                         $cate = exhibit_prekey_split($row['dzid']); //解析
-                        array_push($xArray, $row['timeStamp']);
-                        array_push($yArray, $row[$k]);
+                        echo $cate;
+                        //array_push($xArray, $row['timeStamp']);
+                        //array_push($yArray, $row[$k]);
                     }
-                    // 生成 x
+                /*    // 生成 x
                     $xData1 = $xData;
                     $xData = generate_x($xArray);
                     if($xData == '') {
@@ -172,7 +173,8 @@ function search_select($data){
                     $ret = generate_series($cate, $yArray);
                     if($ret) {
                         array_push($yData, $ret);
-                  }
+                    }
+                 */
                 }
             }
         }
