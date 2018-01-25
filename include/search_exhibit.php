@@ -117,16 +117,15 @@ function search_select($data){
         'bb' => '[sd,sd,as,ds,dssd]',
     );
     $req = json_decode(utf8_encode($data), true);
-    //return var_dump($req);
-    //return var_dump($req).'<hr/>'.$data.'<hr/>'.var_dump($test);
     $table = 'item_exhibit_' . $req['table'];
+
     $module = $req['module'];
     $fee = $req['fee'];
     $target = $req['target'];
     $para = $req['para'];
 
-    return $table . '   ' . $module[0];
-    echo $module[0];
+    //return $table . '   ' . $module[0];
+    //echo $module[0];
     //echo $fee;
     //echo $target;
     //echo $para;
