@@ -151,15 +151,15 @@ function search_select($data){
                         array_push($xArray, $row['timeStamp']);
                         array_push($yArray, $row[$k]);
                     }
-                    echo $cate;
 
-                    /*
                     // 生成 x
                     $xData1 = $xData;
                     $xData = generate_x($xArray);
                     if($xData == '') {
                         $xData = $xData1;
                     }
+                    echo $xData;
+                    /*
     
                     // 生成 y
                     $ret = generate_series($cate, $yArray);
