@@ -151,11 +151,11 @@ function search_select($data){
         foreach($fee as $j) { // feeCate
             foreach($target as $k) { //直接字段
                 $msql = $sql . ' typeCate=' . exhibit_flag_to_number($i) . ' AND ' . ' feeCate=' . exhibit_flag_to_number($j);
-                return $msql;
                 $result = _mysql_query($msql);
                 $xArray = array();
                 $yArray = array();
                 $cate = '';
+                echo $msql;
                 while($row = _mysql_fetch_array($result)) {
                     return $row['dzid'];
                     $cate = exhibit_prekey_split($row['dzid']); //解析
