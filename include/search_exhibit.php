@@ -160,9 +160,8 @@ function search_select($data){
                         $cate = exhibit_prekey_split($row['dzid']); //解析
                         array_push($xArray, $row['timeStamp']);
                         array_push($yArray, $row[$k]);
-                        echo $row[$k];
                     }
-                /*    // 生成 x
+                    // 生成 x
                     $xData1 = $xData;
                     $xData = generate_x($xArray);
                     if($xData == '') {
@@ -174,13 +173,10 @@ function search_select($data){
                     if($ret) {
                         array_push($yData, $ret);
                     }
-                 */
                 }
             }
         }
     }
-
-    return;
 
     // 产生title
     $picRes['title'] = generate_title($title);
