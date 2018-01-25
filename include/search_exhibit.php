@@ -86,6 +86,21 @@ function search_init(){
                     '</div>'.
                 '</div>'.
                 ''.
+                '<div id="form_time_div" class="layui-form-item">'.
+                    '<div class="layui-inline">'.
+                        '<label class="layui-form-label">开始时间</label>'.
+                        '<div class="layui-input-inline">'.
+                            '<input id="form_start_time" type="text" class="layui-input" placeholder="yyyyMMdd">'.
+                        '</div>'.
+                    '</div>'.
+                    '<div class="layui-inline">'.
+                        '<label class="layui-form-label">截止时间</label>'.
+                        '<div class="layui-input-inline">'.
+                            '<input id="form_stop_time" type="text" class="layui-input" placeholder="yyyyMMdd">'.
+                        '</div>'.
+                    '</div>'.
+                '</div>'.
+                ''.
                 '<div id="form_submit" class="layui-form-item ele_hidden">'.
                     '<div class="layui-input-block">'.
                         '<button class="layui-btn" lay-submit lay-filter="form_submit">立即提交</button>'.
@@ -97,49 +112,34 @@ function search_init(){
     return $page;
 }
 
-
-function get_table_field($table) {
-    $field = Array(
-        'item_exhibit_strategy' => 'strategyCate',
-        'item_exhibit_status' => 'statusCate',
-        'item_exhibit_view' => 'viewCate',
-        'item_exhibit_intime' => 'intimeCate',
-        'item_exhibit_update' => 'updateCate',
-        'item_exhibit_classify1' => 'classify1Cate'
-    );
-
-    return $field[$table];
-}
-
 function search_select($data){
 
     require ROOT_PATH . '/include/plot_func.php';
     $req = json_decode(utf8_encode($data), true);
     $table = 'item_exhibit_' . $req['table'];
-
-    $module = $req['module'];
     $fee = $req['fee'];
-    $target = $req['target'];
     $para = $req['para'];
+    $module = $req['module'];
+    $target = $req['target'];
 
     // 最后输出的变量
     $title = "自定义查询";
-    $yTitle = "(100%)";
+    $yTitle = "占比(100%)";
     $xData = array();
     $yData = array();
     $picRes = array();
     $finRes = array();
 
-
     $mainPage = ''. 
-        '<a name="select"></a>'.'<h5>自定义查询</h5>'.'<div id="select_plot" style="width: 900px; height: 600px; margin: 0 auto"> </div>';
-
+        '<a name="select"></a>'.'<h5>自定义查询</h5>'.'<div id="select_plot" style="width: 1000px; height: 600px; margin: 0 auto"> </div>';
     $navPage = ''.
         '<li class="layui-nav-item"><a href="#select">自定义查询</a></li>';
 
-
     // 查询并返回
     $sql = 'SELECT * FROM ' . $table . ' WHERE ';
+    if(!strcasecmp($table, 'item_exhibit_summary')) {
+    }
+
     if (count($para) == 0) {
     $xData = array();
     $yData = array();
@@ -192,7 +192,7 @@ function search_select($data){
             foreach($module as $i) { // 字段
                 foreach($fee as $j) { // feeCate
                     foreach($target as $k) { //直接字段
-                        $msql = $sql . ' typeCate=' . exhibit_flag_to_number($i) . ' AND ' . ' feeCate=' . exhibit_flag_to_number($j) . ' AND ' . get_table_field($table) . '=' . exhibit_flag_to_number($p);
+                        $msql = $sql . ' typeCate=' . exhibit_flag_to_number($i) . ' AND ' . ' feeCate=' . exhibit_flag_to_number($j) . ' AND ' . exhibit_table_field($table) . '=' . exhibit_flag_to_number($p);
                         $result = _mysql_query($msql);
                         $xArray = array();
                         $yArray = array();

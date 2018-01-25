@@ -12,7 +12,6 @@ if(!strcasecmp(INTEST, 'DEBUG')) {
     error_reporting(E_ERROR);                                             // 开启错误报告
 }
 
-
 // json title
 function generate_title($title) {
     $arr = array();
@@ -63,7 +62,6 @@ function generate_series($mName, $dataArray) {
 
     $arr = array();
     $mArr = array();
-
     $arr['name'] = $mName;
     for($i=0; $i<count($dataArray); ++$i) {
         array_push($mArr, round((float)$dataArray[$i], 4));
@@ -81,7 +79,6 @@ function generate_plot_option() {
     $mArr1['enabled'] = true;
     $mArr2['dataLabels'] = $mArr1;
     $mArr2['enableMouseTracking'] = true;
-
     $arr['line'] = $mArr2;
 
     return $arr;

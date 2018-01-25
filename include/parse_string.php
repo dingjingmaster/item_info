@@ -6,6 +6,19 @@
 > Created Time: 2018年01月24日 星期三 17时39分34秒
  ************************************************************************/
 
+function exhibit_table_field($table) {
+    $field = Array(
+        'item_exhibit_strategy' => 'strategyCate',
+        'item_exhibit_status' => 'statusCate',
+        'item_exhibit_view' => 'viewCate',
+        'item_exhibit_intime' => 'intimeCate',
+        'item_exhibit_update' => 'updateCate',
+        'item_exhibit_classify1' => 'classify1Cate'
+    );
+
+    return $field[$table];
+}
+
 // 主键切割 - 获取字段信息
 function exhibit_prekey_split($mstr) {
 
@@ -23,10 +36,7 @@ function exhibit_prekey_split($mstr) {
     return 'unknow' . '-' . $mstr . '-' . 'error';
 }
 
-
-
 // exhibit 转换为数字
-
 function exhibit_flag_to_number($mstr) {
     // 付费类型
     $trans = Array(
@@ -90,15 +100,11 @@ function exhibit_flag_to_number($mstr) {
     //return $mstr;
 }
 
-
-
-
 // exhibit 解析字符
 function exhibit_parse_to_chinese($mstr) {
     if(strlen($mstr) <= 1) {
         return $mstr;
     }
-
     $chArray = array (
         'clkDsp' => '点展比 ',
         'srbClk' => '订点比 ',
