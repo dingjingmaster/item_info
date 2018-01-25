@@ -112,7 +112,6 @@ function get_table_field($table) {
 
 function search_select($data){
 
-    return $data;
     $req = json_decode($data);
     $table = 'item_exhibit_' . $req['table'];
     $module = $req['module'];
@@ -135,7 +134,6 @@ function search_select($data){
     $navPage = ''.
         '<li class="layui-nav-item"><a href="#select">自定义查询</a></li>';
 
-    echo "okkkkkkkkkkkkk!";
 
     // 查询并返回
     $sql = 'SELECT * FROM ' . $table . ' WHERE ';
