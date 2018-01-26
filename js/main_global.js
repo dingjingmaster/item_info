@@ -34,7 +34,7 @@ function detail_input(jsObj) {
     stopTim = $('#fstop_tim').val(); 
 
     diff = stopTim - startTim
-    if (Math.abs(diff) <= 2) {
+    if (diff <= 2) {
         return 'tim';
     }
     if (target.length <= 0) {
@@ -228,7 +228,7 @@ layui.use(['form', 'laydate'], function(){
             layer.msg('请选择至少一个查询指标'); 
             return false;
         } else if (res == 'tim') {
-            layer.msg('请设置更大的时间跨度'); 
+            layer.msg('请设置更大的时间跨度且保证截止时间大于开始时间'); 
             return false;
         } else {
             search_request_select('exhibit', res);
