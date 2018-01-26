@@ -45,6 +45,14 @@ layui.use('element', function(){
     var element = layui.element;
 });
 
+layui.use('laydate', function(){
+    var laydate = layui.laydate;
+    var startTim = {
+        elem: '#form_start_time',
+    };
+    laydate.render(startTim);
+});
+
 // 开始时间
 //laydate.render({
 //elem: '#form_start_time',
@@ -53,11 +61,6 @@ layui.use('element', function(){
 layui.use('form', function(){
     var form = layui.form;
     var fee = [];
-
-    // 开始时间
-    //laydate.render({
-    //    elem: '#form_start_time',
-    //});
 
     form.on('select(form_dim)', function(data){
         // 隐藏所有div

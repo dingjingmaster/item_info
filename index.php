@@ -55,7 +55,6 @@ require dirname(__FILE__) . '/include/common_action.php';
                             <dl class="layui-nav-child">
                                 <dd><a href="javascript:search_request_init('exhibit');">各指标占比查询</a></dd>
 <!--
-
                                 <dd><button class="layui-btn layui-btn-normal layui-btn-fluid" onclick="request_exhibit('clkDsp')">点展比</button></dd>
                                 <dd><button class="layui-btn layui-btn-normal layui-btn-fluid" onclick="request_exhibit('subClk')">订点比</button></dd>
                                 <dd><button class="layui-btn layui-btn-normal layui-btn-fluid" onclick="request_exhibit('subDsp')">订展比</button></dd>
@@ -75,7 +74,6 @@ require dirname(__FILE__) . '/include/common_action.php';
                 <div id="form_div" style="padding: 15px;"></div>
                 <div id="main_div" style="padding: 15px;"></div>
             </div>
-
             <div class="layui-footer"> @  宜搜小说 </div>
         </div>
    </body>
