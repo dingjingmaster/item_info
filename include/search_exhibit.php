@@ -235,6 +235,7 @@ function search_select($data){
                         }
                         $mxArray = min_to_max($minTim, $maxTim);                                                                    // 一条直线完成
                         array_push($cate, $mcate . '-' . exhibit_parse_to_chinese($l));                                             // 保存标签
+                        array_push($yArray, $myArray);
                     }   
                 }
             }
