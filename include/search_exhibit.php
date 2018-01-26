@@ -141,8 +141,8 @@ function search_select($data){
     $xArray = array();
     $yArray = array();
 
-    $mainPage = '<a name="select"></a>'.'<h5>自定义查询</h5>'.'<div id="select_plot" style="width: 1000px; height: 600px; margin: 0 auto"> </div>';
-    $navPage = '<li class="layui-nav-item"><a href="#select">自定义查询</a></li>';
+    $mainPage = '<a name="select"></a>'.'<div id="select_plot" style="width: 1000px; height: 600px; margin: 0 auto"> </div>';
+    $navPage = '<li class="layui-nav-item"><a href="#select">订展比相关查询</a></li>';
 
     // 查询并返回
     $sql = 'SELECT * FROM ' . $table . ' WHERE timeStamp>='. $startTim . ' AND ' . 'timeStamp<=' . $stopTim . ' AND ';
