@@ -1,4 +1,4 @@
-<?php
+<php
 /*************************************************************************
 > FileName: parse_string.php
 > Author  : DingJing
@@ -107,9 +107,9 @@ function exhibit_parse_to_chinese($mstr) {
     }
     $chArray = array (
         'clkDsp' => '点展比 ',
-        'srbClk' => '订点比 ',
-        'srbDsp' => '订展比 ',
-        'redSrb' => '阅订比 ',
+        'subClk' => '订点比 ',
+        'subDsp' => '订展比 ',
+        'redSub' => '阅订比 ',
         'redDsp' => '阅展比',
         'retent' => '留存率',
         'rteDsp' => '留展比 ',
