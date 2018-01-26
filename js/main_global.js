@@ -54,6 +54,10 @@ layui.use(['form', 'laydate'], function(){
         elem: '#fstart_tim',
     };
 
+    var stopTim = {
+        elem: '#fstop_tim',
+    };
+
     form.on('select(form_dim)', function(data){
         // 隐藏所有div
         document.getElementById('form_sub_div').style.display="none";
@@ -184,6 +188,7 @@ layui.use(['form', 'laydate'], function(){
         }
         form.render();
         laydate.render(startTim);
+        laydate.render(stopTim);
     });
     
     form.on('submit(form_submit)', function(data){
