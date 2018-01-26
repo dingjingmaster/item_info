@@ -16,6 +16,8 @@ require dirname(__FILE__) . '/include/common_action.php';
         <script type="text/javascript" src="js/main_search.js"></script>
         <script type="text/javascript" src="js/main_global.js"></script>
         <link rel="stylesheet" href="css/main_global.css"/>
+
+
     </head>
 
     <body class="layui-layout-body" onload="request_retent('day')">
@@ -70,12 +72,28 @@ require dirname(__FILE__) . '/include/common_action.php';
             </div>
 
             <div class="layui-body">
-                <div id="form_div" style="padding: 15px;"></div>
+                <div id="form_div" style="padding: 15px;">
+                    <input id="test_time" type="text" class="layui-input"/>
+                </div>
                 <div id="main_div" style="padding: 15px;"></div>
             </div>
 
             <div class="layui-footer"> @  宜搜小说 </div>
         </div>
-    </body>
+
+
+        <script>
+
+    //var laydate = layui.laydate;
+    layui.laydate.render({
+    elem: '#test_date'
+    });
+        </script>
+ 
+
+
+
+
+   </body>
 </html>
 

@@ -46,23 +46,13 @@ layui.use('element', function(){
 });
 
 // 开始时间
-laydate.render({
-elem: '#form_start_time',
-    });
+//laydate.render({
+//elem: '#form_start_time',
+//    });
 
-layui.use(['form', 'laydate'], function(){
+layui.use('form', function(){
     var form = layui.form;
-    var laydate = layui.laydate;
-
     var fee = [];
-    var startTim = {
-        elem: '#form_start_time',
-        format: 'YYYYMMDD',
-        //max: laydate.now(),
-    }
-
-    laydate.render(startTim);
-
 
     // 开始时间
     //laydate.render({

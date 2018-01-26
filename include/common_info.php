@@ -22,8 +22,10 @@ function _common_print_head(){
         '<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">' .
         '<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">' .
         '<script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>'.
-        '<link rel="stylesheet" href="lib/layui/css/layui.css" media="all">' .
-        '<script src="lib/layui/layui.js"></script>'.
+        '<link rel="stylesheet" href="lib/layui/css/layui.css" media="all"/>' .
+        '<link rel="stylesheet" href="lib/layui/css/modules/laydate/default/laydate.css"/>' .
+        '<script src="lib/layui/layui.all.js"></script>'.
+        '<script src="lib/layui/lay/modules/laydate.js"></script>'.
         '<script src="lib/highcharts/code/highcharts.js"></script>';
 
     return '';
