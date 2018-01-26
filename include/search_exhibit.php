@@ -95,7 +95,7 @@ function search_init(){
                     '<div class="layui-inline">'.
                         '<label class="layui-form-label">截止时间</label>'.
                         '<div class="layui-input-inline">'.
-                            '<input id="form_stop_time" type="text" class="layui-input"/>'.
+                            '<input type="text" class="layui-input" id="fstop_tim">'.
                         '</div>'.
                     '</div>'.
                 '</div>'.
