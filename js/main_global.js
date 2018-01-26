@@ -35,10 +35,10 @@ function detail_input(jsObj) {
 
     diff = stopTim - startTim
     if (Math.abs(diff) <= 2) {
-        layer.msg('请设置更大的时间跨度'); 
+        return 'tim';
     }
     if (target.length <= 0) {
-        layer.msg('请选择至少一个查询指标'); 
+        return 'tar';
     }
 
     res.table = table;
@@ -222,8 +222,16 @@ layui.use(['form', 'laydate'], function(){
         if(formData['dim'] == "") {
             layer.msg("请您输入查询维度...");
         }
+
+        var res = detail_input(formData);
+        if (res == 'tar') {
+            layer.msg('请选择至少一个查询指标'); 
+        } else if (res == 'tim') {
+            layer.msg('请设置更大的时间跨度'); 
+        } else {
+            search_request_select('exhibit', res);
+        }
         
-        search_request_select('exhibit', detail_input(formData));
 
         return false;
     });
