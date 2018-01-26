@@ -25,6 +25,7 @@ function search_request_init(page) {
             var res = xmlhttp.responseText;
             document.getElementById('form_div').innerHTML = res;
             document.getElementById('main_div').innerHTML = '';
+            document.getElementById('nav_page').innerHTML = '';
             document.getElementById('title_div').innerHTML = title;
             var reset = document.getElementById('form_reset');
             $("button#form_reset").click();
