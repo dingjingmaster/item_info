@@ -162,7 +162,9 @@ function search_select($data){
                 $mxArray = array();
                 $myArray = array();
                 $mcate = '';
+                $flag = false;
                 while($row = _mysql_fetch_array($result)) {
+                    $flag = true;
                     $mcate = exhibit_prekey_split($row['dzid']);
                     //$timTmp = $row['timeStamp'];
                     array_push($mxArray, $row['timeStamp']);
@@ -176,10 +178,12 @@ function search_select($data){
                      */
                     array_push($myArray, $row[$j]);
                 }
-                $xmin = min($mxArray);
-                $xmax = max($mxArray);
-                array_push($cate, $mcate . '-' . exhibit_parse_to_chinese($j));                                                 // 保存标签
-                array_push($yArray, $myArray);
+                if($flag) {
+                    $xmin = min($mxArray);
+                    $xmax = max($mxArray);
+                    array_push($cate, $mcate . '-' . exhibit_parse_to_chinese($j));                                                 // 保存标签
+                    array_push($yArray, $myArray);
+                }
             }
         }
     } else if (!strcasecmp($table, 'item_exhibit_fee')) {
@@ -194,7 +198,9 @@ function search_select($data){
                     $mxArray = array();
                     $myArray = array();
                     $mcate = '';
+                    $flag = false;
                     while($row = _mysql_fetch_array($result)) {
+                        $flag = true;
                         $mcate = exhibit_prekey_split($row['dzid']);
                         //$timTmp = $row['timeStamp'];
                         array_push($mxArray, $row['timeStamp']);
@@ -207,11 +213,13 @@ function search_select($data){
                         */
                         array_push($myArray, $row[$k]);
                     }
-                    $xmin = min($mxArray);
-                    $xmax = max($mxArray);
-                    //$mxArray = min_to_max($minTim, $maxTim);                                                                    // 一条直线完成
-                    array_push($cate, $mcate . '-' . exhibit_parse_to_chinese($k));                                             // 保存标签
-                    array_push($yArray, $myArray);
+                    if($flag) {
+                        $xmin = min($mxArray);
+                        $xmax = max($mxArray);
+                        //$mxArray = min_to_max($minTim, $maxTim);                                                                    // 一条直线完成
+                        array_push($cate, $mcate . '-' . exhibit_parse_to_chinese($k));                                             // 保存标签
+                        array_push($yArray, $myArray);
+                    }
                 }
             }
         }
@@ -230,7 +238,9 @@ function search_select($data){
                         $mxArray = array();
                         $myArray = array();
                         $mcate = '';
+                        $flag = false;
                         while($row = _mysql_fetch_array($result)) {
+                            $flag = true;
                             $mcate = exhibit_prekey_split($row['dzid']);
                             //$timTmp = $row['timeStamp'];
                             array_push($mxArray, $row['timeStamp']);
@@ -243,11 +253,13 @@ function search_select($data){
                              */
                             array_push($myArray, $row[$l]);
                         }
-                        $xmin = min($mxArray);
-                        $xmax = max($mxArray);
-                        //$mxArray = min_to_max($minTim, $maxTim);                                                                    // 一条直线完成
-                        array_push($cate, $mcate . '-' . exhibit_parse_to_chinese($l));                                             // 保存标签
-                        array_push($yArray, $myArray);
+                        if($flag) {
+                            $xmin = min($mxArray);
+                            $xmax = max($mxArray);
+                            //$mxArray = min_to_max($minTim, $maxTim);                                                                    // 一条直线完成
+                            array_push($cate, $mcate . '-' . exhibit_parse_to_chinese($l));                                             // 保存标签
+                            array_push($yArray, $myArray);
+                        }
                     }   
                 }
             }
