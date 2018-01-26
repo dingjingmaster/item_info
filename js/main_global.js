@@ -30,7 +30,6 @@ function detail_input(jsObj) {
             para.push(key);
         }
     }
-    alert($('#fstart_tim').val());
     startTim = $('#fstart_tim').val(); 
     stopTim = $('#fstop_tim').val(); 
 
