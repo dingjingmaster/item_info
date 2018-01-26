@@ -11,6 +11,8 @@ function detail_input(jsObj) {
     var fee = Array();
     var target = Array();
     var para = Array();                 // 细分的模块
+    var startTim; 
+    var stopTim; 
 
     var res = Object();
 
@@ -27,16 +29,18 @@ function detail_input(jsObj) {
         } else {
             para.push(key);
         }
-
-        alert(key + ':=' + jsObj[key]);
     }
     alert($('#fstart_tim').val());
+    startTim = $('#fstart_tim').val(); 
+    stopTim = $('#fstop_tim').val(); 
 
     res.table = table;
     res.module = module;
     res.fee = fee;
     res.para = para;
     res.target = target;
+    res.start = startTim;
+    res.stop = stopTim;
 
     return JSON.stringify(res);
 }

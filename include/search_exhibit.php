@@ -111,6 +111,15 @@ function search_init(){
     return $page;
 }
 
+function min_to_max($min, $max) {
+    $res = array();
+    for($m = $minTim; $m < $maxTim; ++$m) {
+        array_push($res, $m);
+    }
+
+    return $res;
+}
+
 function search_select($data){
 
     require ROOT_PATH . '/include/plot_func.php';
@@ -120,6 +129,8 @@ function search_select($data){
     $para = $req['para'];
     $module = $req['module'];
     $target = $req['target'];
+    $startTim = $req['start'];
+    $stopTim = $req['stop'];
 
     // 最后输出的变量
     $title = "自定义查询";
@@ -129,102 +140,130 @@ function search_select($data){
     $picRes = array();
     $finRes = array();
 
+
+    // 最后生成 x 和 y
+    $cate = array();
+    $xArray = array();
+    $yArray = array();
+
     $mainPage = ''. 
         '<a name="select"></a>'.'<h5>自定义查询</h5>'.'<div id="select_plot" style="width: 1000px; height: 600px; margin: 0 auto"> </div>';
     $navPage = ''.
         '<li class="layui-nav-item"><a href="#select">自定义查询</a></li>';
 
     // 查询并返回
-    $sql = 'SELECT * FROM ' . $table . ' WHERE ';
+    $sql = 'SELECT * FROM ' . $table . ' WHERE timeStamp>='. $startTim . ' AND ' . 'timeStamp<=' . $stopTim . ' AND ';
     if(!strcasecmp($table, 'item_exhibit_summary')) {
-    }
+        $minTim = $stopTim;
+        $maxTim = $startTim;
+        foreach($module as $i) {
+            foreach($target as $j) {
+                $msql = $sql . ' typeCate=' . exhibit_flag_to_number($i);
+                $result = _mysql_query($msql);
+                $myArray = array();
+                $mxArray = array();
+                $mcate = '';
+                while($row = _mysql_fetch_array($result)) {
+                    $mcate = exhibit_prekey_split($row['dzid']); //解析
+                    $timTmp = $row['timeStamp'];
+                    if($timTmp >= $startTim && $minTim > $timTmp) {
+                        $minTim = $timTmp;
+                    } else if ($timTmp >= $startTim && $maxTim < $timTmp) {
+                        $maxTim = $timTmp;
+                    }
+                    array_push($myArray, $row[$j]);
+                }
 
-    if (count($para) == 0) {
-    $xData = array();
-    $yData = array();
-    $picRes = array();
-    $finRes = array();
-        foreach($module as $i) { // 字段
-            foreach($fee as $j) { // feeCate
-                foreach($target as $k) { //直接字段
-                    $msql = $sql . ' typeCate=' . exhibit_flag_to_number($i) . ' AND ' . ' feeCate=' . exhibit_flag_to_number($j);
+                // 一条线查询完
+                $mxArray = min_to_max($minTim, $maxTim);
+
+                // 保存标签
+                array_push($cate, $mcate . '-' . exhibit_parse_to_chinese($j));
+            }
+        }
+    } else if (!strcasecmp($table, 'item_exhibit_fee')) {
+        $minTim = $stopTim;
+        $maxTim = $startTim;
+        foreach($module as $i) {
+            foreach($fee as $j) {
+                foreach($target as $k) {
+                    $msql = $sql . ' typeCate=' . exhibit_flag_to_number($i) . 
+                        ' AND feeCate=' . exhibit_flag_to_number($j);
                     $result = _mysql_query($msql);
-                    $xArray = array();
-                    $yArray = array();
-                    $cate = '';
+                    $mxArray = array();
+                    $myArray = array();
+                    $mcate = '';
                     while($row = _mysql_fetch_array($result)) {
-                        $cate = exhibit_prekey_split($row['dzid']); //解析
-                        if($row['timeStamp'] >= 20180101) {
-                            array_push($xArray, $row['timeStamp']);
+                        $mcate = exhibit_prekey_split($row['dzid']);
+                        $timTmp = $row['timeStamp'];
+                        if($timTmp >= $startTim && $minTim > $timTmp) {
+                            $minTim = $timTmp;
+                        } else if ($timTmp >= $startTim && $maxTim < $timTmp) {
+                            $maxTim = $timTmp;
                         }
-                        array_push($yArray, $row[$k]);
+                        array_push($myArray, $row[$k]);
                     }
-                    $cate = $cate . '-' . exhibit_parse_to_chinese($k);
-
-                    // 判断是否合适
-                    if(count($xArray) != count($yArray)) {
-                        continue;
-                    }
-
-                    // 生成 x
-                    $xData1 = $xData;
-                    $xData = generate_x($xArray);
-                    if($xData == '') {
-                        $xData = $xData1;
-                    }
-
-                    // 生成 y
-                    $ret = generate_series($cate, $yArray);
-                    if($ret) {
-                        array_push($yData, $ret);
-                    }
+                    $mxArray = min_to_max($minTim, $maxTim);                                                                    // 一条直线完成
+                    array_push($cate, $mcate . '-' . exhibit_parse_to_chinese($k));                                             // 保存标签
                 }
             }
         }
 
-    } else if(count($para) > 0) {
-    $xData = array();
-    $yData = array();
-    $picRes = array();
-    $finRes = array();
-        foreach($para as $p) { //特殊查询
-            foreach($module as $i) { // 字段
-                foreach($fee as $j) { // feeCate
-                    foreach($target as $k) { //直接字段
-                        $msql = $sql . ' typeCate=' . exhibit_flag_to_number($i) . ' AND ' . ' feeCate=' . exhibit_flag_to_number($j) . ' AND ' . exhibit_table_field($table) . '=' . exhibit_flag_to_number($p);
+    } else {
+        $minTim = $stopTim;
+        $maxTim = $startTim;
+        foreach($module as $i) {
+            foreach($fee as $j) {
+                foreach($para as $k) {
+                    foreach($target as $l) {
+                        $msql = $sql . ' typeCate=' . exhibit_flag_to_number($i) . 
+                            ' AND feeCate=' . exhibit_flag_to_number($j) . 
+                            ' AND ' . exhibit_table_field($table) . '=' . exhibit_flag_to_number($k);
                         $result = _mysql_query($msql);
-                        $xArray = array();
-                        $yArray = array();
-                        $cate = '';
+                        $mxArray = array();
+                        $myArray = array();
+                        $mcate = '';
                         while($row = _mysql_fetch_array($result)) {
-                            $cate = exhibit_prekey_split($row['dzid']); //解析
-                            if($row['timeStamp'] >= 20180101) {
-                                array_push($xArray, $row['timeStamp']);
+                            $mcate = exhibit_prekey_split($row['dzid']);
+                            $timTmp = $row['timeStamp'];
+                            if($timTmp >= $startTim && $minTim > $timTmp) {
+                                $minTim = $timTmp;
+                            } else if ($timTmp >= $startTim && $maxTim < $timTmp) {
+                                $maxTim = $timTmp;
                             }
-                            array_push($yArray, $row[$k]);
+                            array_push($myArray, $row[$l]);
                         }
-                        $cate = $cate . '-' . exhibit_parse_to_chinese($k);
-    
-                        // 判断是否合适
-                        if(count($xArray) != count($yArray)) {
-                            continue;
-                        }
-
-                        // 生成 x
-                        $xData1 = $xData;
-                        $xData = generate_x($xArray);
-                        if($xData == '') {
-                            $xData = $xData1;
-                        }
-        
-                        // 生成 y
-                        $ret = generate_series($cate, $yArray);
-                        if($ret) {
-                            array_push($yData, $ret);
-                        }
-                    }
+                        $mxArray = min_to_max($minTim, $maxTim);                                                                    // 一条直线完成
+                        array_push($cate, $mcate . '-' . exhibit_parse_to_chinese($l));                                             // 保存标签
+                    }   
                 }
             }
+        }
+    }
+
+    $cate = array();
+    $xArray = array();
+    $yArray = array();
+    // 后期处理
+    $max = 0;
+    for($i = 0; $i < count($xArray); ++ $i) {
+        $c = count($xArray[$i]);
+        if($c > $max) {
+            $max = $c;
+        }
+    }
+
+    // 做输出 x
+    for($i = 0; $i < count($xArray); ++ $i) {
+        if(count($xArray[$i]) == $max) {
+            $xData = generate_x($xArray[$i]);
+        }
+    }
+
+    // y
+    for($i = 0; $i < count($yArray); ++ $i) {
+        if(count($yArray[$i]) == $max) {
+            array_push($yData, generate_series($cate[$i], $yArray[$i]));
         }
     }
 
