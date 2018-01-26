@@ -173,12 +173,9 @@ function search_select($data){
                     }
                     array_push($myArray, $row[$j]);
                 }
-
-                // 一条线查询完
-                $mxArray = min_to_max($minTim, $maxTim);
-
-                // 保存标签
-                array_push($cate, $mcate . '-' . exhibit_parse_to_chinese($j));
+                $mxArray = min_to_max($minTim, $maxTim);                                                                        // 一条线查询完
+                array_push($cate, $mcate . '-' . exhibit_parse_to_chinese($j));                                                 // 保存标签
+                array_push($yArray, $myArray);
             }
         }
     } else if (!strcasecmp($table, 'item_exhibit_fee')) {
@@ -205,6 +202,7 @@ function search_select($data){
                     }
                     $mxArray = min_to_max($minTim, $maxTim);                                                                    // 一条直线完成
                     array_push($cate, $mcate . '-' . exhibit_parse_to_chinese($k));                                             // 保存标签
+                    array_push($yArray, $myArray);
                 }
             }
         }
@@ -255,14 +253,15 @@ function search_select($data){
     for($i = 0; $i < count($xArray); ++ $i) {
         if(count($xArray[$i]) == $max) {
             $xData = generate_x($xArray[$i]);
+            break;
         }
     }
 
     // y
     for($i = 0; $i < count($yArray); ++ $i) {
-        if(count($yArray[$i]) == $max) {
+        //if(count($yArray[$i]) == $max) {
             array_push($yData, generate_series($cate[$i], $yArray[$i]));
-        }
+        //}
     }
 
     // 产生title
