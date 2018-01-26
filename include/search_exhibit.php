@@ -113,7 +113,7 @@ function search_init(){
 
 function min_to_max($min, $max) {
     $res = array();
-    for($m = $min; $m < $max; ++$m) {
+    for($m = $min; $m <= $max; ++$m) {
         array_push($res, $m);
     }
 
@@ -243,9 +243,9 @@ function search_select($data){
     $xData = generate_x($xArray);
 
     for($i = 0; $i < count($yArray); ++ $i) {
-        //if(count($yArray[$i]) == count($xArray)) {
+        if(count($yArray[$i]) == count($xArray)) {
             array_push($yData, generate_series($cate[$i], $yArray[$i]));
-        //}
+        }
     }
 
     // 产生title
