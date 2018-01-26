@@ -48,7 +48,7 @@ layui.use('element', function(){
 layui.use('laydate', function(){
     var laydate = layui.laydate;
     var startTim = {
-        elem: '#test1',
+        elem: '#test1_dd_ss',
     };
     laydate.render(startTim);
 });

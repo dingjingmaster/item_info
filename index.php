@@ -72,7 +72,7 @@ require dirname(__FILE__) . '/include/common_action.php';
 
             <div class="layui-body">
                 <div id="form_div" style="padding: 15px;">
-                    <input id="test1" type="text" class="layui-input">
+                    <input id="test1_dd_ss" type="text" class="layui-input">
                 </div>
                 <div id="main_div" style="padding: 15px;"></div>
             </div>
