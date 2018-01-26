@@ -137,7 +137,7 @@ function search_select($data){
     $yTitle = "占比(100%)";
     $xmin = 0;
     $xmax = 0;
-    $xData;
+    $xData = array();
     $yData = array();
     $picRes = array();
     $finRes = array();
@@ -166,16 +166,7 @@ function search_select($data){
                 while($row = _mysql_fetch_array($result)) {
                     $flag = true;
                     $mcate = exhibit_prekey_split($row['dzid']);
-                    //$timTmp = $row['timeStamp'];
                     array_push($mxArray, $row['timeStamp']);
-
-                    /*
-                    if($timTmp >= $startTim && $minTim > $timTmp) {
-                        $minTim = $timTmp;
-                    } else if ($timTmp >= $startTim && $maxTim < $timTmp) {
-                        $maxTim = $timTmp;
-                    }
-                     */
                     array_push($myArray, $row[$j]);
                 }
                 if($flag) {
@@ -202,21 +193,12 @@ function search_select($data){
                     while($row = _mysql_fetch_array($result)) {
                         $flag = true;
                         $mcate = exhibit_prekey_split($row['dzid']);
-                        //$timTmp = $row['timeStamp'];
                         array_push($mxArray, $row['timeStamp']);
-                        /*
-                        if($timTmp >= $startTim && $minTim > $timTmp) {
-                            $minTim = $timTmp;
-                        } else if ($timTmp >= $startTim && $maxTim < $timTmp) {
-                            $maxTim = $timTmp;
-                        }
-                        */
                         array_push($myArray, $row[$k]);
                     }
                     if($flag) {
                         $xmin = min($mxArray);
                         $xmax = max($mxArray);
-                        //$mxArray = min_to_max($minTim, $maxTim);                                                                    // 一条直线完成
                         array_push($cate, $mcate . '-' . exhibit_parse_to_chinese($k));                                             // 保存标签
                         array_push($yArray, $myArray);
                     }
@@ -242,21 +224,12 @@ function search_select($data){
                         while($row = _mysql_fetch_array($result)) {
                             $flag = true;
                             $mcate = exhibit_prekey_split($row['dzid']);
-                            //$timTmp = $row['timeStamp'];
                             array_push($mxArray, $row['timeStamp']);
-                            /*
-                            if($timTmp >= $startTim && $minTim > $timTmp) {
-                                $minTim = $timTmp;
-                            } else if ($timTmp >= $startTim && $maxTim < $timTmp) {
-                                $maxTim = $timTmp;
-                            }
-                             */
                             array_push($myArray, $row[$l]);
                         }
                         if($flag) {
                             $xmin = min($mxArray);
                             $xmax = max($mxArray);
-                            //$mxArray = min_to_max($minTim, $maxTim);                                                                    // 一条直线完成
                             array_push($cate, $mcate . '-' . exhibit_parse_to_chinese($l));                                             // 保存标签
                             array_push($yArray, $myArray);
                         }
@@ -266,29 +239,13 @@ function search_select($data){
         }
     }
 
-    // 后期处理
-    $max = 0;
-    for($i = 0; $i < count($xArray); ++ $i) {
-        $c = count($xArray[$i]);
-        if($c > $max) {
-            $max = $c;
-        }
-    }
+    $xArray = min_to_max($xmin, $xmax);                                                                    // 一条直线完成
+    $xData = generate_x($xArray);
 
-    $mxArray = min_to_max($xmin, $xmax);                                                                    // 一条直线完成
-    // 做输出 x
-    for($i = 0; $i < count($xArray); ++ $i) {
-        //if(count($xArray[$i]) == $max) {
-            $xData = generate_x($xArray[$i]);
-            break;
-       // }
-    }
-
-    // y
     for($i = 0; $i < count($yArray); ++ $i) {
-        //if(count($yArray[$i]) == $max) {
+        if(count($yArray[$i]) == count($xArray)) {
             array_push($yData, generate_series($cate[$i], $yArray[$i]));
-        //}
+        }
     }
 
     // 产生title
