@@ -135,21 +135,18 @@ function search_select($data){
     // 最后输出的变量
     $title = "自定义查询";
     $yTitle = "占比(100%)";
-    $xData = array();
+    $xData;
     $yData = array();
     $picRes = array();
     $finRes = array();
-
 
     // 最后生成 x 和 y
     $cate = array();
     $xArray = array();
     $yArray = array();
 
-    $mainPage = ''. 
-        '<a name="select"></a>'.'<h5>自定义查询</h5>'.'<div id="select_plot" style="width: 1000px; height: 600px; margin: 0 auto"> </div>';
-    $navPage = ''.
-        '<li class="layui-nav-item"><a href="#select">自定义查询</a></li>';
+    $mainPage = '<a name="select"></a>'.'<h5>自定义查询</h5>'.'<div id="select_plot" style="width: 1000px; height: 600px; margin: 0 auto"> </div>';
+    $navPage = '<li class="layui-nav-item"><a href="#select">自定义查询</a></li>';
 
     // 查询并返回
     $sql = 'SELECT * FROM ' . $table . ' WHERE timeStamp>='. $startTim . ' AND ' . 'timeStamp<=' . $stopTim . ' AND ';
@@ -251,10 +248,10 @@ function search_select($data){
 
     // 做输出 x
     for($i = 0; $i < count($xArray); ++ $i) {
-        if(count($xArray[$i]) == $max) {
+        //if(count($xArray[$i]) == $max) {
             $xData = generate_x($xArray[$i]);
             break;
-        }
+       // }
     }
 
     // y
