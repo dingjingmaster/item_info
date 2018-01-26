@@ -226,13 +226,14 @@ layui.use(['form', 'laydate'], function(){
         var res = detail_input(formData);
         if (res == 'tar') {
             layer.msg('请选择至少一个查询指标'); 
+            return false;
         } else if (res == 'tim') {
             layer.msg('请设置更大的时间跨度'); 
+            return false;
         } else {
             search_request_select('exhibit', res);
         }
         
-
         return false;
     });
 });
