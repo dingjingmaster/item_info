@@ -52,17 +52,17 @@ layui.use(['form', 'laydate'], function(){
     var laydate = layui.laydate;
     var startTim = {
         elem: '#fstart_tim',
-        format: 'yyyyMMdd',
+        format: 'YYYYMMDD',
         min: '20180101',
-        max: laydate.now(data.now(), 'yyyyMMdd'),
+        max: laydate.now(0, 'YYYYMMDD'),
         istime: false,
     };
 
     var stopTim = {
         elem: '#fstop_tim',
-        format: 'yyyyMMdd',
+        format: 'YYYYMMdd',
         min: '20180101',
-        max: laydate.now(data.now(), 'yyyyMMdd'),
+        max: laydate.now(0, 'YYYYMMdd'),
         istime: false,
     };
 
