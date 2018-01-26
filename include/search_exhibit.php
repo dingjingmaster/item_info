@@ -85,7 +85,7 @@ function search_init(){
                     '</div>'.
                 '</div>'.
                 ''.
-                '<div id="form_time_div" class="layui-form-item">'.
+                '<div id="form_time_div" class="layui-form-item ele_hidden">'.
                     '<div class="layui-inline">'.
                         '<label class="layui-form-label">开始时间</label>'.
                         '<div class="layui-input-block">'.

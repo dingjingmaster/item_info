@@ -45,22 +45,14 @@ layui.use('element', function(){
     var element = layui.element;
 });
 
-layui.use('laydate', function(){
+layui.use(['form', 'laydate'], function(){
+    var form = layui.form;
+    var fee = [];
+
     var laydate = layui.laydate;
     var startTim = {
         elem: '#fstart_time',
     };
-    laydate.render(startTim);
-});
-
-// 开始时间
-//laydate.render({
-//elem: '#form_start_time',
-//    });
-
-layui.use('form', function(){
-    var form = layui.form;
-    var fee = [];
 
     form.on('select(form_dim)', function(data){
         // 隐藏所有div
@@ -68,6 +60,7 @@ layui.use('form', function(){
         document.getElementById('form_mod_div').style.display="none";
         document.getElementById('form_fee_div').style.display="none";
         document.getElementById('form_target_div').style.display="none";
+        document.getElementById('form_time_div').style.display="none";
         document.getElementById('form_submit').style.display="none";
         // 删除
         $("#form_sub").empty();
@@ -78,6 +71,7 @@ layui.use('form', function(){
             // 1. 选择要查询的页面 2.选中后出现按钮
             document.getElementById('form_mod_div').style.display="block";
             document.getElementById('form_target_div').style.display="block";
+            document.getElementById('form_time_div').style.display="block";
             document.getElementById('form_submit').style.display="block";
         } else if (data.value == 'fee') {
             // 付费类别
@@ -85,6 +79,7 @@ layui.use('form', function(){
             document.getElementById('form_mod_div').style.display="block";
             document.getElementById('form_fee_div').style.display="block";
             document.getElementById('form_target_div').style.display="block";
+            document.getElementById('form_time_div').style.display="block";
             document.getElementById('form_submit').style.display="block";
         } else if (data.value == 'strategy') {
             // 推荐策略
@@ -93,6 +88,7 @@ layui.use('form', function(){
             document.getElementById('form_mod_div').style.display="block";
             document.getElementById('form_fee_div').style.display="block";
             document.getElementById('form_target_div').style.display="block";
+            document.getElementById('form_time_div').style.display="block";
             document.getElementById('form_submit').style.display="block";
             // 维度细分
             var stg= '' +
@@ -114,6 +110,7 @@ layui.use('form', function(){
             document.getElementById('form_mod_div').style.display="block";
             document.getElementById('form_fee_div').style.display="block";
             document.getElementById('form_target_div').style.display="block";
+            document.getElementById('form_time_div').style.display="block";
             document.getElementById('form_submit').style.display="block";
             // 维度细分
             var stu= '' +
@@ -126,6 +123,7 @@ layui.use('form', function(){
             document.getElementById('form_mod_div').style.display="block";
             document.getElementById('form_fee_div').style.display="block";
             document.getElementById('form_target_div').style.display="block";
+            document.getElementById('form_time_div').style.display="block";
             document.getElementById('form_submit').style.display="block";
             // 维度细分
             var vie= '' +
@@ -143,6 +141,7 @@ layui.use('form', function(){
             document.getElementById('form_mod_div').style.display="block";
             document.getElementById('form_fee_div').style.display="block";
             document.getElementById('form_target_div').style.display="block";
+            document.getElementById('form_time_div').style.display="block";
             document.getElementById('form_submit').style.display="block";
             // 维度细分
             var itim= '' +
@@ -157,6 +156,7 @@ layui.use('form', function(){
             document.getElementById('form_mod_div').style.display="block";
             document.getElementById('form_fee_div').style.display="block";
             document.getElementById('form_target_div').style.display="block";
+            document.getElementById('form_time_div').style.display="block";
             document.getElementById('form_submit').style.display="block";
             // 维度细分
             var utim = '' +
@@ -171,6 +171,7 @@ layui.use('form', function(){
             document.getElementById('form_mod_div').style.display="block";
             document.getElementById('form_fee_div').style.display="block";
             document.getElementById('form_target_div').style.display="block";
+            document.getElementById('form_time_div').style.display="block";
             document.getElementById('form_submit').style.display="block";
             // 维度细分
             var ctg1 = '' +
@@ -182,6 +183,7 @@ layui.use('form', function(){
             document.getElementById('form_sub').innerHTML = ctg1;
         }
         form.render();
+        laydate.render(startTim);
     });
     
     form.on('submit(form_submit)', function(data){
