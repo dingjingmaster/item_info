@@ -27,6 +27,8 @@ function detail_input(jsObj) {
         } else {
             para.push(key);
         }
+
+        alert(key + ':=' + jsObj[key]);
     }
 
     res.table = table;
