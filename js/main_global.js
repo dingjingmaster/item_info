@@ -54,7 +54,7 @@ layui.use(['form', 'laydate'], function(){
         elem: '#fstart_tim',
         format: 'yyyyMMdd',
         min: '20180101',
-        max: laydate.now(data.now(), 'yyyyMMdd')
+        max: laydate.now(data.now(), 'yyyyMMdd'),
         istime: false,
     };
 
@@ -62,7 +62,7 @@ layui.use(['form', 'laydate'], function(){
         elem: '#fstop_tim',
         format: 'yyyyMMdd',
         min: '20180101',
-        max: laydate.now(data.now(), 'yyyyMMdd')
+        max: laydate.now(data.now(), 'yyyyMMdd'),
         istime: false,
     };
 
