@@ -33,6 +33,14 @@ function detail_input(jsObj) {
     startTim = $('#fstart_tim').val(); 
     stopTim = $('#fstop_tim').val(); 
 
+    diff = stopTim - startTim
+    if (Math.abs(diff) <= 2) {
+        layer.msg('请设置更大的时间跨度'); 
+    }
+    if (target.length <= 0) {
+        layer.msg('请选择至少一个查询指标'); 
+    }
+
     res.table = table;
     res.module = module;
     res.fee = fee;
