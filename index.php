@@ -25,17 +25,18 @@ require dirname(__FILE__) . '/include/common_action.php';
             <div class="layui-header">
                 <div id="title_div" class="layui-logo"></div>
                 <ul id="nav_page" class="layui-nav layui-layout-left"></ul>
-
+<!--
                 <ul class="layui-nav layui-layout-right">
                     <li class="layui-nav-item">
                         <a href="javascript:;">自定义查询</a>
                         <dl id="search_module" class="layui-nav-child">
                             <dd><a href="javascript:search_request_init('retent');">留存率相关查询</a></dd>
-<!--                            <dd><a href="javascript:search_request_init('exhibit');">订展比相关查询</a></dd>
--->
+                                <dd><a href="javascript:search_request_init('exhibit');">订展比相关查询</a></dd>
+
                         </dl>
                     </li>
                 </ul>
+-->
             </div>
 
             <div class="layui-side layui-bg-black">
