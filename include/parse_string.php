@@ -106,13 +106,13 @@ function exhibit_parse_to_chinese($mstr) {
         return $mstr;
     }
     $chArray = array (
-        'clkDsp' => '点展比 ',
-        'subClk' => '订点比 ',
-        'subDsp' => '订展比 ',
-        'redSub' => '阅订比 ',
+        'clkDsp' => '点展比',
+        'subClk' => '订点比',
+        'subDsp' => '订展比',
+        'redSub' => '阅订比',
         'redDsp' => '阅展比',
         'retent' => '留存率',
-        'rteDsp' => '留展比 ',
+        'rteDsp' => '留展比',
         'shfRecMdl' => '书架推荐',
         'freGusMdl' => '免费-猜你喜欢',
         'bakArdMdl' => '章末页-读本书的人还看过',
@@ -176,6 +176,7 @@ function exhibit_parse_to_chinese($mstr) {
         'retent' => '留存率',
         'rteDsp' => '留展比',
     );
+
 
     return $chArray[$mstr];
 }
