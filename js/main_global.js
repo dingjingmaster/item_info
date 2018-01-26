@@ -51,7 +51,7 @@ layui.use(['form', 'laydate'], function(){
 
     var laydate = layui.laydate;
     var startTim = {
-        elem: '#fstart_time',
+        elem: '#fstart_tim',
     };
 
     form.on('select(form_dim)', function(data){
