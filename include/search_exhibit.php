@@ -32,7 +32,6 @@ function search_init(){
                         '</select>'.
                     '</div>'.
                 '</div>'.
-                ''.
                 '<div id="form_mod_div" class="layui-form-item ele_hidden">'.
                     '<label class="layui-form-label">查询模块</label>'.
                     '<div class="layui-input-block">'.
@@ -55,7 +54,6 @@ function search_init(){
                         '<input type="checkbox" lay-skin="primary" name="extRecMdl" title="退出拦截推荐"/>'.
                     '</div>'.
                 '</div>'.
-                ''.
                 '<div id="form_fee_div" class="layui-form-item ele_hidden">'.
                     '<label class="layui-form-label">付费类型</label>'.
                     '<div class="layui-input-block">'.
@@ -66,12 +64,10 @@ function search_init(){
                         '<input type="checkbox" lay-skin="primary" name="tfFee" title="限免"/>'.
                     '</div>'.
                 '</div>'.
-                ''.
                 '<div id="form_sub_div" class="layui-inline ele_hidden">'.
                     '<label class="layui-form-label">维度细分</label>'.
                     '<div id="form_sub" class="layui-input-block"></div>'.
                 '</div>'.
-                ''.
                 '<div id="form_target_div" class="layui-form-item ele_hidden">'.
                     '<label class="layui-form-label">查询指标</label>'.
                     '<div class="layui-input-block">'.
@@ -84,7 +80,6 @@ function search_init(){
                         '<input type="checkbox" lay-skin="primary" name="rteDsp" title="留展比"/>'.
                     '</div>'.
                 '</div>'.
-                ''.
                 '<div id="form_time_div" class="layui-form-item ele_hidden">'.
                     '<div class="layui-inline">'.
                         '<label class="layui-form-label">开始时间</label>'.
@@ -99,7 +94,6 @@ function search_init(){
                         '</div>'.
                     '</div>'.
                 '</div>'.
-                ''.
                 '<div id="form_submit" class="layui-form-item ele_hidden">'.
                     '<div class="layui-input-block">'.
                         '<button class="layui-btn" lay-submit lay-filter="form_submit">立即提交</button>'.
@@ -205,7 +199,6 @@ function search_select($data){
                 }
             }
         }
-
     } else {
         $minTim = $stopTim;
         $maxTim = $startTim;
@@ -238,16 +231,13 @@ function search_select($data){
             }
         }
     }
-
     $xArray = min_to_max($xmin, $xmax);                                                                    // 一条直线完成
     $xData = generate_x($xArray);
-
     for($i = 0; $i < count($yArray); ++ $i) {
         if(count($yArray[$i]) == count($xArray)) {
             array_push($yData, generate_series($cate[$i], $yArray[$i]));
         }
     }
-
     // 产生title
     $picRes['title'] = generate_title($title);
     $picRes['subtitle'] = generate_title('');
@@ -255,10 +245,8 @@ function search_select($data){
     $picRes['yAxis'] = generate_y($yTitle);
     $picRes['series'] = $yData;
     $picRes['plotOptions'] = generate_plot_option();
-
     $finRes['div'] = "select_plot";
     $finRes['json'] = json_encode($picRes);
-
     $rep = array();
     $rep['title'] = "自定义查询";
     $rep['mainPage'] = $mainPage;
@@ -267,8 +255,6 @@ function search_select($data){
 
     return json_encode($rep);
 }
-
-
 ?>
 
 

@@ -8,7 +8,7 @@
 function search_request_init(page) {
 
     var xmlhttp;
-    var title;
+    var title = '';
     var request = '/item_info/item_info/include/common_action.php?type=search&page=' + page;
     if(window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
@@ -19,15 +19,13 @@ function search_request_init(page) {
     if(page == 'exhibit') {
         title = '订展比相关查询'
     }
-
-
     xmlhttp.onreadystatechange = function() {
         if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             //
             var res = xmlhttp.responseText;
             document.getElementById('form_div').innerHTML = res;
             document.getElementById('main_div').innerHTML = '';
-            document.getElementById('nav_page').innerHTML = title;
+            document.getElementById('title_div').innerHTML = title;
             var reset = document.getElementById('form_reset');
             $("button#form_reset").click();
        }
@@ -48,29 +46,19 @@ function search_request_select(page, info) {
 
     xmlhttp.onreadystatechange = function() {
         if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            //
             var res = xmlhttp.responseText;
-//            document.getElementById('main_div').innerHTML = res;
-//            /*
-            
             var json = JSON.parse(res);
             
-            // 主页
-            var mainPage = json.mainPage;
+            var mainPage = json.mainPage;                                                           // 主页
             document.getElementById('main_div').innerHTML = mainPage;
-            
-            // 导航栏
-            var navPage = json.navPage;
+            var navPage = json.navPage;                                                             // 导航栏
             document.getElementById('nav_page').innerHTML = navPage;
-            // json 绘图信息
-            var js = JSON.parse(json.json);
+            var js = JSON.parse(json.json);                                                         // json 绘图信息
             var divId = js['div'];
             var pic = js['json'];
             plot_picture(divId, JSON.parse(pic));
-//            */
         }
     }
-
     xmlhttp.open('POST', request, true);
     xmlhttp.setRequestHeader('Content-type', "application/x-www-form-urlencoded");
     xmlhttp.send("page=" + page + '&data=' + info);
