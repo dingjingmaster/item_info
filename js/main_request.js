@@ -37,6 +37,7 @@ function request_retent(req) {
             // 标题
             var titlePage = json.title;
             document.getElementById('title_div').innerHTML = titlePage;
+            document.getElementById('form_div').innerHTML = '';
 
             // 主页
             var mainPage = json.mainPage;
