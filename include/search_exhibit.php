@@ -84,13 +84,13 @@ function search_init(){
                     '<div class="layui-inline">'.
                         '<label class="layui-form-label">开始时间</label>'.
                         '<div class="layui-input-block">'.
-                            '<input type="text" class="layui-input" id="fstart_tim">'.
+                            '<input type="text" class="layui-input" readonly="" id="fstart_tim">'.
                         '</div>' .
                     '</div>'.
                     '<div class="layui-inline">'.
                         '<label class="layui-form-label">截止时间</label>'.
                         '<div class="layui-input-inline">'.
-                            '<input type="text" class="layui-input" id="fstop_tim">'.
+                            '<input type="text" class="layui-input" readonly="" id="fstop_tim">'.
                         '</div>'.
                     '</div>'.
                 '</div>'.
