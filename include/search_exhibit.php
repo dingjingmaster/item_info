@@ -106,9 +106,6 @@ function search_init(){
                         '<button id="form_reset" type="reset" class="layui-btn layui-btn-primary" lay-filter="form_reset">重置</button>'.
                     '</div>'.
                 '</div>'.
-                '<script>'.
-                    'layui.use("laydate", function(){var laydate = layui.laydate; laydate.render({elem: "#form_start_time"});})'.
-                '</script>'.
             '</form>';
 
     return $page;

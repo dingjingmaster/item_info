@@ -71,7 +71,9 @@ require dirname(__FILE__) . '/include/common_action.php';
             </div>
 
             <div class="layui-body">
-                <div id="form_div" style="padding: 15px;"></div>
+                <div id="form_div" style="padding: 15px;">
+                    <input id="test1" type="text" class="layui-input">
+                </div>
                 <div id="main_div" style="padding: 15px;"></div>
             </div>
             <div class="layui-footer"> @  宜搜小说 </div>
