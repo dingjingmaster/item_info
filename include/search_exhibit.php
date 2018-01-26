@@ -241,9 +241,6 @@ function search_select($data){
         }
     }
 
-    $cate = array();
-    $xArray = array();
-    $yArray = array();
     // 后期处理
     $max = 0;
     for($i = 0; $i < count($xArray); ++ $i) {
