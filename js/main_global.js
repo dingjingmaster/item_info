@@ -70,6 +70,7 @@ layui.use(['form', 'laydate'], function(){
         format: 'yyyyMMdd',
         min: '2018-01-01',
         max: -1,
+        value: -2,
         istime: false,
     };
 
@@ -84,7 +85,6 @@ layui.use(['form', 'laydate'], function(){
         // 删除
         $("#form_sub").empty();
 
-        //
         if(data.value == 'summary') {
             // 总体情况
             // 1. 选择要查询的页面 2.选中后出现按钮
