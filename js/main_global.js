@@ -30,6 +30,7 @@ function detail_input(jsObj) {
 
         alert(key + ':=' + jsObj[key]);
     }
+    alert($('#fstart_tim').val());
 
     res.table = table;
     res.module = module;
