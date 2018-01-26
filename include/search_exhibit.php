@@ -135,6 +135,8 @@ function search_select($data){
     // 最后输出的变量
     $title = "自定义查询";
     $yTitle = "占比(100%)";
+    $xmin = 0;
+    $xmax = 0;
     $xData;
     $yData = array();
     $picRes = array();
@@ -157,20 +159,25 @@ function search_select($data){
             foreach($target as $j) {
                 $msql = $sql . ' typeCate=' . exhibit_flag_to_number($i);
                 $result = _mysql_query($msql);
-                $myArray = array();
                 $mxArray = array();
+                $myArray = array();
                 $mcate = '';
                 while($row = _mysql_fetch_array($result)) {
-                    $mcate = exhibit_prekey_split($row['dzid']); //解析
-                    $timTmp = $row['timeStamp'];
+                    $mcate = exhibit_prekey_split($row['dzid']);
+                    //$timTmp = $row['timeStamp'];
+                    array_push($mxArray, $row['timeStamp']);
+
+                    /*
                     if($timTmp >= $startTim && $minTim > $timTmp) {
                         $minTim = $timTmp;
                     } else if ($timTmp >= $startTim && $maxTim < $timTmp) {
                         $maxTim = $timTmp;
                     }
+                     */
                     array_push($myArray, $row[$j]);
                 }
-                $mxArray = min_to_max($minTim, $maxTim);                                                                        // 一条线查询完
+                $xmin = min($mxArray);
+                $xmax = max($mxArray);
                 array_push($cate, $mcate . '-' . exhibit_parse_to_chinese($j));                                                 // 保存标签
                 array_push($yArray, $myArray);
             }
@@ -189,15 +196,20 @@ function search_select($data){
                     $mcate = '';
                     while($row = _mysql_fetch_array($result)) {
                         $mcate = exhibit_prekey_split($row['dzid']);
-                        $timTmp = $row['timeStamp'];
+                        //$timTmp = $row['timeStamp'];
+                        array_push($mxArray, $row['timeStamp']);
+                        /*
                         if($timTmp >= $startTim && $minTim > $timTmp) {
                             $minTim = $timTmp;
                         } else if ($timTmp >= $startTim && $maxTim < $timTmp) {
                             $maxTim = $timTmp;
                         }
+                        */
                         array_push($myArray, $row[$k]);
                     }
-                    $mxArray = min_to_max($minTim, $maxTim);                                                                    // 一条直线完成
+                    $xmin = min($mxArray);
+                    $xmax = max($mxArray);
+                    //$mxArray = min_to_max($minTim, $maxTim);                                                                    // 一条直线完成
                     array_push($cate, $mcate . '-' . exhibit_parse_to_chinese($k));                                             // 保存标签
                     array_push($yArray, $myArray);
                 }
@@ -220,15 +232,20 @@ function search_select($data){
                         $mcate = '';
                         while($row = _mysql_fetch_array($result)) {
                             $mcate = exhibit_prekey_split($row['dzid']);
-                            $timTmp = $row['timeStamp'];
+                            //$timTmp = $row['timeStamp'];
+                            array_push($mxArray, $row['timeStamp']);
+                            /*
                             if($timTmp >= $startTim && $minTim > $timTmp) {
                                 $minTim = $timTmp;
                             } else if ($timTmp >= $startTim && $maxTim < $timTmp) {
                                 $maxTim = $timTmp;
                             }
+                             */
                             array_push($myArray, $row[$l]);
                         }
-                        $mxArray = min_to_max($minTim, $maxTim);                                                                    // 一条直线完成
+                        $xmin = min($mxArray);
+                        $xmax = max($mxArray);
+                        //$mxArray = min_to_max($minTim, $maxTim);                                                                    // 一条直线完成
                         array_push($cate, $mcate . '-' . exhibit_parse_to_chinese($l));                                             // 保存标签
                         array_push($yArray, $myArray);
                     }   
@@ -246,6 +263,7 @@ function search_select($data){
         }
     }
 
+    $mxArray = min_to_max($xmin, $xmax);                                                                    // 一条直线完成
     // 做输出 x
     for($i = 0; $i < count($xArray); ++ $i) {
         //if(count($xArray[$i]) == $max) {
