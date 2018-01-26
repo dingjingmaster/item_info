@@ -113,7 +113,7 @@ function search_init(){
 
 function min_to_max($min, $max) {
     $res = array();
-    for($m = $minTim; $m < $maxTim; ++$m) {
+    for($m = $min; $m < $max; ++$m) {
         array_push($res, $m);
     }
 
