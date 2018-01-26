@@ -127,7 +127,7 @@ function search_select($data){
     $stopTim = $req['stop'];
 
     // 最后输出的变量
-    $title = "自定义查询";
+    $title = "订展比相关查询";
     $yTitle = "占比(100%)";
     $xmin = 0;
     $xmax = 0;
@@ -147,8 +147,6 @@ function search_select($data){
     // 查询并返回
     $sql = 'SELECT * FROM ' . $table . ' WHERE timeStamp>='. $startTim . ' AND ' . 'timeStamp<=' . $stopTim . ' AND ';
     if(!strcasecmp($table, 'item_exhibit_summary')) {
-        $minTim = $stopTim;
-        $maxTim = $startTim;
         foreach($module as $i) {
             foreach($target as $j) {
                 $msql = $sql . ' typeCate=' . exhibit_flag_to_number($i);
@@ -172,8 +170,6 @@ function search_select($data){
             }
         }
     } else if (!strcasecmp($table, 'item_exhibit_fee')) {
-        $minTim = $stopTim;
-        $maxTim = $startTim;
         foreach($module as $i) {
             foreach($fee as $j) {
                 foreach($target as $k) {
@@ -200,8 +196,6 @@ function search_select($data){
             }
         }
     } else {
-        $minTim = $stopTim;
-        $maxTim = $startTim;
         foreach($module as $i) {
             foreach($fee as $j) {
                 foreach($para as $k) {
