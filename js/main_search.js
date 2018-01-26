@@ -8,6 +8,7 @@
 function search_request_init(page) {
 
     var xmlhttp;
+    var title;
     var request = '/item_info/item_info/include/common_action.php?type=search&page=' + page;
     if(window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
@@ -15,16 +16,22 @@ function search_request_init(page) {
         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
 
+    if(page == 'exhibit') {
+        title = '订展比相关查询'
+    }
+
+
     xmlhttp.onreadystatechange = function() {
         if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             //
             var res = xmlhttp.responseText;
             document.getElementById('form_div').innerHTML = res;
+            document.getElementById('main_div').innerHTML = '';
+            document.getElementById('nav_page').innerHTML = title;
             var reset = document.getElementById('form_reset');
             $("button#form_reset").click();
        }
     }
-
     xmlhttp.open('GET', request, true);
     xmlhttp.send();
 }

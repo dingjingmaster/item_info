@@ -59,14 +59,17 @@ layui.use(['form', 'laydate'], function(){
     var startTim = {
         elem: '#fstart_tim',
         format: 'yyyyMMdd',
-        min: '20180101',
+        min: '2018-01-01',
+        value: '20180101',
+        max: -1,
         istime: false,
     };
 
     var stopTim = {
         elem: '#fstop_tim',
         format: 'yyyyMMdd',
-        min: '20180101',
+        min: '2018-01-01',
+        max: -1,
         istime: false,
     };
 
@@ -109,7 +112,7 @@ layui.use(['form', 'laydate'], function(){
             // 维度细分
             var stg= '' +
                 '<input type="checkbox" lay-skin="primary" name="livStmRec" title="实时流"/>' + 
-                '<input type="checkbox" lay-skin="primary" name="usrKnnRec" title="用户协同"/>' + 
+                '<input type="checkbox" lay-skin="primary" name="usrKnnRec" title="用户协同" checked/>' + 
                 '<input type="checkbox" lay-skin="primary" name="codBotRec" title="冷启动"/>' + 
                 '<input type="checkbox" lay-skin="primary" name="popRec" title="流行度"/>' + 
                 '<input type="checkbox" lay-skin="primary" name="itemKnnRec" title="物品协同"/>' + 
@@ -204,9 +207,9 @@ layui.use(['form', 'laydate'], function(){
     });
     
     form.on('submit(form_submit)', function(data){
-        // 检查数据是否有错
         var formData = data.field;
 
+        // 检查数据是否有错
         // 检查第一栏是否选择
         if(formData['dim'] == "") {
             layer.msg("请您输入查询维度...");
