@@ -10,9 +10,11 @@ function detail_input(jsObj) {
     var module = Array();
     var fee = Array();
     var target = Array();
-    var para = Array();                 // 细分的模块
+    var para = Array();                     // 细分的模块
     var startTim; 
     var stopTim; 
+
+    var flag = "";                          // 请求什么
 
     var res = Object();
 
@@ -24,9 +26,13 @@ function detail_input(jsObj) {
             module.push(key);
         } else if (null != key.match(/Fee$/)) {
             fee.push(key);
-        } else if (key == 'clkDsp' || key == 'subClk' || key == 'subDsp' || key == 'redSub' || key == 'redDsp' || key == 'retent' || key == 'rteDsp' || key == 'dspNum' || key == 'clkNum' || key == 'srbNum' || key == 'redNum' || key == 'rteNum') {
+        } else if (key == 'clkDsp' || key == 'subClk' || key == 'subDsp' || key == 'redSub' || key == 'redDsp' || key == 'retent' || key == 'rteDsp' ) {
             target.push(key);
-        } else {
+            flag = "exhibit"
+        } else if (key == 'dspNum' || key == 'clkNum' || key == 'srbNum' || key == 'redNum' || key == 'rteNum') {
+            target.push(key);
+            flag = "exhValu"
+        }else {
             para.push(key);
         }
     }
@@ -49,7 +55,8 @@ function detail_input(jsObj) {
     res.start = startTim;
     res.stop = stopTim;
 
-    return JSON.stringify(res);
+    return {"flag": flag, "put", JSON.stringify(res)};
+    //return JSON.stringify(res);
 }
 
 
@@ -231,7 +238,7 @@ layui.use(['form', 'laydate'], function(){
             layer.msg('请设置更大的时间跨度且保证截止时间大于开始时间'); 
             return false;
         } else {
-            search_request_select('exhibit', res);
+            search_request_select(res['flag'], res['json']);
         }
         
         return false;
