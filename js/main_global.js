@@ -228,6 +228,7 @@ layui.use(['form', 'laydate'], function(){
         // 检查第一栏是否选择
         if(formData['dim'].length <= 1) {
             layer.msg("请您输入查询维度...");
+            return false;
         }
 
         var res = detail_input(formData);
