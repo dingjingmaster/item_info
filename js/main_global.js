@@ -238,7 +238,7 @@ layui.use(['form', 'laydate'], function(){
             layer.msg('请设置更大的时间跨度且保证截止时间大于开始时间'); 
             return false;
         } else {
-            search_request_select(res['flag'], res['json']);
+            search_request_select(res['flag'], res['put']);
         }
         
         return false;
