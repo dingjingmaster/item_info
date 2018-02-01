@@ -126,7 +126,7 @@ function search_select($data){
 
     // 最后输出的变量
     $title = "订展比相关查询";
-    $yTitle = "占比(100%)";
+    $yTitle = "人数";
     $xmin = 0;
     $xmax = 0;
     $xData = array();

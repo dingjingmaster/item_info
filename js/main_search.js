@@ -16,9 +16,10 @@ function search_request_init(page) {
         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
 
-    if(page == 'exhibit') {
+    if(page == 'exhibit' || page == 'exhValu') {
         title = '订展比相关查询'
     }
+
     xmlhttp.onreadystatechange = function() {
         if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             //
