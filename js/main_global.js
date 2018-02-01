@@ -55,7 +55,7 @@ function detail_input(jsObj) {
     res.start = startTim;
     res.stop = stopTim;
 
-    return {"flag": flag, "put", JSON.stringify(res)};
+    return {"flag": flag, "put": JSON.stringify(res)};
     //return JSON.stringify(res);
 }
 
