@@ -21,7 +21,7 @@ function search_init(){
                     '<div class="layui-input-inline">'.
                         '<select id="form_dim" lay-filter="form_dim" name="dim">'.
                             '<option value=""></option>'.
-                            '<option value="summary" checked>总计</option>'.
+                            '<option value="summary" selected>总计</option>'.
                             '<option value="fee">付费类型</option>'.
                             '<option value="strategy">推荐策略</option>'.
                             '<option value="status">连载状态</option>'.
