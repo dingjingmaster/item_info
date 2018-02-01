@@ -38,6 +38,7 @@ require dirname(__FILE__) . '/include/common_action.php';
                             <a href="javascript:;">订展比相关查询</a>
                             <dl class="layui-nav-child">
                                 <dd><a href="javascript:search_request_init('exhibit');">比例查询</a></dd>
+                                <dd><a href="javascript:search_request_init('exhValu');">阅读量查询</a></dd>
                             </dl>
                         </li>
                     </ul>
