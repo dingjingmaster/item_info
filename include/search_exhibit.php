@@ -21,7 +21,7 @@ function search_init(){
                     '<div class="layui-input-inline">'.
                         '<select id="form_dim" lay-filter="form_dim" name="dim">'.
                             '<option value=""></option>'.
-                            '<option value="summary">总计</option>'.
+                            '<option value="summary" checked>总计</option>'.
                             '<option value="fee">付费类型</option>'.
                             '<option value="strategy">推荐策略</option>'.
                             '<option value="status">连载状态</option>'.
@@ -32,7 +32,7 @@ function search_init(){
                         '</select>'.
                     '</div>'.
                 '</div>'.
-                '<div id="form_mod_div" class="layui-form-item ele_hidden">'.
+                '<div id="form_mod_div" class="layui-form-item">'.
                     '<label class="layui-form-label">查询模块</label>'.
                     '<div class="layui-input-block">'.
                         '<input type="checkbox" lay-skin="primary" name="chsStmMdl" title="精选-瀑布流" checked/>'.
@@ -68,7 +68,7 @@ function search_init(){
                     '<label class="layui-form-label">维度细分</label>'.
                     '<div id="form_sub" class="layui-input-block"></div>'.
                 '</div>'.
-                '<div id="form_target_div" class="layui-form-item ele_hidden">'.
+                '<div id="form_target_div" class="layui-form-item">'.
                     '<label class="layui-form-label">查询指标</label>'.
                     '<div class="layui-input-block">'.
                         '<input type="checkbox" lay-skin="primary" name="clkDsp" title="点展比"/>'.
@@ -80,7 +80,7 @@ function search_init(){
                         '<input type="checkbox" lay-skin="primary" name="rteDsp" title="留展比"/>'.
                     '</div>'.
                 '</div>'.
-                '<div id="form_time_div" class="layui-form-item ele_hidden">'.
+                '<div id="form_time_div" class="layui-form-item">'.
                     '<div class="layui-inline">'.
                         '<label class="layui-form-label">开始时间</label>'.
                         '<div class="layui-input-block">'.
@@ -94,7 +94,7 @@ function search_init(){
                         '</div>'.
                     '</div>'.
                 '</div>'.
-                '<div id="form_submit" class="layui-form-item ele_hidden">'.
+                '<div id="form_submit" class="layui-form-item">'.
                     '<div class="layui-input-block">'.
                         '<button class="layui-btn" lay-submit lay-filter="form_submit">立即提交</button>'.
                         '<button id="form_reset" type="reset" class="layui-btn layui-btn-primary" lay-filter="form_reset">重置</button>'.
