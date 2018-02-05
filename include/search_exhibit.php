@@ -160,7 +160,7 @@ function search_select($data){
     $xArray = array();
     $yArray = array();
 
-    $xyArray = array();
+    //$xyArray = array();
 
     $mainPage = '<a name="select"></a>'.'<div id="select_plot" style="width: 1000px; height: 600px; margin: 0 auto"> </div>';
     $navPage = '<li class="layui-nav-item"><a href="#select">订展比相关查询</a></li>';
@@ -174,25 +174,25 @@ function search_select($data){
                 $msql = $sql . ' typeCate=' . exhibit_flag_to_number($i);
                 //echo $msql;
                 $result = _mysql_query($msql);
-                //$mxArray = array();
-                //$myArray = array();
-                $mxyArray = array();
+                $mxArray = array();
+                $myArray = array();
+                //$mxyArray = array();
                 $mcate = '';
                 $flag = false;
                 while($row = _mysql_fetch_array($result)) {
                     $flag = true;
                     $mcate = exhibit_prekey_split($row['dzid']);
-                    //array_push($mxArray, $row['timeStamp']);
-                    //array_push($myArray, $row[$j]);
-                    $mxyArray[$row['timeStamp']] = $row[$j];
+                    array_push($mxArray, $row['timeStamp']);
+                    array_push($myArray, $row[$j]);
+                    //$mxyArray[$row['timeStamp']] = $row[$j];
                 }
 
                 if($flag) {
                     $xmin = min($mxArray);
                     $xmax = max($mxArray);
                     array_push($cate, $mcate . '-' . exhibit_parse_to_chinese($j));                                                 // 保存标签
-                    //array_push($yArray, $myArray);
-                    array_push($xyArray, $mxyArray);
+                    array_push($yArray, $myArray);
+                    //array_push($xyArray, $mxyArray);
                 }
             }
         }
