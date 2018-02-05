@@ -150,6 +150,7 @@ function search_select($data){
         foreach($module as $i) {
             foreach($target as $j) {
                 $msql = $sql . ' typeCate=' . exhibit_flag_to_number($i);
+                echo $msql;
                 $result = _mysql_query($msql);
                 $mxArray = array();
                 $myArray = array();
@@ -232,6 +233,8 @@ function search_select($data){
             array_push($yData, generate_series($cate[$i], $yArray[$i]));
         }
     }
+
+    /*
     // 产生title
     $picRes['title'] = generate_title($title);
     $picRes['subtitle'] = generate_title('');
@@ -246,8 +249,8 @@ function search_select($data){
     $rep['mainPage'] = $mainPage;
     $rep['navPage'] = $navPage;
     $rep['json'] = json_encode($finRes);
-
     return json_encode($rep);
+     */
 }
 ?>
 

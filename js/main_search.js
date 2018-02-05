@@ -49,6 +49,9 @@ function search_request_select(page, info) {
     xmlhttp.onreadystatechange = function() {
         if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             var res = xmlhttp.responseText;
+            document.getElementById('main_div').innerHTML = res;
+
+            /*
             var json = JSON.parse(res);
             
             var mainPage = json.mainPage;                                                           // 主页
@@ -59,6 +62,7 @@ function search_request_select(page, info) {
             var divId = js['div'];
             var pic = js['json'];
             plot_picture(divId, JSON.parse(pic));
+            */
         }
     }
     xmlhttp.open('POST', request, true);
