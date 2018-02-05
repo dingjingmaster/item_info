@@ -107,9 +107,26 @@ function search_init(){
 
 function min_to_max($min, $max) {
     $res = array();
+
+    $date1 = date_create($min);
+    $date2 = date_create($max);
+    $diff = date_diff($date1, $date2);
+    $diffnum = (int)$diff ->format("%a");
+
+    for($i = 0; $i <= $diffnum; ++ $i) {
+        $sql = $i . ' days';
+        date_sub($date2, date_interval_create_from_date_string($sql));
+
+        array_push($res, date_format($date2, "Ymd"));
+    }
+
+    $res = array_reverse($res, true);
+
+    /*
     for($m = $min; $m <= $max; ++$m) {
         array_push($res, $m);
     }
+     */
 
     return $res;
 }
@@ -141,6 +158,8 @@ function search_select($data){
     $xArray = array();
     $yArray = array();
 
+    $xyArray = array();
+
     $mainPage = '<a name="select"></a>'.'<div id="select_plot" style="width: 1000px; height: 600px; margin: 0 auto"> </div>';
     $navPage = '<li class="layui-nav-item"><a href="#select">订展比相关查询</a></li>';
 
@@ -149,24 +168,29 @@ function search_select($data){
     if(!strcasecmp($table, 'item_exhibit_summary')) {
         foreach($module as $i) {
             foreach($target as $j) {
+                $dataTmp = array();
                 $msql = $sql . ' typeCate=' . exhibit_flag_to_number($i);
                 //echo $msql;
                 $result = _mysql_query($msql);
-                $mxArray = array();
-                $myArray = array();
+                //$mxArray = array();
+                //$myArray = array();
+                $mxyArray = array();
                 $mcate = '';
                 $flag = false;
                 while($row = _mysql_fetch_array($result)) {
                     $flag = true;
                     $mcate = exhibit_prekey_split($row['dzid']);
-                    array_push($mxArray, $row['timeStamp']);
-                    array_push($myArray, $row[$j]);
+                    //array_push($mxArray, $row['timeStamp']);
+                    //array_push($myArray, $row[$j]);
+                    $mxyArray[$row['timeStamp']] = $row[$j];
                 }
+
                 if($flag) {
                     $xmin = min($mxArray);
                     $xmax = max($mxArray);
                     array_push($cate, $mcate . '-' . exhibit_parse_to_chinese($j));                                                 // 保存标签
-                    array_push($yArray, $myArray);
+                    //array_push($yArray, $myArray);
+                    array_push($xyArray, $mxyArray);
                 }
             }
         }
