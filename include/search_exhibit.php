@@ -108,19 +108,21 @@ function search_init(){
 function min_to_max($min, $max) {
     $res = array();
 
-    $date1 = date_create($min);
-    $date2 = date_create($max);
-    $diff = date_diff($date1, $date2);
-    $diffnum = (int)$diff ->format("%a");
+    //$date1 = date_create($min);
+    //$date2 = date_create($max);
 
-    for($i = 0; $i <= $diffnum; ++ $i) {
-        $sql = $i . ' days';
-        date_sub($date2, date_interval_create_from_date_string($sql));
+    $diff = (int)date_diff(date_create($min), date_create($max)) ->format("%a");
 
-        array_push($res, date_format($date2, "Ymd"));
+    //$diff = date_diff($date1, $date2);
+    
+    //$diffnum = (int)$diff ->format("%a");
+
+    for($i = 0; $i <= $diff; ++ $i) {
+        array_push($res, date("Ymd", strtotime($min) + $i * 86400));
+            //date_format($date2, "Ymd"));
     }
 
-    $res = array_reverse($res, true);
+    //$res = array_reverse($res, true);
 
     /*
     for($m = $min; $m <= $max; ++$m) {
