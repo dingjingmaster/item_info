@@ -105,8 +105,11 @@ function search_init(){
 
 function min_to_max($min, $max) {
     $res = array();
-    for($m = $min; $m <= $max; ++$m) {
-        array_push($res, $m);
+
+    $diff = (int)date_diff(date_create($min), date_create($max)) ->format("%a");
+
+    for($i = 0; $i <= $diff; ++ $i) {
+        array_push($res, date("Ymd", strtotime($min) + $i * 86400));
     }
 
     return $res;
