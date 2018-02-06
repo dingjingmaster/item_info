@@ -15,7 +15,7 @@ if(!strcasecmp(INTEST, 'DEBUG')) {
 function retent_rate_init(){
 
     $page_back = array();
-    $script_div = '<script type="text/javascript" src="js/retent_global.js"></script>';
+    $script_div = "js/retent_global.js";
     $form_div = "";
     $main_div = "";
     $nav_div = "";
