@@ -108,11 +108,11 @@ layui.use(['form', 'laydate'], function(){
         if(data.value == 'limitfree') {
             // 总体情况
             // 1. 选择要查询的页面 2.选中后出现按钮
-            document.getElementById('form_fee_div').style.display="block";
-            //document.getElementById('form_sub_div').style.display="block";
-            //document.getElementById('form_target_div').style.display="block";
-            //document.getElementById('form_time_div').style.display="block";
-            //document.getElementById('form_submit').style.display="block";
+            //document.getElementById('form_fee_div').style.display="block";
+            document.getElementById('form_sub_div').style.display="block";
+            document.getElementById('form_target_div').style.display="block";
+            document.getElementById('form_time_div').style.display="block";
+            document.getElementById('form_submit').style.display="block";
 
         } else if (data.value == 'fee') {
             // 付费类别
