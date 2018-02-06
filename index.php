@@ -14,11 +14,12 @@ require dirname(__FILE__) . '/include/common_action.php';
         <title>宜搜物品信息展示平台</title>
         <script type="text/javascript" src="js/main_request.js"></script>
         <script type="text/javascript" src="js/main_search.js"></script>
+        <script type="text/javascript" src="" id="script"></script>
 <!--        <script type="text/javascript" src="js/main_global.js"></script>-->
         <link rel="stylesheet" href="css/main_global.css"/>
     </head>
     <body class="layui-layout-body" onload="page_init('retent', 'rate')">
-        <div id="script"></div>
+        <div id="script_div"></div>
         <div class="layui-layout layui-layout-admin">
             <div class="layui-header">
                 <div id="title_div" class="layui-logo"></div>
