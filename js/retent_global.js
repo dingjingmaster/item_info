@@ -114,17 +114,10 @@ layui.use(['form', 'laydate'], function(){
             document.getElementById('form_submit').style.display="block";
 
             var stg= '' +
-                '<input type="checkbox" lay-skin="primary" name="livStmRec" title="实时流"/>' + 
-                '<input type="checkbox" lay-skin="primary" name="usrKnnRec" title="用户协同" checked/>' + 
-                '<input type="checkbox" lay-skin="primary" name="codBotRec" title="冷启动"/>' + 
-                '<input type="checkbox" lay-skin="primary" name="popRec" title="流行度"/>' + 
-                '<input type="checkbox" lay-skin="primary" name="itemKnnRec" title="物品协同"/>' + 
-                '<input type="checkbox" lay-skin="primary" name="samCtgRec" title="同分类"/>' + 
-                '<input type="checkbox" lay-skin="primary" name="subMdlRec" title="订阅模型"/>' + 
-                '<input type="checkbox" lay-skin="primary" name="redMdlRec" title="阅读模型"/>' + 
-                '<input type="checkbox" lay-skin="primary" name="cotSimRec" title="内容相似"/>' + 
-                '<input type="checkbox" lay-skin="primary" name="redMdlRec" title="阅读同分类"/>' + 
-                '<input type="checkbox" lay-skin="primary" name="cat1SimCtgRec" title="一级同分类"/>';
+                '<input type="checkbox" lay-skin="primary" name="limfe1" title="第一批限免" checked/>' + 
+                '<input type="checkbox" lay-skin="primary" name="limfe2" title="第二批限免" checked/>' + 
+                '<input type="checkbox" lay-skin="primary" name="limfe3" title="第三批限免" checked/>' + 
+                '<input type="checkbox" lay-skin="primary" name="limfe4" title="第四批限免" checked/>' + 
             document.getElementById('form_sub').innerHTML = stg;
             
 
