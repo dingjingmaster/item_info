@@ -5,36 +5,6 @@
 > Created Time: 2018年01月17日 星期三 15时59分41秒
  ************************************************************************/
 
-function page_init(page, type) {
-
-    var xmlhttp;
-    var request = '/item_info/item_info/include/common_action.php?page=' + page + '&type=' + type;
-    if(window.XMLHttpRequest) {
-        xmlhttp = new XMLHttpRequest();
-    } else {
-        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-    }
-
-    xmlhttp.onreadystatechange = function() {
-        if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            //
-            var res = xmlhttp.responseText;
-            var json = JSON.parse(res);
-
-            document.getElementById('form_div').innerHTML = json.form_div;
-            document.getElementById('main_div').innerHTML = json.main_div;
-            document.getElementById('nav_div').innerHTML = json.nav_div;
-            document.getElementById('title_div').innerHTML = json.title_div;
-            document.getElementById('script').src = json.script_div;
-
-            var reset = document.getElementById('form_reset');
-            $("button#form_reset").click();
-       }
-    }
-    xmlhttp.open('GET', request, true);
-    xmlhttp.send();
-}
-
 function search(page, data) {
 
     var xmlhttp;
@@ -48,16 +18,17 @@ function search(page, data) {
     xmlhttp.onreadystatechange = function() {
         if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             var res = xmlhttp.responseText;
-            var json = JSON.parse(res);
+            //var json = JSON.parse(res);
+            document.getElementById('main_div').innerHTML = res;
             
-            var mainPage = json.mainPage;                                                           // 主页
-            document.getElementById('main_div').innerHTML = mainPage;
-            var navPage = json.navPage;                                                             // 导航栏
-            document.getElementById('nav_page').innerHTML = navPage;
-            var js = JSON.parse(json.json);                                                         // json 绘图信息
-            var divId = js['div'];
-            var pic = js['json'];
-            plot_picture(divId, JSON.parse(pic));
+            //var mainPage = json.mainPage;                                                           // 主页
+            //document.getElementById('main_div').innerHTML = mainPage;
+            //var navPage = json.navPage;                                                             // 导航栏
+            //document.getElementById('nav_page').innerHTML = navPage;
+            //var js = JSON.parse(json.json);                                                         // json 绘图信息
+            //var divId = js['div'];
+            //var pic = js['json'];
+            //plot_picture(divId, JSON.parse(pic));
         }
     }
     xmlhttp.open('POST', request, true);

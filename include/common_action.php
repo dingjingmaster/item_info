@@ -21,6 +21,10 @@ if(!strcasecmp($_GET['page'], 'retent')) {
 
 }
 
+if(!strcasecmp($_POST['page'], 'retent')) {
+    echo "ok";
+} else if(!strcasecmp($_POST['page'], 'exhibit')) {
+}
 
 
 
@@ -29,6 +33,7 @@ if(!strcasecmp($_GET['page'], 'retent')) {
 
 
 
+/*
 
 if(!strcasecmp($_GET['type'], 'retent')) {
     require ROOT_PATH . '/include/item_retent_info.php';
@@ -62,6 +67,7 @@ if(!strcasecmp($_GET['type'], 'retent')) {
     _mysql_select_db();
     echo search_select($_POST['data']);
 }
+*/
 
 
 
