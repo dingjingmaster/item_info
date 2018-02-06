@@ -17,7 +17,7 @@ require ROOT_PATH . '/include/common_util.php';
 require ROOT_PATH . '/include/parse_string.php';
 
 function search_retent($data) {
-    define('DB_NAME', 'item_retent');
+    define('DB_NAME', 'item_retention');
     $req = json_decode(utf8_encode($data), true);
     $table = 'item_retent' . $req['table'];
     $fee = $req['fee'];
