@@ -22,7 +22,7 @@ if(!strcasecmp($_GET['page'], 'retent')) {
 }
 
 if(!strcasecmp($_POST['page'], 'retent')) {
-    echo "ok";
+    echo $_POST['date'];
 } else if(!strcasecmp($_POST['page'], 'exhibit')) {
 }
 
