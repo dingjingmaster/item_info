@@ -108,11 +108,25 @@ layui.use(['form', 'laydate'], function(){
         if(data.value == 'limitfree') {
             // 总体情况
             // 1. 选择要查询的页面 2.选中后出现按钮
-            //document.getElementById('form_fee_div').style.display="block";
             document.getElementById('form_sub_div').style.display="block";
             document.getElementById('form_target_div').style.display="block";
             document.getElementById('form_time_div').style.display="block";
             document.getElementById('form_submit').style.display="block";
+
+            var stg= '' +
+                '<input type="checkbox" lay-skin="primary" name="livStmRec" title="实时流"/>' + 
+                '<input type="checkbox" lay-skin="primary" name="usrKnnRec" title="用户协同" checked/>' + 
+                '<input type="checkbox" lay-skin="primary" name="codBotRec" title="冷启动"/>' + 
+                '<input type="checkbox" lay-skin="primary" name="popRec" title="流行度"/>' + 
+                '<input type="checkbox" lay-skin="primary" name="itemKnnRec" title="物品协同"/>' + 
+                '<input type="checkbox" lay-skin="primary" name="samCtgRec" title="同分类"/>' + 
+                '<input type="checkbox" lay-skin="primary" name="subMdlRec" title="订阅模型"/>' + 
+                '<input type="checkbox" lay-skin="primary" name="redMdlRec" title="阅读模型"/>' + 
+                '<input type="checkbox" lay-skin="primary" name="cotSimRec" title="内容相似"/>' + 
+                '<input type="checkbox" lay-skin="primary" name="redMdlRec" title="阅读同分类"/>' + 
+                '<input type="checkbox" lay-skin="primary" name="cat1SimCtgRec" title="一级同分类"/>';
+            document.getElementById('form_sub').innerHTML = stg;
+            
 
         } else if (data.value == 'fee') {
             // 付费类别
@@ -145,6 +159,7 @@ layui.use(['form', 'laydate'], function(){
             //    '<input type="checkbox" lay-skin="primary" name="redMdlRec" title="阅读同分类"/>' + 
             //    '<input type="checkbox" lay-skin="primary" name="cat1SimCtgRec" title="一级同分类"/>';
             //document.getElementById('form_sub').innerHTML = stg;
+            
         } else if (data.value == 'viewCount') {
             // 连载状态
            // document.getElementById('form_sub_div').style.display="block";
