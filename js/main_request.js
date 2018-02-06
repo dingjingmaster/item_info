@@ -21,21 +21,12 @@ function plot_picture(divName, jsonPara) {
 function page_init(page, type) {
 
     var xmlhttp;
-    var title = '';
     var request = '/item_info/item_info/include/common_action.php?page=' + page + '&type=' + type;
     if(window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
     } else {
         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
-
-    if(page == 'retent') {
-        if(tyep == 'rate') {
-            title = '留存率查询';
-        } else if ('retent') {
-            title = '阅读量查询';
-        }
-    } 
 
     xmlhttp.onreadystatechange = function() {
         if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
