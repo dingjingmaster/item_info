@@ -21,7 +21,7 @@ require dirname(__FILE__) . '/include/common_action.php';
         <div class="layui-layout layui-layout-admin">
             <div class="layui-header">
                 <div id="title_div" class="layui-logo"></div>
-                <ul id="nav_page" class="layui-nav layui-layout-left"></ul>
+                <ul id="nav_div" class="layui-nav layui-layout-left"></ul>
             </div>
             <div class="layui-side layui-bg-black">
                 <div class="layui-slide-scroll">
@@ -31,11 +31,6 @@ require dirname(__FILE__) . '/include/common_action.php';
                             <dl class="layui-nav-child">
                                 <dd><a href="javascript:page_init('retent', 'rate');">留存率查询</a></dd>
                                 <dd><a href="javascript:page_init('retent', 'dayNum');">阅读查询</a></dd>
-
-                                <dd><button class="layui-btn layui-btn-normal layui-btn-fluid" onclick="request_retent('day')">天留存统计</button></dd>
-                                <dd><button class="layui-btn layui-btn-normal layui-btn-fluid" onclick="request_retent('week')">周留存统计</button></dd>
-                                <dd><button class="layui-btn layui-btn-normal layui-btn-fluid" onclick="request_retent('week7')">七日留存统计</button></dd>
-
                             </dl>
                         </li>
                         <li class="layui-nav-item">

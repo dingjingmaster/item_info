@@ -41,10 +41,12 @@ function page_init(page, type) {
         if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             //
             var res = xmlhttp.responseText;
-            document.getElementById('form_div').innerHTML = res;
-            document.getElementById('main_div').innerHTML = '';
-            document.getElementById('nav_page').innerHTML = '';
-            document.getElementById('title_div').innerHTML = title;
+            var json = JSON.parse(res);
+
+            document.getElementById('form_div').innerHTML = json.form_div;
+            document.getElementById('main_div').innerHTML = json.main_div;
+            document.getElementById('nav_div').innerHTML = json.nav_div;
+            document.getElementById('title_div').innerHTML = json.title_div;
             var reset = document.getElementById('form_reset');
             $("button#form_reset").click();
        }

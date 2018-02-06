@@ -10,8 +10,11 @@ define('DB_USER', 'root');
 define('DB_PWD', '123456');
 
 if(!strcasecmp($_GET['page'], 'retent')) {
+    require ROOT_PATH . '/include/page_init.php';
+    echo retent_init();
 
 } else if (!strcasecmp($_GET['page'], 'exhibit')) {
+    require ROOT_PATH . '/include/page_init.php';
 
 }
 
