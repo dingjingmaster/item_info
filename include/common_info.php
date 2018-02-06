@@ -28,8 +28,6 @@ function _common_print_head(){
 
     return '';
 }
-        //'<script src="http://code.highcharts.com/highcharts.js"></script>';
-
 ?>
 
 

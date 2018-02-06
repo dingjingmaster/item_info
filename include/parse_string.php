@@ -177,8 +177,10 @@ function exhibit_parse_to_chinese($mstr) {
         'rteDsp' => '留展比',
     );
 
-
     return $chArray[$mstr];
+}
+
+function retent_table_field() {
 }
 
 
