@@ -106,7 +106,7 @@ layui.use(['form', 'laydate'], function(){
 
 
         if(data.value == 'limitfree') {
-            // 总体情况
+            // 限免
             // 1. 选择要查询的页面 2.选中后出现按钮
             document.getElementById('form_sub_div').style.display="block";
             document.getElementById('form_target_div').style.display="block";
@@ -124,96 +124,82 @@ layui.use(['form', 'laydate'], function(){
 
         } else if (data.value == 'fee') {
             // 付费类别
-            // 1. 选择要查询的页面 和 付费类型 2.选中后出现按钮
-            //document.getElementById('form_mod_div').style.display="block";
-            //document.getElementById('form_fee_div').style.display="block";
-            //document.getElementById('form_target_div').style.display="block";
-            //document.getElementById('form_time_div').style.display="block";
-            //document.getElementById('form_submit').style.display="block";
+            document.getElementById('form_sub_div').style.display="block";
+            document.getElementById('form_fee_div').style.display="block";
+            document.getElementById('form_target_div').style.display="block";
+            document.getElementById('form_time_div').style.display="block";
+            document.getElementById('form_submit').style.display="block";
+
         } else if (data.value == 'status') {
-            // 推荐策略
-            // 1. 选择要查询的页面 和 付费类型 和 模块细分 2. 选中后出现按钮
-            //document.getElementById('form_sub_div').style.display="block";
-            //document.getElementById('form_mod_div').style.display="block";
-            //document.getElementById('form_fee_div').style.display="block";
-            //document.getElementById('form_target_div').style.display="block";
-            //document.getElementById('form_time_div').style.display="block";
-            //document.getElementById('form_submit').style.display="block";
-            // 维度细分
-            //var stg= '' +
-            //    '<input type="checkbox" lay-skin="primary" name="livStmRec" title="实时流"/>' + 
-            //    '<input type="checkbox" lay-skin="primary" name="usrKnnRec" title="用户协同" checked/>' + 
-            //    '<input type="checkbox" lay-skin="primary" name="codBotRec" title="冷启动"/>' + 
-            //    '<input type="checkbox" lay-skin="primary" name="popRec" title="流行度"/>' + 
-            //    '<input type="checkbox" lay-skin="primary" name="itemKnnRec" title="物品协同"/>' + 
-            //    '<input type="checkbox" lay-skin="primary" name="samCtgRec" title="同分类"/>' + 
-            //    '<input type="checkbox" lay-skin="primary" name="subMdlRec" title="订阅模型"/>' + 
-            //    '<input type="checkbox" lay-skin="primary" name="redMdlRec" title="阅读模型"/>' + 
-            //    '<input type="checkbox" lay-skin="primary" name="cotSimRec" title="内容相似"/>' + 
-            //    '<input type="checkbox" lay-skin="primary" name="redMdlRec" title="阅读同分类"/>' + 
-            //    '<input type="checkbox" lay-skin="primary" name="cat1SimCtgRec" title="一级同分类"/>';
-            //document.getElementById('form_sub').innerHTML = stg;
+            // 书籍状态
+            document.getElementById('form_sub_div').style.display="block";
+            document.getElementById('form_fee_div').style.display="block";
+            document.getElementById('form_target_div').style.display="block";
+            document.getElementById('form_time_div').style.display="block";
+            document.getElementById('form_submit').style.display="block";
+            var stg= '' +
+                '<input type="checkbox" lay-skin="primary" name="finish" title="完结"/>' + 
+                '<input type="checkbox" lay-skin="primary" name="unfinish" title="连载"/>';
+            document.getElementById('form_sub').innerHTML = stg;
             
         } else if (data.value == 'viewCount') {
             // 连载状态
-           // document.getElementById('form_sub_div').style.display="block";
-           // document.getElementById('form_mod_div').style.display="block";
-           // document.getElementById('form_fee_div').style.display="block";
-           // document.getElementById('form_target_div').style.display="block";
-           // document.getElementById('form_time_div').style.display="block";
-           // document.getElementById('form_submit').style.display="block";
+            document.getElementById('form_sub_div').style.display="block";
+            document.getElementById('form_fee_div').style.display="block";
+            document.getElementById('form_target_div').style.display="block";
+            document.getElementById('form_time_div').style.display="block";
+            document.getElementById('form_submit').style.display="block";
             // 维度细分
-           // var stu= '' +
-           //     '<input type="checkbox" lay-skin="primary" name="cmpStau" title="完结"/>' + 
-           //     '<input type="checkbox" lay-skin="primary" name="noCmpStau" title="连载"/>';
-           // document.getElementById('form_sub').innerHTML = stu;
-           // document.getElementById('form_sub').innerHTML = vie;
+            var stg= '' +
+                '<input type="checkbox" lay-skin="primary" name="bt0to1b" title="介于0到100"/>' + 
+                '<input type="checkbox" lay-skin="primary" name="bt1bto1k" title="介于100到1000"/>' + 
+                '<input type="checkbox" lay-skin="primary" name="bt1kto1w" title="介于1000到1万"/>' + 
+                '<input type="checkbox" lay-skin="primary" name="bt1wto10w" title="介于1万到10万"/>' + 
+                '<input type="checkbox" lay-skin="primary" name="gt10w" title="大于10万"/>';
+            document.getElementById('form_sub').innerHTML = stg;
         } else if (data.value == 'intime') {
             // 入库时间
-            //document.getElementById('form_sub_div').style.display="block";
-            //document.getElementById('form_mod_div').style.display="block";
-            //document.getElementById('form_fee_div').style.display="block";
-            //document.getElementById('form_target_div').style.display="block";
-            //document.getElementById('form_time_div').style.display="block";
-            //document.getElementById('form_submit').style.display="block";
+            document.getElementById('form_sub_div').style.display="block";
+            document.getElementById('form_fee_div').style.display="block";
+            document.getElementById('form_target_div').style.display="block";
+            document.getElementById('form_time_div').style.display="block";
+            document.getElementById('form_submit').style.display="block";
             // 维度细分
-            //var itim= '' +
-            //    '<input type="checkbox" lay-skin="primary" name="lesMonIn" title="1月内入库"/>' + 
-            //    '<input type="checkbox" lay-skin="primary" name="bt1mto3mIn" title="1~3月内入库"/>' + 
-            //    '<input type="checkbox" lay-skin="primary" name="bt3mto12mIn" title="3~12月内入库"/>' + 
-            //    '<input type="checkbox" lay-skin="primary" name="bt12mto99mIn" title="12~99月内入库"/>';
-            //document.getElementById('form_sub').innerHTML = itim;
+            var itim= '' +
+                '<input type="checkbox" lay-skin="primary" name="lesMonIn" title="1月内入库"/>' + 
+                '<input type="checkbox" lay-skin="primary" name="bt1mto3mIn" title="1~3月内入库"/>' + 
+                '<input type="checkbox" lay-skin="primary" name="bt3mto12mIn" title="3~12月内入库"/>' + 
+                '<input type="checkbox" lay-skin="primary" name="gt1yIn" title="大于1年入库"/>';
+            document.getElementById('form_sub').innerHTML = itim;
         } else if (data.value == 'update') {
             // 最后更新时间
-            //document.getElementById('form_sub_div').style.display="block";
-            //document.getElementById('form_mod_div').style.display="block";
-            //document.getElementById('form_fee_div').style.display="block";
-            //document.getElementById('form_target_div').style.display="block";
-            //document.getElementById('form_time_div').style.display="block";
-            //document.getElementById('form_submit').style.display="block";
+            document.getElementById('form_sub_div').style.display="block";
+            document.getElementById('form_fee_div').style.display="block";
+            document.getElementById('form_target_div').style.display="block";
+            document.getElementById('form_time_div').style.display="block";
+            document.getElementById('form_submit').style.display="block";
             // 维度细分
-            //var utim = '' +
-            //    '<input type="checkbox" lay-skin="primary" name="lesMonUpd" title="0~1月未更新"/>' + 
-            //    '<input type="checkbox" lay-skin="primary" name="bt1mto3mUpd" title="1~3月未更新"/>' + 
-            //    '<input type="checkbox" lay-skin="primary" name="bt3mto12mUpd" title="3~12月未更新"/>' + 
-            //    '<input type="checkbox" lay-skin="primary" name="bt12mto99mUpd" title="12~99月未更新"/>';
-            //document.getElementById('form_sub').innerHTML = utim;
+            var utim = '' +
+                '<input type="checkbox" lay-skin="primary" name="lesMonUpd" title="0~1月未更新"/>' + 
+                '<input type="checkbox" lay-skin="primary" name="bt1mto3mUpd" title="1~3月未更新"/>' + 
+                '<input type="checkbox" lay-skin="primary" name="bt3mto12mUpd" title="3~12月未更新"/>' + 
+                '<input type="checkbox" lay-skin="primary" name="gt1yIn" title="大于1年未更新"/>';
+            document.getElementById('form_sub').innerHTML = utim;
         } else if (data.value == 'classify1') {
             // 一级分类
-            //document.getElementById('form_sub_div').style.display="block";
-            //document.getElementById('form_mod_div').style.display="block";
-            //document.getElementById('form_fee_div').style.display="block";
-            //document.getElementById('form_target_div').style.display="block";
-            //document.getElementById('form_time_div').style.display="block";
-            //document.getElementById('form_submit').style.display="block";
+            document.getElementById('form_sub_div').style.display="block";
+            document.getElementById('form_fee_div').style.display="block";
+            document.getElementById('form_target_div').style.display="block";
+            document.getElementById('form_time_div').style.display="block";
+            document.getElementById('form_submit').style.display="block";
             // 维度细分
-            //var ctg1 = '' +
-            //    '<input type="checkbox" lay-skin="primary" name="boyCfy1" title="男频"/>' + 
-            //    '<input type="checkbox" lay-skin="primary" name="girlCfy1" title="女频"/>' + 
-            //    '<input type="checkbox" lay-skin="primary" name="monCfy1" title="包月"/>' + 
-            //    '<input type="checkbox" lay-skin="primary" name="pshCfy1" title="出版"/>' + 
-            //    '<input type="checkbox" lay-skin="primary" name="othCfy1" title="其它"/>';
-            //document.getElementById('form_sub').innerHTML = ctg1;
+            var ctg1 = '' +
+                '<input type="checkbox" lay-skin="primary" name="boyCfy1" title="男频"/>' + 
+                '<input type="checkbox" lay-skin="primary" name="girlCfy1" title="女频"/>' + 
+                '<input type="checkbox" lay-skin="primary" name="monCfy1" title="包月"/>' + 
+                '<input type="checkbox" lay-skin="primary" name="pshCfy1" title="出版"/>' + 
+                '<input type="checkbox" lay-skin="primary" name="othCfy1" title="其它"/>';
+            document.getElementById('form_sub').innerHTML = ctg1;
         }
         form.render();
         laydate.render(startTim);
