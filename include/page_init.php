@@ -12,7 +12,7 @@ if(!strcasecmp(INTEST, 'DEBUG')) {
     error_reporting(E_ERROR);                                             // 开启错误报告
 }
 
-function retent_init(){
+function retent_rate_init(){
 
     $page_back = array();
     $form_div = "";
@@ -79,10 +79,6 @@ function retent_init(){
                     '</div>'.
                 '</div>'.
             '</form>';
-
-    $main_div = "";
-    $nav_div = "";
-    $title_div = "";
 
     $page_back['form_div'] = $form_div;
     $page_back['main_div'] = $main_div;

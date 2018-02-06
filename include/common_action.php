@@ -9,9 +9,12 @@ define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PWD', '123456');
 
+// get 请求做初始化
 if(!strcasecmp($_GET['page'], 'retent')) {
     require ROOT_PATH . '/include/page_init.php';
-    echo retent_init();
+    if(!strcasecmp($_GET['type'], 'rate')) {
+        echo retent_rate_init();
+    }
 
 } else if (!strcasecmp($_GET['page'], 'exhibit')) {
     require ROOT_PATH . '/include/page_init.php';
