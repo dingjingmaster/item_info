@@ -17,7 +17,7 @@ require dirname(__FILE__) . '/include/common_action.php';
         <script type="text/javascript" src="js/main_global.js"></script>
         <link rel="stylesheet" href="css/main_global.css"/>
     </head>
-    <body class="layui-layout-body" onload="request_retent('day')">
+    <body class="layui-layout-body" onload="page_init('retent', 'rate')">
         <div class="layui-layout layui-layout-admin">
             <div class="layui-header">
                 <div id="title_div" class="layui-logo"></div>
