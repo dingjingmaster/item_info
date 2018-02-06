@@ -22,6 +22,7 @@ if(!strcasecmp($_GET['page'], 'retent')) {
 }
 
 if(!strcasecmp($_POST['page'], 'retent')) {
+    define('DB_NAME', 'item_retention');
     require ROOT_PATH . '/include/search_info.php';
     echo search_retent($_POST['data']);
 } else if(!strcasecmp($_POST['page'], 'exhibit')) {

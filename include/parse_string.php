@@ -180,7 +180,51 @@ function exhibit_parse_to_chinese($mstr) {
     return $chArray[$mstr];
 }
 
-function retent_table_field() {
+function retent_table_field($mstr) {
+    $trans = Array(
+        "freFee" => 1,
+        "chgFee" => 2,
+        "monFee" => 3,
+        "pubFee" => 4,
+        "tfFee" => 5,
+
+        "tarDay" => 1,
+        "tarWeek" => 2,
+        "tarWk7" => 3,
+
+        "limfe1" => 1,
+        "limfe2" => 2,
+        "limfe3" => 3,
+        "limfe4" => 4,
+
+        "finish" => 1,
+        "unfinish" => 2,
+
+        "bt0to1b" => 1,
+        "bt1bto1k" => 2,
+        "bt1kto1w" => 3,
+        "bt1wto10w" => 4,
+        "gt10w" => 5,
+
+        "lesMonIn" => 1,
+        "bt1mto3mIn" => 2,
+        "bt3mto12mIn" => 3,
+        "gt1yIn" => 4,
+
+        "lesMonUpd" => 1,
+        "bt1mto3mUpd" => 2,
+        "bt3mto12mUpd" => 3,
+        "gt1yUpd" => 4,
+
+        "boyCfy1" => 1,
+        "girlCfy1" => 2,
+        "pshCfy1" => 3,
+        "othCfy1" => 4,
+
+
+    );
+    return $trans[$mstr];
+ 
 }
 
 

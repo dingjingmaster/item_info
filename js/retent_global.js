@@ -180,7 +180,6 @@ layui.use(['form', 'laydate'], function(){
             var ctg1 = '' +
                 '<input type="checkbox" lay-skin="primary" name="boyCfy1" title="男频"/>' + 
                 '<input type="checkbox" lay-skin="primary" name="girlCfy1" title="女频"/>' + 
-                '<input type="checkbox" lay-skin="primary" name="monCfy1" title="包月"/>' + 
                 '<input type="checkbox" lay-skin="primary" name="pshCfy1" title="出版"/>' + 
                 '<input type="checkbox" lay-skin="primary" name="othCfy1" title="其它"/>';
             document.getElementById('form_sub').innerHTML = ctg1;
