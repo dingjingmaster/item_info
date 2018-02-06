@@ -27,10 +27,10 @@ function retent_rate_init(){
                     '<div class="layui-input-inline">'.
                         '<select id="form_dim" lay-filter="form_dim" name="dim">'.
                             '<option value=""></option>'.
-                            '<option value="summary">限免</option>'.
+                            '<option value="limitfree">限免</option>'.
                             '<option value="fee">付费类型</option>'.
-                            '<option value="strategy">连载/完结状态</option>'.
-                            '<option value="view">订阅级别</option>'.
+                            '<option value="status">连载/完结状态</option>'.
+                            '<option value="viewCount">订阅级别</option>'.
                             '<option value="intime">入库时间</option>'.
                             '<option value="update">更新时间</option>'.
                             '<option value="classify1">一级分类</option>'.
