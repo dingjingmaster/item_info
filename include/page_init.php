@@ -47,7 +47,7 @@ function retent_rate_init(){
                         '<input type="checkbox" lay-skin="primary" name="tfFee" title="限免"/>'.
                     '</div>'.
                 '</div>'.
-                '<div id="form_sub_div" class="layui-inline ele_hidden">'.
+                '<div id="form_sub_div" class="layui-form-item ele_hidden">'.
                     '<label class="layui-form-label">维度细分</label>'.
                     '<div id="form_sub" class="layui-input-block"></div>'.
                 '</div>'.
