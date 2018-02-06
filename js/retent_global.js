@@ -117,7 +117,8 @@ layui.use(['form', 'laydate'], function(){
                 '<input type="checkbox" lay-skin="primary" name="limfe1" title="第一批限免" checked/>' + 
                 '<input type="checkbox" lay-skin="primary" name="limfe2" title="第二批限免" checked/>' + 
                 '<input type="checkbox" lay-skin="primary" name="limfe3" title="第三批限免" checked/>' + 
-                '<input type="checkbox" lay-skin="primary" name="limfe4" title="第四批限免" checked/>' + 
+                '<input type="checkbox" lay-skin="primary" name="limfe4" title="第四批限免" checked/>';
+
             document.getElementById('form_sub').innerHTML = stg;
             
 
