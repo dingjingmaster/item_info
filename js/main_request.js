@@ -18,6 +18,55 @@ function plot_picture(divName, jsonPara) {
     });
 }
 
+function page_init(page, type) {
+
+    var xmlhttp;
+    var title = '';
+    var request = '/item_info/item_info/include/common_action.php?page=' + page + '&type=' + type;
+    if(window.XMLHttpRequest) {
+        xmlhttp = new XMLHttpRequest();
+    } else {
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+    if(page == 'retent') {
+        if(tyep == 'rate') {
+            title = '留存率查询';
+        } else if ('retent') {
+            title = '阅读量查询';
+        }
+    } 
+
+    xmlhttp.onreadystatechange = function() {
+        if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            //
+            var res = xmlhttp.responseText;
+            document.getElementById('form_div').innerHTML = res;
+            document.getElementById('main_div').innerHTML = '';
+            document.getElementById('nav_page').innerHTML = '';
+            document.getElementById('title_div').innerHTML = title;
+            var reset = document.getElementById('form_reset');
+            $("button#form_reset").click();
+       }
+    }
+    xmlhttp.open('GET', request, true);
+    xmlhttp.send();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function request_retent(req) {
     var xmlhttp;
     var request = '/item_info/item_info/include/common_action.php?type=retent&req=' + req;

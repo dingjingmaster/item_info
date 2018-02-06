@@ -9,6 +9,21 @@ define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PWD', '123456');
 
+if(!strcasecmp($_GET['page'], 'retent')) {
+
+} else if (!strcasecmp($_GET['page'], 'exhibit')) {
+
+}
+
+
+
+
+
+
+
+
+
+
 if(!strcasecmp($_GET['type'], 'retent')) {
     require ROOT_PATH . '/include/item_retent_info.php';
     _mysql_connect();

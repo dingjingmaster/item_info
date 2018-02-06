@@ -29,9 +29,13 @@ require dirname(__FILE__) . '/include/common_action.php';
                         <li class="layui-nav-item">
                             <a class="" href="javascript:;">留存相关统计</a>
                             <dl class="layui-nav-child">
+                                <dd><a href="javascript:page_init('retent', 'rate');">留存率查询</a></dd>
+                                <dd><a href="javascript:page_init('retent', 'dayNum');">阅读查询</a></dd>
+
                                 <dd><button class="layui-btn layui-btn-normal layui-btn-fluid" onclick="request_retent('day')">天留存统计</button></dd>
                                 <dd><button class="layui-btn layui-btn-normal layui-btn-fluid" onclick="request_retent('week')">周留存统计</button></dd>
                                 <dd><button class="layui-btn layui-btn-normal layui-btn-fluid" onclick="request_retent('week7')">七日留存统计</button></dd>
+
                             </dl>
                         </li>
                         <li class="layui-nav-item">
