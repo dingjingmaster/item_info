@@ -54,9 +54,9 @@ function retent_rate_init(){
                 '<div id="form_target_div" class="layui-form-item">'.
                     '<label class="layui-form-label">查询指标</label>'.
                     '<div class="layui-input-block">'.
-                        '<input type="checkbox" lay-skin="primary" name="clkDsp" title="天留存" checked/>'.
-                        '<input type="checkbox" lay-skin="primary" name="subClk" title="周留存"/>'.
-                        '<input type="checkbox" lay-skin="primary" name="subDsp" title="七日留存"/>'.
+                        '<input type="checkbox" lay-skin="primary" name="tarDay" title="天留存" checked/>'.
+                        '<input type="checkbox" lay-skin="primary" name="tarWeek" title="周留存"/>'.
+                        '<input type="checkbox" lay-skin="primary" name="tarWk7" title="七日留存"/>'.
                     '</div>'.
                 '</div>'.
                 '<div id="form_time_div" class="layui-form-item">'.
