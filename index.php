@@ -14,6 +14,7 @@ require dirname(__FILE__) . '/include/common_action.php';
         <title>宜搜物品信息展示平台</title>
         <script type="text/javascript" src="js/main_request.js"></script>
         <script type="text/javascript" src="js/main_search.js"></script>
+        <script type="text/javascript" src="js/main_put.js"></script>
         <script type="text/javascript" id="script"></script>
         <link rel="stylesheet" href="css/main_global.css"/>
     </head>

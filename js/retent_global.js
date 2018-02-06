@@ -6,32 +6,25 @@
  ************************************************************************/
 
 function detail_input(jsObj) {
+
     var table = "";
-    var module = Array();
     var fee = Array();
     var target = Array();
-    var para = Array();                     // 细分的模块
+    var para = Array();                                                 // 细分的模块
     var startTim; 
     var stopTim; 
 
-    var flag = "";                          // 请求什么
-
     var res = Object();
 
-    table = jsObj['dim'];
+    table = jsObj['dim'];                                               // 查询哪个表
+
     for(var key in jsObj) {
         if(key == 'dim') {
             continue;
-        } else if (null != key.match(/Mdl$/)) {
-            module.push(key);
         } else if (null != key.match(/Fee$/)) {
             fee.push(key);
-        } else if (key == 'clkDsp' || key == 'subClk' || key == 'subDsp' || key == 'redSub' || key == 'redDsp' || key == 'retent' || key == 'rteDsp' ) {
+        } else if (key == 'tarDay' || key == 'tarWeek' || key == 'tarWk7') {
             target.push(key);
-            flag = "exhibit"
-        } else if (key == 'dspNum' || key == 'clkNum' || key == 'srbNum' || key == 'redNum' || key == 'rteNum') {
-            target.push(key);
-            flag = "exhValu"
         }else {
             para.push(key);
         }
@@ -48,26 +41,20 @@ function detail_input(jsObj) {
     }
 
     res.table = table;
-    res.module = module;
     res.fee = fee;
     res.para = para;
     res.target = target;
     res.start = startTim;
     res.stop = stopTim;
 
-    return {"flag": flag, "put": JSON.stringify(res)};
-    //return JSON.stringify(res);
+    return {"page": "retent", "put": JSON.stringify(res)};
 }
-
-
 
 $(document).ready(function() {})
 
 layui.use('element', function(){
     var element = layui.element;
 });
-
-
 
 layui.use(['form', 'laydate'], function(){
     var form = layui.form;
@@ -99,11 +86,9 @@ layui.use(['form', 'laydate'], function(){
         document.getElementById('form_target_div').style.display="none";
         document.getElementById('form_time_div').style.display="none";
         document.getElementById('form_submit').style.display="none";
+
         // 删除
         $("#form_sub").empty();
-
-
-
 
         if(data.value == 'limitfree') {
             // 限免
@@ -182,7 +167,7 @@ layui.use(['form', 'laydate'], function(){
                 '<input type="checkbox" lay-skin="primary" name="lesMonUpd" title="0~1月未更新"/>' + 
                 '<input type="checkbox" lay-skin="primary" name="bt1mto3mUpd" title="1~3月未更新"/>' + 
                 '<input type="checkbox" lay-skin="primary" name="bt3mto12mUpd" title="3~12月未更新"/>' + 
-                '<input type="checkbox" lay-skin="primary" name="gt1yIn" title="大于1年未更新"/>';
+                '<input type="checkbox" lay-skin="primary" name="gt1yUpd" title="大于1年未更新"/>';
             document.getElementById('form_sub').innerHTML = utim;
         } else if (data.value == 'classify1') {
             // 一级分类
@@ -223,7 +208,7 @@ layui.use(['form', 'laydate'], function(){
             layer.msg('请设置更大的时间跨度且保证截止时间大于开始时间'); 
             return false;
         } else {
-            search_request_select(res['flag'], res['put']);
+            search(res['page'], res['put']);
         }
         
         return false;
