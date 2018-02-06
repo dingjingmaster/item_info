@@ -15,6 +15,7 @@ if(!strcasecmp(INTEST, 'DEBUG')) {
 function retent_rate_init(){
 
     $page_back = array();
+    $script_div = '<script type="text/javascript" src="js/retent_global.js"></script>';
     $form_div = "";
     $main_div = "";
     $nav_div = "";
@@ -80,10 +81,12 @@ function retent_rate_init(){
                 '</div>'.
             '</form>';
 
+    $page_back['script'] = $script;
     $page_back['form_div'] = $form_div;
     $page_back['main_div'] = $main_div;
     $page_back['nav_div'] = $nav_div;
     $page_back['title_div'] = $title_div;
+    $page_back['script_div'] = $script_div;
 
     return json_encode($page_back);
 }

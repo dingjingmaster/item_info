@@ -38,6 +38,7 @@ function page_init(page, type) {
             document.getElementById('main_div').innerHTML = json.main_div;
             document.getElementById('nav_div').innerHTML = json.nav_div;
             document.getElementById('title_div').innerHTML = json.title_div;
+            document.getElementById('script_div').innerHTML = json.script_div;
 
             var reset = document.getElementById('form_reset');
             $("button#form_reset").click();
