@@ -124,7 +124,6 @@ layui.use(['form', 'laydate'], function(){
 
         } else if (data.value == 'fee') {
             // 付费类别
-            document.getElementById('form_sub_div').style.display="block";
             document.getElementById('form_fee_div').style.display="block";
             document.getElementById('form_target_div').style.display="block";
             document.getElementById('form_time_div').style.display="block";
