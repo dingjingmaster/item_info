@@ -13,6 +13,7 @@ function retent_init($type) {
     $main_div = "";
     $nav_div = "";
     $title_div = "留存率查询";
+
     if (!strcmp($type,  'value')) {
         $target = '<input type="checkbox" lay-skin="primary" name="valDay" title="天阅读量" checked/>'.
             '<input type="checkbox" lay-skin="primary" name="valWeek" title="周阅读量"/>'.
@@ -21,7 +22,6 @@ function retent_init($type) {
         $target = '<input type="checkbox" lay-skin="primary" name="rteDay" title="天留存率" checked/>'.
             '<input type="checkbox" lay-skin="primary" name="rteWeek" title="周留存率"/>'.
             '<input type="checkbox" lay-skin="primary" name="rteWk7" title="近七日留存率"/>';
-
     }
 
     $form_div = '<form class="layui-form" action="">'.

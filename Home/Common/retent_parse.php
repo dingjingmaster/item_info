@@ -6,8 +6,8 @@
  * Time: 10:51
  */
 
+/*
 function set_field($tableName) {
-    echo $tableName;
     switch($tableName) {
         case 'limitfree':
             return array('irid', 'last', 'remain', 'retent', 'tfCate', 'timeStamp');
@@ -25,6 +25,7 @@ function set_field($tableName) {
             return array('irid', 'last', 'remain', 'retent', 'cate1Cate', 'feeCate', 'typeCate', 'timeStamp');
     }
 }
+*/
 
 function str_to_number($str) {
     if(strlen($str) <= 1) {

@@ -14,8 +14,6 @@
     <script type="text/javascript" src="public/js/common.js"></script>
     <script type="text/javascript" src="public/js/get_request.js"></script>
     <script type="text/javascript" src="public/js/post_request.js"></script>
-    <script type="text/javascript" id="script_div"></script>
-    <script type="text/javascript" id="script"></script>
 </head>
 <body class="layui-layout-body" onload="get_request('retent', 'retent_init')">
 <div class="layui-layout layui-layout-admin">
@@ -36,8 +34,8 @@
                 <li class="layui-nav-item">
                     <a href="javascript:;">订展比相关查询</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:get_request('exhibit', 'exhibit');">比例查询</a></dd>
-                        <dd><a href="javascript:get_request('exhibit', 'value');">阅读量查询</a></dd>
+                        <dd><a href="javascript:get_request('exhibit', 'exhibit_init');">比例查询</a></dd>
+                        <dd><a href="javascript:get_request('exhibit', 'value_init');">阅读量查询</a></dd>
                     </dl>
                 </li>
             </ul>

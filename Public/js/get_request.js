@@ -20,9 +20,15 @@ function get_request(type, para) {
             document.getElementById('main_div').innerHTML = json.main_div;
             document.getElementById('nav_div').innerHTML = json.nav_div;
             document.getElementById('title_div').innerHTML = json.title_div;
-            document.getElementById('script').src = json.script_div;
-            //*/
-            var reset = document.getElementById('form_reset');
+
+            var sc = document.createElement("script");
+            var sc_id = document.createAttribute("id");
+            sc_id.value = "scripts_s";
+            sc.setAttributeNode(sc_id);
+            document.getElementById("main_div").appendChild(sc);
+            document.getElementById('scripts_s').src = json.script_div;
+
+            var reset =document.getElementById('form_reset');
             $("button#form_reset").click();
         }
     }

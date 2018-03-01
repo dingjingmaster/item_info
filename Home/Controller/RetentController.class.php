@@ -28,8 +28,6 @@ class RetentController extends Controller{
         $title = "各限免批次留存率统计";
 
         $Retent = new Model\RetentModel($_POST['para']);
-        //$Retent->getRetent();
-        //$this->show("ok");
         $this->ajaxReturn(generate_response($Retent->getRetent(), $nav_title, $title, $yTitle));
     }
 
