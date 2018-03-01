@@ -1,0 +1,1 @@
+<?php if (!defined('THINK_PATH')) exit();?>{"table":"limitfree","fee":["chgFee"],"para":["limfe1","limfe2","limfe3","limfe4"],"target":["tarDay"],"start":"20180101","stop":"20180227"}
