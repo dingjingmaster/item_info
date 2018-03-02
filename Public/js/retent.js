@@ -51,6 +51,12 @@ function detail_input(jsObj) {
     return {"page": flag, "put": JSON.stringify(res)};
 }
 
+function get_before_date(beforeDay) {
+    var d = new Date();
+    d.setDate(d.getDate() - beforeDay);
+    return d;
+}
+
 layui.use(['form', 'laydate'], function(){
     var form = layui.form;
     var fee = [];

@@ -59,6 +59,12 @@ function detail_input(jsObj) {
     //return JSON.stringify(res);
 }
 
+function get_before_date(beforeDay) {
+    var d = new Date();
+    d.setDate(d.getDate() - beforeDay);
+    return d;
+}
+
 layui.use(['form', 'laydate'], function(){
     var form = layui.form;
     var fee = [];
@@ -67,7 +73,7 @@ layui.use(['form', 'laydate'], function(){
     var startTim = {
         elem: '#fstart_tim',
         format: 'yyyyMMdd',
-        min: '2018-02-01',
+        min: '2018-01-01',
         value: '20180201',
         max: -3,
         istime: false,
@@ -77,8 +83,8 @@ layui.use(['form', 'laydate'], function(){
         elem: '#fstop_tim',
         format: 'yyyyMMdd',
         min: '2018-02-01',
-        max: -3,
-        value: new Date(),
+        max: -2,
+        value: get_before_date(2),
         istime: false,
     };
 
