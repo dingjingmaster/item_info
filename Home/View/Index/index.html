@@ -6,14 +6,14 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" href="public/lib/layui/css/layui.css" media="all"/>
-    <link rel="stylesheet" href="public/css/main_global.css"/>
+    <link rel="stylesheet" href="Public/lib/layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="Public/css/main_global.css"/>
     <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
-    <script src="public/lib/layui/layui.js"></script>
-    <script src="public/lib/highcharts/code/highcharts.js"></script>
-    <script type="text/javascript" src="public/js/common.js"></script>
-    <script type="text/javascript" src="public/js/get_request.js"></script>
-    <script type="text/javascript" src="public/js/post_request.js"></script>
+    <script src="Public/lib/layui/layui.js"></script>
+    <script src="Public/lib/highcharts/code/highcharts.js"></script>
+    <script type="text/javascript" src="Public/js/common.js"></script>
+    <script type="text/javascript" src="Public/js/get_request.js"></script>
+    <script type="text/javascript" src="Public/js/post_request.js"></script>
 </head>
 <body class="layui-layout-body" onload="get_request('retent', 'retent_init')">
 <div class="layui-layout layui-layout-admin">
