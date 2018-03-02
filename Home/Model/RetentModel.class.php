@@ -85,8 +85,8 @@ class RetentModel extends Model {
                 }
                 $bak['exp'] = $msql['exp'];
                 $bak['data'] = $resData;
+                array_push($result, $bak);
             }
-            array_push($result, $bak);
         }
         return $result;
     }
