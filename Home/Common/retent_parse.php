@@ -6,27 +6,6 @@
  * Time: 10:51
  */
 
-/*
-function set_field($tableName) {
-    switch($tableName) {
-        case 'limitfree':
-            return array('irid', 'last', 'remain', 'retent', 'tfCate', 'timeStamp');
-        case 'fee':
-            return array('irid', 'last', 'remain', 'retent', 'feeCate', 'typeCate', 'timeStamp');
-        case 'status':
-            return array('irid', 'last', 'remain', 'retent', 'statuCate', 'feeCate', 'typeCate', 'timeStamp');
-        case 'viewCount':
-            return array('irid', 'last', 'remain', 'retent', 'viewCate', 'feeCate', 'typeCate', 'timeStamp');
-        case 'intime':
-            return array('irid', 'last', 'remain', 'retent', 'intimeCate', 'feeCate', 'typeCate', 'timeStamp');
-        case 'update':
-            return array('irid', 'last', 'remain', 'retent', 'updateCate', 'feeCate', 'typeCate', 'timeStamp');
-        case 'classify1':
-            return array('irid', 'last', 'remain', 'retent', 'cate1Cate', 'feeCate', 'typeCate', 'timeStamp');
-    }
-}
-*/
-
 function str_to_number($str) {
     if(strlen($str) <= 1) {
         return $str;
