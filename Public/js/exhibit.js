@@ -147,7 +147,7 @@ layui.use(['form', 'laydate'], function(){
             // 维度细分
             var stu= '' +
                 '<input type="checkbox" lay-skin="primary" name="cmpStau" title="完结"/>' +
-                '<input type="checkbox" lay-skin="primary" name="noCmpStau" title="连载"/>';
+                '<input type="checkbox" lay-skin="primary" name="noCmpStau" title="连载" checked/>';
             document.getElementById('form_sub').innerHTML = stu;
         } else if (data.value == 'view') {
             // 订阅级别
@@ -159,7 +159,7 @@ layui.use(['form', 'laydate'], function(){
             document.getElementById('form_submit').style.display="block";
             // 维度细分
             var vie= '' +
-                '<input type="checkbox" lay-skin="primary" name="bt0to10Sub" title="介于0到10"/>' +
+                '<input type="checkbox" lay-skin="primary" name="bt0to10Sub" title="介于0到10" checked/>' +
                 '<input type="checkbox" lay-skin="primary" name="bt10to1bSub" title="介于10到100"/>' +
                 '<input type="checkbox" lay-skin="primary" name="bt1bto1kSub" title="介于100到1000"/>' +
                 '<input type="checkbox" lay-skin="primary" name="bt1kto10kSub" title="介于1000到10000"/>' +
@@ -177,7 +177,7 @@ layui.use(['form', 'laydate'], function(){
             document.getElementById('form_submit').style.display="block";
             // 维度细分
             var itim= '' +
-                '<input type="checkbox" lay-skin="primary" name="lesMonIn" title="1月内入库"/>' +
+                '<input type="checkbox" lay-skin="primary" name="lesMonIn" title="1月内入库" checked/>' +
                 '<input type="checkbox" lay-skin="primary" name="bt1mto3mIn" title="1~3月内入库"/>' +
                 '<input type="checkbox" lay-skin="primary" name="bt3mto12mIn" title="3~12月内入库"/>' +
                 '<input type="checkbox" lay-skin="primary" name="bt12mto99mIn" title="12~99月内入库"/>';
@@ -192,7 +192,7 @@ layui.use(['form', 'laydate'], function(){
             document.getElementById('form_submit').style.display="block";
             // 维度细分
             var utim = '' +
-                '<input type="checkbox" lay-skin="primary" name="lesMonUpd" title="0~1月未更新"/>' +
+                '<input type="checkbox" lay-skin="primary" name="lesMonUpd" title="0~1月未更新" checked/>' +
                 '<input type="checkbox" lay-skin="primary" name="bt1mto3mUpd" title="1~3月未更新"/>' +
                 '<input type="checkbox" lay-skin="primary" name="bt3mto12mUpd" title="3~12月未更新"/>' +
                 '<input type="checkbox" lay-skin="primary" name="bt12mto99mUpd" title="12~99月未更新"/>';
@@ -207,7 +207,7 @@ layui.use(['form', 'laydate'], function(){
             document.getElementById('form_submit').style.display="block";
             // 维度细分
             var ctg1 = '' +
-                '<input type="checkbox" lay-skin="primary" name="boyCfy1" title="男频"/>' +
+                '<input type="checkbox" lay-skin="primary" name="boyCfy1" title="男频" checked/>' +
                 '<input type="checkbox" lay-skin="primary" name="girlCfy1" title="女频"/>' +
                 '<input type="checkbox" lay-skin="primary" name="monCfy1" title="包月"/>' +
                 '<input type="checkbox" lay-skin="primary" name="pshCfy1" title="出版"/>' +

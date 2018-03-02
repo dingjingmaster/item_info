@@ -100,7 +100,7 @@ layui.use(['form', 'laydate'], function(){
             document.getElementById('form_submit').style.display="block";
 
             var stg= '' +
-                '<input type="checkbox" lay-skin="primary" name="limfe1" title="第一批限免" checked/>' +
+                '<input type="checkbox" lay-skin="primary" name="limfe1" title="第一批限免" checked />' +
                 '<input type="checkbox" lay-skin="primary" name="limfe2" title="第二批限免" checked/>' +
                 '<input type="checkbox" lay-skin="primary" name="limfe3" title="第三批限免" checked/>' +
                 '<input type="checkbox" lay-skin="primary" name="limfe4" title="第四批限免" checked/>';
@@ -124,7 +124,7 @@ layui.use(['form', 'laydate'], function(){
             document.getElementById('form_submit').style.display="block";
             var stg= '' +
                 '<input type="checkbox" lay-skin="primary" name="finish" title="完结"/>' +
-                '<input type="checkbox" lay-skin="primary" name="unfinish" title="连载"/>';
+                '<input type="checkbox" lay-skin="primary" name="unfinish" title="连载" checked/>';
             document.getElementById('form_sub').innerHTML = stg;
 
         } else if (data.value == 'viewCount') {
@@ -136,7 +136,7 @@ layui.use(['form', 'laydate'], function(){
             document.getElementById('form_submit').style.display="block";
             // 维度细分
             var stg= '' +
-                '<input type="checkbox" lay-skin="primary" name="bt0to1b" title="介于0到100"/>' +
+                '<input type="checkbox" lay-skin="primary" name="bt0to1b" title="介于0到100" checked/>' +
                 '<input type="checkbox" lay-skin="primary" name="bt1bto1k" title="介于100到1000"/>' +
                 '<input type="checkbox" lay-skin="primary" name="bt1kto1w" title="介于1000到1万"/>' +
                 '<input type="checkbox" lay-skin="primary" name="bt1wto10w" title="介于1万到10万"/>' +
@@ -151,7 +151,7 @@ layui.use(['form', 'laydate'], function(){
             document.getElementById('form_submit').style.display="block";
             // 维度细分
             var itim= '' +
-                '<input type="checkbox" lay-skin="primary" name="lesMonIn" title="1月内入库"/>' +
+                '<input type="checkbox" lay-skin="primary" name="lesMonIn" title="1月内入库" checked/>' +
                 '<input type="checkbox" lay-skin="primary" name="bt1mto3mIn" title="1~3月内入库"/>' +
                 '<input type="checkbox" lay-skin="primary" name="bt3mto12mIn" title="3~12月内入库"/>' +
                 '<input type="checkbox" lay-skin="primary" name="gt1yIn" title="大于1年入库"/>';
@@ -165,7 +165,7 @@ layui.use(['form', 'laydate'], function(){
             document.getElementById('form_submit').style.display="block";
             // 维度细分
             var utim = '' +
-                '<input type="checkbox" lay-skin="primary" name="lesMonUpd" title="0~1月未更新"/>' +
+                '<input type="checkbox" lay-skin="primary" name="lesMonUpd" title="0~1月未更新" checked/>' +
                 '<input type="checkbox" lay-skin="primary" name="bt1mto3mUpd" title="1~3月未更新"/>' +
                 '<input type="checkbox" lay-skin="primary" name="bt3mto12mUpd" title="3~12月未更新"/>' +
                 '<input type="checkbox" lay-skin="primary" name="gt1yUpd" title="大于1年未更新"/>';
@@ -179,7 +179,7 @@ layui.use(['form', 'laydate'], function(){
             document.getElementById('form_submit').style.display="block";
             // 维度细分
             var ctg1 = '' +
-                '<input type="checkbox" lay-skin="primary" name="boyCfy1" title="男频"/>' +
+                '<input type="checkbox" lay-skin="primary" name="boyCfy1" title="男频" checked/>' +
                 '<input type="checkbox" lay-skin="primary" name="girlCfy1" title="女频"/>' +
                 '<input type="checkbox" lay-skin="primary" name="pshCfy1" title="出版"/>' +
                 '<input type="checkbox" lay-skin="primary" name="othCfy1" title="其它"/>';

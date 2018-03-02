@@ -72,7 +72,6 @@ class ExhibitModel extends Model {
                     array_push($result, $bak);
                 }
             }
-
         }
         return $result;
     }
