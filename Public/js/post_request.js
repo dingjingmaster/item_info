@@ -7,7 +7,7 @@
 
 function post_request(page, act, para) {
     var xmlhttp;
-    var request = '/item_info/index.php/Home/' + page + '/' + act;
+    var request = '/item_info/index.php?s=Home/' + page + '/' + act;
     if(window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
     } else {
