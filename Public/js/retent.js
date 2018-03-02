@@ -59,7 +59,7 @@ layui.use(['form', 'laydate'], function(){
     var startTim = {
         elem: '#fstart_tim',
         format: 'yyyyMMdd',
-        min: '2018-02-01',
+        min: '2018-01-01',
         value: '20180201',
         max: -3,
         istime: false,
@@ -70,7 +70,7 @@ layui.use(['form', 'laydate'], function(){
         format: 'yyyyMMdd',
         min: '2018-01-01',
         max: -1,
-        value: new Date(),
+        value: get_before_date(1),
         istime: false,
     };
 
