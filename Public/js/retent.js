@@ -128,7 +128,6 @@ layui.use(['form', 'laydate'], function(){
             document.getElementById('form_sub').innerHTML = stg;
 
         } else if (data.value == 'viewCount') {
-            // 连载状态
             document.getElementById('form_sub_div').style.display="block";
             document.getElementById('form_fee_div').style.display="block";
             document.getElementById('form_target_div').style.display="block";

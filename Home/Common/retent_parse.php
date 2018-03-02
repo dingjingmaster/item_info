@@ -29,13 +29,13 @@ function str_to_number($str) {
 function to_chinese_character($str) {
     $trans = array(
         'freFee' => '免费', 'chgFee' => '付费', 'monFee' => '包月', 'pubFee'=>'公版', 'tfFee'=>'限免',
-        'rteDay' => '天', 'rteWeek'=>'周', 'rteWk7'=>'七日',
-        'valDay' => '天', 'valWeek'=>'周', 'valWk7'=>'七日',
+        'rteDay' => '天留存', 'rteWeek'=>'周留存', 'rteWk7'=>'七日留存',
+        'valDay' => '天阅读量', 'valWeek'=>'周阅读量', 'valWk7'=>'七日阅读量',
         "limfe1" => '第一批限免', "limfe2" => '第二批限免', "limfe3" => '第三批限免', "limfe4" => '第四批限免',
         "finish" => '完结', "unfinish" => '连载',
-        "bt1to1b" => '1~1百', "bt1bto1k" => '1百~1千', "bt1kto1w" => '1千~1万', "bt1wto10w" => '1万~10万', "gt10w" => '大于10万',
-        "lesMonIn" => '少于1月入库', "bt1mto3mIn" => '1月~3月入库', "bt3mto12mIn" => '3月~12月入库', "gt1yIn" => '大于1年入库',
-        "lesMonUpd" => '少于1月更新', "bt1mto3mUpd" => '1月~3月更新', "bt3mto12mUpd" => '3月~12月更新', "gt1yUpd" => '大于1年更新',
+        "bt0to1b" => '1到1百', "bt1bto1k" => '1百到1千', "bt1kto1w" => '1千到1万', "bt1wto10w" => '1万到10万', "gt10w" => '大于10万',
+        "lesMonIn" => '少于1月入库', "bt1mto3mIn" => '1月到3月入库', "bt3mto12mIn" => '3月到12月入库', "gt1yIn" => '大于1年入库',
+        "lesMonUpd" => '少于1月更新', "bt1mto3mUpd" => '1月到3月更新', "bt3mto12mUpd" => '3月到12月更新', "gt1yUpd" => '大于1年更新',
         "boyCfy1" => '男频', "girlCfy1" => '女频', "pshCfy1" => '出版', "othCfy1" => '其它'
     );
 
