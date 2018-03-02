@@ -15,9 +15,9 @@ function exhibit_init($type){
     $title_div = "订展比查询";
 
     if (!strcmp($type,  'value')) {
-        $target = '<input type="checkbox" lay-skin="primary" name="dspVal" title="展现量"/>'.
+        $target = '<input type="checkbox" lay-skin="primary" name="dspNum" title="展现量"/>'.
             '<input type="checkbox" lay-skin="primary" name="clkNum" title="点击量"/>'.
-            '<input type="checkbox" lay-skin="primary" name="subNum" title="订阅量" checked/>'.
+            '<input type="checkbox" lay-skin="primary" name="srbNum" title="订阅量" checked/>'.
             '<input type="checkbox" lay-skin="primary" name="redNum" title="阅读量"/>'.
             '<input type="checkbox" lay-skin="primary" name="rteNum" title="留存量"/>';
 
