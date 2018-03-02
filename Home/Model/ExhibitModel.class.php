@@ -61,7 +61,6 @@ class ExhibitModel extends Model {
                 $bak = array();
                 $field = 'dzid, timeStamp, ' . $i;
                 $resData = date_range($this->start, $this->stop);
-                ///*
                 $res = $this->where($msql['sql'])->getField($field, ';');
                 if (($res != null) && ($res != false)) {
                     foreach ($res as $key => $value) {
@@ -70,9 +69,8 @@ class ExhibitModel extends Model {
                     }
                     $bak['exp'] = $msql['exp'] . '-' . to_chinese_character($i);
                     $bak['data'] = $resData;
+                    array_push($result, $bak);
                 }
-               // */
-                array_push($result, $bak);
             }
 
         }
@@ -122,7 +120,7 @@ class ExhibitModel extends Model {
                 break;
             case 'fee':
                 foreach ($this->fee as $i) {
-                    foreach($this->methods as $j) {
+                    foreach($this->module as $j) {
                         $m = array();
                         $msql = 'feeCate=' . str_to_number($i) . ' AND ' . 'typeCate=' . str_to_number($j) . ' AND ' . ' timeStamp >= ' . $this->start . ' AND timeStamp <= ' . $this->stop;
                         $exp = to_chinese_character($i) . '-' . to_chinese_character($j);
@@ -135,7 +133,7 @@ class ExhibitModel extends Model {
             case 'status':
                 foreach($this->fee as $i) {
                     foreach($this->paras as $j) {
-                        foreach($this->methods as $k) {
+                        foreach($this->module as $k) {
                             $m = array();
                             $msql = 'feeCate=' . str_to_number($i) . ' AND ' . 'statusCate=' . str_to_number($j) . ' AND ' . 'typeCate=' . str_to_number($k) . ' AND ' . ' timeStamp >= ' . $this->start . ' AND timeStamp <= ' . $this->stop;
                             $exp = to_chinese_character($i) . '-' . to_chinese_character($j) . '-' . to_chinese_character($k);
@@ -149,7 +147,7 @@ class ExhibitModel extends Model {
             case 'view':
                 foreach($this->fee as $i) {
                     foreach($this->paras as $j) {
-                        foreach($this->methods as $k) {
+                        foreach($this->module as $k) {
                             $m = array();
                             $msql = 'feeCate=' . str_to_number($i) . ' AND ' . 'viewCate=' . str_to_number($j) . ' AND ' . 'typeCate=' . str_to_number($k) . ' AND ' . ' timeStamp >= ' . $this->start . ' AND timeStamp <= ' . $this->stop;
                             $exp = to_chinese_character($i) . '-' . to_chinese_character($j) . '-' . to_chinese_character($k);
@@ -163,7 +161,7 @@ class ExhibitModel extends Model {
             case 'intime':
                 foreach($this->fee as $i) {
                     foreach($this->paras as $j) {
-                        foreach($this->methods as $k) {
+                        foreach($this->module as $k) {
                             $m = array();
                             $msql = 'feeCate=' . str_to_number($i) . ' AND ' . 'intimeCate=' . str_to_number($j) . ' AND ' . 'typeCate=' . str_to_number($k) . ' AND ' . ' timeStamp >= ' . $this->start . ' AND timeStamp <= ' . $this->stop;
                             $exp = to_chinese_character($i) . '-' . to_chinese_character($j) . '-' . to_chinese_character($k);
@@ -177,7 +175,7 @@ class ExhibitModel extends Model {
             case 'update':
                 foreach($this->fee as $i) {
                     foreach($this->paras as $j) {
-                        foreach($this->methods as $k) {
+                        foreach($this->module as $k) {
                             $m = array();
                             $msql = 'feeCate=' . str_to_number($i) . ' AND ' . 'updateCate=' . str_to_number($j) . ' AND ' . 'typeCate=' . str_to_number($k) . ' AND ' . ' timeStamp >= ' . $this->start . ' AND timeStamp <= ' . $this->stop;
                             $exp = to_chinese_character($i) . '-' . to_chinese_character($j) . '-' . to_chinese_character($k);
@@ -191,7 +189,7 @@ class ExhibitModel extends Model {
             case 'classify1':
                 foreach($this->fee as $i) {
                     foreach($this->paras as $j) {
-                        foreach($this->methods as $k) {
+                        foreach($this->module as $k) {
                             $m = array();
                             $msql = 'feeCate=' . str_to_number($i) . ' AND ' . 'classify1Cate=' . str_to_number($j) . ' AND ' . 'typeCate=' . str_to_number($k) . ' AND ' . ' timeStamp >= ' . $this->start . ' AND timeStamp <= ' . $this->stop;
                             $exp = to_chinese_character($i) . '-' . to_chinese_character($j) . '-' . to_chinese_character($k);
@@ -205,7 +203,7 @@ class ExhibitModel extends Model {
             case 'strategy':
                 foreach($this->fee as $i) {
                     foreach($this->paras as $j) {
-                        foreach($this->methods as $k) {
+                        foreach($this->module as $k) {
                             $m = array();
                             $msql = 'feeCate=' . str_to_number($i) . ' AND ' . 'strategyCate=' . str_to_number($j) . ' AND ' . 'typeCate=' . str_to_number($k) . ' AND ' . ' timeStamp >= ' . $this->start . ' AND timeStamp <= ' . $this->stop;
                             $exp = to_chinese_character($i) . '-' . to_chinese_character($j) . '-' . to_chinese_character($k);

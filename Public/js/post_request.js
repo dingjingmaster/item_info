@@ -13,7 +13,6 @@ function post_request(page, act, para) {
     } else {
         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
-
     xmlhttp.onreadystatechange = function() {
         if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             var res = xmlhttp.responseText;

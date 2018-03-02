@@ -52,11 +52,10 @@ class RetentModel extends Model {
 
     public function getRetent() {
         $result = array();
-        $field = 'irid, retent, timeStamp';
-        $resData = date_range($this->start, $this->stop);
-        ///*
         foreach ($this->get_sql() as $msql) {
             $bak = array();
+            $field = 'irid, retent, timeStamp';
+            $resData = date_range($this->start, $this->stop);
             $res = $this->where($msql['sql'])->getField($field, ';');
             if (($res != null) && ($res != false)) {
                 foreach ($res as $key => $value) {
@@ -65,18 +64,18 @@ class RetentModel extends Model {
                 }
                 $bak['exp'] = $msql['exp'];
                 $bak['data'] = $resData;
+                array_push($result, $bak);
             }
-            array_push($result, $bak);
         }
         return $result;
     }
 
     public function getValue() {
         $result = array();
-        $field = 'irid, last, timeStamp';
-        $resData = date_range($this->start, $this->stop);
         foreach ($this->get_sql() as $msql) {
             $bak = array();
+            $field = 'irid, last, timeStamp';
+            $resData = date_range($this->start, $this->stop);
             $res = $this->where($msql['sql'])->getField($field, ';');
             if (($res != null) && ($res != false)) {
                 foreach ($res as $key => $value) {

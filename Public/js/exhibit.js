@@ -56,7 +56,6 @@ function detail_input(jsObj) {
     res.stop = stopTim;
 
     return {"page": flag, "put": JSON.stringify(res)};
-    //return JSON.stringify(res);
 }
 
 function get_before_date(beforeDay) {
@@ -229,12 +228,10 @@ layui.use(['form', 'laydate'], function(){
             layer.msg("请您输入查询维度...");
             return false;
         }
-
         var res = detail_input(formData);
         if (res != false) {
             post_request('exhibit', res['page'], res['put']);
         }
-
         return false;
     });
 });
