@@ -24,7 +24,7 @@ class ExhibitModel extends Model {
     protected $tablePrefix = 'item_exhibit_';
     protected $tableName;
     protected $fields;
-    protected $pk = 'irid';
+    protected $pk = 'dzid';
     protected $connection = array(
         'db_type'  => 'mysql',
         'db_user'  => 'root',
@@ -50,19 +50,17 @@ class ExhibitModel extends Model {
             //
             echo 'error';
         }
-
         parent::__construct();
     }
 
     public function getRetent() {
         $result = array();
-        $resData = date_range($this->start, $this->stop);
         ///*
         foreach ($this->get_sql() as $msql) {
-            $bak = array();
-            $field = 'dzid, timeStamp, ';
             foreach ($this->target as $i) {
-                $field = $field . $i;
+                $bak = array();
+                $field = 'dzid, timeStamp, ' . $i;
+                $resData = date_range($this->start, $this->stop);
                 ///*
                 $res = $this->where($msql['sql'])->getField($field, ';');
                 if (($res != null) && ($res != false)) {
@@ -74,8 +72,9 @@ class ExhibitModel extends Model {
                     $bak['data'] = $resData;
                 }
                // */
+                array_push($result, $bak);
             }
-            array_push($result, $bak);
+
         }
         return $result;
     }
