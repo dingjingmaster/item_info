@@ -79,7 +79,7 @@ def get_status_sql(irid, last, remain, retent, statuCate, feeCate, typeCate, tim
 '''
 def get_viewCount_sql(irid, last, remain, retent, viewCate, feeCate, typeCate, timeStamp):
 
-    sql = "INSERT INTO item_retent_viewCount(irid,\
+    sql = "INSERT INTO item_retent_viewcount(irid,\
             last, remain, retent,\
             viewCate, feeCate, typeCate,\
             timeStamp)\
