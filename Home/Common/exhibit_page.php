@@ -18,17 +18,17 @@ function exhibit_init($type){
         $target = '<input type="checkbox" lay-skin="primary" name="dspNum" title="展现量"/>'.
             '<input type="checkbox" lay-skin="primary" name="clkNum" title="点击量"/>'.
             '<input type="checkbox" lay-skin="primary" name="srbNum" title="订阅量" checked/>'.
-            '<input type="checkbox" lay-skin="primary" name="redNum" title="阅读量"/>'.
-            '<input type="checkbox" lay-skin="primary" name="rteNum" title="留存量"/>';
+            '<input type="checkbox" lay-skin="primary" name="redNum" title="阅读量1"/>'.
+            '<input type="checkbox" lay-skin="primary" name="rteNum" title="阅读量2"/>';
 
     }else if (!strcmp($type, 'exhibit')) {
         $target = '<input type="checkbox" lay-skin="primary" name="clkDsp" title="点展比"/>'.
             '<input type="checkbox" lay-skin="primary" name="subClk" title="订点比"/>'.
             '<input type="checkbox" lay-skin="primary" name="subDsp" title="订展比" checked/>'.
-            '<input type="checkbox" lay-skin="primary" name="redSub" title="阅订比"/>'.
-            '<input type="checkbox" lay-skin="primary" name="redDsp" title="阅展比"/>'.
-            '<input type="checkbox" lay-skin="primary" name="retent" title="留存率"/>'.
-            '<input type="checkbox" lay-skin="primary" name="rteDsp" title="留展比"/>';
+            '<input type="checkbox" lay-skin="primary" name="redSub" title="阅订比1"/>'.
+            '<input type="checkbox" lay-skin="primary" name="redDsp" title="阅展比1"/>'.
+            '<input type="checkbox" lay-skin="primary" name="retent" title="阅订比2"/>'.
+            '<input type="checkbox" lay-skin="primary" name="rteDsp" title="阅展比2"/>';
     }
 
     $form_div = '<form class="layui-form" action="">'.
