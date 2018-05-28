@@ -73,7 +73,7 @@ layui.use(['form', 'laydate'], function(){
         elem: '#fstart_tim',
         format: 'yyyyMMdd',
         min: '2018-01-01',
-        value: '20180201',
+        value: get_before_date(36),
         max: -3,
         istime: false,
     };
