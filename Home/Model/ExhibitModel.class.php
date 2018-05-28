@@ -28,7 +28,7 @@ class ExhibitModel extends Model {
     protected $connection = array(
         'db_type'  => 'mysql',
         'db_user'  => 'root',
-        'db_pwd'   => '123456',
+        'db_pwd'   => 'root',
         'db_host'  => '127.0.0.1',
         'db_port'  => '3306',
         'db_name'  => 'item_exhibit',

@@ -134,7 +134,8 @@ layui.use(['form', 'laydate'], function(){
                 '<input type="checkbox" lay-skin="primary" name="redMdlRec" title="阅读模型"/>' +
                 '<input type="checkbox" lay-skin="primary" name="cotSimRec" title="内容相似"/>' +
                 '<input type="checkbox" lay-skin="primary" name="redMdlRec" title="阅读同分类"/>' +
-                '<input type="checkbox" lay-skin="primary" name="cat1SimCtgRec" title="一级同分类"/>';
+                '<input type="checkbox" lay-skin="primary" name="cat1SimCtgRec" title="一级同分类"/>' +
+                '<input type="checkbox" lay-skin="primary" name="nerIcfKnn" title="近期协同"/>';
             document.getElementById('form_sub').innerHTML = stg;
         } else if (data.value == 'status') {
             // 连载状态
