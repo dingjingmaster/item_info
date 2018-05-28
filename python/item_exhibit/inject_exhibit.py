@@ -182,6 +182,8 @@ def trans_to_word(mstr):
         res = 'redSimRec'
     elif mstr == '一级同分类':
         res = 'cat1SimCtgRec'
+    elif mstr == '近期协同':
+        res = 'nerIcfKnn'
 
     # 状态
     elif mstr == '完结':
@@ -282,6 +284,8 @@ def get_strategy_number(mstr):
         res = 11
     elif mstr == '0':
         res = 12
+    elif mstr == '近期协同':
+        res = 13
 
     return res
 
