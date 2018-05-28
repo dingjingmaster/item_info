@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bb15f31b-be3b-4112-b198-7264f9e0de4c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Runtime/Logs/Home/18_05_28.log" afterPath="$PROJECT_DIR$/Runtime/Logs/Home/18_05_28.log" />
-    </list>
+    <list default="true" id="bb15f31b-be3b-4112-b198-7264f9e0de4c" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -105,8 +103,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP-5.5.38" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="30" />
-    <option name="y" value="138" />
+    <option name="x" value="639" />
+    <option name="y" value="107" />
     <option name="width" value="1787" />
     <option name="height" value="766" />
   </component>
@@ -208,7 +206,7 @@
       <workItem from="1519976828605" duration="1073000" />
       <workItem from="1522654073516" duration="397000" />
       <workItem from="1527495223455" duration="1265000" />
-      <workItem from="1527496734576" duration="1904000" />
+      <workItem from="1527496734576" duration="1933000" />
     </task>
     <task id="LOCAL-00001" summary="大小写问题">
       <created>1519957080456</created>
@@ -298,10 +296,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32939000" />
+    <option name="totallyTimeSpent" value="32968000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="30" y="138" width="1787" height="766" extended-state="0" />
+    <frame x="639" y="107" width="1787" height="766" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18012422" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
