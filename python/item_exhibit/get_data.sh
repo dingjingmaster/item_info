@@ -5,7 +5,8 @@ workDir=$(cd $(dirname $0); pwd)
 nowTime=`date -d "-2 day" +%Y%m%d`
 
 ###################     参数定义      ###########################
-exhibitBase="hdfs://10.26.24.165:9090/rs/stat/${nowTime}/mail/"
+#exhibitBase="hdfs://10.26.24.165:9090/rs/stat/${nowTime}/mail/"
+exhibitBase="hdfs://10.26.26.145:8020/rs/stat/${nowTime}/mail/useritem/"
 
 total="data/total.txt"                                                  # 总计
 fee="data/fee.txt"                                                      # 付费类型
@@ -16,18 +17,6 @@ intime="data/intime.txt"                                                # 入库
 update="data/update.txt"                                                # 更新时间
 classify1="data/classify1.txt"                                          # 一级分类
 classify2="data/classify2.txt"                                          # 二级分类
-
-### 测试
-#total="mail/total/part-00000"
-#fee="mail/charge/part-00000"
-#strategy="mail/strategy/part-00000"
-#statu="mail/status/part-00000"
-#viewCount="mail/level/part-00000"
-#intime="mail/itime/part-00000"
-#update="mail/utime/part-00000"
-#classify1="mail/firstType/part-00000"
-
-
 
 ###################     开始执行      ###########################
 # 拉取数据

@@ -7,7 +7,9 @@ thisDay=`date -d "-2 day" +%Y-%m-%d`
 lastDay=`date -d "-3 day" +%Y-%m-%d`
 
 ###################     参数定义      ###########################
-hadLogBase="hdfs://10.26.24.165:9090/rs/appsinfo/data/user_retention_rate"
+#hadLogBase="hdfs://10.26.24.165:9090/rs/appsinfo/data/user_retention_rate"
+hadLogBase="hdfs://10.26.26.145:8020/rs/appsinfo/data/user_retention_rate"
+
 
 # 天数据
 thisDayLog="data/day_${thisDay}"

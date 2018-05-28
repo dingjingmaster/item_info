@@ -304,3 +304,13 @@ INFO: [ app_begin ] --END-- [ RunTime:0.000770s ]
 SQL: SELECT `dzid`,`timeStamp`,`subDsp` FROM `item_exhibit_strategy` WHERE ( feeCate=2 AND strategyCate=2 AND typeCate=6 AND  timeStamp >= 20180201 AND timeStamp <= 20180526 )  [ RunTime:0.0074s ]
 SQL: SELECT `dzid`,`timeStamp`,`subDsp` FROM `item_exhibit_strategy` WHERE ( feeCate=2 AND strategyCate=13 AND typeCate=6 AND  timeStamp >= 20180201 AND timeStamp <= 20180526 )  [ RunTime:0.0075s ]
 
+[ 2018-05-28T17:38:03+08:00 ] 127.0.0.1 /item_info/index.php?s=Home/exhibit/search_exhibit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000338s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000406s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000425s ]
+SQL: SELECT `dzid`,`timeStamp`,`subDsp` FROM `item_exhibit_strategy` WHERE ( feeCate=2 AND strategyCate=2 AND typeCate=6 AND  timeStamp >= 20180201 AND timeStamp <= 20180526 )  [ RunTime:0.0070s ]
+SQL: SELECT `dzid`,`timeStamp`,`subDsp` FROM `item_exhibit_strategy` WHERE ( feeCate=2 AND strategyCate=13 AND typeCate=6 AND  timeStamp >= 20180201 AND timeStamp <= 20180526 )  [ RunTime:0.0069s ]
+
