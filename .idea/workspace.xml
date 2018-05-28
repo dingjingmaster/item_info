@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb15f31b-be3b-4112-b198-7264f9e0de4c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/.phpstorm.meta.php" afterPath="$PROJECT_DIR$/.phpstorm.meta.php" />
-      <change beforePath="$PROJECT_DIR$/Home/Common/exhibit_parse.php" afterPath="$PROJECT_DIR$/Home/Common/exhibit_parse.php" />
-      <change beforePath="$PROJECT_DIR$/Home/Model/ExhibitModel.class.php" afterPath="$PROJECT_DIR$/Home/Model/ExhibitModel.class.php" />
-      <change beforePath="$PROJECT_DIR$/Public/js/exhibit.js" afterPath="$PROJECT_DIR$/Public/js/exhibit.js" />
+      <change beforePath="$PROJECT_DIR$/Runtime/Logs/Home/18_05_28.log" afterPath="$PROJECT_DIR$/Runtime/Logs/Home/18_05_28.log" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,11 +23,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="exhibit_parse.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="exhibit_parse.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Home/Common/exhibit_parse.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="32" column="281" lean-forward="false" selection-start-line="32" selection-start-column="281" selection-end-line="32" selection-end-column="281" />
+            <state relative-caret-position="247">
+              <caret line="24" column="24" lean-forward="true" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -47,11 +43,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="exhibit.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="exhibit.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Public/js/exhibit.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="404">
-              <caret line="137" column="74" lean-forward="false" selection-start-line="137" selection-start-column="74" selection-end-line="137" selection-end-column="74" />
+            <state relative-caret-position="385">
+              <caret line="139" column="44" lean-forward="true" selection-start-line="139" selection-start-column="44" selection-end-line="139" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="get_request.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Public/js/get_request.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="475">
+              <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -98,7 +104,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP-5.5.38" />
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="30" />
     <option name="y" value="138" />
     <option name="width" value="1787" />
@@ -202,7 +208,7 @@
       <workItem from="1519976828605" duration="1073000" />
       <workItem from="1522654073516" duration="397000" />
       <workItem from="1527495223455" duration="1265000" />
-      <workItem from="1527496734576" duration="1281000" />
+      <workItem from="1527496734576" duration="1904000" />
     </task>
     <task id="LOCAL-00001" summary="大小写问题">
       <created>1519957080456</created>
@@ -292,10 +298,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32316000" />
+    <option name="totallyTimeSpent" value="32939000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="30" y="138" width="1787" height="766" extended-state="1" />
+    <frame x="30" y="138" width="1787" height="766" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18012422" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -501,13 +507,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Public/js/get_request.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Public/js/post_request.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
@@ -587,14 +586,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Home/Common/exhibit_parse.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="32" column="281" lean-forward="false" selection-start-line="32" selection-start-column="281" selection-end-line="32" selection-end-column="281" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Home/Common/exhibit_page.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="475">
@@ -611,10 +602,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Public/js/get_request.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Public/js/exhibit.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="137" column="74" lean-forward="false" selection-start-line="137" selection-start-column="74" selection-end-line="137" selection-end-column="74" />
+        <state relative-caret-position="385">
+          <caret line="139" column="44" lean-forward="true" selection-start-line="139" selection-start-column="44" selection-end-line="139" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Home/Common/exhibit_parse.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="24" column="24" lean-forward="true" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
           <folding />
         </state>
       </provider>
