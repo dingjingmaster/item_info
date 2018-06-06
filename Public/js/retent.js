@@ -76,7 +76,7 @@ layui.use(['form', 'laydate'], function(){
         format: 'yyyyMMdd',
         min: '2018-01-01',
         max: -1,
-        value: get_before_date(1),
+        value: get_before_date(2),
         istime: false,
     };
 
