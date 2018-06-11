@@ -16,7 +16,7 @@ function str_to_number($str) {
         "rteDay" => 1, "rteWeek" => 2, "rteWk7" => 3,
         "valDay" => 1, "valWeek" => 2, "valWk7" => 3,
         "limfe1" => 1, "limfe2" => 2, "limfe3" => 3, "limfe4" => 4,
-        "finish" => 1, "unfinish" => 2,
+        "unfinish" => 1, "finish" => 2,
         "bt0to1b" => 1, "bt1bto1k" => 2, "bt1kto1w" => 3, "bt1wto10w" => 4, "gt10w" => 5,
         "lesMonIn" => 1, "bt1mto3mIn" => 2, "bt3mto12mIn" => 3, "gt1yIn" => 4,
         "lesMonUpd" => 1, "bt1mto3mUpd" => 2, "bt3mto12mUpd" => 3, "gt1yUpd" => 4,
