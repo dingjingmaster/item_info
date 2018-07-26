@@ -12,7 +12,7 @@ function str_to_number($str) {
     }
 
     $trans = array(
-        "freFee" => 1, "chgFee" => 2, "monFee" => 3, "pubFee" => 4, "tfFee" => 5, "allFee"=>6,
+        "freFee" => 1, "chgFee" => 2, "monFee" => 3, "pubFee" => 4, "tfFee" => 5, "allFee" => 6,
         "livStmRec" => 1, "usrKnnRec" => 2, "codBotRec" => 3, "popRec" => 4, "itemKnnRec" => 5, "samCtgRec" => 6, "subMdlRec" => 7, "redMdlRec" => 8, "cotSimRec" => 9, "redSimRec" => 10, "cat1SimCtgRec" => 11, "nerIcfKnn" => 13,
         "shfRecMdl" => 1, "freGusMdl" => 2, "bakArdMdl" => 3, "foeArdMdl" => 4, "shfGusMdl" => 5, "chsStmMdl" => 6, "foeArdMorMdl" => 7, "monStmMdl" => 8, "foeCtgMdl" => 9, "foeAutMdl" => 10, "chsFinStmMdl" => 11, "chsGilStmMdl" => 15, "freMonRecMdl" => 12, "chsBoyStmMdl" => 13, "chsRakStmMdl" => 14, "redRecMdl" => 16, "extRecMdl" => 17,
         "noCmpStau" => 1, "cmpStau" => 2,
