@@ -158,6 +158,8 @@ def trans_to_word(mstr):
         res = 'pubFee'
     elif mstr == '限免':
         res = 'tfFee'
+    elif mstr == '全免':
+            res = 'allFee'
 
     # 推荐策略
     elif mstr == '实时流':
@@ -253,6 +255,8 @@ def get_fee_number(mstr):
         res = 4
     elif mstr == "限免":
         res = 5
+    elif mstr == "全免":
+        res = 6
 
     return res;
 

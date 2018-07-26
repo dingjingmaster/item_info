@@ -12,7 +12,7 @@ function str_to_number($str) {
     }
 
     $trans = array(
-        "freFee" => 1, "chgFee" => 2, "monFee" => 3, "pubFee" => 4, "tfFee" => 5,
+        "freFee" => 1, "chgFee" => 2, "monFee" => 3, "pubFee" => 4, "tfFee" => 5, "allFee"=>6,
         "rteDay" => 1, "rteWeek" => 2, "rteWk7" => 3,
         "valDay" => 1, "valWeek" => 2, "valWk7" => 3,
         "limfe1" => 1, "limfe2" => 2, "limfe3" => 3, "limfe4" => 4,
@@ -28,7 +28,7 @@ function str_to_number($str) {
 
 function to_chinese_character($str) {
     $trans = array(
-        'freFee' => '免费', 'chgFee' => '付费', 'monFee' => '包月', 'pubFee'=>'公版', 'tfFee'=>'限免',
+        'freFee' => '免费(互联网书)', 'chgFee' => '付费', 'monFee' => '包月', 'pubFee'=>'公版', 'tfFee'=>'限免', 'allFee'=>'全免(付费书免费读)',
         'rteDay' => '天留存', 'rteWeek'=>'周留存', 'rteWk7'=>'七日留存',
         'valDay' => '天阅读量', 'valWeek'=>'周阅读量', 'valWk7'=>'七日阅读量',
         "limfe1" => '第一批限免', "limfe2" => '第二批限免', "limfe3" => '第三批限免', "limfe4" => '第四批限免',
