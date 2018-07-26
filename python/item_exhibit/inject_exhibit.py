@@ -159,7 +159,7 @@ def trans_to_word(mstr):
     elif mstr == '限免':
         res = 'tfFee'
     elif mstr == '全免':
-            res = 'allFee'
+        res = 'allFee'
 
     # 推荐策略
     elif mstr == '实时流':
