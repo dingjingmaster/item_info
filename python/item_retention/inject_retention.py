@@ -51,7 +51,7 @@ def get_fee_sql(irid, last, remain, retent, feeCate, typeCate, timeStamp):
     last = 0
     remain = 0
     retent = 0.0
-    feeCate = 1免费 2付费 3包月 4公版 5限免
+    feeCate = 1免费 2付费 3包月 4公版 5限免 6 全免
     typeCate = 1天 2周 3七日
     timeStamp = 时间戳
 '''
@@ -72,7 +72,7 @@ def get_status_sql(irid, last, remain, retent, statuCate, feeCate, typeCate, tim
     last = 0
     remain = 0
     retent = 0.0
-    feeCate = 1免费 2付费 3包月 4公版 5限免
+    feeCate = 1免费 2付费 3包月 4公版 5限免 6 全免
     typeCate = 1天 2周 3七日
     viewCate = 1小于100 2介于100与1000 3介于1000与10000 4介于10000与100000 5大于100000
     timeStamp = 时间戳
@@ -94,7 +94,7 @@ def get_viewCount_sql(irid, last, remain, retent, viewCate, feeCate, typeCate, t
     last = 0
     remain = 0
     retent = 0.0
-    feeCate = 1免费 2付费 3包月 4公版 5限免
+    feeCate = 1免费 2付费 3包月 4公版 5限免 6 全免
     typeCate = 1天 2周 3七日
     intimeCate = 1小于1月 2介于1月与3月 3介于3月与1年 4大于1年
     timeStamp = 时间戳
@@ -116,8 +116,8 @@ def get_intime_sql(irid, last, remain, retent, intimeCate, feeCate, typeCate, ti
     last = 0
     remain = 0
     retent = 0.0
-    feeCate = 1免费 2付费 3包月 4公版 5限免
-    typeCate = 1天 2周 3七日
+    feeCate = 1免费 2付费 3包月 4公版 5限免 6 全免
+    typeCate = 1天 2周 3七日 
     updateCate = 1小于1月 2介于1月与3月 3介于3月与1年 4大于1年
     timeStamp = 时间戳
 '''
@@ -138,7 +138,7 @@ def get_update_sql(irid, last, remain, retent, updateCate, feeCate, typeCate, ti
     last = 0
     remain = 0
     retent = 0.0
-    feeCate = 1免费 2付费 3包月 4公版 5限免
+    feeCate = 1免费 2付费 3包月 4公版 5限免 6全免
     typeCate = 1天 2周 3七日
     classify1Cate = 1男频 2女频 3出版 4其它
     timeStamp = 时间戳
@@ -241,6 +241,8 @@ def get_fee_status(mstr):
         flag = 4
     elif mstr == "limitfree":
         flag = 5
+    elif mstr == "allFee":
+        flag = 6
 
     return flag
 

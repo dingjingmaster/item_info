@@ -46,6 +46,7 @@ function retent_init($type) {
         '<input type="checkbox" lay-skin="primary" name="freFee" title="免费"/>'.
         '<input type="checkbox" lay-skin="primary" name="chgFee" title="付费" checked/>'.
         '<input type="checkbox" lay-skin="primary" name="monFee" title="包月"/>'.
+        '<input type="checkbox" lay-skin="primary" name="allFee" title="全免"/>'.
         '<input type="checkbox" lay-skin="primary" name="pubFee" title="公版"/>'.
         '<input type="checkbox" lay-skin="primary" name="tfFee" title="限免"/>'.
         '</div>'.

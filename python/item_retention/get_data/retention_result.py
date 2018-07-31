@@ -113,9 +113,10 @@ def remain_data(lastlist, thislist, lastDict, remainDict):
         tf = itemArr[9]
         cpid = itemArr[10]
         by = itemArr[11]
+        fc = itemArr[12]
 
-		# cate1, cate2, cate3, viewcount, status, freeflag, intimestamp, lastupdatestamp, createdatestamp, tf, cpid, by 
-        itemInfo = (cate1, cate2, cate3, viewCount, status, freeFlag, intimeStamp, lastUpdateStamp, createTimeStamp, tf, cpid, by)                    # 物品信息
+        # cate1, cate2, cate3, viewcount, status, freeflag, intimestamp, lastupdatestamp, createdatestamp, tf, cpid, by 
+        itemInfo = (cate1, cate2, cate3, viewCount, status, freeFlag, intimeStamp, lastUpdateStamp, createTimeStamp, tf, cpid, by, fc)          # 物品信息
 
         udidNum = len(arr1) - 2
         lastDict[gid] = (itemInfo, udidNum)
@@ -123,7 +124,7 @@ def remain_data(lastlist, thislist, lastDict, remainDict):
     # 获取 thisday 留下来的 udid 针对每个 gid
     for i in thislist:
         arr1 = i.split("\t")
-        gid = arr1[0] 																			# 获取 gid
+        gid = arr1[0]                                                                                                                           # 获取 gid
         itemInfoStr = arr1[1]
         itemArr = itemInfoStr.split("{]")
 
@@ -139,8 +140,9 @@ def remain_data(lastlist, thislist, lastDict, remainDict):
         tf = itemArr[9]
         cpid = itemArr[10]
         by = itemArr[11]
+        fc = itemArr[12]
 
-        itemInfo = (cate1, cate2, cate3, viewCount, status, freeFlag, intimeStamp, lastUpdateStamp, createTimeStamp, tf, cpid, by)                    # 物品信息
+        itemInfo = (cate1, cate2, cate3, viewCount, status, freeFlag, intimeStamp, lastUpdateStamp, createTimeStamp, tf, cpid, by, fc)                    # 物品信息
 
         udidNum = len(arr1) - 2
         remainDict[gid] = (itemInfo, udidNum)
@@ -169,13 +171,16 @@ def fee_rate(lastDayDict, thisDayRemain, outRateList):
         freeFlag = itemInfo[5]
         tf = itemInfo[9]
         by = itemInfo[11]
+        fc = itemInfo[12]
         if tf == "":
             tf = "0"
         if by == "":
-			by = "0"
+            by = "0"
 
         if int(freeFlag) == 0 or freeFlag == "":
             freeFlag = "free"
+        elif int(fc) > 0 and int(freeFlag) > 0:
+            freeFlag = "allFee"
         elif int(tf) > 0 and int(freeFlag) > 0:
             freeFlag = "limitfree"
         elif int(by) == 1:
@@ -200,13 +205,16 @@ def fee_rate(lastDayDict, thisDayRemain, outRateList):
         freeFlag = itemInfo[5]
         tf = itemInfo[9]
         by = itemInfo[11]
+        fc = itemInfo[12]
         if tf == "":
             tf = "0"
         if by == "":
-			by = "0"
+            by = "0"
 
         if int(freeFlag) == 0 or freeFlag == "":
             freeFlag = "free"
+        elif int(fc) > 0 and int(freeFlag) > 0:
+            freeFlag = "allFee"
         elif int(tf) > 0 and int(freeFlag) > 0:
             freeFlag = "limitfree"
         elif int(by) == 1:
@@ -250,10 +258,11 @@ def status_rate(lastDayDict, thisDayRemain, outRateList):
         freeFlag = itemInfo[5]
         tf = itemInfo[9]
         by = itemInfo[11]
+        fc = itemInfo[12]
         if tf == "":
             tf = "0"
         if by == "":
-			by = "0"
+            by = "0"
         if status == "2":
             status = "accomplish"
         else:
@@ -261,6 +270,8 @@ def status_rate(lastDayDict, thisDayRemain, outRateList):
 
         if freeFlag == "0" or freeFlag == "":
             freeFlag = "free"
+        elif int(fc) > 0 and int(freeFlag) > 0:
+            freeFlag = "allFee"
         elif int(tf) > 0 and int(freeFlag) > 0:
             freeFlag = "limitfree"
         elif by == "1":
@@ -286,10 +297,11 @@ def status_rate(lastDayDict, thisDayRemain, outRateList):
         freeFlag = itemInfo[5]
         tf = itemInfo[9]
         by = itemInfo[11]
+        fc = itemInfo[12]
         if tf == "":
             tf = "0"
         if by == "":
-			by = "0"
+            by = "0"
 
         if status == "2":
             status = "accomplish"
@@ -298,6 +310,8 @@ def status_rate(lastDayDict, thisDayRemain, outRateList):
 
         if freeFlag == "0" or freeFlag == "":
             freeFlag = "free"
+        elif int(fc) > 0 and int(freeFlag) > 0:
+            freeFlag = "allFee"
         elif int(tf) > 0 and int(freeFlag) > 0:
             freeFlag = "limitfree"
         elif by == "1":
@@ -342,13 +356,16 @@ def category_rate(lastDayDict, thisDayRemain, outRateDayList):
         freeFlag = itemInfo[5]
         tf = itemInfo[9]
         by = itemInfo[11]
+        fc = itemInfo[12]
         if tf == "":
             tf = "0"
         if by == "0":
-			by = "0"
+            by = "0"
 
         if freeFlag == "0" or freeFlag == "":
             freeFlag = "free"
+        elif int(fc) > 0 and int(freeFlag) > 0:
+            freeFlag = "allFee"
         elif int(tf) > 0 and int(freeFlag) > 0:
             freeFlag = "limitfree"
         elif by == "1":
@@ -391,13 +408,16 @@ def category_rate(lastDayDict, thisDayRemain, outRateDayList):
         freeFlag = itemInfo[5]
         tf = itemInfo[9]
         by = itemInfo[11]
+        fc = itemInfo[12]
         if tf == "":
             tf = "0"
         if by == "":
-			by = "0"
+            by = "0"
 
         if freeFlag == "0" or freeFlag == "":
             freeFlag = "free"
+        elif int(fc) > 0 and int(freeFlag) > 0:
+            freeFlag = "allFee"
         elif int(tf) > 0 and int(freeFlag) != 0:
             freeFlag = "limitfree"
         elif by == "1":
@@ -460,13 +480,16 @@ def viewcount_rate(lastDayDict, thisDayRemain, outRateDayList):
         freeFlag = itemInfo[5]
         tf = itemInfo[9]
         by = itemInfo[11]
+        fc = itemInfo[12]
         if tf == "":
             tf = "0"
         if by == "":
-			by = "0"
+            by = "0"
 
         if freeFlag == "0" or freeFlag == "":
             freeFlag = "free"
+        elif int(fc) > 0 and int(freeFlag) > 0:
+            freeFlag = "allFee"
         elif int(tf) > 0 and int(freeFlag) > 0:
             freeFlag = "limitfree"
         elif by == "1":
@@ -505,13 +528,16 @@ def viewcount_rate(lastDayDict, thisDayRemain, outRateDayList):
         freeFlag = itemInfo[5]
         tf = itemInfo[9]
         by = itemInfo[11]
+        fc = itemInfo[12]
         if tf == "":
             tf = "0"
         if by == "":
-			by = "0"
+            by = "0"
 
         if freeFlag == "0" or freeFlag == "":
             freeFlag = "free"
+        elif int(fc) > 0 and int(freeFlag) > 0:
+            freeFlag = "allFee"
         elif int(tf) > 0 and int(freeFlag) > 0:
             freeFlag = "limitfree"
         elif by == "1":
@@ -573,13 +599,16 @@ def intime_rate(lastDayDict, thisDayRemain, outRateList):
         freeFlag = itemInfo[5]
         tf = itemInfo[9]
         by = itemInfo[11]
+        fc = itemInfo[12]
         if tf == "":
             tf = "0"
         if by == "":
-			by = "0"
+            by = "0"
 
         if freeFlag == "0" or freeFlag == "":
             freeFlag = "free"
+        elif int(fc) > 0 and int(freeFlag) > 0:
+            freeFlag = "allFee"
         elif int(tf) > 0 and int(freeFlag) > 0:
             freeFlag = "limitfree"
         elif by == "1":
@@ -587,7 +616,7 @@ def intime_rate(lastDayDict, thisDayRemain, outRateList):
         elif freeFlag == "1":
             freeFlag = "charge"
         elif freeFlag == "10":
-			freeFlag = "pub"
+            freeFlag = "pub"
 
         year = 0
         month = 0
@@ -616,13 +645,16 @@ def intime_rate(lastDayDict, thisDayRemain, outRateList):
         freeFlag = itemInfo[5]
         tf = itemInfo[9]
         by = itemInfo[11]
+        fc = itemInfo[12]
         if tf == "":
             tf = "0"
         if by == "":
-			by = "0"
+            by = "0"
 
         if freeFlag == "0" or freeFlag == "":
             freeFlag = "free"
+        elif int(fc) > 0 and int(freeFlag) > 0:
+            freeFlag = "allFee"
         elif int(tf) > 0 and int(freeFlag) > 0:
             freeFlag = "limitfree"
         elif by == "1":
@@ -681,13 +713,16 @@ def lastUpdate_rate(lastDayDict, thisDayRemain, outRateList):
         freeFlag = itemInfo[5]
         tf = itemInfo[9]
         by = itemInfo[11]
+        fc = itemInfo[12]
         if tf == "":
             tf = "0"
         if by == "":
-			by = "0"
+            by = "0"
 
         if freeFlag == "0" or freeFlag == "":
             freeFlag = "free"
+        elif int(fc) > 0 and int(freeFlag) > 0:
+            freeFlag = "allFee"
         elif int(tf) > 0 and int(freeFlag) > 0:
             freeFlag = "limitfree"
         elif by == "1":
@@ -724,13 +759,16 @@ def lastUpdate_rate(lastDayDict, thisDayRemain, outRateList):
         freeFlag = itemInfo[5]
         tf = itemInfo[9]
         by = itemInfo[11]
+        fc = itemInfo[12]
         if tf == "":
             tf = "0"
         if by == "":
-			by = "0"
+            by = "0"
 
         if freeFlag == "0" or freeFlag == "":
             freeFlag = "free"
+        elif int(fc) > 0 and int(freeFlag) > 0:
+            freeFlag = "allFee"
         elif int(tf) > 0 and int(freeFlag) > 0:
             freeFlag = "limitfree"
         elif by == "1":
@@ -788,13 +826,16 @@ def createtime_rate(lastDayDict, thisDayRemain, outRateList):
         freeFlag = itemInfo[5]
         tf = itemInfo[9]
         by = itemInfo[11]
+        fc = itemInfo[12]
         if tf == "":
             tf = "0"
         if by == "":
-			by = "0"
+            by = "0"
 
         if freeFlag == "0" or freeFlag == "":
             freeFlag = "免费书"
+        elif int(fc) > 0 and int(freeFlag) > 0:
+            freeFlag = "全免"
         elif int(tf) > 0 and int(freeFlag) > 0:
             freeFlag = "限免书"
         elif by == "1":
@@ -830,13 +871,16 @@ def createtime_rate(lastDayDict, thisDayRemain, outRateList):
         freeFlag = itemInfo[5]
         tf = itemInfo[9]
         by = itemInfo[11]
+        fc = itemInfo[12]
         if tf == "":
             tf = "0"
         if by == "":
-			by = "0"
+            by = "0"
 
         if freeFlag == "0" or freeFlag == "":
             freeFlag = "免费书"
+        elif int(fc) > 0 and int(freeFlag) > 0:
+            freeFlag = "全免"
         elif int(tf) > 0 and int(freeFlag) > 0:
             freeFlag = "限免书"
         elif by == "1":
