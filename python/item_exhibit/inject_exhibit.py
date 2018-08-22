@@ -146,6 +146,18 @@ def trans_to_word(mstr):
         res = 'redRecMdl'
     elif mstr == '退出拦截推荐':
         res = 'extRecMdl'
+    elif mstr == '精选-精品必读':
+        res = 'chsBDMdl'
+    elif mstr == '精选-热门推荐':
+        res = 'chsHRMdl'
+    elif mstr == '免费-免费推荐':
+        res = 'freFRMdl'
+    elif mstr == '精选-根据阅读分类推荐':
+        res = 'chsRRCMdl'
+    elif mstr == '精选-根据阅读书籍推荐':
+        res = 'chsRRBMdl'
+    elif mstr == '精选-完结佳作':
+        res = 'chsCRMdl'
 
     # 书籍付费情况
     elif mstr == '付费':
