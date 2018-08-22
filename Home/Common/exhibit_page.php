@@ -52,10 +52,15 @@ function exhibit_init($type){
         '<label class="layui-form-label">查询模块</label>'.
         '<div class="layui-input-block">'.
         '<input type="checkbox" lay-skin="primary" name="chsStmMdl" title="精选-瀑布流" checked/>'.
+        '<input type="checkbox" lay-skin="primary" name="chsBDMdl" title="精选-精品必读"/>'.
+        '<input type="checkbox" lay-skin="primary" name="chsHRMdl" title="精选-热门推荐"/>'.
+        '<input type="checkbox" lay-skin="primary" name="chsCRMdl" title="精选-完结佳作"/>'.
         '<input type="checkbox" lay-skin="primary" name="chsBoyStmMdl" title="精选-男频瀑布流"/>'.
         '<input type="checkbox" lay-skin="primary" name="chsGilStmMdl" title="精选-女频瀑布流"/>'.
         '<input type="checkbox" lay-skin="primary" name="chsRakStmMdl" title="精选-排行瀑布流"/>'.
         '<input type="checkbox" lay-skin="primary" name="chsFinStmMdl" title="精选-完结瀑布流"/>'.
+        '<input type="checkbox" lay-skin="primary" name="chsRRCMdl" title="精选-根据阅读分类推荐"/>'.
+        '<input type="checkbox" lay-skin="primary" name="chsRRBMdl" title="精选-根据阅读书籍推荐"/>'.
         '<input type="checkbox" lay-skin="primary" name="foeCtgMdl" title="封面页-类别推荐"/>'.
         '<input type="checkbox" lay-skin="primary" name="foeAutMdl" title="封面页-作者推荐"/>'.
         '<input type="checkbox" lay-skin="primary" name="foeArdMdl" title="封面页-读本书的人还看过"/>'.
@@ -64,6 +69,7 @@ function exhibit_init($type){
         '<input type="checkbox" lay-skin="primary" name="shfRecMdl" title="书架推荐"/>'.
         '<input type="checkbox" lay-skin="primary" name="shfGusMdl" title="书架-猜你喜欢"/>'.
         '<input type="checkbox" lay-skin="primary" name="freGusMdl" title="免费-猜你喜欢"/>'.
+        '<input type="checkbox" lay-skin="primary" name="freFRMdl" title="免费-免费推荐"/>'.
         '<input type="checkbox" lay-skin="primary" name="freMonRecMdl" title="免费-包月推荐"/>'.
         '<input type="checkbox" lay-skin="primary" name="monStmMdl" title="包月瀑布流"/>'.
         '<input type="checkbox" lay-skin="primary" name="redRecMdl" title="根据阅读推荐"/>'.

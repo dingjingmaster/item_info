@@ -332,6 +332,18 @@ def get_module_number(mstr):
         res = 16
     elif mstr == '退出拦截推荐':
         res = 17
+    elif mstr == '精选-精品必读':
+        res = 18
+    elif mstr == '精选-热门推荐':
+        res = 19
+    elif mstr == '免费-免费推荐':
+        res = 20
+    elif mstr == '精选-根据阅读分类推荐':
+        res = 21
+    elif mstr == '精选-根据阅读书籍推荐':
+        res = 22
+    elif mstr == '精选-完结佳作':
+        res = 23
 
     return res
 
