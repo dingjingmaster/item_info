@@ -14,7 +14,7 @@ require __DIR__ . '/../Common/utype_page.php';
 
 class UtypeController extends Controller {
     public function utype_rinit() {
-        $this->ajaxReturn(retent_init('retent'));
+        $this->ajaxReturn(utype_init('retent'));
     }
 
     public function utype_vinit(){
@@ -26,7 +26,6 @@ class UtypeController extends Controller {
         $yTitle = "留存率(100%)";
         $title = "各限免批次留存率统计";
 
-        echo 'ok';
         //$Retent = new Model\RetentModel($_POST['para']);
         //$this->ajaxReturn(generate_response($Retent->getRetent(), $nav_title, $title, $yTitle));
     }
@@ -34,10 +33,13 @@ class UtypeController extends Controller {
     public function search_value() {
         $nav_title = "";
         $yTitle = "阅读量";
-        $title = "各限免批次阅读量统计";
+        $title = "用户类型阅读量统计";
 
-        echo 'ok';
-        //$Retent = new Model\RetentModel($_POST['para']);
-        //$this->ajaxReturn(generate_response($Retent->getValue(), $nav_title, $title, $yTitle));
+        $i = $_POST['para'];
+
+        var_dump($i);
+
+        $Retent = new Model\UtypeModel($_POST['para']);
+        $this->ajaxReturn(generate_response($Retent->getValue(), $nav_title, $title, $yTitle));
     }
 }

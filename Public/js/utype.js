@@ -13,7 +13,7 @@ function detail_input(jsObj) {
     var stopTim;
     var res = Object();
     var flag = '';
-    table = 'user_type';                                               // 查询哪个表
+    table = 'summary';                                               // 查询哪个表
     for(var key in jsObj) {
         if(key == 'frePro' || key == 'nchPro' || key == 'chaPro' || key == 'monPro') {
             flag = "search_retent";
