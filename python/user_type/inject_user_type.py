@@ -17,221 +17,73 @@ def execute_sql(cursor, sql):
     return;
 
 
-def get_summary_sql(dzid, shwNum, clkNum, subNum, redNum, remNum, clkShwRat, subClkRat, subShwRat, redSubRat, redShwRat, remRat, remShwRat, typeCate, timeStamp):
-    sql = "INSERT INTO item_exhibit_summary(dzid,\
-            dspNum, clkNum, srbNum, redNum, rteNum,\
-            clkDsp, subClk, subDsp, redSub, redDsp, retent, rteDsp,\
-            typeCate, timeStamp)\
+def get_summary_sql(utid, freNum, nchNum, chaNum, monNum, allNum, frePro, nchPro, chaPro, monPro, timeStamp):
+	utid = 'summary' + '-' + str(timeStamp)
+    sql = "INSERT INTO utype_summary(utid,\
+            freNum, nchNum, chaNum, monNum, allNum,\
+            frePro, nchPro, chaPro, monPro,\
+            timeStamp)\
             VALUES('%s', '%d', '%d', '%d', '%d', '%d', '%f', '%f', '%f', '%f', '%f', '%f', '%f', '%d', '%d');" %\
-            (dzid, shwNum, clkNum, subNum, redNum, remNum, clkShwRat, subClkRat, subShwRat, redSubRat, redShwRat, remRat, remShwRat, typeCate, timeStamp)
-
-    return sql
-
-def get_fee_sql(dzid, shwNum, clkNum, subNum, redNum, remNum, clkShwRat, subClkRat, subShwRat, redSubRat, redShwRat, remRat, remShwRat, feeCate, typeCate, timeStamp):
-
-    sql = "INSERT INTO item_exhibit_fee(dzid,\
-            dspNum, clkNum, srbNum, redNum, rteNum,\
-            clkDsp, subClk, subDsp, redSub, redDsp, retent, rteDsp,\
-            feeCate, typeCate, timeStamp)\
-            VALUES('%s', '%d', '%d', '%d', '%d', '%d', '%f', '%f', '%f', '%f', '%f', '%f', '%f', '%d', '%d', '%d');" %\
-            (dzid, shwNum, clkNum, subNum, redNum, remNum, clkShwRat, subClkRat, subShwRat, redSubRat, redShwRat, remRat, remShwRat, feeCate, typeCate, timeStamp)
-
-    return sql
-
-
-def get_strategy_sql(dzid, shwNum, clkNum, subNum, redNum, remNum, clkShwRat, subClkRat, subShwRat, redSubRat, redShwRat, remRat, remShwRat, feeCate, strategyCate, typeCate, timeStamp):
-
-    sql = "INSERT INTO item_exhibit_strategy(dzid,\
-            dspNum, clkNum, srbNum, redNum, rteNum,\
-            clkDsp, subClk, subDsp, redSub, redDsp, retent, rteDsp,\
-            feeCate, strategyCate, typeCate, timeStamp)\
-            VALUES('%s', '%d', '%d', '%d', '%d', '%d', '%f', '%f', '%f', '%f', '%f', '%f', '%f','%d', '%d', '%d', '%d');" %\
-            (dzid, shwNum, clkNum, subNum, redNum, remNum, clkShwRat, subClkRat, subShwRat, redSubRat, redShwRat, remRat, remShwRat, feeCate, strategyCate, typeCate, timeStamp)
-
-    return sql
-
-def get_status_sql(dzid, shwNum, clkNum, subNum, redNum, remNum, clkShwRat, subClkRat, subShwRat, redSubRat, redShwRat, remRat, remShwRat, feeCate, statusCate, typeCate, timeStamp):
-
-    sql = "INSERT INTO item_exhibit_status(dzid,\
-            dspNum, clkNum, srbNum, redNum, rteNum,\
-            clkDsp, subClk, subDsp, redSub, redDsp, retent, rteDsp,\
-            feeCate, statusCate, typeCate, timeStamp)\
-            VALUES('%s', '%d', '%d', '%d', '%d', '%d', '%f', '%f', '%f', '%f', '%f', '%f', '%f','%d', '%d', '%d', '%d');" %\
-            (dzid, shwNum, clkNum, subNum, redNum, remNum, clkShwRat, subClkRat, subShwRat, redSubRat, redShwRat, remRat, remShwRat, feeCate, statusCate, typeCate, timeStamp)
-
-    return sql
-
-def get_view_sql(dzid, shwNum, clkNum, subNum, redNum, remNum, clkShwRat, subClkRat, subShwRat, redSubRat, redShwRat, remRat, remShwRat, feeCate, viewCate, typeCate, timeStamp):
-
-    sql = "INSERT INTO item_exhibit_view(dzid,\
-            dspNum, clkNum, srbNum, redNum, rteNum,\
-            clkDsp, subClk, subDsp, redSub, redDsp, retent, rteDsp,\
-            feeCate, viewCate, typeCate, timeStamp)\
-            VALUES('%s', '%d', '%d', '%d', '%d', '%d', '%f', '%f', '%f', '%f', '%f', '%f', '%f','%d', '%d', '%d', '%d');" %\
-            (dzid, shwNum, clkNum, subNum, redNum, remNum, clkShwRat, subClkRat, subShwRat, redSubRat, redShwRat, remRat, remShwRat, feeCate, viewCate, typeCate, timeStamp)
-
-    return sql
-
-def get_intime_sql(dzid, shwNum, clkNum, subNum, redNum, remNum, clkShwRat, subClkRat, subShwRat, redSubRat, redShwRat, remRat, remShwRat, feeCate, intimeCate, typeCate, timeStamp):
-
-    sql = "INSERT INTO item_exhibit_intime(dzid,\
-            dspNum, clkNum, srbNum, redNum, rteNum,\
-            clkDsp, subClk, subDsp, redSub, redDsp, retent, rteDsp,\
-            feeCate, intimeCate, typeCate, timeStamp)\
-            VALUES('%s', '%d', '%d', '%d', '%d', '%d', '%f', '%f', '%f', '%f', '%f', '%f', '%f','%d', '%d', '%d', '%d');" %\
-            (dzid, shwNum, clkNum, subNum, redNum, remNum, clkShwRat, subClkRat, subShwRat, redSubRat, redShwRat, remRat, remShwRat, feeCate, intimeCate, typeCate, timeStamp)
-
-    return sql
-
-def get_update_sql(dzid, shwNum, clkNum, subNum, redNum, remNum, clkShwRat, subClkRat, subShwRat, redSubRat, redShwRat, remRat, remShwRat, feeCate, updateCate, typeCate, timeStamp):
-
-    sql = "INSERT INTO item_exhibit_update(dzid,\
-            dspNum, clkNum, srbNum, redNum, rteNum,\
-            clkDsp, subClk, subDsp, redSub, redDsp, retent, rteDsp,\
-            feeCate, updateCate, typeCate, timeStamp)\
-            VALUES('%s', '%d', '%d', '%d', '%d', '%d', '%f', '%f', '%f', '%f', '%f', '%f', '%f','%d', '%d', '%d', '%d');" %\
-            (dzid, shwNum, clkNum, subNum, redNum, remNum, clkShwRat, subClkRat, subShwRat, redSubRat, redShwRat, remRat, remShwRat, feeCate, updateCate, typeCate, timeStamp)
-
-    return sql
-
-def get_classify1_sql(dzid, shwNum, clkNum, subNum, redNum, remNum, clkShwRat, subClkRat, subShwRat, redSubRat, redShwRat, remRat, remShwRat, feeCate, classify1Cate, typeCate, timeStamp):
-
-    sql = "INSERT INTO item_exhibit_classify1(dzid,\
-            dspNum, clkNum, srbNum, redNum, rteNum,\
-            clkDsp, subClk, subDsp, redSub, redDsp, retent, rteDsp,\
-            feeCate, classify1Cate, typeCate, timeStamp)\
-            VALUES('%s', '%d', '%d', '%d', '%d', '%d', '%f', '%f', '%f', '%f', '%f', '%f', '%f','%d', '%d', '%d', '%d');" %\
-            (dzid, shwNum, clkNum, subNum, redNum, remNum, clkShwRat, subClkRat, subShwRat, redSubRat, redShwRat, remRat, remShwRat, feeCate, classify1Cate, typeCate, timeStamp)
-
+            (utid, freNum, nchNum, chaNum, monNum, allNum, frePro, nchPro, chaPro, monPro, timeStamp)
     return sql
 
 # inject mysql
-def inject_mysql(txtpath, cursor, times, type):
-
-    fr = open(txtpath, "r")
-    sql = ""
-    dzid = ""
-    shwNum = 0
-    clkNum = 0
-    subNum = 0
-    redNum = 0
-    remNum = 0
-    clkShwRat = 0.0
-    subClkRat = 0.0
-    subShwRat = 0.0
-    redSubRat = 0.0
-    redShwRat = 0.0
-    remRat = 0.0
-    remShwRat = 0.0
-
-    # 组装好 key
+def inject_mysql(mdict, cursor, times):
+	sql = ""
+    utid = ""
+	freNum = 0
+	nchNum = 0
+	chaNum = 0
+	monNum = 0
+	allNum = 0
+	frePro = 0.0
+	nchPro = 0.0
+	chaPro = 0.0
+	monPro = 0.0
     timeStamp = int(times)
-
-    for line in fr.readlines():
-        line = line.strip('\n')
-        arr = line.split("\t")
-        moduleName = arr[0]
-        feeStr = ""
-        paraStr = ""
-
-        # 获取数据 -- 总计
-        if len(arr) == 13:
-            shwNum = int(arr[1])
-            clkNum = int(arr[2])
-            subNum = int(arr[3])
-            redNum = int(arr[4])
-            remNum = int(arr[5])
-            clkShwRat = float(arr[6][:-1])
-            subClkRat = float(arr[7][:-1])
-            subShwRat = float(arr[8][:-1])
-            redSubRat = float(arr[9][:-1])
-            redShwRat = float(arr[10][:-1])
-            remRat = float(arr[11][:-1])
-            remShwRat = float(arr[12][:-1])
-        elif len(arr) == 14:
-            feeStr = arr[1]
-            shwNum = int(arr[2])
-            clkNum = int(arr[3])
-            subNum = int(arr[4])
-            redNum = int(arr[5])
-            remNum = int(arr[6])
-            clkShwRat = float(arr[7][:-1])
-            subClkRat = float(arr[8][:-1])
-            subShwRat = float(arr[9][:-1])
-            redSubRat = float(arr[10][:-1])
-            redShwRat = float(arr[11][:-1])
-            remRat = float(arr[12][:-1])
-            remShwRat = float(arr[13][:-1])
-        elif len(arr) == 15:
-            feeStr = arr[1]
-            paraStr = arr[2]
-            shwNum = int(arr[3])
-            clkNum = int(arr[4])
-            subNum = int(arr[5])
-            redNum = int(arr[6])
-            remNum = int(arr[7])
-            clkShwRat = float(arr[8][:-1])
-            subClkRat = float(arr[9][:-1])
-            subShwRat = float(arr[10][:-1])
-            redSubRat = float(arr[11][:-1])
-            redShwRat = float(arr[12][:-1])
-            remRat = float(arr[13][:-1])
-            remShwRat = float(arr[14][:-1])
-        else:
-            print 'error';
-
-        if type == "summary":
-            typeCate = get_module_number(moduleName)
-            dzid = trans_to_word(moduleName) + '-' + str(times)
-            sql = get_summary_sql(dzid, shwNum, clkNum, subNum, redNum, remNum, clkShwRat, subClkRat, subShwRat, redSubRat, redShwRat, remRat, remShwRat, typeCate, timeStamp)
-        elif type == "fee":
-            typeCate = get_module_number(moduleName)
-            feeCate = get_fee_number(feeStr)
-            dzid = trans_to_word(moduleName) + '-' + trans_to_word(feeStr) + '-' + str(times)
-            sql = get_fee_sql(dzid, shwNum, clkNum, subNum, redNum, remNum, clkShwRat, subClkRat, subShwRat, redSubRat, redShwRat, remRat, remShwRat, feeCate, typeCate, timeStamp)
-        elif type == "strategy":
-            typeCate = get_module_number(moduleName)
-            feeCate = get_fee_number(feeStr)
-            strategyCate = get_strategy_number(paraStr)
-            dzid = trans_to_word(moduleName) + '-' + trans_to_word(feeStr) + '-' + trans_to_word(paraStr) + '-' + str(times)
-            sql = get_strategy_sql(dzid, shwNum, clkNum, subNum, redNum, remNum, clkShwRat, subClkRat, subShwRat, redSubRat, redShwRat, remRat, remShwRat, feeCate, strategyCate, typeCate, timeStamp)
-        elif type == "status":
-            typeCate = get_module_number(moduleName)
-            feeCate = get_fee_number(feeStr)
-            statusCate = get_status_number(paraStr)
-            dzid = trans_to_word(moduleName) + '-' + trans_to_word(feeStr) + '-' + trans_to_word(paraStr) + '-' + str(times)
-            sql = get_status_sql(dzid, shwNum, clkNum, subNum, redNum, remNum, clkShwRat, subClkRat, subShwRat, redSubRat, redShwRat, remRat, remShwRat, feeCate, statusCate, typeCate, timeStamp)
-        elif type == "view":
-            typeCate = get_module_number(moduleName)
-            feeCate = get_fee_number(feeStr)
-            viewCate = get_view_number(paraStr)
-            dzid = trans_to_word(moduleName) + '-' + trans_to_word(feeStr) + '-' + trans_to_word(paraStr) + '-' + str(times)
-            sql = get_view_sql(dzid, shwNum, clkNum, subNum, redNum, remNum, clkShwRat, subClkRat, subShwRat, redSubRat, redShwRat, remRat, remShwRat, feeCate, viewCate, typeCate, timeStamp)
-        elif type == "intime":
-            typeCate = get_module_number(moduleName)
-            feeCate = get_fee_number(feeStr)
-            intimeCate = get_intime_number(paraStr)
-            dzid = trans_to_word(moduleName) + '-' + trans_to_word(feeStr) + '-' + trans_to_word(paraStr) + '-' + str(times)
-            sql = get_intime_sql(dzid, shwNum, clkNum, subNum, redNum, remNum, clkShwRat, subClkRat, subShwRat, redSubRat, redShwRat, remRat, remShwRat, feeCate, intimeCate, typeCate, timeStamp)
-        elif type == "update":
-            typeCate = get_module_number(moduleName)
-            feeCate = get_fee_number(feeStr)
-            updateCate = get_update_number(paraStr)
-            dzid = trans_to_word(moduleName) + '-' + trans_to_word(feeStr) + '-' + trans_to_word(paraStr) + '-' + str(times)
-            sql = get_update_sql(dzid, shwNum, clkNum, subNum, redNum, remNum, clkShwRat, subClkRat, subShwRat, redSubRat, redShwRat, remRat, remShwRat, feeCate, updateCate, typeCate, timeStamp)
-        elif type == "classify1":
-            typeCate = get_module_number(moduleName)
-            feeCate = get_fee_number(feeStr)
-            classify1Cate = get_classify1_number(paraStr)
-            dzid = trans_to_word(moduleName) + '-' + trans_to_word(feeStr) + '-' + trans_to_word(paraStr) + '-' + str(times)
-            sql = get_classify1_sql(dzid, shwNum, clkNum, subNum, redNum, remNum, clkShwRat, subClkRat, subShwRat, redSubRat, redShwRat, remRat, remShwRat, feeCate, classify1Cate, typeCate, timeStamp)
-        execute_sql(cursor, sql)
-    fr.close()
-
+	
+	freNum = mdict['freNum']
+	nchNum = mdict['nchNum']
+	chaNum = mdict['chaNum']
+	monNum = mdict['monNum']
+	allNum = mdict['allNum']
+	
+	frePro = float(mdict['freNum']) / mdict['allNum']
+	nchPro = float(mdict['nchNum']) / mdict['allNum']
+	chaPro = float(mdict['chaNum']) / mdict['allNum']
+	monPro = float(mdict['monNum']) / mdict['allNum']
+	
+	sql = get_summary_sql(utid, freNum, nchNum, chaNum, monNum, allNum, frePro, nchPro, chaPro, monPro, timeStamp)
+	execute_sql(cursor, sql)
     return
 
 def get_user_type(path):
-	pass
+	mdict = {}
+	mdict['freNum'] = 0
+	mdict['nchNum'] = 0
+	mdict['chaNum'] = 0
+	mdict['monNum'] = 0
+	mdict['allNum'] = 0
+	
+	fr = open(path, 'r')
+	for line in fr.readlines():
+		line = line.strip('\n')
+		arr = line.split('\t')
+		if len(line) < 2:
+			continue
+		uid, type = arr
+		
+		mdict['allNum'] += 1
+		if 1 == int(type):
+			mdict['freNum'] += 1
+		elif 2 == int(type):
+			mdict['nchNum'] += 1
+		elif 3 == int(type):
+			mdict['chaNum'] += 1
+		elif 4 == int(type):
+			mdict['monNum'] += 1
+	fr.close()
+	return mdict
 	
 
 if __name__ == '__main__':
@@ -257,19 +109,9 @@ if __name__ == '__main__':
 		时间戳
 	'''
 	# 获取用户类别数据
+	retdict = get_user_type(userTypePath)
+	inject_mysql(retdict, cursor, time)
 	
-	
-	
-	
-
-    inject_mysql(summaryPath, cursor, time, "summary")
-    inject_mysql(feePath, cursor, time, "fee")
-    inject_mysql(strategyPath, cursor, time, "strategy")
-    inject_mysql(statusPath, cursor, time, "status")
-    inject_mysql(viewPath, cursor, time, "view")
-    inject_mysql(intimePath, cursor, time, "intime")
-    inject_mysql(updatePath, cursor, time, "update")
-    inject_mysql(classify1Path, cursor, time, "classify1")
 
     db.close()                                                                          # 关闭数据库
 

@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb15f31b-be3b-4112-b198-7264f9e0de4c" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sql/create_utype.sql" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Runtime/Logs/Home/18_09_10.log" afterPath="$PROJECT_DIR$/Runtime/Logs/Home/18_09_10.log" />
-      <change beforePath="$PROJECT_DIR$/python/readme.md" afterPath="$PROJECT_DIR$/python/readme.md" />
+      <change beforePath="$PROJECT_DIR$/python/user_type/inject_user_type.py" afterPath="$PROJECT_DIR$/python/user_type/inject_user_type.py" />
+      <change beforePath="$PROJECT_DIR$/sql/create_utype.sql" afterPath="$PROJECT_DIR$/sql/create_utype.sql" />
       <change beforePath="$PROJECT_DIR$/../novel_tool/thinkphp/library/think/Request.php" afterPath="$PROJECT_DIR$/../novel_tool/thinkphp/library/think/Request.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,8 +18,8 @@
       <file leaf-file-name="create_utype.sql" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sql/create_utype.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state relative-caret-position="247">
+              <caret line="13" column="24" lean-forward="true" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -83,8 +79,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP-5.5.38" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="154" />
-    <option name="y" value="138" />
+    <option name="x" value="121" />
+    <option name="y" value="178" />
     <option name="width" value="1696" />
     <option name="height" value="752" />
   </component>
@@ -247,7 +243,7 @@
       <workItem from="1534907064686" duration="19000" />
       <workItem from="1535080361757" duration="2146000" />
       <workItem from="1536287754576" duration="2022000" />
-      <workItem from="1536545635207" duration="7571000" />
+      <workItem from="1536545635207" duration="9071000" />
     </task>
     <task id="LOCAL-00001" summary="大小写问题">
       <created>1519957080456</created>
@@ -337,10 +333,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55502000" />
+    <option name="totallyTimeSpent" value="57002000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="154" y="138" width="1696" height="752" extended-state="0" />
+    <frame x="121" y="178" width="1696" height="752" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18704157" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -733,8 +729,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sql/create_utype.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state relative-caret-position="247">
+          <caret line="13" column="24" lean-forward="true" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
           <folding />
         </state>
       </provider>
