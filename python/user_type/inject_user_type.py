@@ -98,7 +98,7 @@ if __name__ == '__main__':
 
     retdict = {}
     
-    db = MySQLdb.connect('localhost', user, passwd, 'item_exhibit', unix_socket='/data/wapage/hhzk/mserver/mysql5713/mysql.sock');
+    db = MySQLdb.connect('localhost', user, passwd, 'user_type', unix_socket='/data/wapage/hhzk/mserver/mysql5713/mysql.sock');
     cursor = db.cursor()                                                                # 获取操作游标
 
     '''
