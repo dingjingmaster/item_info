@@ -16,7 +16,7 @@ function detail_input(jsObj) {
     table = 'summary';                                               // 查询哪个表
     for(var key in jsObj) {
         if(key == 'frePro' || key == 'nchPro' || key == 'chaPro' || key == 'monPro') {
-            flag = "search_retent";
+            flag = "search_exhibit";
             target.push(key);
         } else if (key == 'freNum' || key == 'nchNum' || key == 'chaNum' || key == 'monNum' || key == 'allNum') {
             flag = 'search_value';
