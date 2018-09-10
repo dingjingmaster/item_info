@@ -2,10 +2,11 @@
 source ~/.bash_profile
 source ~/.bashrc
 workDir=$(cd $(dirname $0); pwd)
+nowTimeStr=`date -d "-1 day" +%Y-%m-%d`
 nowTime=`date -d "-1 day" +%Y%m%d`
 
 ###################     参数定义      ###########################
-userType="hdfs://10.26.26.145:8020/rs/dingjing/user_type/thisday_utype/${nowTime}"
+userType="hdfs://10.26.26.145:8020/rs/dingjing/user_type/thisday_utype/${nowTimeStr}"
 localUserType="data/user_type.txt"
 
 ###################     开始执行      ###########################
