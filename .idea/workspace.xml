@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb15f31b-be3b-4112-b198-7264f9e0de4c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/python/user_type/inject_user_type.py" afterPath="$PROJECT_DIR$/python/user_type/inject_user_type.py" />
-      <change beforePath="$PROJECT_DIR$/sql/create_utype.sql" afterPath="$PROJECT_DIR$/sql/create_utype.sql" />
       <change beforePath="$PROJECT_DIR$/../novel_tool/thinkphp/library/think/Request.php" afterPath="$PROJECT_DIR$/../novel_tool/thinkphp/library/think/Request.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -78,7 +76,7 @@
     <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP-5.5.38" />
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="121" />
     <option name="y" value="178" />
     <option name="width" value="1696" />
@@ -243,7 +241,7 @@
       <workItem from="1534907064686" duration="19000" />
       <workItem from="1535080361757" duration="2146000" />
       <workItem from="1536287754576" duration="2022000" />
-      <workItem from="1536545635207" duration="9071000" />
+      <workItem from="1536545635207" duration="9668000" />
     </task>
     <task id="LOCAL-00001" summary="大小写问题">
       <created>1519957080456</created>
@@ -333,10 +331,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57002000" />
+    <option name="totallyTimeSpent" value="57599000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="121" y="178" width="1696" height="752" extended-state="0" />
+    <frame x="121" y="178" width="1696" height="752" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18704157" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />

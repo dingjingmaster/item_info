@@ -23,7 +23,7 @@ def get_summary_sql(utid, freNum, nchNum, chaNum, monNum, allNum, frePro, nchPro
             freNum, nchNum, chaNum, monNum, allNum,\
             frePro, nchPro, chaPro, monPro,\
             timeStamp)\
-            VALUES('%s', '%d', '%d', '%d', '%d', '%d', '%f', '%f', '%f', '%f', '%f', '%f', '%f', '%d', '%d');" %\
+            VALUES('%s', '%d', '%d', '%d', '%d', '%d', '%f', '%f', '%f', '%f', '%d');" %\
             (utid, freNum, nchNum, chaNum, monNum, allNum, frePro, nchPro, chaPro, monPro, timeStamp)
     return sql
 
