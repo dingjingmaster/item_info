@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb15f31b-be3b-4112-b198-7264f9e0de4c" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/Home/Common/utype_page.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Home/Controller/UtypeController.class.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Public/js/utype.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/sql/create_utype.sql" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Home/View/Index/index.html" afterPath="$PROJECT_DIR$/Home/View/Index/index.html" />
-      <change beforePath="$PROJECT_DIR$/Public/js/get_request.js" afterPath="$PROJECT_DIR$/Public/js/get_request.js" />
-      <change beforePath="$PROJECT_DIR$/Public/js/post_request.js" afterPath="$PROJECT_DIR$/Public/js/post_request.js" />
-      <change beforePath="$PROJECT_DIR$/ThinkPHP/Library/Think/Dispatcher.class.php" afterPath="$PROJECT_DIR$/ThinkPHP/Library/Think/Dispatcher.class.php" />
+      <change beforePath="$PROJECT_DIR$/Runtime/Logs/Home/18_09_10.log" afterPath="$PROJECT_DIR$/Runtime/Logs/Home/18_09_10.log" />
+      <change beforePath="$PROJECT_DIR$/python/readme.md" afterPath="$PROJECT_DIR$/python/readme.md" />
       <change beforePath="$PROJECT_DIR$/../novel_tool/thinkphp/library/think/Request.php" afterPath="$PROJECT_DIR$/../novel_tool/thinkphp/library/think/Request.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,44 +19,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="utype.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Public/js/utype.js">
+      <file leaf-file-name="create_utype.sql" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sql/create_utype.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="74" column="6" lean-forward="true" selection-start-line="74" selection-start-column="6" selection-end-line="74" selection-end-column="6" />
+            <state relative-caret-position="266">
+              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UtypeController.class.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Home/Controller/UtypeController.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="post_request.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Public/js/post_request.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="10" column="57" lean-forward="false" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="57" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="utype_page.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Home/Common/utype_page.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="42" column="37" lean-forward="true" selection-start-line="42" selection-start-column="37" selection-end-line="42" selection-end-column="37" />
-              <folding>
-                <marker date="1536549320670" expanded="true" signature="1137:2305" ph="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -95,6 +61,8 @@
         <option value="$PROJECT_DIR$/Home/Controller/UtypeController.class.php" />
         <option value="$PROJECT_DIR$/Public/js/post_request.js" />
         <option value="$PROJECT_DIR$/Public/js/utype.js" />
+        <option value="$PROJECT_DIR$/python/readme.md" />
+        <option value="$PROJECT_DIR$/sql/create_utype.sql" />
       </list>
     </option>
   </component>
@@ -114,9 +82,9 @@
     <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP-5.5.38" />
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="59" />
-    <option name="y" value="190" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="154" />
+    <option name="y" value="138" />
     <option name="width" value="1696" />
     <option name="height" value="752" />
   </component>
@@ -203,6 +171,16 @@
             <path>
               <item name="item_info" type="b2602c69:ProjectViewProjectNode" />
               <item name="item_info" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="python" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="item_info" type="b2602c69:ProjectViewProjectNode" />
+              <item name="item_info" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="sql" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="item_info" type="b2602c69:ProjectViewProjectNode" />
+              <item name="item_info" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="ThinkPHP" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
@@ -219,6 +197,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\GitHub\item_info\sql" />
       <recent name="E:\GitHub\item_info\Public\js" />
       <recent name="D:\www\item_info\Public" />
     </key>
@@ -268,7 +247,7 @@
       <workItem from="1534907064686" duration="19000" />
       <workItem from="1535080361757" duration="2146000" />
       <workItem from="1536287754576" duration="2022000" />
-      <workItem from="1536545635207" duration="4618000" />
+      <workItem from="1536545635207" duration="7571000" />
     </task>
     <task id="LOCAL-00001" summary="大小写问题">
       <created>1519957080456</created>
@@ -358,10 +337,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52549000" />
+    <option name="totallyTimeSpent" value="55502000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="59" y="190" width="1696" height="752" extended-state="1" />
+    <frame x="154" y="138" width="1696" height="752" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18704157" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -411,8 +390,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Public/js/exhibit.js" />
-    <entry file="file://$PROJECT_DIR$/Public/js/retent.js" />
     <entry file="file://$PROJECT_DIR$/Home/Model/ExhibitModel.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -709,37 +686,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/python/readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="2" lean-forward="false" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/js/post_request.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="12" column="39" lean-forward="false" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Home/Controller/UtypeController.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <state relative-caret-position="343">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Public/js/utype.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="74" column="6" lean-forward="true" selection-start-line="74" selection-start-column="6" selection-end-line="74" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Public/js/post_request.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="10" column="57" lean-forward="false" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="57" />
+        <state relative-caret-position="1368">
+          <caret line="72" column="30" lean-forward="false" selection-start-line="72" selection-start-column="15" selection-end-line="72" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Home/Common/utype_page.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="42" column="37" lean-forward="true" selection-start-line="42" selection-start-column="37" selection-end-line="42" selection-end-column="37" />
+        <state relative-caret-position="267">
+          <caret line="26" column="67" lean-forward="false" selection-start-line="26" selection-start-column="61" selection-end-line="26" selection-end-column="67" />
           <folding>
             <marker date="1536549320670" expanded="true" signature="1137:2305" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sql/create_utype.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
