@@ -76,22 +76,21 @@ class UtypeModel extends Model {
     }
 
     public function getValue() {
-        $bak = array();
         $result = array();
-        $field = 'utid, freNum, nchNum, chaNum, monNum, allNum, timeStamp';
-        $sql = ' timeStamp >= ' . $this->start . ' AND timeStamp <= ' . $this->stop;
-
-        $resData = date_range($this->start, $this->stop);
-        $res = $this->where($sql)->getField($field, ';');
-        if (($res != null) && ($res != false)) {
-
-            var_dump($res);
-            //foreach ($res as $key => $value) {
-            //    $arr = explode(';', $value);
-            //    $resData[$arr[1]] = $arr[0];
-            //}
-            //$bak['data'] = $resData;
-            //array_push($result, $bak);
+        $field = 'utid, timeStamp';
+        foreach ($this->get_sql() as $msql) {
+            $bak = array();
+            $resData = date_range($this->start, $this->stop);
+            $res = $this->where($msql['sql'])->getField($field . ',' . $msql['field'], ';');
+            if (($res != null) && ($res != false)) {
+                foreach ($res as $key => $value) {
+                    $arr = explode(';', $value);
+                    $resData[$arr[1]] = $arr[0];
+                }
+                $bak['exp'] = $msql['exp'];
+                $bak['data'] = $resData;
+                array_push($result, $bak);
+            }
         }
         return $result;
     }
@@ -109,13 +108,21 @@ class UtypeModel extends Model {
     }
 
     private function get_sql() {
-
+        $sqlInfo = [];
         switch($this->tableName) {
             case "summary":
-                return ;
+                foreach ($this->target as $par) {
+                    $m = array();
+                    $msql = ' timeStamp >= ' . $this->start . ' AND timeStamp <= ' . $this->stop;
+                    $m['exp'] = to_chinese_character($par);
+                    $m['sql'] = $msql;
+                    $m['field'] = $par;
+                    array_push($sqlInfo, $m);
+                }
+                break;
         }
 
-        return '';
+        return $sqlInfo;
     }
 
 

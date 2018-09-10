@@ -37,9 +37,10 @@ class UtypeController extends Controller {
 
         $i = $_POST['para'];
 
-        var_dump($i);
+        //var_dump($i);
 
         $Retent = new Model\UtypeModel($_POST['para']);
-        $this->ajaxReturn(generate_response($Retent->getValue(), $nav_title, $title, $yTitle));
+        var_dump($Retent->getValue());
+        //$this->ajaxReturn(generate_response($Retent->getValue(), $nav_title, $title, $yTitle));
     }
 }
