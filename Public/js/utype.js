@@ -27,8 +27,8 @@ function detail_input(jsObj) {
     }
     startTim = $('#fstart_tim').val();
     stopTim = $('#fstop_tim').val();
-    diff = stopTim - startTim
-    if (diff <= 2) {
+    diff = stopTim - startTim;
+    if (diff <= 1) {
         layer.msg('请设置更大的时间跨度且保证截止时间大于开始时间');
         return false;
     }
@@ -53,22 +53,21 @@ function get_before_date(beforeDay) {
 
 layui.use(['form', 'laydate'], function(){
     var form = layui.form;
-    var fee = [];
 
     var laydate = layui.laydate;
     var startTim = {
         elem: '#fstart_tim',
         format: 'yyyyMMdd',
-        min: '2018-01-01',
-        value: get_before_date(36),
-        max: -3,
+        min: '2018-08-15',
+        value: get_before_date(16),
+        max: -1,
         istime: false
     };
 
     var stopTim = {
         elem: '#fstop_tim',
         format: 'yyyyMMdd',
-        min: '2018-01-01',
+        min: '2018-08-15',
         max: -1,
         value: get_before_date(2),
         istime: false
