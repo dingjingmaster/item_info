@@ -18,7 +18,7 @@ function detail_input(jsObj) {
         if(key == 'frePro' || key == 'nchPro' || key == 'chaPro' || key == 'monPro') {
             flag = "search_retent";
             target.push(key);
-        } else if (key == 'freNum' || key == 'nchNum' || key == 'chaNum' || key == 'monNum') {
+        } else if (key == 'freNum' || key == 'nchNum' || key == 'chaNum' || key == 'monNum' || key == 'allNum') {
             flag = 'search_value';
             target.push(key);
         }else {

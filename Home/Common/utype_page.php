@@ -18,7 +18,8 @@ function utype_init($type) {
         $target = '<input type="checkbox" lay-skin="primary" name="freNum" title="免费用户量"/>'.
             '<input type="checkbox" lay-skin="primary" name="nchNum" title="准付费用户量"/>'.
             '<input type="checkbox" lay-skin="primary" name="chaNum" title="付费用户量" checked/>'.
-            '<input type="checkbox" lay-skin="primary" name="monNum" title="包月用户量"/>';
+            '<input type="checkbox" lay-skin="primary" name="monNum" title="包月用户量"/>'.
+            '<input type="checkbox" lay-skin="primary" name="allNum" title="天用户量"/>';
 
     }else if (!strcmp($type, 'exhibit')) {
         $target = '<input type="checkbox" lay-skin="primary" name="frePro" title="免费用户占比"/>'.

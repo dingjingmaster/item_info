@@ -2,9 +2,9 @@
 function get_request(type, para) {
 
     var xmlhttp;
-    //var request = '/item_info/index.php?s=Home/' + type + '/' + para;
+    var request = '/item_info/index.php?s=Home/' + type + '/' + para;
 
-    var request = '/item_info?s=Home/' + type + '/' + para;
+    //var request = '/item_info?s=Home/' + type + '/' + para;
     if(window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
     } else {

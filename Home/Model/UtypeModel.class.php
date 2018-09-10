@@ -8,7 +8,7 @@
 namespace Home\Model;
 use Think\Model;
 require __DIR__ . '/../Common/common.php';
-require __DIR__ . '/../Common/retent_parse.php';
+require __DIR__ . '/../Common/utype_parse.php';
 
 class UtypeModel extends Model {
 
@@ -30,15 +30,6 @@ class UtypeModel extends Model {
         'db_charset' => 'utf8',
     );
 
-    /*
-      res.table = table;
-    res.para = para;
-    res.target = target;
-    res.start = startTim;
-    res.stop = stopTim;
-
-     */
-
     public function __construct($req) {
         try {
             $res = json_decode($req, true);
@@ -57,21 +48,21 @@ class UtypeModel extends Model {
 
     public function getRetent() {
         $result = array();
-//        $field = 'irid, retent, timeStamp';
-//        foreach ($this->get_sql() as $msql) {
-//            $bak = array();
-//            $resData = date_range($this->start, $this->stop);
-//            $res = $this->where($msql['sql'])->getField($field, ';');
-//            if (($res != null) && ($res != false)) {
-//                foreach ($res as $key => $value) {
-//                    $arr = explode(';', $value);
-//                    $resData[$arr[1]] = $arr[0];
-//                }
-//                $bak['exp'] = $msql['exp'];
-//                $bak['data'] = $resData;
-//                array_push($result, $bak);
-//            }
-//        }
+        $field = 'irid, timeStamp';
+        foreach ($this->get_sql() as $msql) {
+            $bak = array();
+            $resData = date_range($this->start, $this->stop);
+            $res = $this->where($msql['sql'])->getField($field . ',' . $msql['field'], ';');
+            if (($res != null) && ($res != false)) {
+                foreach ($res as $key => $value) {
+                    $arr = explode(';', $value);
+                    $resData[$arr[0]] = $arr[1];
+                }
+                $bak['exp'] = $msql['exp'];
+                $bak['data'] = $resData;
+                array_push($result, $bak);
+            }
+        }
         return $result;
     }
 
@@ -85,7 +76,7 @@ class UtypeModel extends Model {
             if (($res != null) && ($res != false)) {
                 foreach ($res as $key => $value) {
                     $arr = explode(';', $value);
-                    $resData[$arr[1]] = $arr[0];
+                    $resData[$arr[0]] = $arr[1];
                 }
                 $bak['exp'] = $msql['exp'];
                 $bak['data'] = $resData;
@@ -121,7 +112,6 @@ class UtypeModel extends Model {
                 }
                 break;
         }
-
         return $sqlInfo;
     }
 
