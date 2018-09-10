@@ -23,16 +23,16 @@ class UtypeController extends Controller {
 
     public function search_exhibit() {
         $nav_title = "";
-        $yTitle = "留存率(100%)";
-        $title = "各限免批次留存率统计";
+        $yTitle = "用户类型占比(100%)";
+        $title = "用户类型阅读量占比";
 
         $Retent = new Model\UtypeModel($_POST['para']);
-        $this->ajaxReturn(generate_response($Retent->getRetent(), $nav_title, $title, $yTitle));
+        $this->ajaxReturn(generate_response($Retent->getValue(), $nav_title, $title, $yTitle));
     }
 
     public function search_value() {
         $nav_title = "";
-        $yTitle = "阅读量";
+        $yTitle = "用户类型天阅读人数";
         $title = "用户类型阅读量统计";
 
         $Retent = new Model\UtypeModel($_POST['para']);

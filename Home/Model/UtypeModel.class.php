@@ -46,26 +46,6 @@ class UtypeModel extends Model {
         parent::__construct();
     }
 
-    public function getRetent() {
-        $result = array();
-        $field = 'irid, timeStamp';
-        foreach ($this->get_sql() as $msql) {
-            $bak = array();
-            $resData = date_range($this->start, $this->stop);
-            $res = $this->where($msql['sql'])->getField($field . ',' . $msql['field'], ';');
-            if (($res != null) && ($res != false)) {
-                foreach ($res as $key => $value) {
-                    $arr = explode(';', $value);
-                    $resData[$arr[0]] = $arr[1];
-                }
-                $bak['exp'] = $msql['exp'];
-                $bak['data'] = $resData;
-                array_push($result, $bak);
-            }
-        }
-        return $result;
-    }
-
     public function getValue() {
         $result = array();
         $field = 'utid, timeStamp';
