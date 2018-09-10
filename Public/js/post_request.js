@@ -7,7 +7,8 @@
 
 function post_request(page, act, para) {
     var xmlhttp;
-    var request = '/item_info/index.php?s=Home/' + page + '/' + act;
+    //var request = '/item_info/index.php?s=Home/' + page + '/' + act;
+    var request = '/item_info?s=Home/' + page + '/' + act;
     if(window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
     } else {
@@ -16,8 +17,8 @@ function post_request(page, act, para) {
     xmlhttp.onreadystatechange = function() {
         if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             var res = xmlhttp.responseText;
-            //document.getElementById('main_div').innerHTML = res;
-
+            document.getElementById('main_div').innerHTML = res;
+/*
             var json = JSON.parse(res);
             var mainPage = json.mainPage;                                                           // 主页
             document.getElementById('main_div').innerHTML = mainPage;
@@ -27,8 +28,9 @@ function post_request(page, act, para) {
             var divId = js['div'];
             var pic = js['json'];
             plot_picture(divId, JSON.parse(pic));
+            */
         }
-    }
+    };
     xmlhttp.open('POST', request, true);
     xmlhttp.setRequestHeader('Content-type', "application/x-www-form-urlencoded");
     xmlhttp.send('para=' + para);

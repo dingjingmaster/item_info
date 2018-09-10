@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="zh-cn">
 <head>
     <title>宜搜物品信息展示平台</title>
@@ -55,4 +55,3 @@
 </div>
 </body>
 </html>
-

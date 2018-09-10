@@ -278,7 +278,7 @@ class Dispatcher {
         }
         if($urlCase) {
             // URL地址不区分大小写
-            // 智能识别方式 user_type 识别到 UserTypeController 控制器
+            // 智能识别方式 user_type 识别到 UserTypeController.class 控制器
             $controller = parse_name($controller,1);
         }
         return strip_tags(ucfirst($controller));

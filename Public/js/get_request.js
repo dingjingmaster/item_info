@@ -2,7 +2,9 @@
 function get_request(type, para) {
 
     var xmlhttp;
-    var request = '/item_info/index.php?s=Home/' + type + '/' + para;
+    //var request = '/item_info/index.php?s=Home/' + type + '/' + para;
+
+    var request = '/item_info?s=Home/' + type + '/' + para;
     if(window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest();
     } else {
@@ -31,7 +33,7 @@ function get_request(type, para) {
             var reset =document.getElementById('form_reset');
             $("button#form_reset").click();
         }
-    }
+    };
 
     xmlhttp.open('GET', request, true);
     xmlhttp.send();
